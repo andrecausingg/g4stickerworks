@@ -1,0 +1,102 @@
+                                /* 576px */
+@media only screen and (min-width: 36em){  /* Small devices (portrait tablets and large phones)*/
+    html {
+        font-size: 1.2rem;
+    }
+    // Don't Remove Top
+}
+                                /* 768px */
+@media only screen and (min-width: 48em){ /* Medium devices (landscape tablets) */
+    html {
+        font-size: 1.4rem;
+    }
+
+    .yot-overlay-mid-container-form{
+        width: 400px !important;
+    }
+
+    .yot-overlay-left{
+        width: 41.66% !important;
+    }
+
+    .yot-flex-tab{
+        display: flex;
+    }
+    
+    // Don't Remove Top
+    .over-view-container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 8px 8px;
+    }
+
+    .over-view-overlay-mobile{
+        width: 41.66% !important;
+    }
+}
+
+                                /* 992px */
+@media only screen and (min-width: 62em){ /* Large devices (laptops/desktops) */
+    html {
+        font-size: 1.6rem;
+    }
+
+    .yot-content-space-margin-t-80-remove{
+        margin-top: 0px !important;
+    }
+
+    .yot-alert-container{
+        top: 20px !important;
+        width: 350px !important;
+    }
+
+    // Don't Remove Top
+    .overlayLeftSideBar{
+        display: none !important;
+    }
+
+    .g-main-container{
+        display: flex;
+
+        .g-main-item-left{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 33.33% !important;
+        }
+
+        .g-main-item-right{
+            margin-left: 33.33%;
+            width: 66.66% !important;
+        }
+    }
+}
+
+                                /* 1200px */
+@media only screen and (min-width: 75em){  /* Extra large devices (large laptops and desktops, 1200px and up) */
+    .g-main-container{
+        display: flex;
+
+        .g-main-item-left{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 20% !important;
+        }
+
+        .g-main-item-right{
+            margin-left: 20%;
+            width: 80% !important;
+        }
+    }
+
+    .over-view-container{
+        grid-template-columns: 24% 24% 24% 24%;
+    }
+}
+                                /* 1400px */
+@media only screen and (min-width: 87.5em){ /* Tv */
+
+}

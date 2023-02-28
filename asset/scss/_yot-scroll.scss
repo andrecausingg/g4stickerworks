@@ -1,0 +1,11 @@
+/* Style the scrollbar */
+.yot-scrollbar::-webkit-scrollbar {
+    width: 3px; /* Set the width of the scrollbar */
+    background-color: $yot-black1; /* Set the background color of the scrollbar */
+}
+
+/* Style the thumb (the part of the scrollbar that you drag) */
+.yot-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px; /* Round the corners of the thumb */
+    background-color: $yot-blue1; /* Set the background color of the thumb */
+}

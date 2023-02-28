@@ -1,0 +1,44 @@
+// Active 1 bg 
+.yot-active-bg-white{
+    color: $yot-white;
+    background-color: $yot-white;
+}
+
+.yot-active-bgh1:hover{
+    color: $yot-white;
+    background-color: $yot-white;
+}
+
+// Active 2 border bottom white
+.yot-active-bb-white{
+    color: $yot-white !important;
+    border-bottom: 2px solid $yot-white;
+}
+
+// b = border , b = bottom, h = hover
+.yot-active-bbh2{
+    color: $yot-white;
+    border-bottom: 2px solid transparent;
+}
+// b = border , b = bottom, h = hover
+.yot-active-bbh2:hover{
+    color: $yot-white;
+    border-bottom: 2px solid $yot-white;
+}
+
+// Active1 border bottom blue
+.yot-active-bb-blue{
+    color: $yot-blue1 !important;
+    border-bottom: 2px solid $yot-blue1;
+}
+
+// b = border , b = bottom, h = hover
+.yot-active-bbh1{
+    color: $yot-black;
+    border-bottom: 2px solid transparent;
+}
+// b = border , b = bottom, h = hover
+.yot-active-bbh1:hover{
+    color: $yot-blue1;
+    border-bottom: 2px solid $yot-blue1;
+}

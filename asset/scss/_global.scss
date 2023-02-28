@@ -1,0 +1,70 @@
+// Visibility Hide on Mobile
+.yot-hide-for-mobile {
+    @include breakpoint-down(large-laptop) {
+        display: none !important;
+    }
+}
+  
+// Visibility Hide on Desktop
+.yot-hide-for-desktop {
+    @include breakpoint-up(large-laptop) {
+        display: none !important;
+    }
+}
+// Dont Remove Top
+
+// Visibility Hide on Mobile down
+.yot-hide-for-small-mobile-down{
+    @include breakpoint-down(small-mobile) {
+        display: none !important;
+    }
+}
+
+// Visibility Hide on Mobile up
+.yot-hide-for-small-mobile-up{
+    @include breakpoint-up(small-mobile) {
+        display: none !important;
+    }
+}
+
+// Visibility Hide on tablet down
+.yot-hide-for-tablet-down{
+    @include breakpoint-down(medium-tablet) {
+        display: none !important;
+    }
+}
+
+// Visibility Hide on tablet up
+.yot-hide-for-tablet-up{
+    @include breakpoint-up(medium-tablet) {
+        display: none !important;
+    }
+}
+
+.yot-row-x-large-desktop{
+    @include breakpoint-up(xlarge-desktop) {
+        display: flex ;
+    }
+}
+
+// Visibility Hide on large-laptop up
+.yot-hide-for-large-laptop-up{
+    @include breakpoint-up(large-laptop) {
+        display: none !important;
+    }
+}
+
+// Visibility Hide on large-laptop down
+.yot-hide-for-large-laptop-down{
+    @include breakpoint-down(large-laptop) {
+        display: none !important;
+    }
+}
+
+// Flex Medium Tablet
+.yot-flex-medium-tablet{
+    @include breakpoint-up(medium-tablet) {
+        display: flex;
+    }
+}
+

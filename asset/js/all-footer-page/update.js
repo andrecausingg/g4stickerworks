@@ -1,0 +1,122 @@
+$(document).ready(function(){
+    // update All
+    $(document).on("click", ".updateIcon", function() {
+        const id = $(this).attr("data-id");
+        const updateVal = $(this).attr("updateVal");
+        const role = $(this).attr("role");
+
+        if(id != ""){
+            $.ajax({
+                type: "POST",
+                url: "../../../../web-code/asset/php/all-footer-page/update.php", // replace with the URL of your form processing script
+                data: { 
+                    id: id
+                },
+                success: function(response) {
+                    const responseVar = response.trim();
+                    if(responseVar == "updated"){
+                        $("#successAlertupdate").show();
+                        setTimeout(function() {
+                            $("#successAlertupdate").hide(); // Show the element after 10 seconds
+                        }, 10000); // 10000 milliseconds = 10 seconds
+
+                        let dataUrl = ""; // variable to store the data URL
+
+                        // Display the data after success update
+                        switch(role) {
+                            case "facebook":
+                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-facebook.php";
+                                $("#facebookUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-facebook.php");
+                                break;
+                            case "tiktok":
+                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-tiktok.php";
+                                $("#tiktokUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-tiktok.php");
+                                break;
+                            case "instagram":
+                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-instagram.php";
+                                $("#instagramUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-instagram.php");
+                                break;
+                            case "email":
+                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-email.php";
+                                $("#emailContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-email.php");
+                                break;
+                            case "phone":
+                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-phone.php";
+                                $("#phoneContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-phone.php");
+                                break;
+                            case "address":
+                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-address.php";
+                                $("#addressContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-address.php");
+                                break;
+                            default:
+                                dataUrl = "";
+                                break;
+                        }
+
+                        if(dataUrl !== "") {
+                            $("#displayDataAllTableupdate").load(dataUrl); // load the data for the selected option
+                        }
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
+                    // do something to handle the error (e.g. display an error message to the user)
+                }
+            });
+        }
+    });
+
+    // Show the Selected Form Container
+    $("#updateSelect").change(function() {
+        const selectedValue = $(this).val().trim(); // get the value of the selected option
+        let dataUrl = ""; // variable to store the data URL
+        
+        switch(selectedValue) {
+            case "select":
+                $("#updateDisplayDataAllTable").empty();
+                break;
+            case "facebook":
+                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-facebook.php";
+                break;
+            case "tiktok":
+                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-tiktok.php";
+                break;
+            case "instagram":
+                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-instagram.php";
+                break;
+            case "email":
+                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-email.php";
+                break;
+            case "phone":
+                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-phone.php";
+                break;
+            case "address":
+                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-address.php";
+                break;
+            default:
+                dataUrl = "";
+                break;
+        }
+        
+        if(dataUrl !== "") {
+            $("#updateDisplayDataAllTable").load(dataUrl); // load the data for the selected option
+        }
+    });
+
+    // Show update Container
+    $("#updateBtn").click(function(){
+        $("#updateBgContainer").show();
+        $("#updateFormContainer").show();
+    });
+
+    // Hide update Container
+    $("#updateCloseFormIcon").click(function(){
+        $("#updateBgContainer").hide();
+        $("#updateFormContainer").hide();
+    });
+
+    // Close Success Update
+    $("#updateSuccessAlertCloseIcon").click(function(){
+        $("#updateSuccessAlert").hide();
+    });
+});

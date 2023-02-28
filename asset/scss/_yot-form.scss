@@ -1,0 +1,249 @@
+.yot-form-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.yot-form-group-container{
+    position: relative;
+}
+
+.yot-form-group-icon-left{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 24px;
+}
+
+.yot-form-group-icon-right{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 24px;
+}
+
+.yot-form-group-label{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    font-size: $yot-fs-xsm;
+}
+
+.yot-form-group-input-text-l{
+    padding-left: 40px !important;
+}
+
+.yot-form-group-input-text-lr{
+    padding-left:40px !important;
+    padding-right:40px !important;
+}
+
+.yot-form-input-success{
+    border: 1px solid $yot-green;
+}
+
+.yot-form-input-err{
+    border: 1px solid $yot-red;
+}
+
+.yot-form-input{
+    width: 100%;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border: none;
+    font-size: 16px;
+    border: 1px solid $yot-blue;
+
+    // color: $yot-white !important;
+    // background-color: $yot-black1;
+}
+
+.yot-form-input:focus{
+    outline: none !important;
+    // background-color: $yot-orange;
+}
+
+.yot-form-input-ls{
+    width: 100%;
+    padding: 14px 16px;
+    box-sizing: border-box;
+    border: none;
+    color: $yot-white !important;
+    border-top: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid $yot-white;
+    border-left: 2px solid transparent;
+    background-color: $yot-black1;
+    font-size: 16px;
+}
+
+.yot-form-input-ls:focus{
+    outline: none !important;
+    border: 2px solid $yot-orange;
+}
+
+.yot-form-input-good{
+    border: 1px solid $yot-green;
+}
+
+.yot-form-input-bad{
+    border: 1px solid $yot-red;
+}
+
+.yot-form-select{
+    padding: 16px;
+    font-size: 16px;
+    color: white;
+    background-color: $yot-blue1;
+    border: none;
+    border-radius: 5px;
+}
+  
+.yot-form-select:focus {
+    outline: none;
+}
+  
+.yot-form-select option{
+    height: 50px;
+    line-height: 50px; /* Vertically center text within option */
+    padding: 0 16px; /* Add horizontal padding to option */
+    color: $yot-white;
+    background-color: $yot-blue1;
+}
+
+
+// .yot-form-select {
+//     padding: 8px;
+//     font-size: 16px;
+//     color: white;
+//     background-color: hsl(221, 70%, 45%);
+//     border: none;
+//     border-radius: 5px;
+// }
+  
+// .yot-form-select:focus {
+//     outline: none;
+// }
+  
+// .yot-form-select-option{
+//     color: black;
+//     background-color: white;
+// }
+
+
+// // // Input Rectangle
+// // .yot-form-input-primary{
+// //   width: 100%;
+// //   padding: 12px 20px;
+// //   margin: 8px 0;
+// //   box-sizing: border-box;
+// //   border: none;
+// //   color: $yot-black;
+// //   border: 2px solid $yot-black;
+// //   background-color: $yot-yellow;
+// //   font-size: 14px;
+// // }
+
+// // .yot-form-input-primary-bg-effervescent-blue{
+// //   width: 100%;
+// //   padding: 12px 20px;
+// //   margin: 8px 0;
+// //   box-sizing: border-box;
+// //   border: none;
+// //   color: $yot-white;
+// //   border: 2px solid $yot-white;
+// //   background-color: $yot-effervescent-blue;
+// //   font-size: 14px;
+// // }
+
+// // .yot-form-input-primary-bg-white{
+// //   width: 100%;
+// //   padding: 12px 20px;
+// //   margin: 8px 0;
+// //   box-sizing: border-box;
+// //   border: none;
+// //   color: $yot-black;
+// //   border: 2px solid $yot-black;
+// //   background-color: $yot-white;
+// //   font-size: 14px;
+// // }
+
+
+// // // Search Round
+// // .yot-form-input-tertiary-bg-yellow{
+// //   width: 100%;
+// //   padding: 12px 20px;
+// //   margin: 8px 0;
+// //   box-sizing: border-box;
+// //   border: none;
+// //   color: $yot-black;
+// //   border: 2px solid $yot-black;
+// //   background-color: $yot-yellow;
+// //   font-size: 14px;
+
+// //   border-radius: 25px;
+// // }
+
+// // .yot-form-input-tertiary-bg-effervescent-blue{
+// //   width: 100%;
+// //   padding: 12px 20px;
+// //   margin: 8px 0;
+// //   box-sizing: border-box;
+// //   border: none;
+// //   color: $yot-white;
+// //   border: 2px solid $yot-white;
+// //   background-color: $yot-effervescent-blue;
+// //   font-size: 14px;
+
+// //   border-radius: 25px;
+// // }
+
+
+// // //  Input form Log In Sign Up
+// // .yot-form-input{
+// //     width: 100%;
+// //     padding: 12px 20px;
+// //     margin: 8px 0;
+// //     box-sizing: border-box;
+// //     border: none;
+// //     color: $yot-white;
+// //     border-bottom: 2px solid $yot-white;
+// //     background-color: $yot-election-night;
+// //     font-size: 14px;
+// // }
+
+// // ::placeholder{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+// //   color: $yot-white;
+// //   opacity: 1; /* Firefox */
+// // }
+
+// // :-ms-input-placeholder{ /* Internet Explorer 10-11 */
+// //   color: $yot-white;;
+// // }
+
+// // ::-ms-input-placeholder{ /* Microsoft Edge */
+// //   color: $yot-white;
+// // }
+
+// // .yot-form-input-individual{
+// //     width: 36px;
+// //     height: 36px;
+// //     background-color: $yot-election-night;
+// //     border: 2px solid $yot-yellow;
+// //     color: $yot-white;
+// //     text-align: center;
+// //     font-size: 18px;
+// // }
+
+// // // Form Group Icon
+// // .yot-form-icon-parent{
+// //   position: relative;
+// // }
+
+// // .yot-form-icon-child{
+// //   position:absolute;
+// //   top:20px;
+// //   right: 0;
+// // }

@@ -1,0 +1,167 @@
+.yot-btn-white1{
+    border:none;
+    display:inline-block;
+    padding:12px 24px;
+    cursor:pointer;
+
+    font-size: $yot-fs-sm;
+    background-color:$yot-white;
+    color: $yot-black;
+}
+
+.yot-btn-white1:hover{
+    color:  $yot-black;
+    background-color:$yot-blue2;
+}
+
+.yot-btn-blue1{
+    border:none;
+    display:inline-block;
+    padding:12px 24px;
+    cursor:pointer;
+
+    font-size: $yot-fs-sm;
+    background-color:$yot-blue1;
+    color: $yot-white;
+}
+
+.yot-btn-blue1:hover{
+    color:  $yot-black;
+    background-color:$yot-blue2;
+}
+
+.yot-btn-bad{
+    border:none;
+    display:inline-block;
+    padding:12px 24px;
+    cursor:pointer;
+
+    font-size: $yot-fs-sm;
+    background-color:$yot-red;
+    // border: 1px solid $yot-orange;
+    color: $yot-white;
+}
+
+.yot-btn1:hover{
+    background-color: $yot-orange;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.yot-btn1{
+    border:none;
+    display:inline-block;
+    padding:12px 24px;
+    cursor:pointer;
+
+    font-size: $yot-fs-sm;
+    background-color:$yot-black1;
+    border: 1px solid $yot-orange;
+    color: $yot-white;
+}
+
+.yot-btn1:hover{
+    background-color: $yot-orange;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.yot-btn-round{
+    border-radius: 25px;
+}
+
+.yot-btn-active{
+    background-color:$yot-orange !important;
+}
+
+.yot-btn-dis{
+    border:none;
+    display:inline-block;
+    padding:12px 24px;
+    cursor:pointer;
+
+    font-size: $yot-fs-sm;
+    background-color:$yot-grey;
+    color: $yot-white;
+    cursor: not-allowed;
+}
+
+
+// // Secondary Btn
+// .yot-btn-secondary{
+//     border:none;
+//     display:inline-block;
+//     padding:12px 24px;
+//     cursor:pointer;
+//     font-weight: bolder;
+//     border-radius: 10px;
+
+//     width: 100%;
+//     font-size: $yot-fs-sm;
+//     background-color:$yot-sea-of-tears;
+//     color: $yot-white;
+// }
+
+// .yot-btn-secondary:hover{
+//     // background-color: $yot-very-dark-cyan;
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }
+
+// // Tertiary Btn
+// .yot-btn-tertiary{
+//     border:none;
+//     display:inline-block;
+//     padding:12px 24px;
+//     cursor:pointer;
+//     font-weight: bolder;
+//     border-radius: 10px;
+
+//     width: 100%;
+//     font-size: $yot-fs-sm;
+//     background-color:$yot-aconite-purple;
+//     color: $yot-white;
+// }
+
+// .yot-btn-tertiary:hover{
+//     // background-color: $yot-very-dark-cyan;
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }
+
+// // Quaternary Btn
+// .yot-btn-quaternary{
+//     border:none;
+//     display:inline-block;
+//     padding:12px 24px;
+//     cursor:pointer;
+//     font-weight: bolder;
+//     border-radius: 10px;
+
+//     width: 100%;
+//     font-size: $yot-fs-sm;
+//     background-color:$yot-rapsody-blue;
+//     color: $yot-white;
+// }
+
+// .yot-btn-Quaternary:hover{
+//     // background-color: $yot-very-dark-cyan;
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }
+
+// // Quaternary Btn
+// .yot-btn-five{
+//     border:none;
+//     display:inline-block;
+//     padding:12px 24px;
+//     cursor:pointer;
+//     font-weight: bolder;
+//     border-radius: 10px;
+
+//     width: 100%;
+//     font-size: $yot-fs-sm;
+//     background-color:$yot-see-goddess;
+//     color: $yot-white;
+// }
+
+// .yot-btn-five:hover{
+//     // background-color: $yot-very-dark-cyan;
+//     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+// }
+
