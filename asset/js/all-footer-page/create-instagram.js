@@ -10,7 +10,7 @@ $(document).ready(function(){
             if(isValidUrl(instagramUrl)){
                 $.ajax({
                     type: "POST",
-                    url: "../../../../web-code/asset/php/all-footer-page/create-instagram.php", // replace with the URL of your form processing script
+                    url: "../../../../g4stickerworks/asset/php/all-footer-page/create-instagram.php", // replace with the URL of your form processing script
                     data: { 
                         instagramUrl: instagramUrl
                     },
@@ -22,7 +22,7 @@ $(document).ready(function(){
                             setTimeout(function() {
                                 $("#successAlertInsert").hide(); // Show the element after 10 seconds
                             }, 10000); // 10000 milliseconds = 10 seconds
-                            $("#instagramUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-instagram.php")
+                            $("#instagramUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-instagram.php")
                             $('#instagramUrl').css('border-color', 'hsl(207, 90%, 54%)');
                         }
                     },

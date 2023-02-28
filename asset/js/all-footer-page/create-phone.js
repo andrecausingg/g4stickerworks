@@ -10,7 +10,7 @@ $(document).ready(function(){
             if(isValidPhone(phone)){
                 $.ajax({
                     type: "POST",
-                    url: "../../../../web-code/asset/php/all-footer-page/create-phone.php", // replace with the URL of your form processing script
+                    url: "../../../../g4stickerworks/asset/php/all-footer-page/create-phone.php", // replace with the URL of your form processing script
                     data: { 
                         phone: phone
                     },
@@ -22,7 +22,7 @@ $(document).ready(function(){
                             setTimeout(function() {
                                 $("#successAlertInsert").hide(); // Show the element after 10 seconds
                             }, 10000); // 10000 milliseconds = 10 seconds
-                            $("#phoneContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-phone.php")
+                            $("#phoneContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php")
                             $('#phone').css('border-color', 'hsl(207, 90%, 54%)');
                         }
                     },

@@ -7,7 +7,7 @@ $(document).ready(function(){
         if(id != ""){
             $.ajax({
                 type: "POST",
-                url: "../../../../web-code/asset/php/all-footer-page/delete.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/all-footer-page/delete.php", // replace with the URL of your form processing script
                 data: { 
                     id: id
                 },
@@ -27,28 +27,28 @@ $(document).ready(function(){
                                 $("#deleteDisplayDataAllTable").empty();
                                 break;
                             case "facebook":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-facebook.php";
-                                $("#facebookUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-facebook.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-facebook.php";
+                                $("#facebookUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-facebook.php");
                                 break;
                             case "tiktok":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-tiktok.php";
-                                $("#tiktokUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-tiktok.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-tiktok.php";
+                                $("#tiktokUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-tiktok.php");
                                 break;
                             case "instagram":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-instagram.php";
-                                $("#instagramUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-instagram.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-instagram.php";
+                                $("#instagramUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-instagram.php");
                                 break;
                             case "email":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-email.php";
-                                $("#emailContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-email.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-email.php";
+                                $("#emailContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-email.php");
                                 break;
                             case "phone":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-phone.php";
-                                $("#phoneContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-phone.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-phone.php";
+                                $("#phoneContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
                                 break;
                             case "address":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-address.php";
-                                $("#addressContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-address.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-address.php";
+                                $("#addressContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-address.php");
                                 break;
                             default:
                                 dataUrl = "";
@@ -79,22 +79,22 @@ $(document).ready(function(){
                 $("#deleteDisplayDataAllTable").empty();
                 break;
             case "facebook":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-facebook.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-facebook.php";
                 break;
             case "tiktok":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-tiktok.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-tiktok.php";
                 break;
             case "instagram":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-instagram.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-instagram.php";
                 break;
             case "email":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-email.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-email.php";
                 break;
             case "phone":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-phone.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-phone.php";
                 break;
             case "address":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-delete-address.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-address.php";
                 break;
             default:
                 dataUrl = "";

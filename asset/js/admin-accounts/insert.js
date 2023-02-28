@@ -9,7 +9,7 @@ $(document).ready(function(){
 
         if(validateEmail(email) && validateEmailDomain(email) && email != '' && password != '' && password.length > 8){
             $.ajax({
-                url: '../../../../web-code/asset/php/admin-accounts/insert.php',
+                url: '../../../../g4stickerworks/asset/php/admin-accounts/insert.php',
                 type: 'POST',
                 data: { 
                     email: email,
@@ -33,9 +33,9 @@ $(document).ready(function(){
                         }, 10000); // 10000 milliseconds = 10 seconds
 
                         // Display The Data 
-                        $("#displayDataTable").load("../../../../../web-code/asset/php/admin-accounts/display/d-admin-accounts.php");
+                        $("#displayDataTable").load("../../../../../g4stickerworks/asset/php/admin-accounts/display/d-admin-accounts.php");
                         // Display Total
-                        $("#totalAdminAccounts").load("../../../../../web-code/asset/php/admin-accounts/display/d-total.php");
+                        $("#totalAdminAccounts").load("../../../../../g4stickerworks/asset/php/admin-accounts/display/d-total.php");
                     }else{
                         $("#emailExistErr").show();
                         $('#email').css('border-color', 'hsl(4, 95%, 56%)');
@@ -68,7 +68,7 @@ $(document).ready(function(){
 
                 if(email != ""){
                     $.ajax({
-                        url: '../../../../web-code/asset/php/admin-accounts/display/d-email-exist.php',
+                        url: '../../../../g4stickerworks/asset/php/admin-accounts/display/d-email-exist.php',
                         type: 'POST',
                         data: { 
                             email: email,
@@ -200,7 +200,7 @@ $(document).ready(function(){
 
         if(email != ""){
             $.ajax({
-                url: '../../../../web-code/asset/php/admin-accounts/display/d-email-exist.php',
+                url: '../../../../g4stickerworks/asset/php/admin-accounts/display/d-email-exist.php',
                 type: 'POST',
                 data: { 
                     email: email,

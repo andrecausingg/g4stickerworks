@@ -8,7 +8,7 @@ $(document).ready(function(){
         if(id != ""){
             $.ajax({
                 type: "POST",
-                url: "../../../../web-code/asset/php/all-footer-page/update.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the URL of your form processing script
                 data: { 
                     id: id
                 },
@@ -25,28 +25,28 @@ $(document).ready(function(){
                         // Display the data after success update
                         switch(role) {
                             case "facebook":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-facebook.php";
-                                $("#facebookUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-facebook.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php";
+                                $("#facebookUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-facebook.php");
                                 break;
                             case "tiktok":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-tiktok.php";
-                                $("#tiktokUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-tiktok.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-tiktok.php";
+                                $("#tiktokUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-tiktok.php");
                                 break;
                             case "instagram":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-instagram.php";
-                                $("#instagramUrlContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-instagram.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-instagram.php";
+                                $("#instagramUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-instagram.php");
                                 break;
                             case "email":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-email.php";
-                                $("#emailContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-email.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-email.php";
+                                $("#emailContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-email.php");
                                 break;
                             case "phone":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-phone.php";
-                                $("#phoneContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-phone.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php";
+                                $("#phoneContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
                                 break;
                             case "address":
-                                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-address.php";
-                                $("#addressContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-address.php");
+                                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-address.php";
+                                $("#addressContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-address.php");
                                 break;
                             default:
                                 dataUrl = "";
@@ -76,22 +76,22 @@ $(document).ready(function(){
                 $("#updateDisplayDataAllTable").empty();
                 break;
             case "facebook":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-facebook.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php";
                 break;
             case "tiktok":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-tiktok.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-tiktok.php";
                 break;
             case "instagram":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-instagram.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-instagram.php";
                 break;
             case "email":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-email.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-email.php";
                 break;
             case "phone":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-phone.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php";
                 break;
             case "address":
-                dataUrl = "../../../../../web-code/asset/php/all-footer-page/display/d-update-address.php";
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-address.php";
                 break;
             default:
                 dataUrl = "";

@@ -18,7 +18,7 @@ $(document).ready(function(){
         var endFormattedDate = endYear + '-' + endMonth + '-' + endDay;
         
         $.ajax({
-            url: '../../../../web-code/asset/php/cut-file/display/d-start-date-end-date-search.php',
+            url: '../../../../g4stickerworks/asset/php/cut-file/display/d-start-date-end-date-search.php',
             type: 'POST',
             data: { 
                 search: search,
@@ -39,7 +39,7 @@ $(document).ready(function(){
         const jobNum = $('#jobNum').val().trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/cut-file/cut-file.php',
+            url: '../../../../g4stickerworks/asset/php/cut-file/cut-file.php',
             type: 'POST',
             data: { 
                 jobName: jobName,
@@ -59,9 +59,9 @@ $(document).ready(function(){
                     }, 10000); // 10000 milliseconds = 10 seconds
 
                     // Display The Data of Cut File
-                    $("#displayCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-cut-file.php");
+                    $("#displayCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-cut-file.php");
                     // Display the total of Cut file
-                    $("#totalCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-total.php");
+                    $("#totalCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-total.php");
                 }
             }
         })
@@ -76,7 +76,7 @@ $(document).ready(function(){
         const jobNumEdit = $('#jobNumEdit').val().trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/cut-file/edit.php',
+            url: '../../../../g4stickerworks/asset/php/cut-file/edit.php',
             type: 'POST',
             data: { 
                 id: idEdit,
@@ -97,9 +97,9 @@ $(document).ready(function(){
                         $("#successEditAlertCutFile").hide(); // Show the element after 10 seconds
                     }, 10000); // 10000 milliseconds = 10 seconds
                     // Display The Data of Cut File
-                    $("#displayCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-cut-file.php");
+                    $("#displayCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-cut-file.php");
                     // Display the total of Cut file
-                    $("#totalCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-total.php");
+                    $("#totalCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-total.php");
                 }
             }
         })
@@ -110,7 +110,7 @@ $(document).ready(function(){
         const id = $("#id").val().trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/cut-file/delete.php',
+            url: '../../../../g4stickerworks/asset/php/cut-file/delete.php',
             type: 'POST',
             data: { 
                 id: id,
@@ -129,9 +129,9 @@ $(document).ready(function(){
                     }, 10000); // 10000 milliseconds = 10 seconds
 
                     // Display The Data of Cut File
-                    $("#displayCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-cut-file.php");
+                    $("#displayCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-cut-file.php");
                     // Display the total of Cut file
-                    $("#totalCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-total.php");
+                    $("#totalCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-total.php");
                 }
             }
         })
@@ -150,7 +150,7 @@ $(document).ready(function(){
         const id = $(this).attr("data-id").trim();
         
         $.ajax({
-            url: '../../../../web-code/asset/php/cut-file/display/d-edit-container.php',
+            url: '../../../../g4stickerworks/asset/php/cut-file/display/d-edit-container.php',
             type: 'POST',
             data: { 
                 id: id,
@@ -167,7 +167,7 @@ $(document).ready(function(){
         const id = $(this).attr("data-id").trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/cut-file/display/d-delete-container.php',
+            url: '../../../../g4stickerworks/asset/php/cut-file/display/d-delete-container.php',
             type: 'POST',
             data: { 
                 id: id,

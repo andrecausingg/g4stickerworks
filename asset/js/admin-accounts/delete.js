@@ -4,7 +4,7 @@ $(document).ready(function(){
         const id = $("#id").val().trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/admin-accounts/delete.php',
+            url: '../../../../g4stickerworks/asset/php/admin-accounts/delete.php',
             type: 'POST',
             data: { 
                 id: id,
@@ -23,9 +23,9 @@ $(document).ready(function(){
                     }, 10000); // 10000 milliseconds = 10 seconds
 
                     // Display Data
-                    $("#displayDataTable").load("../../../../../web-code/asset/php/admin-accounts/display/d-admin-accounts.php");
+                    $("#displayDataTable").load("../../../../../g4stickerworks/asset/php/admin-accounts/display/d-admin-accounts.php");
                     // Display Total
-                    $("#totalAdminAccounts").load("../../../../../web-code/asset/php/admin-accounts/display/d-total.php");
+                    $("#totalAdminAccounts").load("../../../../../g4stickerworks/asset/php/admin-accounts/display/d-total.php");
                 }
             }
         })
@@ -37,7 +37,7 @@ $(document).ready(function(){
         const id = $(this).attr("data-id").trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/admin-accounts/display/d-delete-container.php',
+            url: '../../../../g4stickerworks/asset/php/admin-accounts/display/d-delete-container.php',
             type: 'POST',
             data: { 
                 id: id,

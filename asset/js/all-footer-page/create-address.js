@@ -10,7 +10,7 @@ $('#createFormAddress').submit(function(e){
         if(isValidAddress(address)){
             $.ajax({
                 type: "POST",
-                url: "../../../../web-code/asset/php/all-footer-page/create-address.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/all-footer-page/create-address.php", // replace with the URL of your form processing script
                 data: { 
                     address: address
                 },
@@ -22,7 +22,7 @@ $('#createFormAddress').submit(function(e){
                         setTimeout(function() {
                             $("#successAlertInsert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
-                        $("#addressContainer").load("../../../../../web-code/asset/php/all-footer-page/display/d-address.php")
+                        $("#addressContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-address.php")
                         $('#address').css('border-color', 'hsl(207, 90%, 54%)');
                     }
                 },

@@ -8,7 +8,7 @@ $(document).ready(function(){
         const jobNumEdit = $('#jobNumEdit').val().trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/cut-file/edit.php',
+            url: '../../../../g4stickerworks/asset/php/cut-file/edit.php',
             type: 'POST',
             data: { 
                 id: idEdit,
@@ -29,9 +29,9 @@ $(document).ready(function(){
                         $("#successEditAlertCutFile").hide(); // Show the element after 10 seconds
                     }, 10000); // 10000 milliseconds = 10 seconds
                     // Display The Data of Cut File
-                    $("#displayCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-cut-file.php");
+                    $("#displayCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-cut-file.php");
                     // Display the total of Cut file
-                    $("#totalCutFile").load("../../../../../web-code/asset/php/cut-file/display/d-total.php");
+                    $("#totalCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-total.php");
                 }
             }
         })
@@ -64,7 +64,7 @@ $(document).ready(function(){
 
         if(email != ""){
             $.ajax({
-                url: '../../../../web-code/asset/php/admin-accounts/display/d-email-exist.php',
+                url: '../../../../g4stickerworks/asset/php/admin-accounts/display/d-email-exist.php',
                 type: 'POST',
                 data: { 
                     email: email,
@@ -148,7 +148,7 @@ $(document).ready(function(){
         const id = $(this).attr("data-id").trim();
 
         $.ajax({
-            url: '../../../../web-code/asset/php/admin-accounts/display/d-edit-container.php',
+            url: '../../../../g4stickerworks/asset/php/admin-accounts/display/d-edit-container.php',
             type: 'POST',
             data: { 
                 id: id,
