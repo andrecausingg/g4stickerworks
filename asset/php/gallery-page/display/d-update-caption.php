@@ -29,7 +29,7 @@
                 echo'
                     <tr>
                         <td>
-                            <textarea class="yot-form-input yot-tff-sas updateCaption" data-caption="'. htmlspecialchars($row["gallery_page_id"]).' type="text" name="updateCaption" id="updateCaption" style="height:80px;resize:none;" >'.htmlspecialchars($row["caption"]).'</textarea>
+                            <textarea class="yot-form-input yot-tff-sas" data-id="'.htmlspecialchars($row["gallery_page_id"]).'" type="text" style="height:80px;resize:none;">'.htmlspecialchars($row["caption"]).'</textarea>
                         </td>
                         <td>
                             <button class="yot-btn-blue1 updateIcon" data-id="'. htmlspecialchars($row["gallery_page_id"]).'">Update</button>
