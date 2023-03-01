@@ -28,9 +28,12 @@
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        <td>'.htmlspecialchars($row["cellphone_num"]).'</td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-file-pen yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 updateIcon" role="phone" data-id="'. htmlspecialchars($row["all_footer_id"]).'"></i>
+                        <td>
+                            <span id="invalidPhoneErrUpdate" class="yot-tc-red" style="display:none">Please enter a valid phone number</span>
+                            <textarea class="yot-form-input yot-tff-sas" type="text" name="updatePhoneUrl" id="updatePhoneUrl" style="height:80px;resize:none;" >'.htmlspecialchars($row["cellphone_num"]).'</textarea>
+                        </td>
+                        <td>
+                            <button class="yot-btn-blue1 updateIcon" role="phone" data-id="'. htmlspecialchars($row["all_footer_id"]).'">Update</button>
                         </td>
                     </tr>
                 ';
