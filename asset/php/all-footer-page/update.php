@@ -1,5 +1,10 @@
 <?php
-    if(isset($_POST["id"]) && isset($_POST["role"]) && isset($_POST["updateFacebookUrl"])){
+    if((isset($_POST["id"]) && isset($_POST["role"])) && 
+    (isset($_POST["updateFacebookUrl"]) ||
+    isset($_POST["updateFacebookUrl"]) ||
+    )
+    
+    ){
         $id = sanitize($_POST['id']);
         $role = sanitize($_POST['role']);
         $updateFacebookUrl = sanitize($_POST['updateFacebookUrl']);
@@ -31,6 +36,32 @@
         }
     
         public function getUpdateFacebook(){
+            // File Path
+            require_once "../../../asset/php/helper/global/global.php"; 
+    
+            // Class
+            $classConnDB = new classConnDB();
+    
+            // Variable
+            $conn = $classConnDB->conn();
+    
+            // prepare the SQL statement with placeholders
+            $sql = "UPDATE all_footer_tbl SET facebook = ? WHERE all_footer_id = ?";
+            // create a prepared statement
+            $stmt = $conn->prepare($sql);
+            // bind the parameters to the placeholders
+            $stmt->bind_param("si", $facebook, $this->id);
+    
+            // Execute the statement
+            if($stmt->execute()){
+                // close the prepared statement and database connection
+                $stmt->close();
+                $conn->close();
+                echo "Updated";
+            }
+        }
+
+        public function getUpdateTiktok(){
             // File Path
             require_once "../../../asset/php/helper/global/global.php"; 
     
