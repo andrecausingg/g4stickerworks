@@ -21,19 +21,19 @@ $(document).ready(function(){
                         role: role,
                         updateFacebookUrl: updateFacebookUrl
                     },
-                    success: function(response) {
+                    success: function(response){
+                        console.log(response);
                         const responseVar = response.trim();
                         if(responseVar == "updated"){
-                            $("#successAlertupdate").show();
+                            $("#updateSuccessAlert").show();
+                            $("#updateFacebookUrl").css('border-color', 'hsl(207, 90%, 54%)');
+
                             setTimeout(function() {
-                                $("#successAlertupdate").hide(); // Show the element after 10 seconds
+                                $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
                             }, 10000); // 10000 milliseconds = 10 seconds
 
-                            // Display the data after success update
-                            if(role == "facebook") {
-                                $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php");
-                                $("#facebookUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-facebook.php");
-                            }
+                            $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php");
+                            $("#facebookUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-facebook.php");
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -48,6 +48,70 @@ $(document).ready(function(){
                 }
             }
         }
+
+        if(role == "tiktok" && id != ""){
+            if(updateTiktokUrl != "" && isValidUrl(updateTiktokUrl)){
+                $.ajax({
+                    type: "POST",
+                    url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the URL of your form processing script
+                    data: { 
+                        id: id,
+                        role: role,
+                        updateTiktokUrl: updateTiktokUrl
+                    },
+                    success: function(response){
+                        console.log(response);
+                        const responseVar = response.trim();
+                        if(responseVar == "updated"){
+                            $("#updateSuccessAlert").show();
+                            $("#updateTiktokUrl").css('border-color', 'hsl(207, 90%, 54%)');
+        
+                            setTimeout(function() {
+                                $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
+                            }, 10000); // 10000 milliseconds = 10 seconds
+        
+                            $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-tiktok.php");
+                            $("#tiktokUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-tiktok.php");
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
+                        // do something to handle the error (e.g. display an error message to the user)
+                    }
+                });
+            }else{
+                if(!isValidUrl(updateTiktokUrl)){
+                    $("#invalidUrlFacebookErrUpdate").show();
+                    $(this).css('border-color', 'hsl(4, 95%, 56%)');
+                }
+            }
+        }
+
+
+        
+        // case "tiktok":
+        //     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-tiktok.php";
+        //     
+        //     break;
+        // case "instagram":
+        //     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-instagram.php";
+        //     $("#instagramUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-instagram.php");
+        //     break;
+        // case "email":
+        //     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-email.php";
+        //     $("#emailContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-email.php");
+        //     break;
+        // case "phone":
+        //     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php";
+        //     $("#phoneContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
+        //     break;
+        // case "address":
+        //     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-address.php";
+        //     $("#addressContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-address.php");
+        //     break;
+        // default:
+        //     dataUrl = "";
+        //     break;
 
     });
 

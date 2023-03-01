@@ -28,7 +28,6 @@
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        
                         <td>
                             <span id="invalidUrlFacebookErrUpdate" class="yot-tc-red" style="display:none">Invalid Url</span>
                             <textarea class="yot-form-input yot-tff-sas" type="text" name="updateFacebookUrl" id="updateFacebookUrl" style="height:80px;resize:none;" >'.htmlspecialchars($row["facebook"]).'</textarea>

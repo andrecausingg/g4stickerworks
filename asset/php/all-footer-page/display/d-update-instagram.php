@@ -28,9 +28,12 @@
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        <td>'.htmlspecialchars($row["instagram"]).'</td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-file-pen yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 updateIcon" role="instagram" data-id="'. htmlspecialchars($row["all_footer_id"]).'"></i>
+                        <td>
+                            <span id="invalidUrlInstagramErrUpdate" class="yot-tc-red" style="display:none">Invalid Url</span>
+                            <textarea class="yot-form-input yot-tff-sas" type="text" name="updateInstagramUrl" id="updateInstagramUrl" style="height:80px;resize:none;" >'.htmlspecialchars($row["instagram"]).'</textarea>
+                        </td>
+                        <td>
+                            <button class="yot-btn-blue1 updateIcon" role="instagram" data-id="'. htmlspecialchars($row["all_footer_id"]).'">Update</button>
                         </td>
                     </tr>
                 ';

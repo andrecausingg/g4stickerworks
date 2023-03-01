@@ -86,7 +86,7 @@
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "Updated";
+                echo "updated";
             }
         }
         
@@ -112,7 +112,7 @@
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "Updated";
+                echo "updated";
             }
         }
         
@@ -138,7 +138,7 @@
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "Updated";
+                echo "updated";
             }
         }
 
@@ -164,7 +164,7 @@
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "Updated";
+                echo "updated";
             }
         }
     
@@ -190,7 +190,7 @@
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "Updated";
+                echo "updated";
             }
         }
     
@@ -216,7 +216,7 @@
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "Updated";
+                echo "updated";
             }
         }
 
