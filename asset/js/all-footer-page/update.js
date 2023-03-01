@@ -4,11 +4,12 @@ $(document).ready(function(){
         const id = $(this).attr("data-id").trim();
         const role = $(this).attr("role").trim();
         const updateFacebookUrl = $("#updateFacebookUrl").val().trim();
-        // const updateTiktokUrl = $("#updateTiktokUrl").val().trim();
-        // const updateInstagramUrl = $("#updateInstagramUrl").val().trim();
-        // const updateEmailUrl = $("#updateEmailUrl").val().trim();
-        // const updatePhoneUrl = $("#updatePhoneUrl").val().trim();
-        // const updateAddressUrl = $("#updateAddressUrl").val().trim();
+        const updateTiktokUrl = $("#updateTiktokUrl").val()?.trim() || '';
+        const updateInstagramUrl = $("#updateInstagramUrl").val()?.trim() || '';
+        const updateEmailUrl = $("#updateEmailUrl").val()?.trim() || '';
+        const updatePhoneUrl = $("#updatePhoneUrl").val()?.trim() || '';
+        const updateAddressUrl = $("#updateAddressUrl").val()?.trim() || '';
+
 
         if(role == "facebook" && id != ""){
             if(updateFacebookUrl != "" && isValidUrl(updateFacebookUrl)){
@@ -79,7 +80,6 @@ $(document).ready(function(){
             }
         }
 
-        
     });
 
     // Show the Selected Form Container
