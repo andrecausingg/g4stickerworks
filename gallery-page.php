@@ -312,8 +312,35 @@
         </div>
     </div>
 
+    <!-- Success Container-->
+    <div id="successAlertInsert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Insertion:</h3>
+            <i id="successAlertCloseIconInsert" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully inserted.</p>
+    </div>
+
+    <!-- Delete Container-->
+    <div id="deleteSuccessAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Deletion:</h3>
+            <i id="deleteSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully deleted.</p>
+    </div>
+
+    <!-- Success Update Container-->
+    <div id="updateSuccessAlert" class="yot-bg-orange yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Update:</h3>
+            <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully updated.</p>
+    </div>
+
     <script src="./asset/js/all/global.js"></script>
 
-    <script src="./asset/js/gallery/create.js"></script>
+    <script src="./asset/js/gallery-page/create.js"></script>
 </body>
 </html>

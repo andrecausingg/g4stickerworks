@@ -7,11 +7,18 @@ $(document).ready(function(){
         // send the form data to the server with AJAX
         $.ajax({
             type: "POST", // use the POST method
-            url: "your_processing_script.php", // replace with the URL of your form processing script
+            url: "../../../../g4stickerworks/asset/php/gallery-page/create.php", // replace with the URL of your form processing script
             data: { caption: caption }, // send the caption field value as data
             success: function(response) {
-                console.log(response); // log the server response to the console
-                
+                const responseVarChar = response.trim();                
+                if(responseVarChar == "created"){
+                    $("#createFormCaption").trigger("reset");
+                    $("#successAlertInsert").show();
+
+                    setTimeout(function() {
+                        $("#successAlertInsert").hide(); // Show the element after 10 seconds
+                    }, 10000); // 10000 milliseconds = 10 seconds
+                }
                 // do something with the server response (e.g. show a success message)
             },
             error: function(jqXHR, textStatus, errorThrown) {
