@@ -313,7 +313,7 @@
     </div>
 
     <!-- Success Container-->
-    <div id="successAlertInsert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+    <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Successful Insertion:</h3>
             <i id="successAlertCloseIconInsert" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>

@@ -9,15 +9,20 @@ $(document).ready(function(){
             $.ajax({
                 type: "POST", // use the POST method
                 url: "../../../../g4stickerworks/asset/php/gallery-page/update.php", // replace with the URL of your form processing script
-                data: { caption: caption }, // send the caption field value as data
+                data: { 
+                    id:id,
+                    caption: caption,
+                }, // send the caption field value as data
                 success: function(response) {
+                    console.log(response);
                     const responseVarChar = response.trim();                
                     if(responseVarChar == "updated"){
-                        $("#createFormCaption").trigger("reset");
-                        $("#successAlertInsert").show();
+                        $("#updateSuccessAlert").show();
+                        $("#deleteSuccessAlert").hide();
+                        $("#createSuccessAlert").hide();
 
                         setTimeout(function() {
-                            $("#successAlertInsert").hide(); // Show the element after 10 seconds
+                            $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
 
                         $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");

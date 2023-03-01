@@ -36,7 +36,7 @@
             $conn = $classConnDB->conn();
         
             // prepare the SQL statement with placeholders
-            $sql = "UPDATE all_footer_tbl SET caption = ? WHERE gallery_page_id = ?";
+            $sql = "UPDATE gallery_page_tbl SET caption = ? WHERE gallery_page_id = ?";
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
