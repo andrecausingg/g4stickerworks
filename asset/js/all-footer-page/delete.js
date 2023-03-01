@@ -25,32 +25,48 @@ $(document).ready(function(){
                         switch(role) {
                             case "select":
                                 $("#deleteDisplayDataAllTable").empty();
+                                deleteSelect();
+                                updateSelect();
                                 break;
                             case "facebook":
+                                deleteSelect();
+                                updateSelect();
                                 dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-facebook.php";
                                 $("#facebookUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-facebook.php");
                                 break;
                             case "tiktok":
+                                deleteSelect();
+                                updateSelect();
                                 dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-tiktok.php";
                                 $("#tiktokUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-tiktok.php");
                                 break;
                             case "instagram":
+                                deleteSelect();
+                                updateSelect();
                                 dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-instagram.php";
                                 $("#instagramUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-instagram.php");
                                 break;
                             case "email":
+                                deleteSelect();
+                                updateSelect();
                                 dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-email.php";
                                 $("#emailContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-email.php");
                                 break;
                             case "phone":
+                                deleteSelect();
+                                updateSelect();
                                 dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-phone.php";
                                 $("#phoneContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
                                 break;
                             case "address":
+                                deleteSelect();
+                                updateSelect();
                                 dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-address.php";
                                 $("#addressContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-address.php");
                                 break;
                             default:
+                                deleteSelect();
+                                updateSelect();
                                 dataUrl = "";
                                 break;
                         }
@@ -120,4 +136,104 @@ $(document).ready(function(){
     $("#deleteSuccessAlertCloseIcon").click(function(){
         $("#deleteSuccessAlert").hide();
     });
+
+    function updateSelect(){
+        const selectedValue = $("#updateSelect").val();
+        var dataUrl = ""; // variable to store the data URL
+        
+        switch(selectedValue) {
+            case "facebook":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php";
+                break;
+            case "tiktok":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-tiktok.php";
+                break;
+            case "instagram":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-instagram.php";
+                break;
+            case "email":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-email.php";
+                break;
+            case "phone":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php";
+                break;
+            case "address":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-address.php";
+                break;
+            default:
+                $("#updateDisplayDataAllTable").empty();
+                break;
+        }
+        
+        if(dataUrl !== "") {
+            $("#updateDisplayDataAllTable").load(dataUrl); // load the data for the selected option
+        }
+    }
+
+    function updateSelect(){
+        const selectedValue = $("#updateSelect").val();
+        var dataUrl = ""; // variable to store the data URL
+        
+        switch(selectedValue) {
+            case "facebook":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php";
+                break;
+            case "tiktok":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-tiktok.php";
+                break;
+            case "instagram":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-instagram.php";
+                break;
+            case "email":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-email.php";
+                break;
+            case "phone":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php";
+                break;
+            case "address":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-address.php";
+                break;
+            default:
+                $("#updateDisplayDataAllTable").empty();
+                break;
+        }
+        
+        if(dataUrl !== "") {
+            $("#updateDisplayDataAllTable").load(dataUrl); // load the data for the selected option
+        }
+    }
+
+    function deleteSelect(){
+        const selectedValue = $("#deleteSelect").val().trim(); // get the value of the selected option
+        let dataUrl = ""; // variable to store the data URL
+        
+        switch(selectedValue) {
+            case "facebook":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-facebook.php";
+                break;
+            case "tiktok":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-tiktok.php";
+                break;
+            case "instagram":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-instagram.php";
+                break;
+            case "email":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-email.php";
+                break;
+            case "phone":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-phone.php";
+                break;
+            case "address":
+                dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-address.php";
+                break;
+            default:
+                dataUrl = "";
+                $("#deleteDisplayDataAllTable").empty();
+                break;
+        }
+        
+        if(dataUrl !== "") {
+            $("#deleteDisplayDataAllTable").load(dataUrl); // load the data for the selected option
+        }
+    }
 });
