@@ -75,9 +75,6 @@ $(document).ready(function(){
         let dataUrl = ""; // variable to store the data URL
         
         switch(selectedValue) {
-            case "select":
-                $("#deleteDisplayDataAllTable").empty();
-                break;
             case "facebook":
                 dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-delete-facebook.php";
                 break;
@@ -98,6 +95,7 @@ $(document).ready(function(){
                 break;
             default:
                 dataUrl = "";
+                $("#deleteDisplayDataAllTable").empty();
                 break;
         }
         

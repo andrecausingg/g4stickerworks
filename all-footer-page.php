@@ -438,7 +438,7 @@
                 <!-- Select Container -->
                 <div class="yot-mb-8">
                     <select class="yot-form-select yot-form-select-option yot-w-50" name="deleteSelect" id="deleteSelect">
-                        <option value="select">- Select -</option>
+                        <option value="">- Select -</option>
                         <option value="facebook">Facebook</option>
                         <option value="tiktok">Tiktok</option>
                         <option value="instagram">Instagram</option>
@@ -466,7 +466,7 @@
                 <!-- Select Container -->
                 <div class="yot-mb-8">
                     <select class="yot-form-select yot-form-select-option yot-w-50" name="updateSelect" id="updateSelect">
-                        <option value="select">- Select -</option>
+                        <option value="">- Select -</option>
                         <option value="facebook">Facebook</option>
                         <option value="tiktok">Tiktok</option>
                         <option value="instagram">Instagram</option>
