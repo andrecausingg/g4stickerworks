@@ -25,6 +25,7 @@ $(document).ready(function(){
                         const responseVar = response.trim();
                         if(responseVar == "updated"){
                             $("#updateSuccessAlert").show();
+                            $("#updateFacebookUrl").css('border-color', 'hsl(207, 90%, 54%)');
 
                             setTimeout(function() {
                                 $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
@@ -42,7 +43,7 @@ $(document).ready(function(){
             }else{
                 if(!isValidUrl(updateFacebookUrl)){
                     $("#invalidUrlFacebookErrUpdate").show();
-                    $(this).css('border-color', 'hsl(4, 95%, 56%)');
+                    $("#updateFacebookUrl").css('border-color', 'hsl(4, 95%, 56%)');
                 }
             }
         }
@@ -62,8 +63,8 @@ $(document).ready(function(){
                         const responseVar = response.trim();
                         if(responseVar == "updated"){
                             $("#updateSuccessAlert").show();
-                            $("#invalidUrlTiktokErrUpdate").css('border-color', 'hsl(207, 90%, 54%)');
-        
+                            $("#updateTiktokUrl").css('border-color', 'hsl(207, 90%, 54%)');
+
                             setTimeout(function() {
                                 $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
                             }, 10000); // 10000 milliseconds = 10 seconds
@@ -79,8 +80,8 @@ $(document).ready(function(){
                 });
             }else{
                 if(!isValidUrl(updateTiktokUrl)){
-                    $("#invalidUrlFacebookErrUpdate").show();
-                    $(this).css('border-color', 'hsl(4, 95%, 56%)');
+                    $("#invalidUrlTiktokErrUpdate").show();
+                    $("#updateTiktokUrl").css('border-color', 'hsl(4, 95%, 56%)');
                 }
             }
         }
@@ -122,9 +123,9 @@ $(document).ready(function(){
                 }
             }
         }
-        
+
         if(role == "email" && id != ""){
-            if(updateEmail != "" && isValid(updateEmail)){
+            if(updateEmail != "" && isValidEmail(updateEmail)){
                 $.ajax({
                     type: "POST",
                     url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the  of your form processing script
@@ -145,7 +146,7 @@ $(document).ready(function(){
                             }, 10000); // 10000 milliseconds = 10 seconds
         
                             $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-email.php");
-                            $("#tiktokContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-email.php");
+                            $("#emailContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-email.php");
                         }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -155,49 +156,13 @@ $(document).ready(function(){
                 });
             }else{
                 if(!isValid(updateEmail)){
-                    $("#invalidFacebookErrUpdate").show();
-                    $(this).css('border-color', 'hsl(4, 95%, 56%)');
+                    $("#invalidEMailErrUpdate").show();
+                    $("#updateEmail").css('border-color', 'hsl(4, 95%, 56%)');
                 }
             }
         }
 
-        if(role == "phone" && id != ""){
-            if(updatePhone != "" && isValid(updatePhone)){
-                $.ajax({
-                    type: "POST",
-                    url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the  of your form processing script
-                    data: { 
-                        id: id,
-                        role: role,
-                        updatePhone: updatePhone
-                    },
-                    success: function(response){
-                        console.log(response);
-                        const responseVar = response.trim();
-                        if(responseVar == "updated"){
-                            $("#updateSuccessAlert").show();
-                            $("#updatePhone").css('border-color', 'hsl(207, 90%, 54%)');
         
-                            setTimeout(function() {
-                                $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
-                            }, 10000); // 10000 milliseconds = 10 seconds
-        
-                            $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php");
-                            $("#tiktokContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
-                        }
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
-                        // do something to handle the error (e.g. display an error message to the user)
-                    }
-                });
-            }else{
-                if(!isValid(updatePhone)){
-                    $("#invalidFacebookErrUpdate").show();
-                    $(this).css('border-color', 'hsl(4, 95%, 56%)');
-                }
-            }
-        }
     });
 
     // Show the Selected Form Container
@@ -265,12 +230,36 @@ $(document).ready(function(){
 
     // Validation Tiktok
     $(document).on('input', '#updateTiktokUrl', function() {
-        const facebookUrl = $(this).val().trim();
-        if(isValidUrl(facebookUrl)){
+        const tiktokUrl = $(this).val().trim();
+        if(isValidUrl(tiktokUrl)){
             $("#invalidUrlTiktokErrUpdate").hide();
             $(this).css('border-color', 'hsl(122, 39%, 49%)');
         } else {
             $("#invalidUrlTiktokErrUpdate").show();
+            $(this).css('border-color', 'hsl(4, 95%, 56%)');
+        }
+    });
+
+    // Validation Instagram
+    $(document).on('input', '#updateInstagramUrl', function() {
+        const instagramUrl = $(this).val().trim();
+        if(isValidUrl(instagramUrl)){
+            $("#invalidUrlInstagramErrUpdate").hide();
+            $(this).css('border-color', 'hsl(122, 39%, 49%)');
+        } else {
+            $("#invalidUrlInstagramErrUpdate").show();
+            $(this).css('border-color', 'hsl(4, 95%, 56%)');
+        }
+    });
+
+    // Validation Email
+    $(document).on('input', '#updateEmail', function() {
+        const email = $(this).val().trim();
+        if(isValidEmail(email)){
+            $("#invalidEmailErrUpdate").hide();
+            $(this).css('border-color', 'hsl(122, 39%, 49%)');
+        } else {
+            $("#invalidEmailErrUpdate").show();
             $(this).css('border-color', 'hsl(4, 95%, 56%)');
         }
     });
@@ -279,5 +268,11 @@ $(document).ready(function(){
         // Regular expression for validating URLs
         const urlRegex = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
         return urlRegex.test(url);
+    }
+
+    function isValidEmail(email) {
+        // Regular expression for validating email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     }
 });

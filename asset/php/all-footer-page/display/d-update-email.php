@@ -30,7 +30,7 @@
                     <tr>
                         <td>
                             <span id="invalidEmailErrUpdate" class="yot-tc-red" style="display:none">Invalid Email</span>
-                            <textarea class="yot-form-input yot-tff-sas" type="text" name="updateEmailUrl" id="updateEmailUrl" style="height:80px;resize:none;" >'.htmlspecialchars($row["email"]).'</textarea>
+                            <textarea class="yot-form-input yot-tff-sas" type="text" name="updateEmail" id="updateEmail" style="height:80px;resize:none;" >'.htmlspecialchars($row["email"]).'</textarea>
                         </td>
                         <td>
                             <button class="yot-btn-blue1 updateIcon" role="email" data-id="'. htmlspecialchars($row["all_footer_id"]).'">Update</button>

@@ -1,38 +1,39 @@
-        
-        if(role == "phone" && id != ""){
-            if(updatePhone != "" && isValid(updatePhone)){
-                $.ajax({
-                    type: "POST",
-                    url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the  of your form processing script
-                    data: { 
-                        id: id,
-                        role: role,
-                        updatePhone: updatePhone
-                    },
-                    success: function(response){
-                        console.log(response);
-                        const responseVar = response.trim();
-                        if(responseVar == "updated"){
-                            $("#updateSuccessAlert").show();
-                            $("#updatePhone").css('border-color', 'hsl(207, 90%, 54%)');
-        
-                            setTimeout(function() {
-                                $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
-                            }, 10000); // 10000 milliseconds = 10 seconds
-        
-                            $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php");
-                            $("#tiktokContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
-                        }
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
-                        // do something to handle the error (e.g. display an error message to the user)
-                    }
-                });
-            }else{
-                if(!isValid(updatePhone)){
-                    $("#invalidFacebookErrUpdate").show();
-                    $(this).css('border-color', 'hsl(4, 95%, 56%)');
+
+
+if(role == "phone" && id != ""){
+    if(updatePhone != "" && isValid(updatePhone)){
+        $.ajax({
+            type: "POST",
+            url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the  of your form processing script
+            data: { 
+                id: id,
+                role: role,
+                updatePhone: updatePhone
+            },
+            success: function(response){
+                console.log(response);
+                const responseVar = response.trim();
+                if(responseVar == "updated"){
+                    $("#updateSuccessAlert").show();
+                    $("#updatePhone").css('border-color', 'hsl(207, 90%, 54%)');
+
+                    setTimeout(function() {
+                        $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
+                    }, 10000); // 10000 milliseconds = 10 seconds
+
+                    $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php");
+                    $("#tiktokContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
                 }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
+                // do something to handle the error (e.g. display an error message to the user)
             }
+        });
+    }else{
+        if(!isValid(updatePhone)){
+            $("#invalidFacebookErrUpdate").show();
+            $(this).css('border-color', 'hsl(4, 95%, 56%)');
         }
+    }
+}

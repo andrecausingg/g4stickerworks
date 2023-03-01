@@ -3,9 +3,9 @@
         (isset($_POST["updateFacebookUrl"]) ||
             isset($_POST["updateTiktokUrl"]) ||
             isset($_POST["updateInstagramUrl"]) ||
-            isset($_POST["updateEmailUrl"]) ||
-            isset($_POST["updatePhoneUrl"]) ||
-            isset($_POST["updateAddressUrl"]))
+            isset($_POST["updateEmail"]) ||
+            isset($_POST["updatePhone"]) ||
+            isset($_POST["updateAddress"]))
         ){
             
         $id = sanitize($_POST['id']);
@@ -13,11 +13,11 @@
         $updateFacebookUrl = sanitize($_POST['updateFacebookUrl'] ?? '');
         $updateTiktokUrl = sanitize($_POST['updateTiktokUrl'] ?? '');
         $updateInstagramUrl = sanitize($_POST['updateInstagramUrl'] ?? '');
-        $updateEmailUrl = sanitize($_POST['updateEmailUrl'] ?? '');
-        $updatePhoneUrl = sanitize($_POST['updatePhoneUrl'] ?? '');
-        $updateAddressUrl = sanitize($_POST['updateAddressUrl'] ?? '');
+        $updateEmail = sanitize($_POST['updateEmail'] ?? '');
+        $updatePhone = sanitize($_POST['updatePhone'] ?? '');
+        $updateAddress = sanitize($_POST['updateAddress'] ?? '');
 
-        $classUpdate = new classUpdate($id, $role, $updateFacebookUrl, $updateTiktokUrl, $updateInstagramUrl, $updateEmailUrl, $updatePhoneUrl, $updateAddressUrl);
+        $classUpdate = new classUpdate($id, $role, $updateFacebookUrl, $updateTiktokUrl, $updateInstagramUrl, $updateEmail, $updatePhone, $updateAddress);
 
         if($role == "facebook" && $updateFacebookUrl != ""){
             $classUpdate->getUpdateFacebook();
@@ -25,11 +25,11 @@
             $classUpdate->getUpdateTiktok();
         }else if($role == "instagram" && $updateInstagramUrl != ""){
             $classUpdate->getUpdateInstagram();
-        }else if($role == "email" && $updateEmailUrl != ""){
+        }else if($role == "email" && $updateEmail != ""){
             $classUpdate->getUpdateEmail();
-        }else if($role == "phone" && $updatePhoneUrl != ""){
+        }else if($role == "phone" && $updatePhone != ""){
             $classUpdate->getUpdatePhone();
-        }else if($role == "address" && $updateAddressUrl != ""){
+        }else if($role == "address" && $updateAddress != ""){
             $classUpdate->getUpdateAddress();
         }
     }
@@ -49,19 +49,19 @@
         private $updateFacebookUrl;
         private $updateTiktokUrl;
         private $updateInstagramUrl;
-        private $updateEmailUrl;
-        private $updatePhoneUrl;
-        private $updateAddressUrl;
+        private $updateEmail;
+        private $updatePhone;
+        private $updateAddress;
     
-        public function __construct($id, $role, $updateFacebookUrl, $updateTiktokUrl, $updateInstagramUrl, $updateEmailUrl, $updatePhoneUrl, $updateAddressUrl){
+        public function __construct($id, $role, $updateFacebookUrl, $updateTiktokUrl, $updateInstagramUrl, $updateEmail, $updatePhone, $updateAddress){
             $this->id = $id;
             $this->role = $role;
             $this->updateFacebookUrl = $updateFacebookUrl;
             $this->updateTiktokUrl = $updateTiktokUrl;
             $this->updateInstagramUrl = $updateInstagramUrl;
-            $this->updateEmailUrl = $updateEmailUrl;
-            $this->updatePhoneUrl = $updatePhoneUrl;
-            $this->updateAddressUrl = $updateAddressUrl;
+            $this->updateEmail = $updateEmail;
+            $this->updatePhone = $updatePhone;
+            $this->updateAddress = $updateAddress;
         }
 
         public function getUpdateFacebook(){
@@ -157,7 +157,7 @@
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
-            $stmt->bind_param("si",  $this->email, $this->id);
+            $stmt->bind_param("si",  $this->updateEmail, $this->id);
         
             // Execute the statement
             if($stmt->execute()){
@@ -183,7 +183,7 @@
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
-            $stmt->bind_param("si",  $this->phone, $this->id);
+            $stmt->bind_param("si",  $this->updatePhone, $this->id);
         
             // Execute the statement
             if($stmt->execute()){
@@ -209,7 +209,7 @@
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
-            $stmt->bind_param("si",  $this->address, $this->id);
+            $stmt->bind_param("si",  $this->updateAddress, $this->id);
         
             // Execute the statement
             if($stmt->execute()){
