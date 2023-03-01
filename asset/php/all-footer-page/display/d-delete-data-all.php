@@ -53,7 +53,6 @@
 
             // Class
             $classConnDB = new classConnDB();
-            $classHidePassword = new classHidePassword();
 
             // Variable
             $conn = $classConnDB->conn();

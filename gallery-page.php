@@ -304,10 +304,10 @@
                 </div>
 
                 <!-- Update Container -->
-                <div id="updateDisplayContainer"></div>
+                <div id="updateDisplayContainer" style="display:none"></div>
 
                 <!-- Delete Container -->
-                <div id="deleteDisplayContainer"></div>
+                <div id="deleteDisplayContainer" style="display:none"></div>
             </div>
         </div>
     </div>

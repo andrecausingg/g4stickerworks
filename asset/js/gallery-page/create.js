@@ -30,8 +30,6 @@ $(document).ready(function(){
         });
     });
     
-
-
     // Show the Selected Form Container
     $("#selectOption").change(function() {
         var selectedValue = $(this).val(); // get the value of the selected option
@@ -49,6 +47,19 @@ $(document).ready(function(){
             } else {
                 $("#" + containerID).hide(); // hide the other containers
             }
+        }
+        if (selectedValue == "create") {
+            $("#createDisplayContainer").show(); // show the create container
+            $("#updateDisplayContainer").hide(); // hide the update container
+            $("#deleteDisplayContainer").hide(); // hide the delete container
+        } else if (selectedValue == "update") {
+            $("#createDisplayContainer").hide(); // hide the create container
+            $("#updateDisplayContainer").show(); // show the update container
+            $("#deleteDisplayContainer").hide(); // hide the delete container
+        } else if (selectedValue == "delete") {
+            $("#createDisplayContainer").hide(); // hide the create container
+            $("#updateDisplayContainer").hide(); // hide the update container
+            $("#deleteDisplayContainer").show(); // show the delete container
         }
     });
 

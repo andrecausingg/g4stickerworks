@@ -21,7 +21,7 @@ class classDisplayData{
             $facebook = htmlspecialchars($row["facebook"], ENT_QUOTES, 'UTF-8');
 
             echo '
-                .'$facebook.'
+                <a class="yot-text-fs-m" target="_blank" href="'. $facebook .'" style="color:white;">'. $facebook .'</a>
             ';
         }
     }
