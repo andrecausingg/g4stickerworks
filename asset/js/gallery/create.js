@@ -1,4 +1,27 @@
 $(document).ready(function(){
+    $("#createFormCaption").submit(function(e) {
+        e.preventDefault(); // prevent the default form submission
+        
+        var caption = $("#caption").val().trim(); // get the value of the caption field
+        
+        // send the form data to the server with AJAX
+        $.ajax({
+            type: "POST", // use the POST method
+            url: "your_processing_script.php", // replace with the URL of your form processing script
+            data: { caption: caption }, // send the caption field value as data
+            success: function(response) {
+                console.log(response); // log the server response to the console
+                
+                // do something with the server response (e.g. show a success message)
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
+                // do something to handle the error (e.g. display an error message to the user)
+            }
+        });
+    });
+    
+
 
     // Show the Selected Form Container
     $("#selectOption").change(function() {
