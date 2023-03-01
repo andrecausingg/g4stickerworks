@@ -202,8 +202,8 @@
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
                 <h2 class="yot-mb-16 yot-resize-font-64">Gallery Page</h2>
                 <div class="yot-text-center yot-pa-16">
-                    <button id="createBtn" class="yot-btn-blue1">Caption</button>
-                    <button id="updateBtn" class="yot-btn-blue1">Images</button>
+                    <button id="captionBtn" class="yot-btn-blue1">Caption</button>
+                    <button id="imagesBtn" class="yot-btn-blue1">Images</button>
                 </div>
             </div>
             
@@ -272,30 +272,29 @@
         </div>
 
         <!-- Create Container -->
-        <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:"></div>
-        <div id="createFormContainer" class="yot-overlay-mid-container" style="display:;">
+        <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+        <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                 <!-- Title -->
                 <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                    <h2 class="yot-tc-blue1">CREATE</h2>
+                    <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
                     <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
 
-                <!-- Facebook Form Container -->
-                <div id="createContainerFacebook">
-                    <form id="createFormFacebook">
-                        <!-- Url -->
+                <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Caption</label>
+                    <select class="yot-form-select yot-form-select-option yot-w-33-33" name="selectOption" id="selectOption">
+                        <option value="create">Create</option>
+                        <option value="update">Update</option>
+                        <option value="delete">Delete</option>
+                    </select>
+                </div>
+
+                <!-- Create Container -->
+                <div id="createDisplayContainer">
+                    <form id="createFormCaption">
                         <div class="yot-form-group">
-                            <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="facebookUrl">Caption</label>
-                                <select class="yot-form-select yot-form-select-option yot-w-50" name="deleteSelect" id="deleteSelect">
-                                    <option value="create">Create</option>
-                                    <option value="update">Update</option>
-                                    <option value="delete">Delete</option>
-                                </select>
-                            </div>
-                            <span id="invalidUrlFacebookErr" class="yot-tc-red" style="display:none">Invalid Url</span>
-                            <input class="yot-form-input" type="text" name="facebookUrl" id="facebookUrl">
+                            <textarea class="yot-form-input yot-tff-sas" type="text" name="caption" id="caption" style="height:100px;resize:none;" ></textarea>
                         </div>
 
                         <div class="yot-text-center">
@@ -303,10 +302,18 @@
                         </div>
                     </form>
                 </div>
+
+                <!-- Delete Container -->
+                <div id="deleteDisplayContainer"></div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainer"></div>
             </div>
         </div>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
+
+    <script src="./asset/js/gallery/create.js"></script>
 </body>
 </html>
