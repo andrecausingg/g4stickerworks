@@ -18,6 +18,8 @@ $(document).ready(function(){
                     setTimeout(function() {
                         $("#successAlertInsert").hide(); // Show the element after 10 seconds
                     }, 10000); // 10000 milliseconds = 10 seconds
+
+                    $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");
                 }
                 // do something with the server response (e.g. show a success message)
             },

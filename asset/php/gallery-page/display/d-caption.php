@@ -14,14 +14,14 @@ class classDisplayData{
         $conn = $classConnDB->conn();
         
         // DISPLAY
-        $stmt = $conn->prepare("SELECT * FROM all_footer_tbl");
+        $stmt = $conn->prepare("SELECT * FROM gallery_page_tbl WHERE caption <> ''");
         $stmt->execute();
         $result = $stmt->get_result();
         while($row = $result->fetch_assoc()){
-            $facebook = htmlspecialchars($row["facebook"], ENT_QUOTES, 'UTF-8');
+            $caption = htmlspecialchars($row["caption"], ENT_QUOTES, 'UTF-8');
 
             echo '
-                .'$facebook.'
+                '. $caption .'
             ';
         }
     }

@@ -212,7 +212,7 @@
                 <!-- Title -->
                 <div class="yot-mb-16 yot-tc-blue1 yot-text-center">
                     <h1 class="yot-resize-font-64">Gallery</h1>
-                    <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
+                    <p id="displayCaption" class="yot-resize-font-18 yot-mb-16"></p>
                 </div>
 
                 <div class="yot-row">
@@ -342,5 +342,6 @@
     <script src="./asset/js/all/global.js"></script>
 
     <script src="./asset/js/gallery-page/create.js"></script>
+    <script src="./asset/js/gallery-page/display/d-caption.js"></script>
 </body>
 </html>
