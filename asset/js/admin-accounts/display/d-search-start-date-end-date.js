@@ -18,7 +18,7 @@ $(document).ready(function(){
         var endFormattedDate = endYear + '-' + endMonth + '-' + endDay;
         
         $.ajax({
-            url: '../../../../web-code/asset/php/admin-accounts/display/d-start-date-end-date-search.php',
+            url: '../../../../g4stickerworks/asset/php/admin-accounts/display/d-start-date-end-date-search.php',
             type: 'POST',
             data: { 
                 search: search,
