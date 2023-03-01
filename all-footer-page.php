@@ -459,7 +459,7 @@
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                 <!-- Title -->
                 <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                    <h2 class="yot-tc-blue1">Update</h2>
+                    <h2 class="yot-tc-blue1">UPDATE</h2>
                     <i id="updateCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
 

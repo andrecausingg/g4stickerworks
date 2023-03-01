@@ -40,7 +40,7 @@
                         <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                             <form id="editFormCutFile">
                                 <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                                    <h2 class="yot-tc-blue1">Update</h2>
+                                    <h2 class="yot-tc-blue1">UPDATE</h2>
                                     <i id="closeCutFileFormIconEdit" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                                     <input type="hidden" name="idEdit" id="idEdit" value="'.$row["cut_file_id"].'">
                                 </div>

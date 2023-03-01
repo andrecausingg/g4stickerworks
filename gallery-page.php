@@ -89,7 +89,6 @@
                             <a href="about-us-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
                             <a href="gallery-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">Gallery</a>
                             <a href="all-footer-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">All Footer</a>
-                            
                         </div>
                     </div>
                 </div>
@@ -200,21 +199,15 @@
         <!-- Right -->
         <div class="g-main-item-right" style="padding: 24px;">
             <!-- Title -->
-            <h2 class="yot-mb-16 yot-resize-font-64">Gallery Page</h2>
-            
-            <!-- Gallery Container -->
-            <div class="over-view-container">
-                <!-- Gallery  -->
-                <div class="yot-bg-blue1 yot-mb-8 over-view-item1 yot-text-center" style="border-radius: 8px; padding: 8px;">
-                    <div class="yot-mb-8">
-                        <h3 class="yot-tc-white">Gallery</h3>
-                    </div>
-                    <div>
-                        <button class="yot-btn-white1 yot-mb-8">Edit</button> <br>
-                    </div>
+            <div class="yot-row yot-flex-ai-c-jc-sb">
+                <h2 class="yot-mb-16 yot-resize-font-64">Gallery Pages</h2>
+                <div class="yot-text-center yot-bg-white yot-pa-16">
+                    <button id="createBtn" class="yot-btn-blue1">Create</button>
+                    <button id="updateBtn" class="yot-btn-blue1">Update</button>
+                    <button id="deleteBtn" class="yot-btn-blue1">Delete</button>
                 </div>
             </div>
-
+            
             <!-- Gallery Section -->
             <section >
                 <!-- Title -->
