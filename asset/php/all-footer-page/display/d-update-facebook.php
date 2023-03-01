@@ -28,7 +28,7 @@
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        <td><textarea class="yot-form-input yot-tff-sas" type="text" name="updateVal" id="updateVal" style="height:80px;resize:none;" >'.htmlspecialchars($row["facebook"]).'</textarea></td>
+                        <td><textarea class="yot-form-input yot-tff-sas" type="text" name="updateFacebookUrl" id="updateFacebookUrl" style="height:80px;resize:none;" >'.htmlspecialchars($row["facebook"]).'</textarea></td>
                         <td>
                             <button class="yot-btn-blue1 updateIcon" role="facebook" data-id="'. htmlspecialchars($row["all_footer_id"]).'">Update</button>
                         </td>

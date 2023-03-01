@@ -1,9 +1,14 @@
 <?php
-    if(isset($_POST["id"])){
+    if(isset($_POST["id"]) && isset($_POST["role"]) && isset($_POST["updateFacebookUrl"])){
         $id = sanitize($_POST['id']);
-        $classDelete = new classDelete();
-        $classDelete->setId($id);
-        $classDelete->getDelete();
+        $role = sanitize($_POST['role']);
+        $updateFacebookUrl = sanitize($_POST['updateFacebookUrl']);
+
+        $classUpdate = new classUpdate($id, $role, $updateFacebookUrl);
+
+        if($role == "facebook"){
+            $classUpdate->getUpdateFacebook();
+        }
     }
     
     // Sanitize Input
@@ -14,14 +19,18 @@
         return $data;
     }
     
-    class classDelete{
+    class classUpdate{
         private $id;
+        private $role;
+        private $updateFacebookUrl;
     
-        public function setId($id){
+        public function __construct($id, $role, $updateFacebookUrl){
             $this->id = $id;
+            $this->role = $role;
+            $this->updateFacebookUrl = $updateFacebookUrl;
         }
     
-        public function getDelete(){
+        public function getUpdateFacebook(){
             // File Path
             require_once "../../../asset/php/helper/global/global.php"; 
     
@@ -31,19 +40,19 @@
             // Variable
             $conn = $classConnDB->conn();
     
-            // prepare the SQL statement with placeholders 
-            $sql = "DELETE FROM all_footer_tbl WHERE all_footer_id = ?";
+            // prepare the SQL statement with placeholders
+            $sql = "UPDATE all_footer_tbl SET facebook = ? WHERE all_footer_id = ?";
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
-            $stmt->bind_param("i",$this->id);
+            $stmt->bind_param("si", $facebook, $this->id);
     
             // Execute the statement
             if($stmt->execute()){
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "deleted";
+                echo "Updated";
             }
         }
     }
