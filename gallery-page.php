@@ -303,11 +303,11 @@
                     </form>
                 </div>
 
-                <!-- Delete Container -->
-                <div id="deleteDisplayContainer"></div>
-
                 <!-- Update Container -->
                 <div id="updateDisplayContainer"></div>
+
+                <!-- Delete Container -->
+                <div id="deleteDisplayContainer"></div>
             </div>
         </div>
     </div>
