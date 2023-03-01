@@ -286,10 +286,15 @@
                     <form id="createFormFacebook">
                         <!-- Url -->
                         <div class="yot-form-group">
-                            <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="facebookUrl">Url Facebook</label>
-                                <span id="invalidUrlFacebookErr" class="yot-tc-red" style="display:none">Invalid Url</span>
+                            <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="facebookUrl">Caption</label>
+                                <select class="yot-form-select yot-form-select-option yot-w-50" name="deleteSelect" id="deleteSelect">
+                                    <option value="create">Create</option>
+                                    <option value="update">Update</option>
+                                    <option value="delete">Delete</option>
+                                </select>
                             </div>
+                            <span id="invalidUrlFacebookErr" class="yot-tc-red" style="display:none">Invalid Url</span>
                             <input class="yot-form-input" type="text" name="facebookUrl" id="facebookUrl">
                         </div>
 
