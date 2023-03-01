@@ -1,9 +1,9 @@
 <?php
     $classDisplayData = new classDisplayData();
-    $classDisplayData->getDataFacebook();
+    $classDisplayData->getDataCaption();
 
     class classDisplayData{
-        public function getDataFacebook(){
+        public function getDataCaption(){
             // File Path
             require_once "../../helper/global/global.php"; 
 
@@ -16,21 +16,21 @@
             echo '
                 <table class="yot-table-blue-theme">
                 <tr>
-                    <th>Facebook</th>
+                    <th>Caption</th>
                     <th>Action</th>
                 </tr>
             ';
             
             // DISPLAY
-            $stmt = $conn->prepare("SELECT * FROM all_footer_tbl WHERE facebook <> ''");
+            $stmt = $conn->prepare("SELECT * FROM gallery_page_tbl WHERE caption <> ''");
             $stmt->execute();
             $result = $stmt->get_result();
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        <td>'.htmlspecialchars($row["facebook"]).'</td>
+                        <td>'.htmlspecialchars($row["caption"]).'</td>
                         <td class="yot-flex">
-                            <i class="fa-solid fa-trash yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 deleteIcon" role="facebook" data-id="'. htmlspecialchars($row["all_footer_id"]).'"></i>
+                            <i class="fa-solid fa-trash yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 deleteIcon" data-id="'. htmlspecialchars($row["gallery_page_id"]).'"></i>
                         </td>
                     </tr>
                 ';

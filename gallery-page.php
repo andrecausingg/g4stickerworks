@@ -342,6 +342,7 @@
     <script src="./asset/js/all/global.js"></script>
 
     <script src="./asset/js/gallery-page/create.js"></script>
+    <script src="./asset/js/gallery-page/delete.js"></script>
     <script src="./asset/js/gallery-page/display/d-caption.js"></script>
 </body>
 </html>

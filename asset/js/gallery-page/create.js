@@ -20,6 +20,8 @@ $(document).ready(function(){
                     }, 10000); // 10000 milliseconds = 10 seconds
 
                     $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");
+                    $("#updateDisplayContainer").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-update-caption.php");
+                    $("#deleteDisplayContainer").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-delete-caption.php");
                 }
                 // do something with the server response (e.g. show a success message)
             },
