@@ -31,8 +31,6 @@
             $classUpdate->getUpdatePhone();
         }else if($role == "address" && $updateAddressUrl != ""){
             $classUpdate->getUpdateAddress();
-        }else{
-            echo "Invalid role or URL not provided.";
         }
     }
 
@@ -134,6 +132,84 @@
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
             $stmt->bind_param("si",  $this->updateInstagramUrl, $this->id);
+        
+            // Execute the statement
+            if($stmt->execute()){
+                // close the prepared statement and database connection
+                $stmt->close();
+                $conn->close();
+                echo "Updated";
+            }
+        }
+
+        public function getUpdateEmail(){
+            // File Path
+            require_once "../../../asset/php/helper/global/global.php"; 
+        
+            // Class
+            $classConnDB = new classConnDB();
+        
+            // Variable
+            $conn = $classConnDB->conn();
+        
+            // prepare the SQL statement with placeholders
+            $sql = "UPDATE all_footer_tbl SET email = ? WHERE all_footer_id = ?";
+            // create a prepared statement
+            $stmt = $conn->prepare($sql);
+            // bind the parameters to the placeholders
+            $stmt->bind_param("si",  $this->email, $this->id);
+        
+            // Execute the statement
+            if($stmt->execute()){
+                // close the prepared statement and database connection
+                $stmt->close();
+                $conn->close();
+                echo "Updated";
+            }
+        }
+    
+        public function getUpdatePhone(){
+            // File Path
+            require_once "../../../asset/php/helper/global/global.php"; 
+        
+            // Class
+            $classConnDB = new classConnDB();
+        
+            // Variable
+            $conn = $classConnDB->conn();
+        
+            // prepare the SQL statement with placeholders
+            $sql = "UPDATE all_footer_tbl SET cellphone_num = ? WHERE all_footer_id = ?";
+            // create a prepared statement
+            $stmt = $conn->prepare($sql);
+            // bind the parameters to the placeholders
+            $stmt->bind_param("si",  $this->phone, $this->id);
+        
+            // Execute the statement
+            if($stmt->execute()){
+                // close the prepared statement and database connection
+                $stmt->close();
+                $conn->close();
+                echo "Updated";
+            }
+        }
+    
+        public function getUpdateAddress(){
+            // File Path
+            require_once "../../../asset/php/helper/global/global.php"; 
+        
+            // Class
+            $classConnDB = new classConnDB();
+        
+            // Variable
+            $conn = $classConnDB->conn();
+        
+            // prepare the SQL statement with placeholders
+            $sql = "UPDATE all_footer_tbl SET address = ? WHERE all_footer_id = ?";
+            // create a prepared statement
+            $stmt = $conn->prepare($sql);
+            // bind the parameters to the placeholders
+            $stmt->bind_param("si",  $this->address, $this->id);
         
             // Execute the statement
             if($stmt->execute()){

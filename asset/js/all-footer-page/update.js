@@ -13,65 +13,34 @@ $(document).ready(function(){
 
         if(role == "facebook" && id != ""){
             if(updateFacebookUrl != "" && isValidUrl(updateFacebookUrl)){
-                // $.ajax({
-                //     type: "POST",
-                //     url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the URL of your form processing script
-                //     data: { 
-                //         id: id,
-                //         role: role,
-                //         updateFacebookUrl: updateFacebookUrl
-                //     },
-                //     success: function(response) {
-                //         const responseVar = response.trim();
-                //         if(responseVar == "updated"){
-                //             $("#successAlertupdate").show();
-                //             setTimeout(function() {
-                //                 $("#successAlertupdate").hide(); // Show the element after 10 seconds
-                //             }, 10000); // 10000 milliseconds = 10 seconds
+                $.ajax({
+                    type: "POST",
+                    url: "../../../../g4stickerworks/asset/php/all-footer-page/update.php", // replace with the URL of your form processing script
+                    data: { 
+                        id: id,
+                        role: role,
+                        updateFacebookUrl: updateFacebookUrl
+                    },
+                    success: function(response) {
+                        const responseVar = response.trim();
+                        if(responseVar == "updated"){
+                            $("#successAlertupdate").show();
+                            setTimeout(function() {
+                                $("#successAlertupdate").hide(); // Show the element after 10 seconds
+                            }, 10000); // 10000 milliseconds = 10 seconds
 
-                //             let dataUrl = ""; // variable to store the data URL
-
-                //             // Display the data after success update
-                //             switch(role) {
-                //                 case "facebook":
-                //                     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php";
-                //                     $("#facebookUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-facebook.php");
-                //                     break;
-                //                 case "tiktok":
-                //                     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-tiktok.php";
-                //                     $("#tiktokUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-tiktok.php");
-                //                     break;
-                //                 case "instagram":
-                //                     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-instagram.php";
-                //                     $("#instagramUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-instagram.php");
-                //                     break;
-                //                 case "email":
-                //                     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-email.php";
-                //                     $("#emailContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-email.php");
-                //                     break;
-                //                 case "phone":
-                //                     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-phone.php";
-                //                     $("#phoneContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-phone.php");
-                //                     break;
-                //                 case "address":
-                //                     dataUrl = "../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-address.php";
-                //                     $("#addressContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-address.php");
-                //                     break;
-                //                 default:
-                //                     dataUrl = "";
-                //                     break;
-                //             }
-
-                //             if(dataUrl !== "") {
-                //                 $("#displayDataAllTableupdate").load(dataUrl); // load the data for the selected option
-                //             }
-                //         }
-                //     },
-                //     error: function(jqXHR, textStatus, errorThrown) {
-                //         console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
-                //         // do something to handle the error (e.g. display an error message to the user)
-                //     }
-                // });
+                            // Display the data after success update
+                            if(role == "facebook") {
+                                $("#displayDataAllTableupdate").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-update-facebook.php");
+                                $("#facebookUrlContainer").load("../../../../../g4stickerworks/asset/php/all-footer-page/display/d-facebook.php");
+                            }
+                        }
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
+                        // do something to handle the error (e.g. display an error message to the user)
+                    }
+                });
             }else{
                 if(!isValidUrl(updateFacebookUrl)){
                     $("#invalidUrlFacebookErrUpdate").show();
