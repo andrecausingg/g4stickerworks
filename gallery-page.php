@@ -7,7 +7,7 @@
     <title>Gallery Page</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/asset/images/g4works-favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
 
     <!-- Css -->
     <link rel="stylesheet" href="./asset/scss/style.css">
@@ -199,12 +199,11 @@
         <!-- Right -->
         <div class="g-main-item-right" style="padding: 24px;">
             <!-- Title -->
-            <div class="yot-row yot-flex-ai-c-jc-sb">
-                <h2 class="yot-mb-16 yot-resize-font-64">Gallery Pages</h2>
-                <div class="yot-text-center yot-bg-white yot-pa-16">
-                    <button id="createBtn" class="yot-btn-blue1">Create</button>
-                    <button id="updateBtn" class="yot-btn-blue1">Update</button>
-                    <button id="deleteBtn" class="yot-btn-blue1">Delete</button>
+            <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
+                <h2 class="yot-mb-16 yot-resize-font-64">Gallery Page</h2>
+                <div class="yot-text-center yot-pa-16">
+                    <button id="createBtn" class="yot-btn-blue1">Caption</button>
+                    <button id="updateBtn" class="yot-btn-blue1">Images</button>
                 </div>
             </div>
             
@@ -270,6 +269,36 @@
                     </div>
                 </div>
             </section>
+        </div>
+
+        <!-- Create Container -->
+        <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:"></div>
+        <div id="createFormContainer" class="yot-overlay-mid-container" style="display:;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 class="yot-tc-blue1">CREATE</h2>
+                    <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Facebook Form Container -->
+                <div id="createContainerFacebook">
+                    <form id="createFormFacebook">
+                        <!-- Url -->
+                        <div class="yot-form-group">
+                            <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="facebookUrl">Url Facebook</label>
+                                <span id="invalidUrlFacebookErr" class="yot-tc-red" style="display:none">Invalid Url</span>
+                            </div>
+                            <input class="yot-form-input" type="text" name="facebookUrl" id="facebookUrl">
+                        </div>
+
+                        <div class="yot-text-center">
+                            <input class="yot-btn-blue1" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
