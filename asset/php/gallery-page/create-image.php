@@ -36,7 +36,7 @@
                     if($imageSize < 5000000){
                         $imageNameNew = uniqid('', true).".".$imageActualExt;
                         $imageDestination = '../../public-image/'.$imageNameNew;
-                        move_classUploaded_file($imageTemp, $imageDestination);
+                        move_uploaded_file($imageTemp, $imageDestination);
                         // $this->saveToDatabase($caption, $imageDestination);
                         $query_insert = mysqli_query($classConnDB->conn(),"INSERT INTO posts_tbl (user_id, content, image, is_profile, created_at_var, created_at) VALUES ('$id', '$caption', '$imageNameNew', '1', '$dateTimeVarChar', NOW())");
                         if($query_insert){
