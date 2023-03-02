@@ -332,9 +332,9 @@
 
                 <!-- Create Form Container -->
                 <div id="createDisplayContainerImage">
-                    <form id="createFormCaptionImage">
+                    <form id="createFormImage">
                         <div class="yot-form-group">
-                            <input class="yot-form-input" type="file" name="" id="">
+                            <input class="yot-form-input" type="file" name="imageGallery" id="imageGallery">
                         </div>
 
                         <div class="yot-text-center">

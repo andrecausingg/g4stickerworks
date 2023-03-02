@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // Form Upload Image
-    $("#formUploadImage").on("submit", function(e){
+    $("#createFormImage").on("submit", function(e){
         e.preventDefault();
         var formData = new FormData(this);
 
@@ -10,18 +10,19 @@ $(document).ready(function(){
             data: formData,
             success: function(response){
                 const responseVar = response.trim();
+                console.log(responseVar);
 
-                if(data == 'Imageuploadedsuccessfully'){
-                    resetForm();
-                    uploadPictureContainer();
-                    hideSuccessUploadProfileImage();
-                }else if(data == 'Imagetoolarge'){
-                    hideErrImgTooBig();
-                }else if(data == 'Erroruploadingimage'){
-                    hideErroruploadingimage();
-                }else if(data == 'Invalidfiletype'){
-                    hideInvalidfiletype();
-                }
+                // if(data == 'Imageuploadedsuccessfully'){
+                //     resetForm();
+                //     uploadPictureContainer();
+                //     hideSuccessUploadProfileImage();
+                // }else if(data == 'Imagetoolarge'){
+                //     hideErrImgTooBig();
+                // }else if(data == 'Erroruploadingimage'){
+                //     hideErroruploadingimage();
+                // }else if(data == 'Invalidfiletype'){
+                //     hideInvalidfiletype();
+                // }
             },
             
             error: function(err) {

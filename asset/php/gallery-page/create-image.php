@@ -10,18 +10,18 @@
             // Class
             $classConnDB = new classConnDB();
             $classDateTime = new classDateTime();
-
+    
             // Variable
             $conn = $classConnDB->conn();
             $dateTimeVarChar = $classDateTime->getDateTime();
-
-            $image = $_FILES['profileImage'];
-
+    
+            $image = $_FILES['imageGallery'];
+    
             if(!isset($image)){
                 echo 'putimagefirst';
                 // return json_encode(['status' => 'error', 'message' => 'All fields are required']);
             }
-
+    
             $imageName = $image['name'];
             $imageSize = $image['size'];
             $imageTemp = $image['tmp_name'];
@@ -30,16 +30,24 @@
             $imageExt = explode('.', $imageName);
             $imageActualExt = strtolower(end($imageExt));
             $allowed = array('jpg', 'jpeg', 'png', 'gif');
-
+    
             if(in_array($imageActualExt, $allowed)){
                 if($imageError === 0){
                     if($imageSize < 5000000){
                         $imageNameNew = uniqid('', true).".".$imageActualExt;
-                        $imageDestination = '../../public-image/'.$imageNameNew;
+                        $imageDestination = '/asset/images/gallery/'.$imageNameNew;
                         move_classUploaded_file($imageTemp, $imageDestination);
-                        // $this->saveToDatabase($caption, $imageDestination);
-                        $query_insert = mysqli_query($classConnDB->conn(),"INSERT INTO posts_tbl (user_id, content, image, is_profile, created_at_var, created_at) VALUES ('$id', '$caption', '$imageNameNew', '1', '$dateTimeVarChar', NOW())");
-                        if($query_insert){
+    
+                        // Use prepared statement to prevent SQL injection
+                        $stmt = $conn->prepare("INSERT INTO gallery_page_tbl (image, created_at_var, created_at) VALUES (?, ?, NOW())");
+                        $stmt->bind_param("ss", $imageNameNew, $dateTimeVarChar);
+                        if($stmt->execute()){
+                            $stmt->close();
+                            $conn->close();
+                            echo "created";
+                        }
+    
+                        if($stmt->affected_rows > 0){
                             echo 'ImageclassUploadedsuccessfully';
                             // return json_encode(['status' => 'success', 'message' => 'Image classUploaded successfully']);
                         }
@@ -57,4 +65,5 @@
             }
         }
     }
+    
 ?>
