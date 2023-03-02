@@ -1764,4 +1764,18 @@ i {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.index-hero-bg {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: 500px;
+  background: url(../images/hero-bg.jpg);
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }/*# sourceMappingURL=style.css.map */
