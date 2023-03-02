@@ -311,7 +311,7 @@
             </div>
         </div>
 
-        <!-- Create Container -->
+        <!-- Create Container Image -->
         <div id="createBgContainerImage" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
         <div id="createFormContainerImage" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -323,7 +323,7 @@
 
                 <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                     <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Upload Image</label>
-                    <select class="yot-form-select yot-form-select-option yot-w-33-33" name="selectOption" id="selectOption">
+                    <select class="yot-form-select yot-form-select-option yot-w-33-33" name="selectOptionImage" id="selectOptionImage">
                         <option value="create">Create</option>
                         <option value="update">Update</option>
                         <option value="delete">Delete</option>
@@ -331,8 +331,8 @@
                 </div>
 
                 <!-- Create Form Container -->
-                <div id="createDisplayContainer">
-                    <form id="createFormCaption">
+                <div id="createDisplayContainerImage">
+                    <form id="createFormCaptionImage">
                         <div class="yot-form-group">
                             <input class="yot-form-input" type="file" name="" id="">
                         </div>
