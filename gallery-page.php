@@ -290,11 +290,51 @@
                     </select>
                 </div>
 
-                <!-- Create Container -->
+                <!-- Create Form Container -->
                 <div id="createDisplayContainer">
                     <form id="createFormCaption">
                         <div class="yot-form-group">
                             <textarea class="yot-form-input yot-tff-sas" type="text" name="caption" id="caption" style="height:100px;resize:none;" ></textarea>
+                        </div>
+
+                        <div class="yot-text-center">
+                            <input class="yot-btn-blue1" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainer" style="display:none"></div>
+
+                <!-- Delete Container -->
+                <div id="deleteDisplayContainer" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- Create Container -->
+        <div id="createBgContainerImage" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+        <div id="createFormContainerImage" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 id="titleCaptionImage" class="yot-tc-blue1">CREATE</h2>
+                    <i id="createCloseFormIconImage" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Upload Image</label>
+                    <select class="yot-form-select yot-form-select-option yot-w-33-33" name="selectOption" id="selectOption">
+                        <option value="create">Create</option>
+                        <option value="update">Update</option>
+                        <option value="delete">Delete</option>
+                    </select>
+                </div>
+
+                <!-- Create Form Container -->
+                <div id="createDisplayContainer">
+                    <form id="createFormCaption">
+                        <div class="yot-form-group">
+                            <input class="yot-form-input" type="file" name="" id="">
                         </div>
 
                         <div class="yot-text-center">
@@ -345,5 +385,7 @@
     <script src="./asset/js/gallery-page/delete.js"></script>
     <script src="./asset/js/gallery-page/update.js"></script>
     <script src="./asset/js/gallery-page/display/d-caption.js"></script>
+
+    <script src="./asset/js/gallery-page/create-image.js"></script>
 </body>
 </html>
