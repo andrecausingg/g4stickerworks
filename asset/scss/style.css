@@ -67,6 +67,9 @@
     top: 20px !important;
     width: 350px !important;
   }
+  .yot-overlay-mid-container-form-600 {
+    width: 600px !important;
+  }
   .overlayLeftSideBar {
     display: none !important;
   }

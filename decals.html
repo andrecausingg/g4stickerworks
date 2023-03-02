@@ -29,13 +29,13 @@
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
                 <a href="index.html" class="yot-text-fs-xl yot-active-bbh1">Home</a> <span class="yot-mlr-4"></span> 
-                <!-- Tarpaulin -->
+                <!-- List Products -->
                 <div style="position: relative">
-                    <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-cursor-pointer">
+                    <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-active-bb-blue yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">Products</span>
                     </div>
                     <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -111px;">
-                        <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
+                        <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Decals</a>
                         <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
                         <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
                         <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
@@ -68,9 +68,20 @@
             <a href="index.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Home</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
-        <div class="yot-mb-16">
-            <a href="product.html" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Product</a>
-
+        <div class="yot-mb-16">                 
+            <!-- Pages -->        
+            <div class="yot-mb-8">
+                <div class="pagesPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-cursor-pointer">
+                    <span style="font-size: 36px; font-weight: bolder;">Products</span>
+                    <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
+                </div>
+                <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
+                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Decals</a>
+                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
+                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
+                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
+                </div>
+            </div>
         </div>
         <div class="yot-mb-16">
             <a href="services.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
@@ -166,45 +177,117 @@
         <section>
             <!-- Title And Btn -->
             <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                <div class="yot-flex yot-flex-fd-c">
-                    <h1 class="yot-resize-font-64 yot-tc-blue1">PRODUCTS</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis assumenda distinctio ab eos reprehenderit laudantium provident ratione, labore consequatur asperiores nobis, illo ullam voluptas. Voluptatibus quam delectus odit nemo repudiandae.</p>
+                <h1 id="decalsTitle" class="yot-resize-font-64 yot-tc-blue1">All Decals</h1>
+
+                <!-- Select Container -->
+                <div>
+                    <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
+                        <option value="">- Select Decals -</option>
+                        <option value="fullDecals">Full Decals</option>
+                        <option value="stockDecals">Stock Decals</option>
+                        <option value="stickerMags">Sticker Mags</option>
+                    </select>
                 </div>
             </div>
 
-            <!-- List Of Products -->
-            <div class="yot-row">
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Price: 1000.00</p>
-                    <p>Theme: Sporty</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
-                </div>
+            <!-- Decals Filter Btn-->
+            <button id="decalsFilterBtn" class="yot-btn-blue1 yot-mb-16" style="display: none;">Filters</button>
 
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Price: 1000.00</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Price: 1000.00</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Price: 1000.00</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
-                </div>
+            <!-- Brand and Motor Cycle Title -->
+            <div id="brandAndMotorCycleTitle" class="yot-mb-16">
+                <h3 id="brandTitleDecals"></h3>
+                <h3 id="motorCycleTitle"></h3>
             </div>
-            
+
+            <!-- All Decals Products -->
+            <div id="allDecalsProduct" class="yot-row">
+                <div class="yot-col-25">
+                    <img src="./asset/images/all-products/mioi125-spider-lightblue.png" alt="">
+                </div>
+
+                <div class="yot-col-25">
+                    <img src="./asset/images/all-products/aerox-155-green-splash-monster-yamaha.png" alt="">
+                </div>
+
+                <div class="yot-col-25">
+                    <img src="./asset/images/all-products/aerox-155-red-demon-yamaha.png" alt="">
+                </div>
+
+                <div class="yot-col-25">
+                    <img src="./asset/images/all-products/mio-i-125-blue.png" alt="">
+                </div>
+            </div>  
+
+            <div id="yamahaMioI125" class="yot-row" style="display:none">
+                <div class="yot-col-25">
+                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
+                </div>
+
+                <div class="yot-col-25">
+                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
+                </div>
+
+                <div class="yot-col-25">
+                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
+                </div>
+
+                <div class="yot-col-25">
+                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
+                </div>
+            </div>  
         </section>
+    </div>
+
+    <!-- Filter Container -->
+    <div id="filterBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+    <div id="filterContainer" class="yot-overlay-mid-container" style="display:none;">
+        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form ">
+            <div class="yot-mb-8 yot-text-center">
+                <i id="filterContainerCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+            </div>
+
+            <!-- Filter Containers -->
+            <div class="yot-flex yot-flex-fd-c">
+                <!-- Select Brand Container -->
+                <div class="yot-mb-8">
+                    <h3 class="yot-mb-4">Brand</h3>
+                    <select class="yot-form-select yot-form-select-option" name="brandSelect" id="brandSelect">
+                        <option value="">- Select -</option>
+                        <option value="yamaha">Yamaha</option>
+                        <option value="honda">Honda</option>
+                        <option value="suzuki">suzuki</option>
+                    </select>
+                </div>
+
+                <!-- Select Motor Cycle Yamaha -->
+                <div id="yamahaMotorCycleContainer" style="display: none;">
+                    <h3 class="yot-mb-4">Motor Cycle</h3>
+                    <select class="yot-form-select yot-form-select-option" name="yamahaMotorCylceSelect" id="yamahaMotorCylceSelect">
+                        <option value="">- Select -</option>
+                        <option value="Mio i 125">Mio i 125</option>
+                        <option value="Mio Aerox V1 & V2">Mio Aerox V1 & V2</option>
+                        <option value="Mio Soul i 125">Mio Soul i 125</option>
+                        <option value="Mio Sporty">Mio Sporty</option>
+                        <option value="Sniper">Sniper</option>
+                        <option value="Nmax">Nmax</option>
+                    </select>
+                </div>
+
+                <!-- Select Motor Cycle Honda -->
+                <div id="hondaMotorCycleContainer" style="display: none;">
+                    <h3 class="yot-mb-4">Motor Cycle</h3>
+                    <select class="yot-form-select yot-form-select-option" name="hondaMotorCylceSelect" id="hondaMotorCylceSelect">
+                        <option value="">- Select -</option>
+                        <option value="">Honda Click 125i</option>
+                        <option value="">Honda Click 160</option>
+                        <option value="">Honda PCX160</option>
+                        <option value="">Honda BeAT</option>
+                        <option value="">Honda TMX125 Alpha</option>
+                        <option value="">Honda ADV160</option>
+                    </select>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -262,5 +345,7 @@
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/login/login.js"></script>
+
+    <script src="./asset/js/decals/all-global/decals-containers.js"></script>
 </body>
 </html>
