@@ -318,46 +318,10 @@
             <!-- Title-->
             <div class="yot-tc-blue1 yot-text-center">
                 <h1 class="yot-resize-font-64">ABOUT US</h1>
-                <p class="yot-resize-font-18 yot-mb-16">Gabriel 4 Sticker Shop (G4 Sticker Works) 
-                    is a  printing and installation 
-                    business which caters any type 
-                    of sticker and tarpaulin needs 
-                    of clients for personal or 
-                    business purpose.
-                    
-                    Our 6 years of experience has 
-                    enabled us to provide the best
-                    possible designing , printing 
-                    and installation
-                    where  we focus to quality 
-                    resulting in satisfied client and 
-                    have lasting business relationships.
-                    
-                    The foundation of our business 
-                    is integrity, honesty and
-                    client relationship.</p>
+                <p id="displaySubTitleAboutUs" class="yot-resize-font-18 yot-mb-16"></p>
             </div>
 
-            <!-- Mission Img Vission -->
-            <div class="yot-row yot-flex-ai-c">
-                <!-- Mission -->
-                <div class="yot-col-33-33 yot-mb-8">
-                    <h1>Mission</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente ipsum expedita voluptas debitis officia, quod magnam officiis magni odit minus ab ipsa est id quam. At molestias dolor harum ratione!</p>
-                </div>
-
-                <!-- Img -->
-                <div class="yot-col-33-33 yot-mb-8">
-                    <img src="./asset/images/undraw_newspaper_re_syf5.svg" alt="">
-                </div>
-
-                <!-- Vission -->
-                <div class="yot-col-33-33 yot-mb-8">
-                    <h1>Vission</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente ipsum expedita voluptas debitis officia, quod magnam officiis magni odit minus ab ipsa est id quam. At molestias dolor harum ratione!</p>
-                </div>
-            </div>
-            
+            <div id="displayImagesAboutUs" class="yot-text-center"></div>
         </section>
     </main>
 
