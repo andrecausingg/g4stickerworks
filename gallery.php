@@ -7,7 +7,7 @@
     <title>Gallery</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/asset/images/g4works-favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
 
     <!-- Css -->
     <link rel="stylesheet" href="./asset/scss/style.css">
@@ -28,23 +28,23 @@
 
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
-                <a href="index.html" class="yot-text-fs-xl yot-active-bbh1">Home</a> <span class="yot-mlr-4"></span> 
+                <a href="index" class="yot-text-fs-xl yot-active-bbh1">Home</a> <span class="yot-mlr-4"></span> 
                 <!-- List Products -->
                 <div style="position: relative">
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">Products</span>
                     </div>
                     <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -111px;">
-                        <a href="decals.html" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
+                        <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
                         <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
                         <a href="sticker-labels" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
                         <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
                     </div>
                 </div> <span class="yot-mlr-4"></span>
-                <a href="services.html" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
-                <a href="contact.html" class="yot-text-fs-xl yot-active-bbh1">Contact Us</a> <span class="yot-mlr-4"></span>
-                <a href="about.html" class="yot-text-fs-xl yot-active-bbh1">About Us</a> <span class="yot-mlr-4"></span>
-                <a href="gallery.html" class="yot-text-fs-xl yot-active-bb-blue">Gallery</a>
+                <a href="services" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
+                <a href="contact" class="yot-text-fs-xl yot-active-bbh1">Contact Us</a> <span class="yot-mlr-4"></span>
+                <a href="about" class="yot-text-fs-xl yot-active-bbh1">About Us</a> <span class="yot-mlr-4"></span>
+                <a href="gallery" class="yot-text-fs-xl yot-active-bb-blue">Gallery</a>
             </div>
 
             <!-- Nav Links -->
@@ -64,23 +64,23 @@
     <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1  overlayLeftSideBar" style="display:none"></div>
     <div id="overlayMobileIndex" class="yot-w-75 yot-flex yot-flex-fd-c  yot-vh-100 yot-bg-white yot-overlay-left yot-pa-16 overlayLeftSideBar" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin: 8px 0px 16px 0px;">
-            <a href="index.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Home</a>
+            <a href="index" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Home</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
         <div class="yot-mb-16">
-            <a href="product.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Product</a>
+            <a href="product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Product</a>
         </div>
         <div class="yot-mb-16">
-            <a href="services.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
+            <a href="services" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
         </div>
         <div class="yot-mb-16">
-            <a href="contact.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
+            <a href="contact" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
         </div>
         <div class="yot-mb-16">
-            <a href="about.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">About Us</a>
+            <a href="about" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">About Us</a>
         </div>
         <div class="yot-mb-16">
-            <a href="gallery.html" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Gallery</a>
+            <a href="gallery" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Gallery</a>
         </div>
 
         <!-- Log In and Sign Up-->
@@ -160,68 +160,14 @@
 
     <!-- Gallery Container -->
     <div class="yot-content-space-margin-t-120 yot-container">
+        <!-- Title -->
+        <div class="yot-mb-16 yot-tc-blue1 yot-text-center">
+            <h1 class="yot-resize-font-64">Gallery</h1>
+            <p id="displayCaption" class="yot-resize-font-18 yot-mb-16"></p>
+        </div>
+
         <!-- Gallery Section -->
-        <section >
-            <!-- Title -->
-            <div class="yot-mb-16 yot-tc-blue1 yot-text-center">
-                <h1 class="yot-resize-font-64">Gallery</h1>
-                <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
-            </div>
-
-            <div class="yot-row">
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-            </div>
-
-            <div class="yot-row">
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-            </div>
-
-            <div class="yot-row">
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-    
-                <div class="yot-col-25">
-                    <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                </div>
-            </div>
-        </section>
+        <section id="displayImages"></section>
     </div>
 
     <!-- Footer -->
@@ -229,55 +175,85 @@
         <!-- Navs -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c">
             <h2 class="yot-mb-8">Quick Links</h2>
-            <a href="index.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Home</a>
-            <a href="product.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Product</a>
-            <a href="services.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Services</a>
-            <a href="contact.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Contacts</a>
-            <a href="about.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">About Us</a>
-            <a href="gallery.html" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">Gallery</a>
+            <a href="index" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Home</a>
+            <a href="product" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Product</a>
+            <a href="services" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Services</a>
+            <a href="contact" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Contacts</a>
+            <a href="about" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">About Us</a>
+            <a href="gallery" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">Gallery</a>
         </div>
 
         <!-- Social Media -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c yot-tc-white">
             <h2 class="yot-mb-8">Social Media</h2>
-            <!-- Facebook -->
-            <a href="#" class="yot-mb-8 yot-text-fs-xl" style="color:white;">
-                <i class="fa-brands fa-facebook-f"></i>
-                www.facebook.com/g4stickershop
-            </a>
+            <!-- Facebook -->   
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-brands fa-facebook-f yot-mr-4"></i>
+                    Facebook
+                </div>
+                <div id="facebookUrlContainer" class="yot-text-center"></div>
+            </div>
+
             <!-- Tiktok -->
-            <a href="#" class="yot-mb-8 yot-text-fs-xl" style="color:white;">
-                <i class="fa-brands fa-tiktok"></i>
-                www.tiktok.com/g4stickershop
-            </a>
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-brands fa-tiktok"></i>
+                    Tiktok
+                </div>
+                <div id="tiktokUrlContainer" class="yot-text-center"></div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </div>
+                <div id="instagramUrlContainer" class="yot-text-center"></div>
+            </div>
         </div>
 
         <!-- Contacts -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c">
             <h2 class="yot-mb-8">Contacts</h2>
             <!-- Email -->
-            <span class="yot-mb-8 yot-text-fs-xl">
-                <i class="fa-solid fa-envelope"></i> 
-                G4kids2019@gmail.com
-            </span>
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-solid fa-envelope"></i> 
+                    Email
+                </div>
+
+                <div id="emailContainer" class="yot-text-center"></div>
+            </div>
+            
             <!-- Contact No. -->
-            <span class="yot-mb-8 yot-text-fs-xl">
-                <i class="fa-solid fa-mobile"></i>
-                09323508154
-            </span>
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-solid fa-mobile"></i>
+                    Phone
+                </div>
+
+                <div id="phoneContainer" class="yot-text-center"></div>
+            </div>
         </div>
 
         <!-- Location -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c">
             <h2 class="yot-mb-8">Location</h2>
-            <span class="yot-mb-8 yot-text-fs-xl">
+
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
                 <i class="fa-solid fa-location-dot"></i>
-                Blk2 Lot7 Sarmiento Homes, Muzon, 3023 San jose Del Monte Bulacan Philippines.
-            </span>
+                    Address
+                </div>
+                <div id="addressContainer" class="yot-text-center"></div>
+            </div>
         </div>
     </footer>
 
     <script src="./asset/js/all/global.js"></script>
+    <script src="./asset/js/all/display-global/d-global-data.js"></script>
     <script src="./asset/js/login/login.js"></script>
 </body>
 </html>

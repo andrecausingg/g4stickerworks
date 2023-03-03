@@ -198,7 +198,7 @@
 
         <!-- Right -->
         <div class="g-main-item-right" style="padding: 24px;">
-            <!-- Title -->
+            <!-- Title with Caption and Image btn-->
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
                 <h2 class="yot-mb-16 yot-resize-font-64">Gallery Page</h2>
                 <div class="yot-text-center yot-pa-16">
@@ -207,14 +207,14 @@
                 </div>
             </div>
 
-        <!-- Title -->
-        <div class="yot-mb-16 yot-tc-blue1 yot-text-center">
-            <h1 class="yot-resize-font-64">Gallery</h1>
-            <p id="displayCaption" class="yot-resize-font-18 yot-mb-16"></p>
-        </div>
+            <!-- Title -->
+            <div class="yot-mb-16 yot-tc-blue1 yot-text-center">
+                <h1 class="yot-resize-font-64">Gallery</h1>
+                <p id="displayCaption" class="yot-resize-font-18 yot-mb-16"></p>
+            </div>
             
             <!-- Gallery Section -->
-            <section class="yot-flex yot-flex-fd-c" id="displayImages"></section>
+            <section id="displayImages"></section>
 
         </div>
 
