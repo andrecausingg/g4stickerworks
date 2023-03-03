@@ -5,17 +5,18 @@ $(document).ready(function(){
         var formData = new FormData(this);
 
         $.ajax({
-            url: "../../../../g4stickerworks/asset/php/gallery-page/create-image.php",
+            url: "../../../../g4stickerworks/asset/php/about-us-page/create-image.php",
             type: "POST",
             data: formData,
             success: function(response){
+                console.log(response);
                 const responseVar = response.trim();
 
                 if(responseVar == 'created'){
                     resetForm();
-                    $("#displayImages").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-images.php");
-                    $("#updateDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-update-image.php");
-                    $("#deleteDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-delete-image.php");
+                    $("#displayImages").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-images.php");
+                    $("#updateDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-update-image.php");
+                    $("#deleteDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-delete-image.php");
                     
                 }else if(responseVar == 'imagetoolarge'){
                     hideErrImgTooBig();
@@ -148,7 +149,7 @@ $(document).ready(function(){
             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
         }, 10000); // 10000 milliseconds = 10 seconds
 
-        $('#imageGallery').val('');
+        $('#image').val('');
     }
 
     function hideErrImgTooBig(){

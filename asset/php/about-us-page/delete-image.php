@@ -32,7 +32,7 @@
             $conn = $classConnDB->conn();
     
             // prepare the SQL statement with placeholders 
-            $sql = "DELETE FROM gallery_page_tbl WHERE gallery_page_id = ?";
+            $sql = "DELETE FROM about_us_page_tbl WHERE about_us_page_id = ?";
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders

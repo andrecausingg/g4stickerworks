@@ -15,7 +15,7 @@
             $conn = $classConnDB->conn();
             $dateTimeVarChar = $classDateTime->getDateTime();
     
-            $image = $_FILES['imageGallery'];
+            $image = $_FILES['image'];
     
             if(!isset($image)){
                 echo 'putimagefirst';
@@ -34,11 +34,11 @@
                 if($imageError === 0){
                     if($imageSize < 50000000){
                         $imageNameNew = uniqid('', true).".".$imageActualExt;
-                        $imageDestination = '../../images/gallery/'.$imageNameNew;
+                        $imageDestination = '../../images/about-us/'.$imageNameNew;
                         move_uploaded_file($imageTemp, $imageDestination);
     
                         // Use prepared statement to prevent SQL injection
-                        $stmt = $conn->prepare("INSERT INTO gallery_page_tbl (image, created_at_varchar, created_at) VALUES (?, ?, NOW())");
+                        $stmt = $conn->prepare("INSERT INTO about_us_page_tbl (image, created_at_varchar, created_at) VALUES (?, ?, NOW())");
                         $stmt->bind_param("ss", $imageNameNew, $dateTimeVarChar);
                         if($stmt->execute()){
                             if($stmt->affected_rows > 0){

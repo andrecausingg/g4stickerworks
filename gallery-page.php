@@ -218,7 +218,7 @@
 
         </div>
 
-        <!-- Create Update Delete Container -->
+        <!-- Create Update Delete Sub Title Container -->
         <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
         <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -258,7 +258,7 @@
             </div>
         </div>
 
-        <!-- Create Container Image -->
+        <!-- Create Update Delete Image Container -->
         <div id="createBgContainerImage" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
         <div id="createFormContainerImage" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -281,7 +281,7 @@
                 <div id="createDisplayContainerImage">
                     <form id="createFormImage">
                         <div class="yot-form-group">
-                            <input class="yot-form-input" type="file" name="imageGallery" id="imageGallery">
+                            <input class="yot-form-input" type="file" name="image" id="image">
                         </div>
 
                         <div class="yot-text-center">
@@ -297,8 +297,6 @@
                 <div id="deleteDisplayContainerImage" style="overflow-y:scroll; height:300px; display:none;"></div>
             </div>
         </div>
-
-
     </div>
 
     <!-- Success Container-->
@@ -357,10 +355,10 @@
 
     <script src="./asset/js/all/global.js"></script>
 
+    <script src="./asset/js/gallery-page/display/d-caption.js"></script>
     <script src="./asset/js/gallery-page/create.js"></script>
     <script src="./asset/js/gallery-page/delete.js"></script>
     <script src="./asset/js/gallery-page/update.js"></script>
-    <script src="./asset/js/gallery-page/display/d-caption.js"></script>
 
     <script src="./asset/js/gallery-page/create-image.js"></script>
     <script src="./asset/js/gallery-page/update-image.js"></script>

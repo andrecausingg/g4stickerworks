@@ -53,11 +53,11 @@ class classUpload {
             if($imageError === 0){
                 if($imageSize < 50000000){
                     $imageNameNew = uniqid('', true).".".$imageActualExt;
-                    $imageDestination = '../../images/gallery/'.$imageNameNew;
+                    $imageDestination = '../../images/about-us/'.$imageNameNew;
                     move_uploaded_file($imageTemp, $imageDestination);
 
                     // Use prepared statement to prevent SQL injection
-                    $stmt = $conn->prepare("UPDATE gallery_page_tbl SET image = ? WHERE gallery_page_id = ?");
+                    $stmt = $conn->prepare("UPDATE about_us_page_tbl SET image = ? WHERE about_us_page_id = ?");
                     $stmt->bind_param("si", $imageNameNew, $this->id);
                     if($stmt->execute()){
                         if($stmt->affected_rows > 0){

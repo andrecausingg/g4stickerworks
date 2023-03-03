@@ -23,20 +23,20 @@
             ';
             
             // DISPLAY
-            $stmt = $conn->prepare("SELECT * FROM about_us_page WHERE image <> '' ORDER BY gallery_page_id DESC");
+            $stmt = $conn->prepare("SELECT * FROM about_us_page_tbl WHERE image <> '' ORDER BY about_us_page_id DESC");
             $stmt->execute();
             $result = $stmt->get_result();
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
                         <td>
-                            <input data-id="'.htmlspecialchars($row["gallery_page_id"]).'" class="yot-form-input" type="file" name="imageGalleryUpdate" id="imageGalleryUpdate">
+                            <input data-id="'.htmlspecialchars($row["about_us_page_id"]).'" class="yot-form-input" type="file" name="imageUpdate" id="imageUpdate">
                         </td>
                         <td>
-                            <img src="../../../../../g4stickerworks/asset/images/gallery/'.$row["image"].'" alt="">
+                            <img src="../../../../../g4stickerworks/asset/images/about-us/'.$row["image"].'" alt="">
                         </td>
                         <td>
-                            <button class="yot-btn-blue1 updateIconImage yot-text-fs-xsm" data-id="'. htmlspecialchars($row["gallery_page_id"]).'">Update</button>
+                            <button class="yot-btn-blue1 updateIconImage yot-text-fs-xsm" data-id="'. htmlspecialchars($row["about_us_page_id"]).'">Update</button>
                         </td>
                     </tr>
                 ';

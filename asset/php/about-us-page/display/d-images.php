@@ -12,32 +12,20 @@ class classDisplayData{
 
         // Variable
         $conn = $classConnDB->conn();
-        $count = 0; // initialize counter variable
         
         // DISPLAY
-        $stmt = $conn->prepare("SELECT * FROM about_us_page WHERE image <> '' ORDER BY gallery_page_id DESC");
+        $stmt = $conn->prepare("SELECT * FROM about_us_page_tbl WHERE image <> '' ORDER BY about_us_page_id DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
-        // start the first row
-        echo '<div class="yot-row yot-flex yot-flex-ai-c-jc-sb">';
-        
         while($row = $result->fetch_assoc()){
-            // increment counter variable
-            $count++;
-
-            // add new column for each image
-            echo '<div class="yot-col-25"><img src="../../../../../g4stickerworks/asset/images/gallery/'.$row["image"].'" alt=""></div>';
-
-            // check if current iteration is a multiple of 4
-            if ($count % 4 == 0) {
-                // close the row and start a new one if current iteration is a multiple of 4
-                echo '</div><div class="yot-row yot-flex yot-flex-ai-c-jc-sb">';
-            }
+            echo'
+                <!-- Img -->
+                <div class="yot-col-50 yot-mb-8" style="margin:auto auto;">
+                    <img src="../../../../../g4stickerworks/asset/images/about-us/'.$row["image"].'" alt="">                
+                </div>
+            ';
         }
-
-        // close the last row
-        echo '</div>';
     }
 }
 ?>
