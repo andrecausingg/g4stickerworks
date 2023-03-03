@@ -19,8 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="yot-header yot-bg-white yot-hide-for-desktop yot-z-index-1">
+        <!-- Header -->
+        <header class="yot-header yot-bg-white yot-hide-for-desktop yot-z-index-1">
         <!-- Nav -->
         <nav class="yot-flex yot-flex-ai-c-jc-sb yot-pa-8">
             <!-- Logo -->
@@ -47,13 +47,13 @@
                 <h4 class="yot-mb-8">GENERAL</h4>
                 <div class="yot-pl-48">
                     <div class="yot-mb-16">
-                        <a href="overview.html" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Over View</a>
+                        <a href="overview" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Over View</a>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="orders.html" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Orders</a>
+                        <a href="orders" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Orders</a>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="visitors.html" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
+                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
                     </div>
                 </div>
             </div>
@@ -69,9 +69,9 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl"></i></span>
                         </div>
                         <div class="AdEmUsContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="admin-accounts.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Admin</a>
-                            <a href="emp-accounts.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Employee</a>
-                            <a href="user-accounts.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
+                            <a href="admin-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Admin</a>
+                            <a href="emp-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Employee</a>
+                            <a href="user-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
                         </div>
                     </div>
 
@@ -82,13 +82,13 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
                         </div>
                         <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                            <a href="index-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
-                            <a href="product-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
-                            <a href="services-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
-                            <a href="contact-us-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Contact Us</a>
-                            <a href="about-us-page.html" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
-                            <a href="gallery-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Gallery</a>
-                            <a href="all-footer-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">All Footer</a>
+                            <a href="index-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
+                            <a href="product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
+                            <a href="services-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
+                            <a href="contact-us-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Contact Us</a>
+                            <a href="about-us-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
+                            <a href="gallery-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Gallery</a>
+                            <a href="all-footer-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">All Footer</a>
                             
                         </div>
                     </div>
@@ -106,8 +106,8 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightWork"></i></span>
                         </div>
                         <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="job.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a>
-                            <a href="cut-file.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
+                            <a href="job" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a>
+                            <a href="cut-file" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
                         </div>
                     </div>
                 </div>
@@ -131,13 +131,13 @@
                 <h4 class="yot-mb-8">GENERAL</h4>
                 <div class="yot-pl-48">
                     <div class="yot-mb-16">
-                        <a href="overview.html" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Over View</a>
+                        <a href="overview" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Over View</a>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="orders.html" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Orders</a>
+                        <a href="orders" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Orders</a>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="visitors.html" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
+                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
                     </div>
                 </div>
             </div>
@@ -153,9 +153,9 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRight"></i></span>
                         </div>
                         <div class="AdEmUsContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="admin-accounts.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Admin</a>
-                            <a href="employee-accounts.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Employee</a>
-                            <a href="user-accounts.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
+                            <a href="admin-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Admin</a>
+                            <a href="employee-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Employee</a>
+                            <a href="user-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
                         </div>
                     </div>
                     
@@ -166,13 +166,13 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
                         </div>
                         <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                            <a href="index-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
-                            <a href="product-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
-                            <a href="services-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
-                            <a href="contact-us-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Contact Us</a>
-                            <a href="about-us-page.html" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
-                            <a href="gallery-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Gallery</a>
-                            <a href="all-footer-page.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">All Footer</a>
+                            <a href="index-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
+                            <a href="product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
+                            <a href="services-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
+                            <a href="contact-us-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Contact Us</a>
+                            <a href="about-us-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
+                            <a href="gallery-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Gallery</a>
+                            <a href="all-footer-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">All Footer</a>
                         </div>
                     </div>
                 </div>
@@ -189,8 +189,8 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightWork"></i></span>
                         </div>
                         <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="job.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a>
-                            <a href="cut-file.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
+                            <a href="job" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a>
+                            <a href="cut-file" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
                         </div>
                     </div>
                 </div>
