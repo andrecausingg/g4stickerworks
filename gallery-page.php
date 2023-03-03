@@ -214,9 +214,7 @@
         </div>
             
             <!-- Gallery Section -->
-            <section class="yot-flex yot-flex-fd-c" id="displayImages">
-                
-            </section>
+            <section class="yot-flex yot-flex-fd-c" id="displayImages"></section>
 
         </div>
 

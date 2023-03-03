@@ -33,6 +33,10 @@ $(document).ready(function(){
 
         function resetForm(){
             $("#createSuccessAlert").show();
+            setTimeout(function() {
+                $("#createSuccessAlert").hide(); // Show the element after 10 seconds
+            }, 10000); // 10000 milliseconds = 10 seconds
+
             $('#imageGallery').val('');
         }
 

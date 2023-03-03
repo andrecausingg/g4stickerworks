@@ -20,7 +20,7 @@ class classDisplayData{
         while($row = $result->fetch_assoc()){
 
            echo'
-                <div>
+                <div class="gallery-page-mage-container yot-mb-16" style="margin-left:auto; margin-right:auto;">
                     <img src="../../../../../g4stickerworks/asset/images/gallery/'.$row["image"].'" alt="">
                 </div>
            ';
