@@ -206,72 +206,21 @@
                     <button id="imagesBtn" class="yot-btn-blue1">Images</button>
                 </div>
             </div>
+
+        <!-- Title -->
+        <div class="yot-mb-16 yot-tc-blue1 yot-text-center">
+            <h1 class="yot-resize-font-64">Gallery</h1>
+            <p id="displayCaption" class="yot-resize-font-18 yot-mb-16"></p>
+        </div>
             
             <!-- Gallery Section -->
-            <section >
-                <!-- Title -->
-                <div class="yot-mb-16 yot-tc-blue1 yot-text-center">
-                    <h1 class="yot-resize-font-64">Gallery</h1>
-                    <p id="displayCaption" class="yot-resize-font-18 yot-mb-16"></p>
-                </div>
-
-                <div class="yot-row">
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-                </div>
-
-                <div class="yot-row">
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-                </div>
-
-                <div class="yot-row">
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-        
-                    <div class="yot-col-25">
-                        <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    </div>
-                </div>
+            <section class="yot-flex yot-flex-fd-c" id="displayImages">
+                
             </section>
+
         </div>
 
-        <!-- Create Container -->
+        <!-- Create Container Caption -->
         <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
         <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -283,7 +232,7 @@
 
                 <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                     <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Caption</label>
-                    <select class="yot-form-select yot-form-select-option yot-w-33-33" name="selectOption" id="selectOption">
+                    <select class="yot-form-select yot-form-select-option" name="selectOption" id="selectOption">
                         <option value="create">Create</option>
                         <option value="update">Update</option>
                         <option value="delete">Delete</option>
@@ -323,7 +272,7 @@
 
                 <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                     <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Upload Image</label>
-                    <select class="yot-form-select yot-form-select-option yot-w-33-33" name="selectOptionImage" id="selectOptionImage">
+                    <select class="yot-form-select yot-form-select-option" name="selectOptionImage" id="selectOptionImage">
                         <option value="create">Create</option>
                         <option value="update">Update</option>
                         <option value="delete">Delete</option>
@@ -377,6 +326,33 @@
             <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
         </div>
         <p class="yot-text-fs-l">The record was successfully updated.</p>
+    </div>
+
+    <!-- Error Container Invalid File Type -->
+    <div id="invalidfiletypeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Invalid File Type</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">Only JPG, JPEG, and PNG files are allowed.</p>
+    </div>
+
+    <!-- Error Container Uploading Image -->
+    <div id="errorUploadingimageAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Uploading image</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">There's Something Wrong!</p>
+    </div>
+
+    <!-- Error Container Invalidfiletype -->
+    <div id="errorImagetoolargeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error File too Big</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">Allowed size is 50mb</p>
     </div>
 
     <script src="./asset/js/all/global.js"></script>

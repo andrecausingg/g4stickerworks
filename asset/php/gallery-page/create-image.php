@@ -19,7 +19,6 @@
     
             if(!isset($image)){
                 echo 'putimagefirst';
-                // return json_encode(['status' => 'error', 'message' => 'All fields are required']);
             }
     
             $imageName = $image['name'];
@@ -29,39 +28,33 @@
             $imageType = $image['type'];
             $imageExt = explode('.', $imageName);
             $imageActualExt = strtolower(end($imageExt));
-            $allowed = array('jpg', 'jpeg', 'png', 'gif');
+            $allowed = array('jpg', 'jpeg', 'png');
     
             if(in_array($imageActualExt, $allowed)){
                 if($imageError === 0){
-                    if($imageSize < 5000000){
+                    if($imageSize < 50000000){
                         $imageNameNew = uniqid('', true).".".$imageActualExt;
-                        $imageDestination = '/asset/images/gallery/'.$imageNameNew;
+                        $imageDestination = '../../images/gallery/'.$imageNameNew;
                         move_uploaded_file($imageTemp, $imageDestination);
     
                         // Use prepared statement to prevent SQL injection
-                        $stmt = $conn->prepare("INSERT INTO gallery_page_tbl (image, created_at_var, created_at) VALUES (?, ?, NOW())");
+                        $stmt = $conn->prepare("INSERT INTO gallery_page_tbl (image, created_at_varchar, created_at) VALUES (?, ?, NOW())");
                         $stmt->bind_param("ss", $imageNameNew, $dateTimeVarChar);
                         if($stmt->execute()){
-                            $stmt->close();
-                            $conn->close();
-                            echo "created";
-                        }
-    
-                        if($stmt->affected_rows > 0){
-                            echo 'ImageclassUploadedsuccessfully';
-                            // return json_encode(['status' => 'success', 'message' => 'Image classUploaded successfully']);
+                            if($stmt->affected_rows > 0){
+                                $stmt->close();
+                                $conn->close();
+                                echo "created";
+                            }
                         }
                     } else {
-                        echo 'Imagetoolarge';
-                        // return json_encode(['status' => 'error', 'message' => 'Image too large']);
+                        echo 'imagetoolarge';
                     }
                 } else {
-                    echo 'ErrorclassUploadingimage';
-                    // return json_encode(['status' => 'error', 'message' => 'Error classUploading image']);
+                    echo 'errorUploadingimage';
                 }
             } else {
-                echo 'Invalidfiletype';
-                // return json_encode(['status' => 'error', 'message' => 'Invalid file type']);
+                echo 'invalidfiletype';
             }
         }
     }

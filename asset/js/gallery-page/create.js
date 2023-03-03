@@ -13,10 +13,10 @@ $(document).ready(function(){
                 const responseVarChar = response.trim();                
                 if(responseVarChar == "created"){
                     $("#createFormCaption").trigger("reset");
-                    $("#successAlertInsert").show();
+                    $("#createSuccessAlert").show();
 
                     setTimeout(function() {
-                        $("#successAlertInsert").hide(); // Show the element after 10 seconds
+                        $("#createSuccessAlert").hide(); // Show the element after 10 seconds
                     }, 10000); // 10000 milliseconds = 10 seconds
 
                     $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");
@@ -76,4 +76,6 @@ $(document).ready(function(){
         $("#createBgContainer").hide();
         $("#createFormContainer").hide();
     });
+
+
 });

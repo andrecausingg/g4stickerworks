@@ -10,19 +10,17 @@ $(document).ready(function(){
             data: formData,
             success: function(response){
                 const responseVar = response.trim();
-                console.log(responseVar);
 
-                // if(data == 'Imageuploadedsuccessfully'){
-                //     resetForm();
-                //     uploadPictureContainer();
-                //     hideSuccessUploadProfileImage();
-                // }else if(data == 'Imagetoolarge'){
-                //     hideErrImgTooBig();
-                // }else if(data == 'Erroruploadingimage'){
-                //     hideErroruploadingimage();
-                // }else if(data == 'Invalidfiletype'){
-                //     hideInvalidfiletype();
-                // }
+                if(responseVar == 'created'){
+                    resetForm();
+                    $("#displayImages").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-images.php");
+                }else if(responseVar == 'imagetoolarge'){
+                    hideErrImgTooBig();
+                }else if(responseVar == 'errorUploadingimage'){
+                    hideErroruploadingimage();
+                }else if(responseVar == 'invalidfiletype'){
+                    hideInvalidfiletype();
+                }
             },
             
             error: function(err) {
@@ -34,41 +32,45 @@ $(document).ready(function(){
         });
 
         function resetForm(){
-            // Display Post
-            $("body").css("overflow", "auto"); 
-            $('.bgTranspaContainer').hide();
-            $('.inputFileProfileImage').val('');
-            $('.profileCaption').val('');
-            $("#preview").attr("src", '../../../../neydra2/assets/images/avatar/user.png');
-        }
-
-        function hideSuccessUploadProfileImage(){
-            $('.alertSuccessProfileIMage').show();
-            setTimeout(function(){
-                $('.alertSuccessProfileIMage').hide();
-            }, 5000);
+            $("#createSuccessAlert").show();
+            $('#imageGallery').val('');
         }
 
         function hideErrImgTooBig(){
-            $('.alertErrImgTooBig').show();
+            $('.errorImagetoolargeAlert').show();
             setTimeout(function(){
-                $('.alertErrImgTooBig').hide();
+                $('.errorImagetoolargeAlert').hide();
             }, 5000);
         }
 
         function hideErroruploadingimage(){
-            $('.alertErroruploadingimage').show();
+            $('#errorUploadingimageAlert').show();
             setTimeout(function(){
-                $('.alertErroruploadingimage').hide();
+                $('#errorUploadingimageAlert').hide();
             }, 5000);
         }
 
         function hideInvalidfiletype(){
-            $('.alertInvalidfiletype').show();
+            $('#invalidfiletypeAlert').show();
             setTimeout(function(){
-                $('.alertInvalidfiletype').hide();
+                $('#invalidfiletypeAlert').hide();
             }, 5000);
         }
+    });
+
+    // Hide Create Alert
+    $("#successAlertCloseIconInsert").click(function(){
+        $("#createSuccessAlert").hide();
+    });
+
+    // Hide Delete Alert
+    $("#deleteSuccessAlertCloseIcon").click(function(){
+        $("#deleteSuccessAlert").hide();
+    });
+
+    // Hide Update Alert
+    $("#updateSuccessAlertCloseIcon").click(function(){
+        $("#updateSuccessAlert").hide();
     });
 
     // Show the Selected Form Container
@@ -110,9 +112,25 @@ $(document).ready(function(){
         $("#createFormContainerImage").show();
     });
 
+    $("#createCloseFormIconImage").click(function(){
+        $("#createBgContainerImage").hide();
+        $("#createFormContainerImage").hide();
+    });
+
     // Hide Create Container
     $("#createCloseFormIcon").click(function(){
         $("#createBgContainer").hide();
         $("#createFormContainer").hide();
     });
+
+    // Hide Alert Image Errors
+    $("#alertCloseIcon").click(function(){
+        $("#errorUploadingimageAlert").hide();
+        $("#invalidfiletypeAlert").hide();
+        $("#errorUploadingimageAlert").hide();
+        $("#errorImagetoolargeAlert").hide();
+    });
+
+    
+    
 });
