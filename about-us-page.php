@@ -201,7 +201,7 @@
         <div class="g-main-item-right" style="padding: 24px;">
             <!-- Title with Btn Form-->
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
-                <h2 class="yot-mb-16 yot-resize-font-64">Gallery Page</h2>
+                <h2 class="yot-mb-16 yot-resize-font-64">About Us Page</h2>
                 <div class="yot-text-center yot-pa-16">
                     <button id="subTitleBtn" class="yot-btn-blue1">Sub Title</button>
                     <button id="imagesBtn" class="yot-btn-blue1">Images</button>
@@ -226,18 +226,47 @@
                     </div>
                 </section>
 
-                <!-- Create Form Container -->
-                <div id="createDisplayContainer">
-                    <form id="createFormSubTitle">
-                        <div class="yot-form-group">
-                            <textarea class="yot-form-input yot-tff-sas" type="text" name="subTitle" id="subTitle" style="height:100px;resize:none;" ></textarea>
+
+                <!-- Create Update Delete Container -->
+                <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+                <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
+                    <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                        <!-- Title -->
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                            <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
+                            <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                         </div>
 
-                        <div class="yot-text-center">
-                            <input class="yot-btn-blue1" type="submit" value="Submit">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Sub Title</label>
+                            <select class="yot-form-select yot-form-select-option" name="selectOption" id="selectOption">
+                                <option value="create">Create</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                            </select>
                         </div>
-                    </form>
+
+                        <!-- Create Form Container -->
+                        <div id="createDisplayContainer">
+                            <form id="createFormCaption">
+                                <div class="yot-form-group">
+                                    <textarea class="yot-form-input yot-tff-sas" type="text" name="caption" id="caption" style="height:100px;resize:none;" ></textarea>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <input class="yot-btn-blue1" type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Update Container -->
+                        <div id="updateDisplayContainer" style="display:none"></div>
+
+                        <!-- Delete Container -->
+                        <div id="deleteDisplayContainer" style="display:none"></div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
