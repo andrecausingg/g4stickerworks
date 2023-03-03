@@ -1,5 +1,11 @@
 $(document).ready(function(){
+    // About Us
+    $("#displaySubTitleAboutUs").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-data.php");
+    $("#displayImagesAboutUs").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-images.php");
+
+
     // Gallery Page
+    $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");
     $("#displayImages").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-images.php");
 
     // All Footers

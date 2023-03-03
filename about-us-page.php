@@ -19,8 +19,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
-        <!-- Header -->
-        <header class="yot-header yot-bg-white yot-hide-for-desktop yot-z-index-1">
+    <!-- Header -->
+    <header class="yot-header yot-bg-white yot-hide-for-desktop yot-z-index-1">
         <!-- Nav -->
         <nav class="yot-flex yot-flex-ai-c-jc-sb yot-pa-8">
             <!-- Logo -->
@@ -215,10 +215,10 @@
                     <!-- Title-->
                     <div class="yot-tc-blue1 yot-text-center">
                         <h1 class="yot-resize-font-64">ABOUT US</h1>
-                        <p id="displaySubTitle" class="yot-resize-font-18 yot-mb-16"></p>
+                        <p id="displaySubTitleAboutUs" class="yot-resize-font-18 yot-mb-16"></p>
                     </div>
 
-                    <div id="displayImages" class="yot-text-center"></div>
+                    <div id="displayImagesAboutUs" class="yot-text-center"></div>
                 </section>
 
                 <!-- Create Update Delete Sub Title Container -->

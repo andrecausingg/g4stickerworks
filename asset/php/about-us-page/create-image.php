@@ -15,7 +15,7 @@
             $conn = $classConnDB->conn();
             $dateTimeVarChar = $classDateTime->getDateTime();
     
-            $image = $_FILES['image'];
+            $image = $_FILES['imageGallery'];
     
             if(!isset($image)){
                 echo 'putimagefirst';

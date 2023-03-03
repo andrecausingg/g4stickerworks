@@ -28,23 +28,23 @@
 
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
-                <a href="index.html" class="yot-text-fs-xl yot-active-bbh1">Home</a> <span class="yot-mlr-4"></span> 
+                <a href="index" class="yot-text-fs-xl yot-active-bbh1">Home</a> <span class="yot-mlr-4"></span> 
                 <!-- List Products -->
                 <div style="position: relative">
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">Products</span>
                     </div>
                     <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -111px;">
-                        <a href="decals.html" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
+                        <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
                         <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
                         <a href="sticker-labels" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
                         <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
                     </div>
                 </div> <span class="yot-mlr-4"></span>
-                <a href="services.html" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
-                <a href="contact.html" class="yot-text-fs-xl yot-active-bbh1">Contact Us</a> <span class="yot-mlr-4"></span>
-                <a href="about.html" class="yot-text-fs-xl yot-active-bb-blue">About Us</a> <span class="yot-mlr-4"></span>
-                <a href="gallery.html" class="yot-text-fs-xl yot-active-bbh1">Gallery</a>
+                <a href="services" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
+                <a href="contact" class="yot-text-fs-xl yot-active-bbh1">Contact Us</a> <span class="yot-mlr-4"></span>
+                <a href="about" class="yot-text-fs-xl yot-active-bb-blue">About Us</a> <span class="yot-mlr-4"></span>
+                <a href="gallery" class="yot-text-fs-xl yot-active-bbh1">Gallery</a>
             </div>
 
 
@@ -66,23 +66,23 @@
     <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1  overlayLeftSideBar" style="display:none"></div>
     <div id="overlayMobileIndex" class="yot-w-75 yot-flex yot-flex-fd-c  yot-vh-100 yot-bg-white yot-overlay-left yot-pa-16 overlayLeftSideBar" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin: 8px 0px 16px 0px;">
-            <a href="index.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Home</a>
+            <a href="index" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Home</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
         <div class="yot-mb-16">
-            <a href="product.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Product</a>
+            <a href="product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Product</a>
         </div>
         <div class="yot-mb-16">
-            <a href="services.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
+            <a href="services" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
         </div>
         <div class="yot-mb-16">
-            <a href="contact.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
+            <a href="contact" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
         </div>
         <div class="yot-mb-16">
-            <a href="about.html" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">About Us</a>
+            <a href="about" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">About Us</a>
         </div>
         <div class="yot-mb-16">
-            <a href="gallery.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Gallery</a>
+            <a href="gallery" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Gallery</a>
         </div>
 
         <!-- Log In and Sign Up-->
@@ -161,55 +161,16 @@
     </div>
 
     <div class="yot-content-space-margin-t-120 yot-container">
-        <!-- About Us Section -->
-        <section>
-            <!-- Title-->
-            <div class="yot-tc-blue1 yot-text-center">
-                <h1 class="yot-resize-font-64">ABOUT US</h1>
-                <p class="yot-resize-font-18 yot-mb-16">Gabriel 4 Sticker Shop (G4 Sticker Works) 
-                    is a  printing and installation 
-                    business which caters any type 
-                    of sticker and tarpaulin needs 
-                    of clients for personal or 
-                    business purpose.
-                    
-                    Our 6 years of experience has 
-                    enabled us to provide the best
-                    possible designing , printing 
-                    and installation
-                    where  we focus to quality 
-                    resulting in satisfied client and 
-                    have lasting business relationships.
-                    
-                    The foundation of our business 
-                    is integrity, honesty and
-                    client relationship.</p>
-            </div>
-
-            <!-- Mission Img Vission -->
-            <div class="yot-text-center yot-row">
-                <!-- Mission and Vission -->
-                <div class="yot-col-50 yot-mb-8" style="margin:auto auto;">
-                    <!-- Mission -->
-                    <div>
-                        <h3>Mission</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perspiciatis quidem incidunt quaerat omnis enim repellat hic, doloremque optio alias in, quos sequi ratione? Ut dolores dicta necessitatibus laboriosam asperiores!</p>
-                    </div>
-
-                    <!-- Vission -->
-                    <div>
-                        <h3>Vission</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perspiciatis quidem incidunt quaerat omnis enim repellat hic, doloremque optio alias in, quos sequi ratione? Ut dolores dicta necessitatibus laboriosam asperiores!</p>
-                    </div>
+            <!-- About Us Section -->
+            <section>
+                <!-- Title-->
+                <div class="yot-tc-blue1 yot-text-center">
+                    <h1 class="yot-resize-font-64">ABOUT US</h1>
+                    <p id="displaySubTitleAboutUs" class="yot-resize-font-18 yot-mb-16"></p>
                 </div>
-                
-                <!-- Img -->
-                <div class="yot-col-50 yot-mb-8" style="margin:auto auto;">
-                    <img src="./asset/images/undraw_newspaper_re_syf5.svg" alt="">
-                </div>
-            </div>
-            
-        </section>
+
+                <div id="displayImagesAboutUs" class="yot-text-center"></div>
+            </section>
     </div>
 
     <!-- Footer -->
@@ -217,12 +178,12 @@
         <!-- Navs -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c">
             <h2 class="yot-mb-8">Quick Links</h2>
-            <a href="index.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Home</a>
-            <a href="product.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Product</a>
-            <a href="services.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Services</a>
-            <a href="contact.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Contacts</a>
-            <a href="about.html" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">About Us</a>
-            <a href="gallery.html" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Gallery</a>
+            <a href="index" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Home</a>
+            <a href="product" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Product</a>
+            <a href="services" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Services</a>
+            <a href="contact" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Contacts</a>
+            <a href="about" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">About Us</a>
+            <a href="gallery" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Gallery</a>
         </div>
 
         <!-- Social Media -->

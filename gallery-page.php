@@ -281,7 +281,7 @@
                 <div id="createDisplayContainerImage">
                     <form id="createFormImage">
                         <div class="yot-form-group">
-                            <input class="yot-form-input" type="file" name="image" id="image">
+                            <input class="yot-form-input" type="file" name="imageGallery" id="imageGallery">
                         </div>
 
                         <div class="yot-text-center">

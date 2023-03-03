@@ -9,6 +9,7 @@ $(document).ready(function(){
             type: "POST",
             data: formData,
             success: function(response){
+                console.log(response);
                 const responseVar = response.trim();
 
                 if(responseVar == 'created'){
