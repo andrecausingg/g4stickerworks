@@ -264,12 +264,12 @@
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                 <!-- Title -->
                 <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                    <h2 id="titleCaptionImage" class="yot-tc-blue1">CREATE</h2>
+                    <h2 id="titleImage" class="yot-tc-blue1">CREATE</h2>
                     <i id="createCloseFormIconImage" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
 
                 <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Upload Image</label>
+                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImage">Upload Image</label>
                     <select class="yot-form-select yot-form-select-option" name="selectOptionImage" id="selectOptionImage">
                         <option value="create">Create</option>
                         <option value="update">Update</option>
@@ -291,12 +291,14 @@
                 </div>
 
                 <!-- Update Container -->
-                <div id="updateDisplayContainer" style="display:none"></div>
+                <div id="updateDisplayContainerImage" style="display:none"></div>
 
                 <!-- Delete Container -->
-                <div id="deleteDisplayContainer" style="display:none"></div>
+                <div id="deleteDisplayContainerImage" style="overflow-y:scroll; height:300px; display:none;"></div>
             </div>
         </div>
+
+
     </div>
 
     <!-- Success Container-->
@@ -361,5 +363,6 @@
     <script src="./asset/js/gallery-page/display/d-caption.js"></script>
 
     <script src="./asset/js/gallery-page/create-image.js"></script>
+    <script src="./asset/js/gallery-page/delete-image.js"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 $(document).ready(function(){
     // Delete All
-    $(document).on("click", ".deleteIcon", function() {
+    $(document).on("click", ".deleteIconImage", function() {
         const id = $(this).attr("data-id");
 
         if(id != ""){
             $.ajax({
                 type: "POST",
-                url: "../../../../g4stickerworks/asset/php/gallery-page/delete.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/gallery-page/delete-image.php", // replace with the URL of your form processing script
                 data: { 
                     id: id
                 },
@@ -18,9 +18,9 @@ $(document).ready(function(){
                             $("#deleteSuccessAlert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
 
-                        $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");
-                        $("#updateDisplayContainer").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-update-caption.php");
-                        $("#deleteDisplayContainer").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-delete-caption.php");
+                        $("#displayImages").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-images.php");
+                        $("#updateDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-update-image.php");
+                        $("#deleteDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-delete-image.php");
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {

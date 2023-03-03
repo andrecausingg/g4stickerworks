@@ -62,6 +62,39 @@ $(document).ready(function(){
         }
     });
 
+    // Show the Selected Form Container
+    $("#selectOptionImage").change(function() {
+        var selectedValue = $(this).val(); // get the value of the selected option
+        var containers = ["create", "update", "delete"];
+        var captions = ["CREATE", "UPDATE", "DELETE"];
+        // put the container IDs into an array in the same order as the options in the select element
+        // put the captions into an array in the same order as the options in the select element
+        
+        // loop through the containers array and hide all containers except the one corresponding to the selected option
+        for (var i = 0; i < containers.length; i++) {
+            var containerID = containers[i] + "DisplayContainerImage"; // get the ID of the container
+            if (selectedValue == containers[i]) {
+                $("#" + containerID).show(); // show the corresponding container
+                $("#titleImage").text(captions[i]); // change the title caption to match the selected option
+            } else {
+                $("#" + containerID).hide(); // hide the other containers
+            }
+        }
+        if (selectedValue == "create") {
+            $("#createDisplayContainerImage").show(); // show the create container
+            $("#updateDisplayContainerImage").hide(); // hide the update container
+            $("#deleteDisplayContainerImage").hide(); // hide the delete container
+        } else if (selectedValue == "update") {
+            $("#createDisplayContainerImage").hide(); // hide the create container
+            $("#updateDisplayContainerImage").show(); // show the update container
+            $("#deleteDisplayContainerImage").hide(); // hide the delete container
+        } else if (selectedValue == "delete") {
+            $("#createDisplayContainerImage").hide(); // hide the create container
+            $("#updateDisplayContainerImage").hide(); // hide the update container
+            $("#deleteDisplayContainerImage").show(); // show the delete container
+        }
+    });
+
     // Hide Create Alert
     $("#successAlertCloseIconInsert").click(function(){
         $("#createSuccessAlert").hide();
@@ -134,7 +167,4 @@ $(document).ready(function(){
         $("#errorUploadingimageAlert").hide();
         $("#errorImagetoolargeAlert").hide();
     });
-
-    
-    
 });
