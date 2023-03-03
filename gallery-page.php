@@ -198,11 +198,11 @@
 
         <!-- Right -->
         <div class="g-main-item-right" style="padding: 24px;">
-            <!-- Title with Caption and Image btn-->
+            <!-- Title with Btn Form-->
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
                 <h2 class="yot-mb-16 yot-resize-font-64">Gallery Page</h2>
                 <div class="yot-text-center yot-pa-16">
-                    <button id="captionBtn" class="yot-btn-blue1">Caption</button>
+                    <button id="captionBtn" class="yot-btn-blue1">Sub Title</button>
                     <button id="imagesBtn" class="yot-btn-blue1">Images</button>
                 </div>
             </div>
@@ -229,7 +229,7 @@
                 </div>
 
                 <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Caption</label>
+                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Sub Title</label>
                     <select class="yot-form-select yot-form-select-option" name="selectOption" id="selectOption">
                         <option value="create">Create</option>
                         <option value="update">Update</option>

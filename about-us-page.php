@@ -199,19 +199,12 @@
 
         <!-- Right -->
         <div class="g-main-item-right" style="padding: 24px;">
-            <!-- Title -->
-            <h2 class="yot-mb-16 yot-resize-font-64">About Us Page</h2>
-            
-            <!-- Services Container -->
-            <div class="over-view-container">
-                <!-- Services  -->
-                <div class="yot-bg-blue1 yot-mb-8 over-view-item1 yot-text-center" style="border-radius: 8px; padding: 8px;">
-                    <div class="yot-mb-8">
-                        <h3 class="yot-tc-white">About Us</h3>
-                    </div>
-                    <div>
-                        <button class="yot-btn-white1 yot-mb-8">Edit</button> <br>
-                    </div>
+            <!-- Title with Btn Form-->
+            <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
+                <h2 class="yot-mb-16 yot-resize-font-64">Gallery Page</h2>
+                <div class="yot-text-center yot-pa-16">
+                    <button id="subTitleBtn" class="yot-btn-blue1">Sub Title</button>
+                    <button id="imagesBtn" class="yot-btn-blue1">Images</button>
                 </div>
             </div>
 
@@ -222,24 +215,7 @@
                     <!-- Title-->
                     <div class="yot-tc-blue1 yot-text-center">
                         <h1 class="yot-resize-font-64">ABOUT US</h1>
-                        <p class="yot-resize-font-18 yot-mb-16">Gabriel 4 Sticker Shop (G4 Sticker Works) 
-                            is a  printing and installation 
-                            business which caters any type 
-                            of sticker and tarpaulin needs 
-                            of clients for personal or 
-                            business purpose.
-                            
-                            Our 6 years of experience has 
-                            enabled us to provide the best
-                            possible designing , printing 
-                            and installation
-                            where  we focus to quality 
-                            resulting in satisfied client and 
-                            have lasting business relationships.
-                            
-                            The foundation of our business 
-                            is integrity, honesty and
-                            client relationship.</p>
+                        <p id="subTitle" class="yot-resize-font-18 yot-mb-16"></p>
                     </div>
 
                     <div class="yot-text-center">
@@ -248,10 +224,49 @@
                             <img src="./asset/images/undraw_newspaper_re_syf5.svg" alt="">
                         </div>
                     </div>
-                    
                 </section>
+
+                <!-- Create Form Container -->
+                <div id="createDisplayContainer">
+                    <form id="createFormSubTitle">
+                        <div class="yot-form-group">
+                            <textarea class="yot-form-input yot-tff-sas" type="text" name="subTitle" id="subTitle" style="height:100px;resize:none;" ></textarea>
+                        </div>
+
+                        <div class="yot-text-center">
+                            <input class="yot-btn-blue1" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+    </div>
+
+    <!-- Success Container-->
+    <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Insertion:</h3>
+            <i id="successAlertCloseIconInsert" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully inserted.</p>
+    </div>
+
+    <!-- Delete Container-->
+    <div id="deleteSuccessAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Deletion:</h3>
+            <i id="deleteSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully deleted.</p>
+    </div>
+
+    <!-- Success Update Container-->
+    <div id="updateSuccessAlert" class="yot-bg-orange yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Update:</h3>
+            <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully updated.</p>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
