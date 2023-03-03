@@ -242,23 +242,7 @@
                             client relationship.</p>
                     </div>
 
-                    <!-- Mission Img Vission -->
-                    <div class="yot-text-center yot-row">
-                        <!-- Mission and Vission -->
-                        <div class="yot-col-50 yot-mb-8" style="margin:auto auto;">
-                            <!-- Mission -->
-                            <div>
-                                <h3>Mission</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perspiciatis quidem incidunt quaerat omnis enim repellat hic, doloremque optio alias in, quos sequi ratione? Ut dolores dicta necessitatibus laboriosam asperiores!</p>
-                            </div>
-
-                            <!-- Vission -->
-                            <div>
-                                <h3>Vission</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio perspiciatis quidem incidunt quaerat omnis enim repellat hic, doloremque optio alias in, quos sequi ratione? Ut dolores dicta necessitatibus laboriosam asperiores!</p>
-                            </div>
-                        </div>
-                        
+                    <div class="yot-text-center">
                         <!-- Img -->
                         <div class="yot-col-50 yot-mb-8" style="margin:auto auto;">
                             <img src="./asset/images/undraw_newspaper_re_syf5.svg" alt="">
