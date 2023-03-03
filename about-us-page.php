@@ -215,7 +215,7 @@
                     <!-- Title-->
                     <div class="yot-tc-blue1 yot-text-center">
                         <h1 class="yot-resize-font-64">ABOUT US</h1>
-                        <p id="subTitle" class="yot-resize-font-18 yot-mb-16"></p>
+                        <p id="displaySubTitle" class="yot-resize-font-18 yot-mb-16"></p>
                     </div>
 
                     <div class="yot-text-center">
@@ -226,20 +226,19 @@
                     </div>
                 </section>
 
-
                 <!-- Create Update Delete Container -->
-                <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-                <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
+                <div id="createBgContainerSubTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+                <div id="createFormContainerSubtitle" class="yot-overlay-mid-container" style="display:none;">
                     <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                         <!-- Title -->
                         <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
                             <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
-                            <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                            <i id="createCloseFormIconSubtitle" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                         </div>
 
                         <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="caption">Sub Title</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectOption" id="selectOption">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="subTitle">Sub Title</label>
+                            <select class="yot-form-select yot-form-select-option" name="selectOptionSubTitle" id="selectOptionSubTitle">
                                 <option value="create">Create</option>
                                 <option value="update">Update</option>
                                 <option value="delete">Delete</option>
@@ -247,10 +246,10 @@
                         </div>
 
                         <!-- Create Form Container -->
-                        <div id="createDisplayContainer">
-                            <form id="createFormCaption">
+                        <div id="createDisplayContainerSubTitle">
+                            <form id="createFormSubTitle">
                                 <div class="yot-form-group">
-                                    <textarea class="yot-form-input yot-tff-sas" type="text" name="caption" id="caption" style="height:100px;resize:none;" ></textarea>
+                                    <textarea class="yot-form-input yot-tff-sas" type="text" name="subTitle" id="subTitle" style="height:100px;resize:none;" ></textarea>
                                 </div>
 
                                 <div class="yot-text-center">
@@ -260,10 +259,10 @@
                         </div>
 
                         <!-- Update Container -->
-                        <div id="updateDisplayContainer" style="display:none"></div>
+                        <div id="updateDisplayContainerSubTitle" style="display:none"></div>
 
                         <!-- Delete Container -->
-                        <div id="deleteDisplayContainer" style="display:none"></div>
+                        <div id="deleteDisplayContainerSubTitle" style="display:none"></div>
                     </div>
                 </div>
 
@@ -299,5 +298,15 @@
     </div>
 
     <script src="./asset/js/all/global.js"></script>
+
+    <script src="./asset/js/about-us-page/display/d-data.js"></script>
+
+    <script src="./asset/js/about-us-page/create-sub-title.js"></script>
+    <script src="./asset/js/about-us-page/update-sub-title.js"></script>
+    <script src="./asset/js/about-us-page/delete-sub-title.js"></script>
+
+    <script src="./asset/js/about-us-page/create-image.js"></script>
+    <script src="./asset/js/about-us-page/update-image.js"></script>
+    <script src="./asset/js/about-us-page/delete-image.js"></script>
 </body>
 </html>

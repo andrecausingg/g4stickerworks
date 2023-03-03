@@ -1,9 +1,9 @@
 <?php
     $classDisplayData = new classDisplayData();
-    $classDisplayData->getDataCaption();
+    $classDisplayData->getData();
 
     class classDisplayData{
-        public function getDataCaption(){
+        public function getData(){
             // File Path
             require_once "../../helper/global/global.php"; 
 
@@ -22,7 +22,7 @@
             ';
             
             // DISPLAY
-            $stmt = $conn->prepare("SELECT * FROM gallery_page_tbl WHERE image <> '' ORDER BY gallery_page_id DESC");
+            $stmt = $conn->prepare("SELECT * FROM about_us_page WHERE image <> '' ORDER BY gallery_page_id DESC");
             $stmt->execute();
             $result = $stmt->get_result();
             while($row = $result->fetch_assoc()){

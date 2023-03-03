@@ -1,28 +1,29 @@
 $(document).ready(function(){
-    $("#createFormCaption").submit(function(e) {
+    $("#createFormSubTitle").submit(function(e) {
         e.preventDefault(); // prevent the default form submission
         
-        var caption = $("#caption").val().trim(); // get the value of the caption field
+        var subTitle = $("#subTitle").val().trim(); // get the value of the subTitle field
         
-        if(caption != ""){
+        if(subTitle != ""){
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/gallery-page/create.php", // replace with the URL of your form processing script
-                data: { caption: caption }, // send the caption field value as data
+                url: "../../../../g4stickerworks/asset/php/about-us-page/create-sub-title.php", // replace with the URL of your form processing script
+                data: { subTitle: subTitle }, // send the subTitle field value as data
                 success: function(response) {
+                    console.log(response);
                     const responseVarChar = response.trim();                
                     if(responseVarChar == "created"){
-                        $("#createFormCaption").trigger("reset");
+                        $("#createFormSubTitle").trigger("reset");
                         $("#createSuccessAlert").show();
 
                         setTimeout(function() {
                             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
 
-                        $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");
-                        $("#updateDisplayContainer").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-update-caption.php");
-                        $("#deleteDisplayContainer").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-delete-caption.php");
+                        $("#displaySubTitle").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-data.php");
+                        $("#updateDisplayContainerSubTitle").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-update-sub-title.php");
+                        $("#deleteDisplayContainerSubTitle").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-delete-sub-title.php");
                     }
                     // do something with the server response (e.g. show a success message)
                 },
@@ -36,7 +37,7 @@ $(document).ready(function(){
     });
     
     // Show the Selected Form Container
-    $("#selectOption").change(function() {
+    $("#selectOptionSubTitle").change(function() {
         var selectedValue = $(this).val(); // get the value of the selected option
         var containers = ["create", "update", "delete"];
         var captions = ["CREATE", "UPDATE", "DELETE"];
@@ -54,31 +55,29 @@ $(document).ready(function(){
             }
         }
         if (selectedValue == "create") {
-            $("#createDisplayContainer").show(); // show the create container
-            $("#updateDisplayContainer").hide(); // hide the update container
-            $("#deleteDisplayContainer").hide(); // hide the delete container
+            $("#createDisplayContainerSubTitle").show(); // show the create container
+            $("#updateDisplayContainerSubTitle").hide(); // hide the update container
+            $("#deleteDisplayContainerSubTitle").hide(); // hide the delete container
         } else if (selectedValue == "update") {
-            $("#createDisplayContainer").hide(); // hide the create container
-            $("#updateDisplayContainer").show(); // show the update container
-            $("#deleteDisplayContainer").hide(); // hide the delete container
+            $("#createDisplayContainerSubTitle").hide(); // hide the create container
+            $("#updateDisplayContainerSubTitle").show(); // show the update container
+            $("#deleteDisplayContainerSubTitle").hide(); // hide the delete container
         } else if (selectedValue == "delete") {
-            $("#createDisplayContainer").hide(); // hide the create container
-            $("#updateDisplayContainer").hide(); // hide the update container
-            $("#deleteDisplayContainer").show(); // show the delete container
+            $("#createDisplayContainerSubTitle").hide(); // hide the create container
+            $("#updateDisplayContainerSubTitle").hide(); // hide the update container
+            $("#deleteDisplayContainerSubTitle").show(); // show the delete container
         }
     });
 
-    // Show Create Container
-    $("#captionBtn").click(function(){
-        $("#createBgContainer").show();
-        $("#createFormContainer").show();
+    // Show Create Container Sub Title
+    $("#subTitleBtn").click(function(){
+        $("#createBgContainerSubTitle").show();
+        $("#createFormContainerSubtitle").show();
     });
 
-    // Hide Create Container
-    $("#createCloseFormIcon").click(function(){
-        $("#createBgContainer").hide();
-        $("#createFormContainer").hide();
+    // Hide Create Container Sub Title
+    $("#createCloseFormIconSubtitle").click(function(){
+        $("#createBgContainerSubTitle").hide();
+        $("#createFormContainerSubtitle").hide();
     });
-
-
 });

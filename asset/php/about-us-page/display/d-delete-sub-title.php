@@ -1,9 +1,9 @@
 <?php
     $classDisplayData = new classDisplayData();
-    $classDisplayData->getDataCaption();
+    $classDisplayData->getData();
 
     class classDisplayData{
-        public function getDataCaption(){
+        public function getData(){
             // File Path
             require_once "../../helper/global/global.php"; 
 
@@ -16,21 +16,21 @@
             echo '
                 <table class="yot-table-blue-theme">
                 <tr>
-                    <th>Caption</th>
+                    <th>Sub Title</th>
                     <th>Action</th>
                 </tr>
             ';
             
             // DISPLAY
-            $stmt = $conn->prepare("SELECT * FROM gallery_page_tbl WHERE caption <> ''");
+            $stmt = $conn->prepare("SELECT * FROM about_us_page_tbl WHERE sub_title <> ''");
             $stmt->execute();
             $result = $stmt->get_result();
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        <td>'.htmlspecialchars($row["caption"]).'</td>
+                        <td>'.htmlspecialchars($row["sub_title"]).'</td>
                         <td class="yot-flex">
-                            <i class="fa-solid fa-trash yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 deleteIcon" data-id="'. htmlspecialchars($row["gallery_page_id"]).'"></i>
+                            <i class="fa-solid fa-trash yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 deleteIcon" data-id="'. htmlspecialchars($row["about_us_page_id"]).'"></i>
                         </td>
                     </tr>
                 ';

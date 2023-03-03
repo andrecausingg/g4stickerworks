@@ -1,9 +1,9 @@
 <?php
     $classDisplayData = new classDisplayData();
-    $classDisplayData->getDataCaption();
+    $classDisplayData->getData();
 
     class classDisplayData{
-        public function getDataCaption(){
+        public function getData(){
             // File Path
             require_once "../../helper/global/global.php"; 
 
@@ -16,23 +16,23 @@
             echo '
                 <table class="yot-table-blue-theme">
                 <tr>
-                    <th>Caption</th>
+                    <th>Sub Title</th>
                     <th>Action</th>
                 </tr>
             ';
             
             // DISPLAY
-            $stmt = $conn->prepare("SELECT * FROM gallery_page_tbl WHERE caption <> ''");
+            $stmt = $conn->prepare("SELECT * FROM about_us_page_tbl WHERE sub_title <> ''");
             $stmt->execute();
             $result = $stmt->get_result();
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
                         <td>
-                            <textarea class="yot-form-input yot-tff-sas" data-id="'.htmlspecialchars($row["gallery_page_id"]).'" type="text" style="height:80px;resize:none;">'.htmlspecialchars($row["caption"]).'</textarea>
+                            <textarea class="yot-form-input yot-tff-sas" data-id="'.htmlspecialchars($row["about_us_page_id"]).'" type="text" style="height:80px;resize:none;">'.htmlspecialchars($row["sub_title"]).'</textarea>
                         </td>
                         <td>
-                            <button class="yot-btn-blue1 updateIcon" data-id="'. htmlspecialchars($row["gallery_page_id"]).'">Update</button>
+                            <button class="yot-btn-blue1 updateIcon" data-id="'. htmlspecialchars($row["about_us_page_id"]).'">Update</button>
                         </td>
                     </tr>
                 ';

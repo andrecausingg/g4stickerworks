@@ -1,11 +1,9 @@
 <?php
-    if(isset($_POST["id"]) && isset($_POST["caption"])){
-            
+    if(isset($_POST["id"])){
         $id = sanitize($_POST['id']);
-        $caption = sanitize($_POST['caption']);
-
-        $classUpdate = new classUpdate($id, $caption);
-        $classUpdate->getUpdate();
+        $classDelete = new classDelete();
+        $classDelete->setId($id);
+        $classDelete->getDelete();
     }
     
     // Sanitize Input
@@ -16,38 +14,36 @@
         return $data;
     }
     
-    class classUpdate{
+    class classDelete{
         private $id;
-        private $caption;
     
-        public function __construct($id, $caption){
+        public function setId($id){
             $this->id = $id;
-            $this->caption = $caption;
         }
-
-        public function getUpdate(){
+    
+        public function getDelete(){
             // File Path
             require_once "../../../asset/php/helper/global/global.php"; 
-        
+    
             // Class
             $classConnDB = new classConnDB();
-        
+    
             // Variable
             $conn = $classConnDB->conn();
-        
-            // prepare the SQL statement with placeholders
-            $sql = "UPDATE gallery_page_tbl SET caption = ? WHERE gallery_page_id = ?";
+    
+            // prepare the SQL statement with placeholders 
+            $sql = "DELETE FROM about_us_page_tbl WHERE about_us_page_id = ?";
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
-            $stmt->bind_param("si",  $this->caption, $this->id);
-        
+            $stmt->bind_param("i",$this->id);
+    
             // Execute the statement
             if($stmt->execute()){
                 // close the prepared statement and database connection
                 $stmt->close();
                 $conn->close();
-                echo "updated";
+                echo "deleted";
             }
         }
     }

@@ -1,8 +1,8 @@
 <?php
-    if(isset($_POST["caption"])){
-        $caption = sanitize($_POST['caption']);
+    if(isset($_POST["subTitle"])){
+        $subTitle = sanitize($_POST['subTitle']);
 
-        $classCreate = new classCreate($caption);
+        $classCreate = new classCreate($subTitle);
         $classCreate->create();
     }
 
@@ -16,11 +16,11 @@
 
     class classCreate{
         // Properties
-        private $caption;
+        private $subTitle;
 
         // Method
-        public function __construct($caption){
-            $this->caption = $caption;
+        public function __construct($subTitle){
+            $this->subTitle = $subTitle;
         }
 
         public function create(){
@@ -36,11 +36,11 @@
             $dateTimeVarChar = $classDateTime->getDateTime();
 
             // prepare the SQL statement with placeholders 
-            $sql = "INSERT INTO gallery_page_tbl (caption, created_at_varchar, created_at) VALUES (?, ?, NOW())";
+            $sql = "INSERT INTO about_us_page_tbl (sub_title, created_at_varchar, created_at) VALUES (?, ?, NOW())";
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
-            $stmt->bind_param("ss", $this->caption, $dateTimeVarChar);
+            $stmt->bind_param("ss", $this->subTitle, $dateTimeVarChar);
             // execute the statement
             if($stmt->execute()){
                 // close the prepared statement and database connection

@@ -15,7 +15,7 @@ class classDisplayData{
         $count = 0; // initialize counter variable
         
         // DISPLAY
-        $stmt = $conn->prepare("SELECT * FROM gallery_page_tbl WHERE image <> '' ORDER BY gallery_page_id DESC");
+        $stmt = $conn->prepare("SELECT * FROM about_us_page WHERE image <> '' ORDER BY gallery_page_id DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
