@@ -1613,6 +1613,10 @@ i {
   color: hsl(0, 0%, 100%);
 }
 
+.yot-tc-yellow1 {
+  color: hsl(35, 97%, 63%);
+}
+
 .yot-tc-yellow {
   color: hsl(54, 100%, 62%);
 }

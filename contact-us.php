@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Contact Us</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/asset/images/g4works-favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
 
     <!-- Css -->
     <link rel="stylesheet" href="./asset/scss/style.css">
@@ -42,12 +42,10 @@
                     </div>
                 </div> <span class="yot-mlr-4"></span>
                 <a href="services" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
-                <a href="contact" class="yot-text-fs-xl yot-active-bbh1">Contact Us</a> <span class="yot-mlr-4"></span>
-                <a href="about" class="yot-text-fs-xl yot-active-bb-blue">About Us</a> <span class="yot-mlr-4"></span>
+                <a href="contact" class="yot-text-fs-xl yot-active-bb-blue">Contact Us</a> <span class="yot-mlr-4"></span>
+                <a href="about-us" class="yot-text-fs-xl yot-active-bbh1">About Us</a> <span class="yot-mlr-4"></span>
                 <a href="gallery" class="yot-text-fs-xl yot-active-bbh1">Gallery</a>
             </div>
-
-
 
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex yot-flex-ai-c">
@@ -76,10 +74,10 @@
             <a href="services" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
         </div>
         <div class="yot-mb-16">
-            <a href="contact" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
+            <a href="contact" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
         </div>
         <div class="yot-mb-16">
-            <a href="about" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">About Us</a>
+            <a href="about-us" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">About Us</a>
         </div>
         <div class="yot-mb-16">
             <a href="gallery" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Gallery</a>
@@ -160,17 +158,83 @@
         </div>
     </div>
 
+    <!-- Contact Us -->
     <div class="yot-content-space-margin-t-120 yot-container">
-            <!-- About Us Section -->
-            <section>
-                <!-- Title-->
-                <div class="yot-tc-blue1 yot-text-center">
-                    <h1 class="yot-resize-font-64">ABOUT US</h1>
-                    <p id="displaySubTitleAboutUs" class="yot-resize-font-18 yot-mb-16"></p>
+        <!-- Contact Us Section -->
+        <section>
+            <!-- Title-->
+            <div class="yot-tc-blue1 yot-text-center">
+                <h1 class="yot-resize-font-64">CONTACT US</h1>
+                <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
+            </div>
+
+            <!-- Img and Contact List -->
+            <div class="yot-row yot-flex-ai-c">
+                <!-- Img -->
+                <div class="yot-col-50 yot-mb-8">
+                    <img src="./asset/images/undraw_newspaper_re_syf5.svg" alt="">
                 </div>
 
-                <div id="displayImagesAboutUs" class="yot-text-center"></div>
-            </section>
+                <!-- Contact List -->
+                <div class="yot-col-50">
+                    <!-- Facebook -->
+                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-blue1 yot-mb-8">
+                        <div class="yot-flex" style="font-size: 24px;">
+                            <i class="fa-brands fa-facebook-f"></i>
+                            <h4 class="yot-ml-4">Facebook</h4>
+                        </div>
+                        <div>
+                            <h4><a class="yot-tc-blue1" href="#" target="_blank" rel="noopener noreferrer">www.facebook.com/g4stickershop</a></h4>
+                        </div>
+                    </div>
+
+                    <!-- Tiktok -->
+                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-blue1 yot-tc-pink1 yot-mb-8">
+                        <div class="yot-flex" style="font-size: 24px;">
+                            <i class="fa-brands fa-tiktok"></i>
+                            <h4 class="yot-ml-4">Tiktok</h4>
+                        </div>
+                        <div>
+                            <h4><a class="yot-tc-pink1" href="#" target="_blank" rel="noopener noreferrer">www.tiktok.com/g4stickershop</a></h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Instagram -->
+                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-yellow1 yot-mb-8">
+                        <div class="yot-flex" style="font-size: 24px;">
+                            <i class="fa-brands fa-tiktok"></i>
+                            <h4 class="yot-ml-4">Instagram</h4>
+                        </div>
+                        <div>
+                            <h4><a class="yot-tc-yellow1" href="#" target="_blank" rel="noopener noreferrer">www.instagram.com/g4_sticker_work/</a></h4>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-blue1 yot-tc-red yot-mb-8">
+                        <div class="yot-flex" style="font-size: 24px;">
+                            <i class="fa-solid fa-envelope"></i>
+                            <h4 class="yot-ml-4">Email</h4>
+                        </div>
+                        <div>
+                            <h4>g4stickershop@gmail.com</h4>
+                        </div>
+                    </div>
+
+                    <!-- Contact No. -->
+                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-blue1 yot-tc-blue3 yot-mb-8">
+                        <div class="yot-flex" style="font-size: 24px;">
+                            <i class="fa-solid fa-mobile"></i>
+                            <h4 class="yot-ml-4">Contact No.</h4>
+                        </div>
+                        <div>
+                            <h4>09123456789</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
     </div>
 
     <!-- Footer -->
@@ -181,8 +245,8 @@
             <a href="index" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Home</a>
             <a href="product" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Product</a>
             <a href="services" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Services</a>
-            <a href="contact" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Contacts</a>
-            <a href="about" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">About Us</a>
+            <a href="contact" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">Contacts</a>
+            <a href="about-us" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">About Us</a>
             <a href="gallery" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Gallery</a>
         </div>
 
@@ -255,8 +319,8 @@
         </div>
     </footer>
 
-    <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/all/display-global/d-global-data.js"></script>
+    <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/login/login.js"></script>
 </body>
 </html>
