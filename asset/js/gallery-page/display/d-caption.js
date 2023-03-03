@@ -5,5 +5,6 @@ $(document).ready(function(){
 
 
     $("#displayImages").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-images.php");
+    $("#updateDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-update-image.php");
     $("#deleteDisplayContainerImage").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-delete-image.php");
 });

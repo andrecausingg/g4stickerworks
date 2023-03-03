@@ -291,7 +291,7 @@
                 </div>
 
                 <!-- Update Container -->
-                <div id="updateDisplayContainerImage" style="display:none"></div>
+                <div id="updateDisplayContainerImage" style="overflow-y:scroll; height:300px; display:none;"></div>
 
                 <!-- Delete Container -->
                 <div id="deleteDisplayContainerImage" style="overflow-y:scroll; height:300px; display:none;"></div>
@@ -363,6 +363,7 @@
     <script src="./asset/js/gallery-page/display/d-caption.js"></script>
 
     <script src="./asset/js/gallery-page/create-image.js"></script>
+    <script src="./asset/js/gallery-page/update-image.js"></script>
     <script src="./asset/js/gallery-page/delete-image.js"></script>
 </body>
 </html>

@@ -16,7 +16,7 @@
             echo '
                 <table class="yot-table-blue-theme">
                 <tr>
-                    <th>Caption</th>
+                    <th>Image</th>
                     <th>Action</th>
                 </tr>
             ';
