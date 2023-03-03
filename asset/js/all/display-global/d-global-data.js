@@ -1,8 +1,14 @@
 $(document).ready(function(){
+    // Contact Us
+    $("#facebookUrlContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-facebook.php");
+    $("#tiktokUrlContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-tiktok.php");
+    $("#instagramUrlContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-instagram.php");
+    $("#emailContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-email.php");
+    $("#phoneContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-phone.php");
+
     // About Us
     $("#displaySubTitleAboutUs").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-data.php");
     $("#displayImagesAboutUs").load("../../../../../g4stickerworks/asset/php/about-us-page/display/d-images.php");
-
 
     // Gallery Page
     $("#displayCaption").load("../../../../../g4stickerworks/asset/php/gallery-page/display/d-caption.php");

@@ -165,7 +165,7 @@
             <!-- Title-->
             <div class="yot-tc-blue1 yot-text-center">
                 <h1 class="yot-resize-font-64">CONTACT US</h1>
-                <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
+                <p class="yot-resize-font-18 yot-mb-16">At our company, we value communication and are always eager to hear from our clients. Whether you have questions about our services, need a quote, or just want to say hello, we encourage you to get in touch. You can reach us by phone, email, or through our website's contact form. Our friendly and knowledgeable team is available to assist you with any inquiries you may have, and we strive to respond to all messages as quickly as possible. We look forward to hearing from you and working together to achieve your goals. Contact us today and let's start a conversation!</p>
             </div>
 
             <!-- Img and Contact List -->
@@ -180,12 +180,10 @@
                     <!-- Facebook -->
                     <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-blue1 yot-mb-8">
                         <div class="yot-flex" style="font-size: 24px;">
-                            <i class="fa-brands fa-facebook-f"></i>
+                            <i class="fa-solid fa-envelope"></i>
                             <h4 class="yot-ml-4">Facebook</h4>
                         </div>
-                        <div>
-                            <h4><a class="yot-tc-blue1" href="#" target="_blank" rel="noopener noreferrer">www.facebook.com/g4stickershop</a></h4>
-                        </div>
+                        <div id="facebookUrlContainerContactUs"></div>
                     </div>
 
                     <!-- Tiktok -->
@@ -194,9 +192,7 @@
                             <i class="fa-brands fa-tiktok"></i>
                             <h4 class="yot-ml-4">Tiktok</h4>
                         </div>
-                        <div>
-                            <h4><a class="yot-tc-pink1" href="#" target="_blank" rel="noopener noreferrer">www.tiktok.com/g4stickershop</a></h4>
-                        </div>
+                        <div id="tiktokUrlContainerContactUs"></div>
                     </div>
                     
                     <!-- Instagram -->
@@ -205,9 +201,7 @@
                             <i class="fa-brands fa-tiktok"></i>
                             <h4 class="yot-ml-4">Instagram</h4>
                         </div>
-                        <div>
-                            <h4><a class="yot-tc-yellow1" href="#" target="_blank" rel="noopener noreferrer">www.instagram.com/g4_sticker_work/</a></h4>
-                        </div>
+                        <div id="instagramUrlContainerContactUs"></div>
                     </div>
 
                     <!-- Email -->
@@ -216,9 +210,7 @@
                             <i class="fa-solid fa-envelope"></i>
                             <h4 class="yot-ml-4">Email</h4>
                         </div>
-                        <div>
-                            <h4>g4stickershop@gmail.com</h4>
-                        </div>
+                        <div id="emailContainerContactUs"></div>
                     </div>
 
                     <!-- Contact No. -->
@@ -227,9 +219,7 @@
                             <i class="fa-solid fa-mobile"></i>
                             <h4 class="yot-ml-4">Contact No.</h4>
                         </div>
-                        <div>
-                            <h4>09123456789</h3>
-                        </div>
+                        <div id="phoneContainerContactUs"></div>
                     </div>
                 </div>
             </div>
