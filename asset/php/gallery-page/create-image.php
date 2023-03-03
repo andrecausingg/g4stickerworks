@@ -36,7 +36,7 @@
                     if($imageSize < 5000000){
                         $imageNameNew = uniqid('', true).".".$imageActualExt;
                         $imageDestination = '/asset/images/gallery/'.$imageNameNew;
-                        move_classUploaded_file($imageTemp, $imageDestination);
+                        move_uploaded_file($imageTemp, $imageDestination);
     
                         // Use prepared statement to prevent SQL injection
                         $stmt = $conn->prepare("INSERT INTO gallery_page_tbl (image, created_at_var, created_at) VALUES (?, ?, NOW())");
