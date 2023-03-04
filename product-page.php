@@ -254,16 +254,15 @@
                     <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                         <div class="yot-tc-blue1">
                             <h1 class="yot-resize-font-64">PRODUCTS</h1>
-                            <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
                         </div>
 
+                        <!-- Select Container -->
                         <div>
-                            <select class="yot-btn-blue1" name="" id="">
-                                <option value="">Decals</option>
-                                <option value="">Mug</option>
-                                <option value="">Tarpaulin</option>
-                                <option value="">Stock Decals</option>
-                                <option value="">Sticker</option>
+                            <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
+                                <option value="">- Select Decals -</option>
+                                <option value="fullDecals">Full Decals</option>
+                                <option value="stockDecals">Stock Decals</option>
+                                <option value="stickerMags">Sticker Mags</option>
                             </select>
                         </div>
                     </div>
