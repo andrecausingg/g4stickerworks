@@ -234,13 +234,13 @@
             <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                 <div class="yot-tc-blue1">
                     <h1 class="yot-resize-font-64">SERVICES</h1>
-                    <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
+                    <p id="displaySubTitleServices" class="yot-resize-font-18 yot-mb-16"></p>
                 </div>
             </div>
 
             <!-- List Of Services -->
             <div class="yot-w-100">
-                <h1>Tarpaulin Printing,  Sticker,  Printing,  Wall Decor,  Office Glass Decor,  Product Labels,  Sintra Board Printing,  Motorcycle & Car,  Company Vehicle,  Wrapping & Customize Decals</h1>
+                <h1 id="displayContentServices"></h1>
             </div>
         </section>
 

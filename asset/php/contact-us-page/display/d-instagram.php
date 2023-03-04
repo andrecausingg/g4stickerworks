@@ -21,7 +21,7 @@ class classDisplayData{
             $instagram = htmlspecialchars($row["instagram"], ENT_QUOTES, 'UTF-8');
 
             echo '
-                <h4><a class="yot-tc-yellow1" href="'. $instagram .'" target="_blank" rel="noopener noreferrer">'. $instagram .'</a></h4>
+                <h5><a class="yot-tc-yellow1" href="'. $instagram .'" target="_blank" rel="noopener noreferrer">'. $instagram .'</a></h5>
             ';
         }
     }

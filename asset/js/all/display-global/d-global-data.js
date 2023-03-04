@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    // Services
+    $("#displayContentServices").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data-content.php");
+    $("#displaySubTitleServices").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data.php");
+
     // Contact Us
     $("#displaySubTitleContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-data.php");
 

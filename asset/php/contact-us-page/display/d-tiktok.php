@@ -21,7 +21,7 @@ class classDisplayData{
             $tiktok = htmlspecialchars($row["tiktok"], ENT_QUOTES, 'UTF-8');
 
             echo '
-                <h4><a class="yot-tc-pink1" href="'.$tiktok.'" target="_blank" rel="noopener noreferrer">'.$tiktok.'</a></h4>
+                <h5><a class="yot-tc-pink1" href="'.$tiktok.'" target="_blank" rel="noopener noreferrer">'.$tiktok.'</a></h5>
             ';
         }
     }

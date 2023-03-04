@@ -21,7 +21,7 @@ class classDisplayData{
             $cellphone_num = htmlspecialchars($row["cellphone_num"], ENT_QUOTES, 'UTF-8');
 
             echo '
-                <h4>'. $cellphone_num .'</h3>
+                <h5>'. $cellphone_num .'</h5>
             ';
         }
     }

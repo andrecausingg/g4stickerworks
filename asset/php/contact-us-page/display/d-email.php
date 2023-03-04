@@ -21,7 +21,7 @@ class classDisplayData{
             $email = htmlspecialchars($row["email"], ENT_QUOTES, 'UTF-8');
 
             echo '
-                <h4>'. $email .'</h4>
+                <h5>'. $email .'</h5>
             ';
         }
     }
