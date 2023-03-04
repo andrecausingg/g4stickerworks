@@ -45,7 +45,7 @@
                                 <input type="hidden" name="id" id="id" value="'.$row["cut_file_id"].'">
                                 <h4>'. $row["job_name"] .'</h4>
                                 <h4>'. $row["job_no"] .'</h4>
-                                <h4>'. $row["date_time_varchar"] .'</h4>
+                                <h4>'. $row["create_at_varchar"] .'</h4>
                             </div>
             
                             <div class="yot-mt-16">

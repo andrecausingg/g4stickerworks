@@ -46,12 +46,12 @@
     
             if ($this->startDate !== "undefined--undefined") {
                 $startDate = $this->startDate;
-                $queryParams[] = "DATE(date_time) >= '$startDate'";
+                $queryParams[] = "DATE(create_at) >= '$startDate'";
             }
     
             if ($this->endDate !== "undefined--undefined") {
                 $endDate = $this->endDate;
-                $queryParams[] = "DATE(date_time) <= '$endDate'";
+                $queryParams[] = "DATE(create_at) <= '$endDate'";
             }
     
             if (!empty($queryParams)) {
@@ -72,7 +72,7 @@
                     echo '<tr>
                               <td>'. $row["job_name"] .'</td>
                               <td>'. $row["job_no"] .'</td>
-                              <td>'. $row["date_time_varchar"] .'</td>
+                              <td>'. $row["create_at_varchar"] .'</td>
                               <td class="yot-flex">
                                   <i class="fa-solid fa-trash yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 deleteIcon" data-id="'. $row["cut_file_id"] .'"></i>
                                   <i class="fa-solid fa-file-pen yot-text-fs-xxl yot-active-bbh1 editIcon" data-id="'. $row["cut_file_id"] .'"></i>

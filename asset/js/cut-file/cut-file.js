@@ -38,33 +38,35 @@ $(document).ready(function(){
         const jobName = $('#jobName').val().trim();
         const jobNum = $('#jobNum').val().trim();
 
-        $.ajax({
-            url: '../../../../g4stickerworks/asset/php/cut-file/cut-file.php',
-            type: 'POST',
-            data: { 
-                jobName: jobName,
-                jobNum: jobNum,
-            },
-            success: function (data){
-                console.log(data);
-                var dataVar = data.trim();
-                if(dataVar == "insert"){
-                    $("#createFormCutFile").trigger("reset");
-                    $("#deleteAlertCutFile").hide();
-                    $("#successEditAlertCutFile").hide();
-                    $("#successAlertCutFile").show();
-
-                    setTimeout(function() {
-                        $("#successAlertCutFile").hide(); // Show the element after 10 seconds
-                    }, 10000); // 10000 milliseconds = 10 seconds
-
-                    // Display The Data of Cut File
-                    $("#displayCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-cut-file.php");
-                    // Display the total of Cut file
-                    $("#totalCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-total.php");
+        if(jobName != "" && jobNum != ""){
+            $.ajax({
+                url: '../../../../g4stickerworks/asset/php/cut-file/cut-file.php',
+                type: 'POST',
+                data: { 
+                    jobName: jobName,
+                    jobNum: jobNum,
+                },
+                success: function (data){
+                    console.log(data);
+                    var dataVar = data.trim();
+                    if(dataVar == "insert"){
+                        $("#createFormCutFile").trigger("reset");
+                        $("#deleteAlertCutFile").hide();
+                        $("#successEditAlertCutFile").hide();
+                        $("#successAlertCutFile").show();
+    
+                        setTimeout(function() {
+                            $("#successAlertCutFile").hide(); // Show the element after 10 seconds
+                        }, 10000); // 10000 milliseconds = 10 seconds
+    
+                        // Display The Data of Cut File
+                        $("#displayCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-cut-file.php");
+                        // Display the total of Cut file
+                        $("#totalCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-total.php");
+                    }
                 }
-            }
-        })
+            })
+        }
     });
 
     // Edit  

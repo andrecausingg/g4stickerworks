@@ -40,7 +40,7 @@
             $dateTimeVarChar = $classDateTime->getDateTime();
 
             // prepare the SQL statement with placeholders for the job name, job number, datetime varchar, and datetime
-            $sql = "INSERT INTO cut_file_tbl (job_name, job_no, date_time_varchar, date_time) VALUES (?, ?, ?, NOW())";
+            $sql = "INSERT INTO cut_file_tbl (job_name, job_no, create_at_varchar, create_at) VALUES (?, ?, ?, NOW())";
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders

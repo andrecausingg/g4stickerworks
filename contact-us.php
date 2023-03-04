@@ -165,7 +165,7 @@
             <!-- Title-->
             <div class="yot-tc-blue1 yot-text-center">
                 <h1 class="yot-resize-font-64">CONTACT US</h1>
-                <p class="yot-resize-font-18 yot-mb-16">At our company, we value communication and are always eager to hear from our clients. Whether you have questions about our services, need a quote, or just want to say hello, we encourage you to get in touch. You can reach us by phone, email, or through our website's contact form. Our friendly and knowledgeable team is available to assist you with any inquiries you may have, and we strive to respond to all messages as quickly as possible. We look forward to hearing from you and working together to achieve your goals. Contact us today and let's start a conversation!</p>
+                <p class="yot-resize-font-18 yot-mb-16">At our company, we value communication and are always eager to hear from our clients. Whether you have questions about our services, need a quote, or just want to say hello, we encourage you to get in touch. You can reach us by phone, email, or through our Social Media Pages. Our friendly and knowledgeable team is available to assist you with any inquiries you may have, and we strive to respond to all messages as quickly as possible. We look forward to hearing from you and working together to achieve your goals. Contact us today and let's start a conversation!</p>
             </div>
 
             <!-- Img and Contact List -->
