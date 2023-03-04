@@ -14,6 +14,7 @@ $(document).ready(function(){
     var brandSelect = $('#brandSelect');
     var modelSelect = $('#modelSelect');
     
+    brandSelect.append('<option value="-1">- Select Model -</option>'); // add the "Select Model" option
     // loop through each key in the data object and add it as an option in the brandSelect dropdown
     for (var brand in data) {
         brandSelect.append('<option value="' + brand + '">' + brand + '</option>');

@@ -1,24 +1,24 @@
-<!DOCTYPE>
- lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
-
-    <!-- Css -->
-    <link rel="stylesheet" href="./asset/scss/style.css">
-
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/3967252a9e.js" crossorigin="anonymous"></script>
-
-    <!-- Jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title>Document</title>
 </head>
 <body>
+    <!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
+
+<!-- Css -->
+<link rel="stylesheet" href="./asset/scss/style.css">
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/3967252a9e.js" crossorigin="anonymous"></script>
+
+<!-- Jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
     <!-- Header -->
     <header class="yot-header yot-bg-white yot-hide-for-desktop yot-z-index-1">
         <!-- Nav -->
@@ -246,70 +246,6 @@
                 </div>
             </div>
 
-            <!-- Create Update Delete Container Content-->
-            <div id="createBgContainerContent" class="yot-overlay-bg-trans yot-bg-black1" style="display:"></div>
-            <div id="createFormContainerContent" class="yot-overlay-mid-container" style="display:;">
-                <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                    <!-- Title -->
-                    <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                        <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
-
-                        <i id="createCloseFormIconContent" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-                    </div>
-
-                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                        <h2>Full Decals</h2>
-                        <select class="yot-form-select yot-form-select-option" name="selectOptionContent" id="selectOptionContent">
-                            <option value="create">Create</option>
-                            <option value="update">Update</option>
-                            <option value="delete">Delete</option>
-                        </select>
-                    </div>
-
-                    <!-- Create Form Container -->
-                    <div id="createDisplayContainerContent">
-                        <form id="createFormContent">
-                            <!-- Select Decals -->
-                            <div class="yot-form-group">
-                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="decals">Decals</label>
-                                <select class="yot-form-select yot-form-select-option yot-w-50"  name="selectDecals" id="selectDecals">
-                                    <option value="">- Select Decals -</option>
-                                    <option value="Full Decals">Full Decals</option>
-                                    <option value="Stock Decals">Stock Decals</option>
-                                    <option value="Sticker Mags">Sticker Mags</option>
-                                </select>
-                            </div>
-
-                            <!-- Select Brand -->
-                            <div class="yot-form-group">
-                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="brand">Brand</label>
-                                <select class="yot-form-select yot-form-select-option yot-w-50" name="brandSelect" id="brandSelect"></select>
-                            </div>
-
-                             <!-- Select Model -->
-                            <div class="yot-form-group ">
-                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="model">Model</label>
-                                <select class="yot-form-select yot-form-select-option yot-w-50" name="modelSelect" id="modelSelect"></select>
-                            </div>
-
-                            <!-- Select Input -->
-                            <div class="yot-form-group">
-                                <input class="yot-form-input" type="file" name="" id="">
-                            </div>
-
-                            <div class="yot-text-center">
-                                <input class="yot-btn-blue1" type="submit" value="Submit">
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Update Container -->
-                    <div id="updateDisplayContainerContent" style="display:none"></div>
-
-                    <!-- Delete Container -->
-                    <div id="deleteDisplayContainerContent" style="display:none"></div>
-                </div>
-            </div>
 
             <!-- Table -->
             <div class="yot-w-100" id="displayDataTable" style="max-height:500px; overflow-y:scroll"></div>
@@ -379,6 +315,71 @@
                 </section>
             </div>
         </div>
+
+        <!-- Create Update Delete Container Content-->
+        <div id="createBgContainerContent" class="yot-overlay-bg-trans yot-bg-black1" style="display:"></div>
+        <div id="createFormContainerContent" class="yot-overlay-mid-container" style="display:;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
+
+                    <i id="createCloseFormIconContent" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                    <h2>Full Decals</h2>
+                    <select class="yot-form-select yot-form-select-option" name="selectOptionContent" id="selectOptionContent">
+                        <option value="create">Create</option>
+                        <option value="update">Update</option>
+                        <option value="delete">Delete</option>
+                    </select>
+                </div>
+
+                <!-- Create Form Container -->
+                <div id="createDisplayContainerContent">
+                    <form id="createFormContent">
+                        <!-- Select Decals -->
+                        <div class="yot-form-group">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="decals">Decals</label>
+                            <select class="yot-form-select yot-form-select-option yot-w-50"  name="selectDecals" id="selectDecals">
+                                <option value="">- Select Decals -</option>
+                                <option value="Full Decals">Full Decals</option>
+                                <option value="Stock Decals">Stock Decals</option>
+                                <option value="Sticker Mags">Sticker Mags</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Brand -->
+                        <div class="yot-form-group">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="brand">Brand</label>
+                            <select class="yot-form-select yot-form-select-option yot-w-50" name="brandSelect" id="brandSelect"></select>
+                        </div>
+
+                            <!-- Select Model -->
+                        <div class="yot-form-group ">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="model">Model</label>
+                            <select class="yot-form-select yot-form-select-option yot-w-50" name="modelSelect" id="modelSelect"></select>
+                        </div>
+
+                        <!-- Select Input -->
+                        <div class="yot-form-group">
+                            <input class="yot-form-input" type="file" name="" id="">
+                        </div>
+
+                        <div class="yot-text-center">
+                            <input class="yot-btn-blue1" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainerContent" style="display:none"></div>
+
+                <!-- Delete Container -->
+                <div id="deleteDisplayContainerContent" style="display:none"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Success Container-->
@@ -427,6 +428,7 @@
             var brandSelect = $('#brandSelect');
             var modelSelect = $('#modelSelect');
             
+            brandSelect.append('<option value="-1">- Select Model -</option>'); // add the "Select Model" option
             // loop through each key in the data object and add it as an option in the brandSelect dropdown
             for (var brand in data) {
                 brandSelect.append('<option value="' + brand + '">' + brand + '</option>');
@@ -434,7 +436,6 @@
             
             // Set up the change event listener for the brand dropdown
             brandSelect.change(function() {
-                $("#modelContainer").show();
                 modelSelect.empty(); // remove all existing options from the dropdown
                 var selectedBrand = $(this).val(); // get the value of the selected brand
                 var models = data[selectedBrand]; // get the corresponding models from the data object
@@ -447,3 +448,4 @@
         });
     </script>
 </body>
+</html>
