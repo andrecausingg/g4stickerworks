@@ -20,7 +20,7 @@ class classDisplayData{
         $result = $stmt->get_result();
 
         // start the first row
-        echo '<div class="yot-row yot-flex yot-flex-ai-c-jc-sb">';
+        echo '<div class="yot-row yot-flex-ai-c-jc-sb">';
         
         while($row = $result->fetch_assoc()){
             // increment counter variable
@@ -32,7 +32,7 @@ class classDisplayData{
             // check if current iteration is a multiple of 4
             if ($count % 4 == 0) {
                 // close the row and start a new one if current iteration is a multiple of 4
-                echo '</div><div class="yot-row yot-flex yot-flex-ai-c-jc-sb">';
+                echo '</div><div class="yot-row yot-flex-ai-c-jc-sb">';
             }
         }
 

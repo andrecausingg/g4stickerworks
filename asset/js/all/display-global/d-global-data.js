@@ -1,5 +1,7 @@
 $(document).ready(function(){
     // Contact Us
+    $("#displaySubTitleContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-data.php");
+
     $("#facebookUrlContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-facebook.php");
     $("#tiktokUrlContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-tiktok.php");
     $("#instagramUrlContainerContactUs").load("../../../../../g4stickerworks/asset/php/contact-us-page/display/d-instagram.php");
