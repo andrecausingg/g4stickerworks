@@ -215,10 +215,10 @@
                     <!-- Title-->
                     <div class="yot-tc-blue1 yot-text-center">
                         <h1 class="yot-resize-font-64">ABOUT US</h1>
-                        <p id="displaySubTitleAboutUs" class="yot-resize-font-18 yot-mb-16"></p>
+                        <p id="displaySubTitle" class="yot-resize-font-18 yot-mb-16"></p>
                     </div>
 
-                    <div id="displayImagesAboutUs" class="yot-text-center"></div>
+                    <div id="displayImages" class="yot-text-center"></div>
                 </section>
 
                 <!-- Create Update Delete Sub Title Container -->

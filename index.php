@@ -236,10 +236,6 @@
                     <h1 class="yot-resize-font-64">SERVICES</h1>
                     <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
                 </div>
-
-                <div>
-                    <button class="yot-btn-blue1">View More</button>
-                </div>
             </div>
 
             <!-- List Of Services -->
