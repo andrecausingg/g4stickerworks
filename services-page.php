@@ -340,11 +340,14 @@
     <script src="./asset/js/all/global.js"></script>
 
     <script src="./asset/js/services-page/display/d-data.js"></script>
-    
+
     <script src="./asset/js/services-page/create-sub-title.js"></script>
     <script src="./asset/js/services-page/update-sub-title.js"></script>
     <script src="./asset/js/services-page/delete-sub-title.js"></script>
 
     <script src="./asset/js/services-page/create-content.js"></script>
+    <script src="./asset/js/services-page/update-content.js"></script>
+    <script src="./asset/js/services-page/delete-content.js"></script>
+
 </body>
 </html>

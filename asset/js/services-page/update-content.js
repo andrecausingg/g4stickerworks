@@ -1,17 +1,17 @@
 $(document).ready(function(){
     // Update
-    $(document).on("click", ".updateIcon", function() {
+    $(document).on("click", ".updateIconContent", function() {
         const id = $(this).attr("data-id").trim();
-        const subTitle = $('textarea[data-id="' + id + '"]').val();
+        const content = $('textarea[data-id="' + id + '"]').val();
 
-        if(id != "" && subTitle != ""){
+        if(id != "" && content != ""){
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/services-page/update-sub-title.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/services-page/update-content.php", // replace with the URL of your form processing script
                 data: { 
                     id:id,
-                    subTitle: subTitle,
+                    content: content,
                 }, // send the subTitle field value as data
                 success: function(response) {
                     console.log(response);
@@ -25,9 +25,9 @@ $(document).ready(function(){
                             $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
 
-                        $("#displaySubTitle").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data.php");
-                        $("#updateDisplayContainerSubTitle").load("../../../../../g4stickerworks/asset/php/services-page/display/d-update-sub-title.php");
-                        $("#deleteDisplayContainerSubTitle").load("../../../../../g4stickerworks/asset/php/services-page/display/d-delete-sub-title.php");
+                        $("#displayContent").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data-content.php");
+                        $("#updateDisplayContainerContent").load("../../../../../g4stickerworks/asset/php/services-page/display/d-update-content.php");
+                        $("#deleteDisplayContainerContent").load("../../../../../g4stickerworks/asset/php/services-page/display/d-delete-content.php");
                     }
                     // do something with the server response (e.g. show a success message)
                 },
