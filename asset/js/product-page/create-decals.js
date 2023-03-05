@@ -127,11 +127,12 @@ $(document).ready(function(){
     });
 
     // Hide Create Update Delete Alert
-    $("#successAlertCloseIcon").click(function(){
+    $("#alertIconClose").click(function(){
         $("#createSuccessAlert").hide();
         $("#deleteSuccessAlert").hide();
         $("#updateSuccessAlert").hide();
     });
+
 
     selectTagDisplayBrandAndModel();
 
@@ -186,5 +187,13 @@ $(document).ready(function(){
         $(".selectContainerModel").hide();
         $(".uploadImageContainerDecals").hide();
         $(".submitContainerDecals").hide();
+
+        $("#updateDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-decals.php");
+        $("#deleteDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-decals.php");
     }
+
+    // Hide Create Success Alert
+    $("#createSuccessAlertCloseIcon").click(function(){
+        $("#createSuccessAlert").hide();
+    });
 });

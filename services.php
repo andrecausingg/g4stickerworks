@@ -193,40 +193,69 @@
         <!-- Social Media -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c yot-tc-white">
             <h2 class="yot-mb-8">Social Media</h2>
-            <!-- Facebook -->
-            <a href="#" class="yot-mb-8 yot-text-fs-xl" style="color:white;">
-                <i class="fa-brands fa-facebook-f"></i>
-                www.facebook.com/g4stickershop
-            </a>
+            <!-- Facebook -->   
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-brands fa-facebook-f yot-mr-4"></i>
+                    Facebook
+                </div>
+                <div id="facebookUrlContainer" class="yot-text-center"></div>
+            </div>
+
             <!-- Tiktok -->
-            <a href="#" class="yot-mb-8 yot-text-fs-xl" style="color:white;">
-                <i class="fa-brands fa-tiktok"></i>
-                www.tiktok.com/g4stickershop
-            </a>
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-brands fa-tiktok"></i>
+                    Tiktok
+                </div>
+                <div id="tiktokUrlContainer" class="yot-text-center"></div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </div>
+                <div id="instagramUrlContainer" class="yot-text-center"></div>
+            </div>
         </div>
 
         <!-- Contacts -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c">
             <h2 class="yot-mb-8">Contacts</h2>
             <!-- Email -->
-            <span class="yot-mb-8 yot-text-fs-xl">
-                <i class="fa-solid fa-envelope"></i> 
-                G4kids2019@gmail.com
-            </span>
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-solid fa-envelope"></i> 
+                    Email
+                </div>
+
+                <div id="emailContainer" class="yot-text-center"></div>
+            </div>
+            
             <!-- Contact No. -->
-            <span class="yot-mb-8 yot-text-fs-xl">
-                <i class="fa-solid fa-mobile"></i>
-                09323508154
-            </span>
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
+                    <i class="fa-solid fa-mobile"></i>
+                    Phone
+                </div>
+
+                <div id="phoneContainer" class="yot-text-center"></div>
+            </div>
         </div>
 
         <!-- Location -->
         <div class="yot-col-25 yot-flex yot-flex-fd-c-ai-c">
             <h2 class="yot-mb-8">Location</h2>
-            <span class="yot-mb-8 yot-text-fs-xl">
+
+            <div class="yot-mb-8 yot-text-fs-xl">
+                <div class="yot-text-center">
                 <i class="fa-solid fa-location-dot"></i>
-                Blk2 Lot7 Sarmiento Homes, Muzon, 3023 San jose Del Monte Bulacan Philippines.
-            </span>
+                    Address
+                </div>
+                <div id="addressContainer" class="yot-text-center"></div>
+            </div>
         </div>
     </footer>
 
