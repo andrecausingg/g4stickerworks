@@ -247,10 +247,10 @@
             <!-- Create Container Decals-->
             <div id="createBgContainerDecals" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
             <div id="createFormContainerDecals" class="yot-overlay-mid-container" style="display:none;">
-                <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <div id="mainFormContainer" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                     <!-- Title -->
                     <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                        <h2 id="title" class="yot-tc-blue1">CREATE</h2>
+                        <h2 id="titleCaptionDecals" class="yot-tc-blue1">CREATE</h2>
 
                         <i id="createCloseFormIconDecals" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                     </div>
@@ -263,6 +263,31 @@
                             <option value="update">Update</option>
                             <option value="delete">Delete</option>
                         </select>
+                    </div>
+
+                    <div id="filterDecalsUpdateDelete" class="yot-row yot-hide-for-mobile" style="display:none">
+                        <!-- Select Decals -->
+                        <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="decals">Type</label>
+                            <select class="yot-form-select yot-form-select-option yot-w-50"  name="" id="">
+                                <option value="">- Select Decals -</option>
+                                <option value="Full Decals">Full Decals</option>
+                                <option value="Stock Decals">Stock Decals</option>
+                                <option value="Sticker Mags">Sticker Mags</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Brand -->
+                        <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c selectContainerBrand yot-col-100">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="brand">Brand</label>
+                            <select class="yot-form-select yot-form-select-option yot-w-50" name="" id=""></select>
+                        </div>
+
+                        <!-- Select Model -->
+                        <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c selectContainerModel yot-col-100">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="model">Model</label>
+                            <select class="yot-form-select yot-form-select-option yot-w-50" name="" id=""></select>
+                        </div>
                     </div>
 
                     <!-- Create Form Container -->
@@ -305,17 +330,8 @@
 
                     <!-- Update Container -->
                     <div id="updateDisplayContainerDecals" style="display:none;">
-                        <div class="yot-form-group yot-mb-8">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="subTitle">Filter</label>
-                            <select class="yot-form-select yot-form-select-option yot-w-50"  name="selectDecals" id="selectDecals">
-                                <option value="Full Decals">Full Decals</option>
-                                <option value="Stock Decals">Stock Decals</option>
-                                <option value="Sticker Mags">Sticker Mags</option>
-                            </select>
-                        </div>
-
                         <!-- Table -->
-                        <div class="yot-w-100" id="displayDataTable" style="overflow-y:scroll;max-height:400px; ">
+                        <div class="yot-w-100" id="displayDataTableUpdate" style="overflow-y:scroll;max-height:400px; ">
                             <table class="yot-table-blue-theme">
                                 <tr>
                                     <th>Image</th>
@@ -384,17 +400,9 @@
                     </div>
 
                     <!-- Delete Container -->
-                    <div id="deleteDisplayContainerDecals" style="display:none; overflow:hidden;height: 400px;">
-                        <div class="yot-mb-8">
-                            <select class="yot-form-select yot-form-select-option yot-w-50"  name="selectDecals" id="selectDecals">
-                                <option value="">- Select Decals -</option>
-                                <option value="Full Decals">Full Decals</option>
-                                <option value="Stock Decals">Stock Decals</option>
-                                <option value="Sticker Mags">Sticker Mags</option>
-                            </select>
-                        </div>
+                    <div id="deleteDisplayContainerDecals" style="display:none;">
                         <!-- Table -->
-                        <div class="yot-w-100" id="displayDataTable" style="overflow-y:scroll;max-height:400px; ">
+                        <div class="yot-w-100" id="deleteDisplayContainerDecalsUpdate" style="overflow-y:scroll;max-height:400px; ">
                             <table class="yot-table-blue-theme">
                                 <tr>
                                     <th>Image</th>
@@ -407,7 +415,7 @@
                             
                                 <tr>
                                     <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
-                                        <img src="./asset/imageS/products/mio-i-125/mio-i-125-orange.png" alt="">
+                                        <img src="./asset/imageS/products/mio-i-125/mio-i-125-blue.png" alt="">
                                         <input class="yot-form-input" type="file" name="" id="">
                                     </td>
                                     <td>
@@ -425,7 +433,7 @@
 
                                 <tr>
                                     <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
-                                        <img src="./asset/imageS/products/mio-i-125/mio-i-125-orange.png" alt="">
+                                        <img src="./asset/imageS/products/mio-i-125/mio-i-125-blue.png" alt="">
                                         <input class="yot-form-input" type="file" name="" id="">
                                     </td>
                                     <td>
@@ -443,7 +451,7 @@
 
                                 <tr>
                                     <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
-                                        <img src="./asset/imageS/products/mio-i-125/mio-i-125-orange.png" alt="">
+                                        <img src="./asset/imageS/products/mio-i-125/mio-i-125-blue.png" alt="">
                                         <input class="yot-form-input" type="file" name="" id="">
                                     </td>
                                     <td>
@@ -470,7 +478,7 @@
     <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Successful Insertion:</h3>
-            <i id="createSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+            <i id="successAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
         </div>
         <p class="yot-text-fs-l">The record was successfully inserted.</p>
     </div>
@@ -479,7 +487,7 @@
     <div id="deleteSuccessAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Successful Deletion:</h3>
-            <i id="deleteSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+            <i id="successAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
         </div>
         <p class="yot-text-fs-l">The record was successfully deleted.</p>
     </div>
@@ -488,7 +496,7 @@
     <div id="updateSuccessAlert" class="yot-bg-orange yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Successful Update:</h3>
-            <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+            <i id="successAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
         </div>
         <p class="yot-text-fs-l">The record was successfully updated.</p>
     </div>
