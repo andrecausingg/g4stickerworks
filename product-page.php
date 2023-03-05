@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Page</title>
-</head>
-<body>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -19,7 +17,8 @@
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
+</head>
+<body>
     <!-- Header -->
     <header class="yot-header yot-bg-white yot-hide-for-desktop yot-z-index-1">
         <!-- Nav -->
@@ -281,24 +280,24 @@
                             </div>
 
                             <!-- Select Brand -->
-                            <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c selectContainerBrand" id="" style="display:none">
+                            <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c selectContainerBrand" style="display:none">
                                 <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="brand">Brand</label>
                                 <select class="yot-form-select yot-form-select-option yot-w-50" name="brandSelect" id="brandSelect"></select>
                             </div>
 
                             <!-- Select Model -->
-                            <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c selectContainerModel" id="" style="display:none">
+                            <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c selectContainerModel" style="display:none">
                                 <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="model">Model</label>
                                 <select class="yot-form-select yot-form-select-option yot-w-50" name="modelSelect" id="modelSelect"></select>
                             </div>
 
                             <!-- Select upload Image -->
-                            <div class="yot-form-group uploadImageContainerDecals" id="" style="display:none">
+                            <div class="yot-form-group uploadImageContainerDecals" style="display:none">
                                 <input class="yot-form-input" type="file" name="imageDecals" id="imageDecals">
                             </div>
 
                             <!-- Submit Btn -->
-                            <div class="yot-text-center submitContainerDecals" id="" style="display:none">
+                            <div class="yot-text-center submitContainerDecals" style="display:none">
                                 <input class="yot-btn-blue1" type="submit" value="Submit">
                             </div>
                         </form>
@@ -465,8 +464,6 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
     <!-- Success Container-->
@@ -494,6 +491,33 @@
             <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
         </div>
         <p class="yot-text-fs-l">The record was successfully updated.</p>
+    </div>
+
+    <!-- Error Container Invalid File Type -->
+    <div id="invalidfiletypeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Invalid File Type</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">Only JPG, JPEG, and PNG files are allowed.</p>
+    </div>
+
+    <!-- Error Container Uploading Image -->
+    <div id="errorUploadingimageAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Uploading image</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">There's Something Wrong!</p>
+    </div>
+
+    <!-- Error Container Invalidfiletype -->
+    <div id="errorImagetoolargeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error File too Big</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">Allowed size is 50mb</p>
     </div>
 
     <script src="./asset/js/all/global.js"></script>

@@ -1,4 +1,33 @@
 $(document).ready(function(){
+    // Listen for form submit event
+    $('#createFormDecals').submit(function(event) {
+        event.preventDefault(); // Prevent default form submission behavior
+
+        // Create form data object
+        var formData = new FormData(this);
+
+        // Send AJAX request to server
+        $.ajax({
+        type: 'POST',
+        url: 'asset/php/product-page/create-decals.php',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function(response) {
+            const responseVar = response.trim();
+            if(responseVar == "created"){
+                
+            }
+
+            // Handle success response here
+        },
+        error: function(xhr, status, error) {
+            console.error(error); // Log error
+            // Handle error response here
+        }
+        });
+    });
+    
     var data = {
         "Honda": ["Honda BeAT", "Honda Click", "Honda Genio", "Honda PCX", "Honda ADV150", "Honda CBR150R", "Honda CB150R", "Honda CB400X", "Honda CB650R", "Honda CB1000R", "Honda CRF150L", "Honda CRF250L", "Honda CRF300L", "Honda XR150L", "Honda Supra GTR150", "Honda TMX125 Alpha", "Honda Wave110 Alpha", "Honda XRM125 Motard", "Honda RS150R", "Honda Zoomer-X"],
         "Yamaha": ["Yamaha Mio i 125", "Yamaha Mio Soul i 125", "Yamaha Nmax", "Yamaha Aerox 155", "Yamaha Sniper 150", "Yamaha MT-15", "Yamaha R15", "Yamaha XSR155", "Yamaha Tracer 900", "Yamaha Super Tenere", "Yamaha YZF-R3", "Yamaha TFX 150", "Yamaha FZi", "Yamaha FZ16", "Yamaha SZ-R", "Yamaha XTZ125", "Yamaha YTX125", "Yamaha YBR125"],
@@ -32,6 +61,7 @@ $(document).ready(function(){
         }
     });
 
+    // Display hide each Container start to #selectDecals
     $("#imageDecals").change(function(){
         const imageDecals = $(this).val();
         if(imageDecals != ""){
