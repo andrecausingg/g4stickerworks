@@ -265,11 +265,11 @@
                         </select>
                     </div>
 
-                    <div id="filterDecalsUpdateDelete" class="yot-row yot-hide-for-mobile" style="display:none">
+                    <div id="filterDecalsUpdateDelete" class="yot-row yot-flex-ai-c-jc-se yot-hide-for-mobile" style="display:none">
                         <!-- Select Decals -->
                         <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
                             <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="decals">Type</label>
-                            <select class="yot-form-select yot-form-select-option yot-w-50"  name="" id="">
+                            <select class="yot-form-select yot-form-select-option"  name="decalSelectFilter" id="decalSelectFilter">
                                 <option value="">- Select Decals -</option>
                                 <option value="Full Decals">Full Decals</option>
                                 <option value="Stock Decals">Stock Decals</option>
@@ -278,15 +278,15 @@
                         </div>
 
                         <!-- Select Brand -->
-                        <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
+                        <div id="brandContainerFilter" class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100" style="display:none">
                             <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="brand">Brand</label>
-                            <select class="yot-form-select yot-form-select-option yot-w-50" name="" id=""></select>
+                            <select class="yot-form-select yot-form-select-option" name="brandSelectFilter" id="brandSelectFilter"></select>
                         </div>
 
                         <!-- Select Model -->
-                        <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
+                        <div id="modelContainerFilter" class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100" style="display:none">
                             <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="model">Model</label>
-                            <select class="yot-form-select yot-form-select-option yot-w-50" name="" id=""></select>
+                            <select class="yot-form-select yot-form-select-option" name="modelSelectFilter" id="modelSelectFilter"></select>
                         </div>
                     </div>
 
