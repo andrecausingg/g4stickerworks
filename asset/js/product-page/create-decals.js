@@ -27,42 +27,7 @@ $(document).ready(function(){
         }
         });
     });
-
-    // Filter For Update and Delete
-    $('#decalSelectFilter, #brandSelectFilter, #modelSelectFilter').on('change', function() {
-        // Get the selected values
-        var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
-        var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
-        var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
     
-        if(brandValue == "-1"){
-            brandValue = "";
-        }
-    
-        // Check if the selected value is defined before accessing its length property
-        if (decalValue && decalValue.length > 0 && brandValue && brandValue.length > 0 && modelValue && modelValue.length > 0) {
-            // Make an AJAX request with the selected values
-            $.ajax({
-                url: '../../../../g4stickerworks/asset/php/product-page/display/d-filter.php',
-                method: 'POST',
-                data: {
-                    decal: decalValue,
-                    brand: brandValue,
-                    model: modelValue
-                },
-                success: function(response) {
-                    console.log(response);
-                    $("#deleteDisplayDecals").html(response)
-                },
-                error: function(xhr) {
-                    // Handle any errors that occur during the AJAX request
-                }
-            });
-        }
-    });
-    
-    
-
     // Show the Selected Form Container
     $("#selectOptionDecals").change(function() {
         var selectedValue = $(this).val(); // get the value of the selected option
@@ -121,8 +86,17 @@ $(document).ready(function(){
         $("#updateSuccessAlert").hide();
     });
 
+    // Hide Create Success Alert
+    $("#createSuccessAlertCloseIcon").click(function(){
+        $("#createSuccessAlert").hide();
+    });
+
+    // For Create Form Only
     selectTagDisplayBrandAndModel();
+    // For Delete and Update Filter Only
     selectTagDisplayBrandAndModelFilter();
+    // Filter In back End
+    filterUpdateDeleteSelectTag();
 
     function selectTagDisplayBrandAndModel(){
         var data = {
@@ -140,24 +114,23 @@ $(document).ready(function(){
         var brandSelect = $('#brandSelect');
         var modelSelect = $('#modelSelect');
         
-        brandSelect.append('<option value="-1">- Select Brand -</option>'); // add the "Select Brand" option
+        brandSelect.append('<option value="">- Select Brand -</option>'); // add the "Select Brand" option
         // loop through each key in the data object and add it as an option in the brandSelect dropdown
         for (var brand in data) {
             brandSelect.append('<option value="' + brand + '">' + brand + '</option>');
         }
-            
+        
         // Set up the change event listener for the brand dropdown
         brandSelect.change(function() {
             modelSelect.empty(); // remove all existing options from the dropdown
             var selectedBrand = $(this).val(); // get the value of the selected brand
             var models = data[selectedBrand]; // get the corresponding models from the data object
-
-            modelSelect.append('<option value="-1">- Select Model -</option>'); // add the "Select Model" option
+        
+            modelSelect.append('<option value="">- Select Model -</option>'); // add the "Select Model" option
             for (var i = 0; i < models.length; i++) {
                 modelSelect.append('<option value="' + models[i] + '">' + models[i] + '</option>');
             }
         });
-
 
         // Display hide each Container start to #selectDecals
         $("#imageDecals").change(function(){
@@ -171,7 +144,7 @@ $(document).ready(function(){
 
         $("#modelSelect").change(function(){
             const modelSelect = $(this).val();
-            if(modelSelect != "-1"){
+            if(modelSelect != ""){
                 $('#imageDecals').val('');
                 $(".uploadImageContainerDecals").show();
             }else{
@@ -182,7 +155,7 @@ $(document).ready(function(){
 
         $("#brandSelect").change(function(){
             const brandSelect = $(this).val();
-            if(brandSelect != "-1"){
+            if(brandSelect != ""){
                 $(".selectContainerModel").show();
                 $('#imageDecals').val('');
             }else{
@@ -207,7 +180,6 @@ $(document).ready(function(){
         });
         
     }
-
     function selectTagDisplayBrandAndModelFilter(){
         var data = {
             "Honda": ["Honda BeAT", "Honda Click", "Honda Genio", "Honda PCX", "Honda ADV150", "Honda CBR150R", "Honda CB150R", "Honda CB400X", "Honda CB650R", "Honda CB1000R", "Honda CRF150L", "Honda CRF250L", "Honda CRF300L", "Honda XR150L", "Honda Supra GTR150", "Honda TMX125 Alpha", "Honda Wave110 Alpha", "Honda XRM125 Motard", "Honda RS150R", "Honda Zoomer-X"],
@@ -224,57 +196,68 @@ $(document).ready(function(){
         var brandSelect = $('#brandSelectFilter');
         var modelSelect = $('#modelSelectFilter');
         
-        brandSelect.append('<option value="-1">- Select Brand -</option>'); // add the "Select Brand" option
-        // loop through each key in the data object and add it as an option in the brandSelect dropdown
+        brandSelect.append('<option value="">- Select Brand -</option>');
         for (var brand in data) {
             brandSelect.append('<option value="' + brand + '">' + brand + '</option>');
         }
-            
-        // Set up the change event listener for the brand dropdown
+
         brandSelect.change(function() {
-            modelSelect.empty(); // remove all existing options from the dropdown
-            var selectedBrand = $(this).val(); // get the value of the selected brand
-            var models = data[selectedBrand]; // get the corresponding models from the data object
-
-            modelSelect.append('<option value="-1">- Select Model -</option>'); // add the "Select Model" option
-            for (var i = 0; i < models.length; i++) {
-                modelSelect.append('<option value="' + models[i] + '">' + models[i] + '</option>');
+            modelSelect.empty();
+            var selectedBrand = $(this).val();
+            var models = data[selectedBrand];
+            if (models) {
+                modelSelect.append('<option value="">- Select Model -</option>');
+                for (var i = 0; i < models.length; i++) {
+                    modelSelect.append('<option value="' + models[i] + '">' + models[i] + '</option>');
+                }
             }
         });
 
-        // Display hide each Container start to #decalSelectFilter
-        $("#brandSelectFilter").change(function(){
-            const brandSelect = $(this).val();
-            if(brandSelect == "-1"){
-                $("#modelContainerFilter").hide();
-            }else{
-                $("#modelContainerFilter").show();
-            }
-        });
-        
-        $("#decalSelectFilter").change(function(){
-            const selectDecals = $(this).val();
+    }
+    function filterUpdateDeleteSelectTag(){
+        // Wait for the page to load before binding the change event to the select elements
+        $('#decalSelectFilter, #brandSelectFilter, #modelSelectFilter').on('change', function() {
+            // Get the selected values
+            var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
+            var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
+            var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
             
-            if(selectDecals == ""){
-                $("#brandContainerFilter").hide();
-                $("#modelContainerFilter").hide();
-            }else{
-                $("#brandContainerFilter").show();
-            }
+            // Make an AJAX request with the selected values
+            $.ajax({
+                url: '../../../../g4stickerworks/asset/php/product-page/display/d-filter.php',
+                method: 'POST',
+                data: {
+                    decal: decalValue,
+                    brand: brandValue,
+                    model: modelValue
+                },
+                success: function(response) {
+                    // console.log(response);
+                    $("#deleteDisplayDecals").html(response)
+                },
+                error: function(xhr) {
+                    // Handle any errors that occur during the AJAX request
+                }
+            });
         });
     }
-
-    // Functions
+    // Reset All Create
     function resetForm(){
         $("#createSuccessAlert").show();
         setTimeout(function() {
             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
         }, 10000); // 10000 milliseconds = 10 seconds
         
+        // Create select tag
         $('#selectDecals').val('');
         $('#brandSelect').val('');
         $('#modelSelect').empty();  // remove all existing options from the dropdown
         $('#imageDecals').val('');
+        
+        // Filters Update Delete Set Empty String 
+        $("#decalSelectFilter").val('');
+        $('#brandSelectFilter').val('');
+        $('#modelSelectFilter').val('');
 
         $(".selectContainerBrand").hide();
         $(".selectContainerModel").hide();
@@ -284,9 +267,4 @@ $(document).ready(function(){
         $("#updateDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-decals.php");
         $("#deleteDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-decals.php");
     }
-
-    // Hide Create Success Alert
-    $("#createSuccessAlertCloseIcon").click(function(){
-        $("#createSuccessAlert").hide();
-    });
 });

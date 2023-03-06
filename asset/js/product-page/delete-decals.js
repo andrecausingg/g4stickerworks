@@ -13,13 +13,7 @@ $(document).ready(function(){
                 success: function(response) {
                     const responseVar = response.trim();
                     if(responseVar == "deleted"){
-                        $("#deleteSuccessAlert").show();
-                        setTimeout(function() {
-                            $("#deleteSuccessAlert").hide(); // Show the element after 10 seconds
-                        }, 10000); // 10000 milliseconds = 10 seconds
-
-                        $("#updateDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-decals.php");
-                        $("#deleteDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-decals.php");
+                        resetForm();
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -29,9 +23,58 @@ $(document).ready(function(){
             });
         }
     });
-
     // Close Success Delete
     $("#deleteSuccessAlertCloseIcon").click(function(){
         $("#deleteSuccessAlert").hide();
     });
+    
+    // Reset All Delete
+    function resetForm(){
+        $("#deleteSuccessAlert").show();
+        setTimeout(function() {
+            $("#deleteSuccessAlert").hide(); // Show the element after 10 seconds
+        }, 10000); // 10000 milliseconds = 10 seconds
+        
+        // Set Empty String Create Form
+        $('#selectDecals').val('');
+        $('#brandSelect').val('');
+        $('#modelSelect').empty();  // remove all existing options from the dropdown
+        $('#imageDecals').val('');
+
+        // Hide Container Create Select Tag
+        $(".selectContainerBrand").hide();
+        $(".selectContainerModel").hide();
+        $(".uploadImageContainerDecals").hide();
+        $(".submitContainerDecals").hide();
+
+        $("#updateDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-decals.php");
+        // $("#deleteDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-decals.php");
+
+        // Get the selected values And Display the table on #deleteDisplayDecals
+        var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
+        var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
+        var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
+        
+        console.log(decalValue);
+        console.log(brandValue);
+        console.log(modelValue);
+
+        // Make an AJAX request with the selected values
+        $.ajax({
+            url: '../../../../g4stickerworks/asset/php/product-page/display/d-filter.php',
+            method: 'POST',
+            data: {
+                decal: decalValue,
+                brand: brandValue,
+                model: modelValue
+            },
+            success: function(response) {
+                // console.log(response);
+                $("#deleteDisplayDecals").html(response)
+            },
+            error: function(xhr) {
+                // Handle any errors that occur during the AJAX request
+            }
+        });
+    }
 });

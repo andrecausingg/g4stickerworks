@@ -42,7 +42,7 @@
                     </div>
                 </div> <span class="yot-mlr-4"></span>
                 <a href="services" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
-                <a href="contact" class="yot-text-fs-xl yot-active-bb-blue">Contact Us</a> <span class="yot-mlr-4"></span>
+                <a href="contact-us" class="yot-text-fs-xl yot-active-bb-blue">Contact Us</a> <span class="yot-mlr-4"></span>
                 <a href="about-us" class="yot-text-fs-xl yot-active-bbh1">About Us</a> <span class="yot-mlr-4"></span>
                 <a href="gallery" class="yot-text-fs-xl yot-active-bbh1">Gallery</a>
             </div>
@@ -74,7 +74,7 @@
             <a href="services" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
         </div>
         <div class="yot-mb-16">
-            <a href="contact" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
+            <a href="contact-us" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
         </div>
         <div class="yot-mb-16">
             <a href="about-us" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">About Us</a>
@@ -235,7 +235,7 @@
             <a href="index" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Home</a>
             <a href="product" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Product</a>
             <a href="services" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Services</a>
-            <a href="contact" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">Contacts</a>
+            <a href="contact-us" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">Contacts</a>
             <a href="about-us" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">About Us</a>
             <a href="gallery" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Gallery</a>
         </div>

@@ -34,32 +34,39 @@
             // Connect to database
             $classConnDB = new ClassConnDB();
             $conn = $classConnDB->conn();
-    
+
             // Create query
             $query = "SELECT * FROM decals_tbl";
             $queryParams = array();
-    
+
+            // Check if decalSelectFilter is not empty and add the filter to the query
             if (!empty($this->decalSelectFilter)) {
                 $decalSelectFilter = $this->decalSelectFilter;
                 $queryParams[] = "decals_type LIKE '%$decalSelectFilter%'";
             }
-    
-            if ($this->brandSelectFilter !== "undefined--undefined") {
+
+            // Check if brandSelectFilter is not empty and add the filter to the query
+            if (!empty($this->brandSelectFilter)) {
                 $brandSelectFilter = $this->brandSelectFilter;
                 $queryParams[] = "brand LIKE '%$brandSelectFilter%'";
             }
-    
-            if ($this->modelSelectFilter !== "undefined--undefined") {
+
+            // Check if modelSelectFilter is not empty and add the filter to the query
+            if (!empty($this->modelSelectFilter)) {
                 $modelSelectFilter = $this->modelSelectFilter;
                 $queryParams[] = "model LIKE '%$modelSelectFilter%'";
             }
-    
-            if (!empty($queryParams)) {
-                $query .= " WHERE " . implode(" AND ", $queryParams);
-            }
 
-            // Add the ORDER BY clause to sort the results by date and time in descending order
-            $query .= " ORDER BY decals_id DESC";
+            // Check if any filters were added and execute the query
+            if (!empty($queryParams)) {
+                // Add WHERE clause to the query if any filters were added
+                $query .= " WHERE " . implode(" AND ", $queryParams);
+
+                // Add the ORDER BY clause to sort the results by date and time in descending order
+                $query .= " ORDER BY decals_id DESC";
+
+                // Execute the query here
+            }
 
             // Execute query
             $result = mysqli_query($conn, $query);
