@@ -47,6 +47,8 @@ $(document).ready(function(){
             $("#decalsTitle").html(selectDecals);
             $("#decalsFilterBtn").show();
         }else{
+            $('#brandSelect').val('');
+            $('#modelSelect').val('');
             $("#decalsTitle").html("All Decals");
             $("#decalsFilterBtn").hide();
             $("#brandAndMotorCycleTitle").hide();
@@ -66,6 +68,7 @@ $(document).ready(function(){
         $("#filterContainer").hide();
     });
     
+    // Filter the Decals
     filterSelectTag();
 
     function filterSelectTag(){

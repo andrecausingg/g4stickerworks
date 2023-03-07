@@ -76,7 +76,7 @@
             // Display data
             if ($result->num_rows > 0) {
                     // start the first row
-                echo '<div class="yot-row yot-flex-ai-c-jc-sb">';
+                echo '<div class="yot-row yot-flex-ai-c-jc-c">';
                 
                 while($row = $result->fetch_assoc()){
                     // increment counter variable
@@ -91,8 +91,11 @@
                         echo '</div><div class="yot-row yot-flex-ai-c-jc-sb">';
                     }
                 }
-            } else {
-                echo "No results found.";
+            } else{
+                echo '<div class="yot-flex yot-flex-fd-c-ai-c">
+                        <h1>No Result Found</h1>
+                        <img src="../../../../../g4stickerworks/asset/images/undraw_empty_re_opql.svg" alt="" style="width:300px; height:300px">
+                    </div>';
             }
 
                 // close the last row

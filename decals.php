@@ -179,19 +179,11 @@
             <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                 <h1 id="decalsTitle" class="yot-resize-font-64 yot-tc-blue1">All Decals</h1>
 
-                <!-- Select Container -->
-                <div>
-                    <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
-                        <option value="">- Select Decals -</option>
-                        <option value="Full Decals">Full Decals</option>
-                        <option value="Stock Decals">Stock Decals</option>
-                        <option value="Sticker Mags">Sticker Mags</option>
-                    </select>
-                </div>
+                <!-- Decals Filter Btn-->
+                <button id="decalsFilterBtn" class="yot-btn-blue1 yot-mb-16">Filters</button>
             </div>
 
-            <!-- Decals Filter Btn-->
-            <button id="decalsFilterBtn" class="yot-btn-blue1 yot-mb-16" style="display: none;">Filters</button>
+
 
             <!-- Brand and Model Title -->
             <div id="brandAndMotorCycleTitle" class="yot-mb-16">
@@ -214,8 +206,19 @@
 
             <!-- Filter Containers -->
             <div class="yot-flex yot-flex-fd-c-ai-c">
-                <!-- Select Brand Container -->
+                <!-- Select Container -->
                 <div class="yot-mb-8 yot-text-center">
+                    <h3 class="yot-mb-4">Decals</h3>
+                    <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
+                        <option value="">- Select Decals -</option>
+                        <option value="Full Decals">Full Decals</option>
+                        <option value="Stock Decals">Stock Decals</option>
+                        <option value="Sticker Mags">Sticker Mags</option>
+                    </select>
+                </div>
+
+                <!-- Select Brand Container -->
+                <div class="yot-mb-8 yot-text-center" id="modelContainer" style="display: none;">
                     <h3 class="yot-mb-4">Brand</h3>
                     <select class="yot-form-select yot-form-select-option" name="brandSelect" id="brandSelect"></select>
                 </div>

@@ -20,7 +20,7 @@ class classDisplayData{
         $result = $stmt->get_result();
 
         // start the first row
-        echo '<div class="yot-row yot-flex-ai-c-jc-sb">';
+        echo '<div class="yot-row yot-flex-ai-c-jc-c">';
         
         while($row = $result->fetch_assoc()){
             // increment counter variable
