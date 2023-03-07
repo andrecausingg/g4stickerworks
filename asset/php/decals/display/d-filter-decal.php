@@ -71,39 +71,66 @@
             // Execute query
             $result = mysqli_query($conn, $query);
 
+            $count = 0;
+
             // Display data
             if ($result->num_rows > 0) {
-                echo '                
-                    <table class="yot-table-blue-theme">
-                    <tr>
-                        <th>Image</th>
-                        <th>Type of Decals</th>
-                        <th>Brand</th>
-                        <th>Model</th>
-                        <th>Date and Time</th>
-                        <th>Action</th>
-                    </tr>
-                ';
-    
-                while ($row = $result->fetch_assoc()) {
-                    echo '
-                        <tr>
-                            <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
-                                <img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt="">
-                            </td>
-                            <td>'.htmlspecialchars($row["decals_type"]).'</td>
-                            <td>'.htmlspecialchars($row["brand"]).'</td>
-                            <td>'.htmlspecialchars($row["model"]).'</td>
-                            <td>'.htmlspecialchars($row["created_at_varchar"]).'</td>
-                            <td><button class="yot-btn-blue1 deleteIconDecals" data-id="'. htmlspecialchars($row["decals_id"]).'">Delete</button></td>
-                        </tr>
-                    ';
+                    // start the first row
+                echo '<div class="yot-row yot-flex-ai-c-jc-sb">';
+                
+                while($row = $result->fetch_assoc()){
+                    // increment counter variable
+                    $count++;
+
+                    // add new column for each image
+                    echo '<div class="yot-col-25"><img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt=""></div>';
+
+                    // check if current iteration is a multiple of 4
+                    if ($count % 4 == 0) {
+                        // close the row and start a new one if current iteration is a multiple of 4
+                        echo '</div><div class="yot-row yot-flex-ai-c-jc-sb">';
+                    }
                 }
-    
-                echo '</table>';
             } else {
                 echo "No results found.";
             }
+
+                // close the last row
+                echo '</div>';
+
+            // // Display data
+            // if ($result->num_rows > 0) {
+            //     echo '                
+            //         <table class="yot-table-blue-theme">
+            //         <tr>
+            //             <th>Image</th>
+            //             <th>Type of Decals</th>
+            //             <th>Brand</th>
+            //             <th>Model</th>
+            //             <th>Date and Time</th>
+            //             <th>Action</th>
+            //         </tr>
+            //     ';
+    
+            //     while ($row = $result->fetch_assoc()) {
+            //         echo '
+            //             <tr>
+            //                 <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
+            //                     <img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt="">
+            //                 </td>
+            //                 <td>'.htmlspecialchars($row["decals_type"]).'</td>
+            //                 <td>'.htmlspecialchars($row["brand"]).'</td>
+            //                 <td>'.htmlspecialchars($row["model"]).'</td>
+            //                 <td>'.htmlspecialchars($row["created_at_varchar"]).'</td>
+            //                 <td><button class="yot-btn-blue1 deleteIconDecals" data-id="'. htmlspecialchars($row["decals_id"]).'">Delete</button></td>
+            //             </tr>
+            //         ';
+            //     }
+    
+            //     echo '</table>';
+            // } else {
+            //     echo "No results found.";
+            // }
         }
     }
 ?>

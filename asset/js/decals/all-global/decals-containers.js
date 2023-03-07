@@ -87,7 +87,7 @@ $(document).ready(function(){
                 },
                 success: function(response) {
                     // console.log(response);
-                    $("#deleteDisplayDecals").html(response)
+                    $("#allDecalsProduct").html(response)
                 },
                 error: function(xhr) {
                     // Handle any errors that occur during the AJAX request
