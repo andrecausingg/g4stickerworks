@@ -33,24 +33,28 @@ $(document).ready(function(){
         }
     });
 
-    // Show Filter Btn and Change the name of the title
+    //Change the name of the title and Show the Brand and Model
     $("#selectDecals").change(function(){
         const selectDecals = $(this).val();
         
         if(selectDecals == "Full Decals"){
             $("#decalsTitle").html(selectDecals);
             $("#decalsFilterBtn").show();
+            $("#brandContainer").show();
         }else if(selectDecals == "Stock Decals"){
             $("#decalsTitle").html(selectDecals);
             $("#decalsFilterBtn").show();
+            $("#brandContainer").show();
         }else if(selectDecals == "Sticker Mags"){
             $("#decalsTitle").html(selectDecals);
             $("#decalsFilterBtn").show();
+            $("#brandContainer").show();
         }else{
+            $("#brandContainer").hide();
+            $("#modelContainer").hide();
             $('#brandSelect').val('');
             $('#modelSelect').val('');
             $("#decalsTitle").html("All Decals");
-            $("#decalsFilterBtn").hide();
             $("#brandAndMotorCycleTitle").hide();
         }
         

@@ -43,7 +43,7 @@
                 </div> <span class="yot-mlr-4"></span>
                 <a href="services" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
                 <a href="contact-us" class="yot-text-fs-xl yot-active-bbh1">Contact Us</a> <span class="yot-mlr-4"></span>
-                <a href="about" class="yot-text-fs-xl yot-active-bbh1">About Us</a> <span class="yot-mlr-4"></span>
+                <a href="about-us" class="yot-text-fs-xl yot-active-bbh1">About Us</a> <span class="yot-mlr-4"></span>
                 <a href="gallery" class="yot-text-fs-xl yot-active-bbh1">Gallery</a>
             </div>
             
@@ -183,8 +183,6 @@
                 <button id="decalsFilterBtn" class="yot-btn-blue1 yot-mb-16">Filters</button>
             </div>
 
-
-
             <!-- Brand and Model Title -->
             <div id="brandAndMotorCycleTitle" class="yot-mb-16">
                 <h3 id="brandTitleDecals"></h3>
@@ -218,7 +216,7 @@
                 </div>
 
                 <!-- Select Brand Container -->
-                <div class="yot-mb-8 yot-text-center" id="modelContainer" style="display: none;">
+                <div class="yot-mb-8 yot-text-center" id="brandContainer" style="display: none;">
                     <h3 class="yot-mb-4">Brand</h3>
                     <select class="yot-form-select yot-form-select-option" name="brandSelect" id="brandSelect"></select>
                 </div>
@@ -241,7 +239,7 @@
             <a href="product" class="yot-mb-16 yot-active-bb-white" style="color:white; font-size: 20px;">Product</a>
             <a href="services" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Services</a>
             <a href="contact-us" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Contacts</a>
-            <a href="about" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">About Us</a>
+            <a href="about-us" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">About Us</a>
             <a href="gallery" class="yot-mb-16 yot-active-bbh2" style="color:white; font-size: 20px;">Gallery</a>
         </div>
         
