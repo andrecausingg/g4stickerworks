@@ -27,6 +27,9 @@ $(document).ready(function(){
     $("#deleteSuccessAlertCloseIcon").click(function(){
         $("#deleteSuccessAlert").hide();
     });
+
+    // Filter In back End Delete Only
+    deleteFilterSelectTag();
     
     // Reset All Delete
     function resetForm(){
@@ -75,6 +78,33 @@ $(document).ready(function(){
             error: function(xhr) {
                 // Handle any errors that occur during the AJAX request
             }
+        });
+    }
+    function deleteFilterSelectTag(){
+        // Wait for the page to load before binding the change event to the select elements
+        $('#decalSelectFilter, #brandSelectFilter, #modelSelectFilter').on('change', function() {
+            // Get the selected values
+            var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
+            var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
+            var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
+            
+            // Make an AJAX request with the selected values
+            $.ajax({
+                url: '../../../../g4stickerworks/asset/php/product-page/display/d-delete-filter.php',
+                method: 'POST',
+                data: {
+                    decal: decalValue,
+                    brand: brandValue,
+                    model: modelValue
+                },
+                success: function(response) {
+                    // console.log(response);
+                    $("#deleteDisplayDecals").html(response)
+                },
+                error: function(xhr) {
+                    // Handle any errors that occur during the AJAX request
+                }
+            });
         });
     }
 });

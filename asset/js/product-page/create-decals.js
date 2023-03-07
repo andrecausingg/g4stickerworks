@@ -91,13 +91,10 @@ $(document).ready(function(){
         $("#createSuccessAlert").hide();
     });
 
-    // For Create Form Only
     selectTagDisplayBrandAndModel();
-    // For Delete and Update Filter Only
     selectTagDisplayBrandAndModelFilter();
-    // Display selected on delete only
-    getFilterDisplayOnDelete();
-
+    
+    // For Create Form Only
     function selectTagDisplayBrandAndModel(){
         var data = {
             "Honda": ["Honda BeAT", "Honda Click", "Honda Genio", "Honda PCX", "Honda ADV150", "Honda CBR150R", "Honda CB150R", "Honda CB400X", "Honda CB650R", "Honda CB1000R", "Honda CRF150L", "Honda CRF250L", "Honda CRF300L", "Honda XR150L", "Honda Supra GTR150", "Honda TMX125 Alpha", "Honda Wave110 Alpha", "Honda XRM125 Motard", "Honda RS150R", "Honda Zoomer-X"],
@@ -180,6 +177,7 @@ $(document).ready(function(){
         });
         
     }
+    // For Delete and Update Select Tag Display Sepecific Only
     function selectTagDisplayBrandAndModelFilter(){
         var data = {
             "Honda": ["Honda BeAT", "Honda Click", "Honda Genio", "Honda PCX", "Honda ADV150", "Honda CBR150R", "Honda CB150R", "Honda CB400X", "Honda CB650R", "Honda CB1000R", "Honda CRF150L", "Honda CRF250L", "Honda CRF300L", "Honda XR150L", "Honda Supra GTR150", "Honda TMX125 Alpha", "Honda Wave110 Alpha", "Honda XRM125 Motard", "Honda RS150R", "Honda Zoomer-X"],
@@ -213,34 +211,6 @@ $(document).ready(function(){
             }
         });
 
-    }
-    function getFilterDisplayOnDelete(){
-        // Get the selected values And Display the table on #deleteDisplayDecals
-        var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
-        var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
-        var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
-        
-        console.log(decalValue);
-        console.log(brandValue);
-        console.log(modelValue);
-
-        // Make an AJAX request with the selected values
-        $.ajax({
-            url: '../../../../g4stickerworks/asset/php/product-page/display/d-delete-filter.php',
-            method: 'POST',
-            data: {
-                decal: decalValue,
-                brand: brandValue,
-                model: modelValue
-            },
-            success: function(response) {
-                // console.log(response);
-                $("#deleteDisplayDecals").html(response)
-            },
-            error: function(xhr) {
-                // Handle any errors that occur during the AJAX request
-            }
-        });
     }
 
     // Reset All Create
