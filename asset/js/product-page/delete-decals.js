@@ -54,14 +54,14 @@ $(document).ready(function(){
         var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
         var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
         var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
-        
+
         console.log(decalValue);
         console.log(brandValue);
         console.log(modelValue);
 
         // Make an AJAX request with the selected values
         $.ajax({
-            url: '../../../../g4stickerworks/asset/php/product-page/display/d-filter.php',
+            url: '../../../../g4stickerworks/asset/php/product-page/display/d-delete-filter.php',
             method: 'POST',
             data: {
                 decal: decalValue,

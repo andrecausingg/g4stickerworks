@@ -178,8 +178,8 @@
                 <!-- Contact List -->
                 <div class="yot-col-50">
                     <!-- Facebook -->
-                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-blue1 yot-mb-8">
-                        <div class="yot-flex" style="font-size: 24px;">
+                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-mb-8">
+                        <div class="yot-flex yot-tc-blue1" style="font-size: 24px;">
                             <i class="fa-solid fa-envelope"></i>
                             <h4 class="yot-ml-4">Facebook</h4>
                         </div>
@@ -187,8 +187,8 @@
                     </div>
 
                     <!-- Tiktok -->
-                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-tc-blue1 yot-tc-pink1 yot-mb-8">
-                        <div class="yot-flex" style="font-size: 24px;">
+                    <div class="yot-bg-white yot-w-100 yot-pa-16 yot-mb-8">
+                        <div class="yot-flex yot-tc-pink1" style="font-size: 24px;">
                             <i class="fa-brands fa-tiktok"></i>
                             <h4 class="yot-ml-4">Tiktok</h4>
                         </div>

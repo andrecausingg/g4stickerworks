@@ -247,15 +247,15 @@
             </div>
 
             <!-- Filter Containers -->
-            <div class="yot-flex yot-flex-fd-c">
+            <div class="yot-flex yot-flex-fd-c-ai-c">
                 <!-- Select Brand Container -->
-                <div class="yot-mb-8">
+                <div class="yot-mb-8 yot-text-center">
                     <h3 class="yot-mb-4">Brand</h3>
                     <select class="yot-form-select yot-form-select-option" name="brandSelect" id="brandSelect"></select>
                 </div>
 
                 <!-- Select Model Container -->
-                <div id="modelContainer" style="display: none;">
+                <div class="yot-text-center" id="modelContainer" style="display: none;">
                     <h3 class="yot-mb-4">Model</h3>
                     <select class="yot-form-select yot-form-select-option" name="modelSelect" id="modelSelect"></select>
                 </div>
