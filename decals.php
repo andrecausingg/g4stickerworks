@@ -200,41 +200,7 @@
             </div>
 
             <!-- All Decals Products -->
-            <div id="allDecalsProduct" class="yot-row">
-                <div class="yot-col-25">
-                    <img src="./asset/images/all-products/mioi125-spider-lightblue.png" alt="">
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/all-products/aerox-155-green-splash-monster-yamaha.png" alt="">
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/all-products/aerox-155-red-demon-yamaha.png" alt="">
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/all-products/mio-i-125-blue.png" alt="">
-                </div>
-            </div>  
-
-            <div id="yamahaMioI125" class="yot-row" style="display:none">
-                <div class="yot-col-25">
-                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
-                </div>
-
-                <div class="yot-col-25">
-                    <img src="./asset/images/yamaha/mio-i-125/mio-i-125-1.jfif" alt="">
-                </div>
-            </div>  
+            <section id="allDecalsProduct"></section>
         </section>
     </div>
 

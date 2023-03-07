@@ -14,7 +14,7 @@ $(document).ready(function(){
     var brandSelect = $('#brandSelect');
     var modelSelect = $('#modelSelect');
     
-    brandSelect.append('<option value="-1">- Select Model -</option>'); // add the "Select Model" option
+    brandSelect.append('<option value="">- Select Model -</option>'); // add the "Select Model" option
     // loop through each key in the data object and add it as an option in the brandSelect dropdown
     for (var brand in data) {
         brandSelect.append('<option value="' + brand + '">' + brand + '</option>');
@@ -27,51 +27,12 @@ $(document).ready(function(){
         var selectedBrand = $(this).val(); // get the value of the selected brand
         var models = data[selectedBrand]; // get the corresponding models from the data object
 
-        modelSelect.append('<option value="-1">- Select Model -</option>'); // add the "Select Model" option
+        modelSelect.append('<option value="">- Select Model -</option>'); // add the "Select Model" option
         for (var i = 0; i < models.length; i++) {
             modelSelect.append('<option value="' + models[i] + '">' + models[i] + '</option>');
         }
     });
 
-
-    // Show Motorcylce after select on Select Brand
-    $("#yamahaMotorCylceSelect").change(function(){
-        const yamahaMotorCylceSelect = $(this).val();
-
-        if(yamahaMotorCylceSelect == "Mio i 125"){
-            $("#motorCycleTitle").html("Motor Cycle: " + yamahaMotorCylceSelect)
-            $("#yamahaMioI125").show();
-            $("#allDecalsProduct").hide();
-        }else if(yamahaMotorCylceSelect == "Mio Aerox V1 & V2"){
-            $("#motorCycleTitle").html("Motor Cycle: " + yamahaMotorCylceSelect)
-        }else if(yamahaMotorCylceSelect == "Mio Soul i 125"){
-            $("#motorCycleTitle").html("Motor Cycle: " + yamahaMotorCylceSelect)
-        }else if(yamahaMotorCylceSelect == "Mio Sporty"){
-            $("#motorCycleTitle").html("Motor Cycle: " + yamahaMotorCylceSelect)
-        }else if(yamahaMotorCylceSelect == "Sniper"){
-            $("#motorCycleTitle").html("Motor Cycle: " + yamahaMotorCylceSelect)
-        }else if(yamahaMotorCylceSelect == "Nmax"){
-            $("#motorCycleTitle").html("Motor Cycle: " + yamahaMotorCylceSelect)
-        }
-    });
-    
-    // Show Motorcylce after select on Select Brand
-    $("#brandSelect").change(function(){
-        const brandSelect = $(this).val();
-        
-        if(brandSelect == "yamaha"){
-            $("#yamahaMotorCycleContainer").show();
-            $("#brandTitleDecals").html("Brand: Yamaha")
-        }else if(brandSelect == "honda"){
-            $("#hondaMotorCycleContainer").show();
-            $("#brandTitleDecals").html("Brand: Honda")
-        }else{
-            $("#yamahaMotorCycleContainer").hide();
-            $("#hondaMotorCycleContainer").hide();
-        }
-
-    });
-    
     // Show Filter Btn and Change the name of the title
     $("#selectDecals").change(function(){
         const selectDecals = $(this).val();
@@ -93,26 +54,6 @@ $(document).ready(function(){
         
     });
 
-    // Show Filter Btn
-    $("#selectDecals").change(function(){
-        const selectDecals = $(this).val();
-
-        if(selectDecals == "Full Decals"){
-            $("#decalsTitle").html("Full Decals");
-            $("#decalsFilterBtn").show();
-        }else if(selectDecals == "Stock Decals"){
-            $("#decalsTitle").html("Stock Decals");
-            $("#decalsFilterBtn").show();
-        }else if(selectDecals == "Sticker Mags"){
-            $("#decalsTitle").html("Sticker Mags");
-            $("#decalsFilterBtn").show();
-        }else{
-            $("#decalsTitle").html("All Decals");
-            $("#decalsFilterBtn").hide();
-        }
-        
-    });
-
     // Show Filter Container
     $("#decalsFilterBtn").click(function(){
         $("#filterBgContainer").show();
@@ -125,4 +66,33 @@ $(document).ready(function(){
         $("#filterContainer").hide();
     });
     
+    filterSelectTag();
+
+    function filterSelectTag(){
+        // Wait for the page to load before binding the change event to the select elements
+        $('#selectDecals, #brandSelect, #modelSelect').on('change', function() {
+            // Get the selected values
+            var decalValue = $('#selectDecals').val() ? $('#selectDecals').val() : "";
+            var brandValue = $('#brandSelect').val() ? $('#brandSelect').val() : "";
+            var modelValue = $('#modelSelect').val() ? $('#modelSelect').val() : "";
+            
+            // Make an AJAX request with the selected values
+            $.ajax({
+                url: '../../../../g4stickerworks/asset/php/decals/display/d-filter-decal.php',
+                method: 'POST',
+                data: {
+                    decal: decalValue,
+                    brand: brandValue,
+                    model: modelValue
+                },
+                success: function(response) {
+                    // console.log(response);
+                    $("#deleteDisplayDecals").html(response)
+                },
+                error: function(xhr) {
+                    // Handle any errors that occur during the AJAX request
+                }
+            });
+        });
+    }
 });

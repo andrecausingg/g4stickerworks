@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    // Decals
+    $("#allDecalsProduct").load("../../../../../g4stickerworks/asset/php/product-page/display/d-decals.php");
+
     // Services
     $("#displayContentServices").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data-content.php");
     $("#displaySubTitleServices").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data.php");

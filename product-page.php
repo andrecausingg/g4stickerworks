@@ -243,10 +243,7 @@
                     </div>
                 </div>
             </div>
-
-            <iframe src="http://localhost/g4stickerworks/decals" width="100%" height="800px"></iframe>
-
-
+            
             <!-- Create Container Decals-->
             <div id="createBgContainerDecals" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
             <div id="createFormContainerDecals" class="yot-overlay-mid-container" style="display:none;">
@@ -371,6 +368,8 @@
                     </div>
                 </div>
             </div>
+
+            
         </div>
     </div>
 
