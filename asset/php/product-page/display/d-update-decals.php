@@ -33,14 +33,14 @@
                 echo'
                     <tr>
                         <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
-                            <img src="../../../../../g4stickerworks/asset/images/products/'.$row["image"].'" alt="">
+                            <img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt="">
                             <input class="yot-form-input" type="file" name="imageDecalsUpdate" id="imageDecalsUpdate" data-id="'. htmlspecialchars($row["decals_id"]).'">
                         </td>
                         <td>'.htmlspecialchars($row["decals_type"]).'</td>
                         <td>'.htmlspecialchars($row["brand"]).'</td>
                         <td>'.htmlspecialchars($row["model"]).'</td>
                         <td>'.htmlspecialchars($row["created_at_varchar"]).'</td>
-                        <td><button class="yot-btn-blue1 updateIcon" data-id="'. htmlspecialchars($row["decals_id"]).'">Update</button></td>
+                        <td><button class="yot-btn-blue1 updateIconDecals" data-id="'. htmlspecialchars($row["decals_id"]).'">Update</button></td>
                     </tr>
                 ';
             }
@@ -48,4 +48,5 @@
             echo'</table>';
         }
     }
+
 ?>

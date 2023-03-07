@@ -9,7 +9,7 @@ $(document).ready(function(){
         // Send AJAX request to server
         $.ajax({
         type: 'POST',
-        url: 'asset/php/product-page/create-decals.php',
+        url: '../../../../g4stickerworks/asset/php/product-page/create-decals.php',
         data: formData,
         contentType: false,
         processData: false,
@@ -17,6 +17,12 @@ $(document).ready(function(){
             const responseVar = response.trim();
             if(responseVar == "created"){
                 resetForm();
+            }else if(responseVar == 'imagetoolarge'){
+                hideErrImgTooBig();
+            }else if(responseVar == 'errorUploadingimage'){
+                hideErroruploadingimage();
+            }else if(responseVar == 'invalidfiletype'){
+                hideInvalidfiletype();
             }
 
             // Handle success response here
@@ -47,19 +53,22 @@ $(document).ready(function(){
             }
         }
         if (selectedValue == "create") {
-            $("#filterDecalsUpdateDelete").hide();
+            $("#filterDecalsUpdate").hide();
+            $("#filterDecalsDelete").hide();
             $("#mainFormContainer").removeClass("yot-overlay-mid-container-form-tablet-size-up");
             $("#createDisplayContainerDecals").show(); // show the create container
             $("#updateDisplayContainerDecals").hide(); // hide the update container
             $("#deleteDisplayContainerDecals").hide(); // hide the delete container
         } else if (selectedValue == "update") {
-            $("#filterDecalsUpdateDelete").show();
+            $("#filterDecalsUpdate").show();
+            $("#filterDecalsDelete").hide();
             $("#mainFormContainer").addClass("yot-overlay-mid-container-form-tablet-size-up");
             $("#createDisplayContainerDecals").hide(); // hide the create container
             $("#updateDisplayContainerDecals").show(); // show the update container
             $("#deleteDisplayContainerDecals").hide(); // hide the delete container
         } else if (selectedValue == "delete") {
-            $("#filterDecalsUpdateDelete").show();
+            $("#filterDecalsUpdate").hide();
+            $("#filterDecalsDelete").show();
             $("#mainFormContainer").addClass("yot-overlay-mid-container-form-tablet-size-up");
             $("#createDisplayContainerDecals").hide(); // hide the create container
             $("#updateDisplayContainerDecals").hide(); // hide the update container
@@ -92,7 +101,8 @@ $(document).ready(function(){
     });
 
     selectTagDisplayBrandAndModel();
-    selectTagDisplayBrandAndModelFilter();
+    selectTagDisplayBrandAndModelFilterDelete();
+    selectTagDisplayBrandAndModelFilterUpdate();
     
     // For Create Form Only
     function selectTagDisplayBrandAndModel(){
@@ -177,8 +187,8 @@ $(document).ready(function(){
         });
         
     }
-    // For Delete and Update Select Tag Display Sepecific Only
-    function selectTagDisplayBrandAndModelFilter(){
+    // For Delete Select Tag Display Sepecific Only
+    function selectTagDisplayBrandAndModelFilterDelete(){
         var data = {
             "Honda": ["Honda BeAT", "Honda Click", "Honda Genio", "Honda PCX", "Honda ADV150", "Honda CBR150R", "Honda CB150R", "Honda CB400X", "Honda CB650R", "Honda CB1000R", "Honda CRF150L", "Honda CRF250L", "Honda CRF300L", "Honda XR150L", "Honda Supra GTR150", "Honda TMX125 Alpha", "Honda Wave110 Alpha", "Honda XRM125 Motard", "Honda RS150R", "Honda Zoomer-X"],
             "Yamaha": ["Yamaha Mio i 125", "Yamaha Mio Soul i 125", "Yamaha Nmax", "Yamaha Aerox 155", "Yamaha Sniper 150", "Yamaha MT-15", "Yamaha R15", "Yamaha XSR155", "Yamaha Tracer 900", "Yamaha Super Tenere", "Yamaha YZF-R3", "Yamaha TFX 150", "Yamaha FZi", "Yamaha FZ16", "Yamaha SZ-R", "Yamaha XTZ125", "Yamaha YTX125", "Yamaha YBR125"],
@@ -193,6 +203,41 @@ $(document).ready(function(){
         
         var brandSelect = $('#brandSelectFilter');
         var modelSelect = $('#modelSelectFilter');
+        
+        brandSelect.append('<option value="">- Select Brand -</option>');
+        for (var brand in data) {
+            brandSelect.append('<option value="' + brand + '">' + brand + '</option>');
+        }
+
+        brandSelect.change(function() {
+            modelSelect.empty();
+            var selectedBrand = $(this).val();
+            var models = data[selectedBrand];
+            if (models) {
+                modelSelect.append('<option value="">- Select Model -</option>');
+                for (var i = 0; i < models.length; i++) {
+                    modelSelect.append('<option value="' + models[i] + '">' + models[i] + '</option>');
+                }
+            }
+        });
+
+    }
+    // For Update Select Tag Display Sepecific Only
+    function selectTagDisplayBrandAndModelFilterUpdate(){
+        var data = {
+            "Honda": ["Honda BeAT", "Honda Click", "Honda Genio", "Honda PCX", "Honda ADV150", "Honda CBR150R", "Honda CB150R", "Honda CB400X", "Honda CB650R", "Honda CB1000R", "Honda CRF150L", "Honda CRF250L", "Honda CRF300L", "Honda XR150L", "Honda Supra GTR150", "Honda TMX125 Alpha", "Honda Wave110 Alpha", "Honda XRM125 Motard", "Honda RS150R", "Honda Zoomer-X"],
+            "Yamaha": ["Yamaha Mio i 125", "Yamaha Mio Soul i 125", "Yamaha Nmax", "Yamaha Aerox 155", "Yamaha Sniper 150", "Yamaha MT-15", "Yamaha R15", "Yamaha XSR155", "Yamaha Tracer 900", "Yamaha Super Tenere", "Yamaha YZF-R3", "Yamaha TFX 150", "Yamaha FZi", "Yamaha FZ16", "Yamaha SZ-R", "Yamaha XTZ125", "Yamaha YTX125", "Yamaha YBR125"],
+            "Suzuki Philippines": ["Suzuki Raider J Crossover", "Suzuki Skydrive Fi", "Suzuki Address", "Suzuki Burgman Street", "Suzuki Gixxer FI", "Suzuki GSX-R150", "Suzuki SV650", "Suzuki V-Strom 1050XT", "Suzuki DR200S", "Suzuki RM-Z250", "Suzuki GSX-S750", "Suzuki GSX-S1000", "Suzuki SV650X", "Suzuki GSX-R1000R", "Suzuki Hayabusa"],
+            "Kawasaki Motors": ["Kawasaki Ninja 400", "Kawasaki Z400", "Kawasaki Versys-X 300", "Kawasaki W800", "Kawasaki Z650", "Kawasaki Versys 650", "Kawasaki Ninja 650", "Kawasaki Z900", "Kawasaki Z900RS", "Kawasaki Ninja 1000SX", "Kawasaki Versys 1000", "Kawasaki Z H2", "Kawasaki Vulcan S", "Kawasaki KLX150L", "Kawasaki KLX300R"],
+            "Kymco": ["Kymco Like 125", "Kymco Agility 125", "Kymco Super 8 150", "Kymco X-Town CT300i", "Kymco Xciting S 400i", "Kymco AK 550", "Kymco Like 150i ABS", "Kymco Like 200i", "Kymco X-Town 300i", "Kymco Like 150 R"],
+            "Motorstar": ["Motorstar Nicess 110", "Motorstar Star-X 125 II", "Motorstar Star-X 155"],
+            "TVS": ["TVS XL100", "TVS Rockz 125", "TVS Dazz Prime", "TVS Apache RTR 160", "TVS Apache RTR 180", "TVS Apache RTR 200", "TVS Apache RR 310"],
+            "Royal Enfield": ["Royal Enfield Classic 350", "Royal Enfield Meteor 350", "Royal Enfield Himalayan", "Royal Enfield Continental GT 650", "Royal Enfield Continental GT 650", "Royal Enfield Interceptor 650"],
+            "CFMoto":["CFMoto 150NK", "CFMoto 250NK", "CFMoto 400NK", "CFMoto 650MT", "CFMoto 650GT"],
+        };
+        
+        var brandSelect = $('#brandSelectFilterUpdate');
+        var modelSelect = $('#modelSelectFilterUpdate');
         
         brandSelect.append('<option value="">- Select Brand -</option>');
         for (var brand in data) {
@@ -239,4 +284,31 @@ $(document).ready(function(){
         $("#updateDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-decals.php");
         $("#deleteDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-decals.php");
     }
+
+    function hideErrImgTooBig(){
+        $('#errorImagetoolargeAlert').show();
+        setTimeout(function(){
+            $('#errorImagetoolargeAlert').hide();
+        }, 5000);
+    }
+
+    function hideErroruploadingimage(){
+        $('#errorUploadingimageAlert').show();
+        setTimeout(function(){
+            $('#errorUploadingimageAlert').hide();
+        }, 5000);
+    }
+
+    function hideInvalidfiletype(){
+        $('#invalidfiletypeAlert').show();
+        setTimeout(function(){
+            $('#invalidfiletypeAlert').hide();
+        }, 5000);
+    }
+
+    $(".alertCloseIcon").click(function(){
+        $('#errorImagetoolargeAlert').hide();
+        $('#errorUploadingimageAlert').hide();
+        $('#invalidfiletypeAlert').hide();
+    });
 });

@@ -33,7 +33,7 @@
                 echo'
                     <tr>
                         <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
-                            <img src="../../../../../g4stickerworks/asset/images/products/'.$row["image"].'" alt="">
+                            <img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt="">
                         </td>
                         <td>'.htmlspecialchars($row["decals_type"]).'</td>
                         <td>'.htmlspecialchars($row["brand"]).'</td>

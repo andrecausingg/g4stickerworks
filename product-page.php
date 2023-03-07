@@ -268,8 +268,34 @@
                         </select>
                     </div>
 
-                    <!-- Filter -->
-                    <div id="filterDecalsUpdateDelete" class="yot-row yot-flex-ai-c-jc-se yot-hide-for-mobile" style="display:none">
+                    <!-- Filter Update-->
+                    <div id="filterDecalsUpdate" class="yot-row yot-flex-ai-c-jc-se yot-hide-for-mobile" style="display:none">
+                        <!-- Select Decals -->
+                        <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="decals">Type</label>
+                            <select class="yot-form-select yot-form-select-option"  name="decalSelectFilterUpdate" id="decalSelectFilterUpdate">
+                                <option value="">- Select Decals -</option>
+                                <option value="Full Decals">Full Decals</option>
+                                <option value="Stock Decals">Stock Decals</option>
+                                <option value="Sticker Mags">Sticker Mags</option>
+                            </select>
+                        </div>
+
+                        <!-- Select Brand -->
+                        <div id="brandContainerFilterUpdate" class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="brand">Brand</label>
+                            <select class="yot-form-select yot-form-select-option" name="brandSelectFilterUpdate" id="brandSelectFilterUpdate"></select>
+                        </div>
+
+                        <!-- Select Model -->
+                        <div id="modelContainerFilterUpdate" class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="model">Model</label>
+                            <select class="yot-form-select yot-form-select-option" name="modelSelectFilterUpdate" id="modelSelectFilterUpdate"></select>
+                        </div>
+                    </div>
+
+                    <!-- Filter Delete-->
+                    <div id="filterDecalsDelete" class="yot-row yot-flex-ai-c-jc-se yot-hide-for-mobile" style="display:none">
                         <!-- Select Decals -->
                         <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c yot-col-100">
                             <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="decals">Type</label>
@@ -379,7 +405,7 @@
     <div id="invalidfiletypeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Error Invalid File Type</h3>
-            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl alertCloseIcon"></i>
         </div>
         <p class="yot-text-fs-l">Only JPG, JPEG, and PNG files are allowed.</p>
     </div>
@@ -388,7 +414,7 @@
     <div id="errorUploadingimageAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Error Uploading image</h3>
-            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl alertCloseIcon"></i>
         </div>
         <p class="yot-text-fs-l">There's Something Wrong!</p>
     </div>
@@ -397,7 +423,7 @@
     <div id="errorImagetoolargeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Error File too Big</h3>
-            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl alertCloseIcon"></i>
         </div>
         <p class="yot-text-fs-l">Allowed size is 50mb</p>
     </div>
@@ -405,6 +431,7 @@
     <script src="./asset/js/all/global.js"></script>
 
     <script src="./asset/js/product-page/create-decals.js"></script>
+    <script src="./asset/js/product-page/update-decals.js"></script>
     <script src="./asset/js/product-page/delete-decals.js"></script>
 
     <script src="./asset/js/product-page/display/d-data.js"></script>

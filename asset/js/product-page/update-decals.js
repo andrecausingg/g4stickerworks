@@ -1,6 +1,44 @@
 $(document).ready(function(){
-     
+    $(document).on("click", ".updateIconDecals", function() {
+        const id = $(this).attr("data-id").trim();
+        const fileInput = $('#imageDecalsUpdate[data-id="' + id + '"]');
+        const file = fileInput[0].files[0];
+        
+        const formData = new FormData();
+        formData.append('file', file); // Add the file to the form data object
+        formData.append('id', id); // Add the id to the form data object
+    
+        // Send the AJAX request to update the image in the database
+        $.ajax({
+            url: '../../../../g4stickerworks/asset/php/product-page/update-decals.php', // replace this with your server URL
+            type: 'POST',
+            data: formData, // pass formData as the data parameter
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                const responseVar = response.trim();
+    
+                if(responseVar == 'updated'){
+                    resetForm();
+                }else if(responseVar == 'imagetoolarge'){
+                    hideErrImgTooBig();
+                }else if(responseVar == 'errorUploadingimage'){
+                    hideErroruploadingimage();
+                }else if(responseVar == 'invalidfiletype'){
+                    hideInvalidfiletype();
+                }
+            },
+            error: function(xhr, status, error) {
+                // handle error response here
+                console.log(error);
+            }
+        });
+    });
 
+    $("#updateSuccessAlertCloseIcon").click(function(){
+        $("#updateSuccessAlert").hide();
+    });
+    
 
     // Filter In back End update Only
     updateFilterSelectTag();
@@ -26,14 +64,10 @@ $(document).ready(function(){
 
         $("#deleteDisplayDecals").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-decals.php");
 
-        // Get the selected values And Display the table on #updateDisplayDecals
-        var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
-        var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
-        var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
-
-        console.log(decalValue);
-        console.log(brandValue);
-        console.log(modelValue);
+        // Get the selected values
+        var decalValue = $('#decalSelectFilterUpdate').val() ? $('#decalSelectFilterUpdate').val() : "";
+        var brandValue = $('#brandSelectFilterUpdate').val() ? $('#brandSelectFilterUpdate').val() : "";
+        var modelValue = $('#modelSelectFilterUpdate').val() ? $('#modelSelectFilterUpdate').val() : "";
 
         // Make an AJAX request with the selected values
         $.ajax({
@@ -55,11 +89,11 @@ $(document).ready(function(){
     }
     function updateFilterSelectTag(){
         // Wait for the page to load before binding the change event to the select elements
-        $('#decalSelectFilter, #brandSelectFilter, #modelSelectFilter').on('change', function() {
+        $('#decalSelectFilterUpdate, #brandSelectFilterUpdate, #modelSelectFilterUpdate').on('change', function() {
             // Get the selected values
-            var decalValue = $('#decalSelectFilter').val() ? $('#decalSelectFilter').val() : "";
-            var brandValue = $('#brandSelectFilter').val() ? $('#brandSelectFilter').val() : "";
-            var modelValue = $('#modelSelectFilter').val() ? $('#modelSelectFilter').val() : "";
+            var decalValue = $('#decalSelectFilterUpdate').val() ? $('#decalSelectFilterUpdate').val() : "";
+            var brandValue = $('#brandSelectFilterUpdate').val() ? $('#brandSelectFilterUpdate').val() : "";
+            var modelValue = $('#modelSelectFilterUpdate').val() ? $('#modelSelectFilterUpdate').val() : "";
             
             // Make an AJAX request with the selected values
             $.ajax({

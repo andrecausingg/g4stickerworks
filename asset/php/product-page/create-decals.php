@@ -61,7 +61,7 @@
                     if($imageSize < 50000000){
                         $imageNameNew = uniqid('', true).".".$imageActualExt;
                         // $finalNameImage = $this->decals . "-" . $this->brand . "-" . $this->model . "-" . $imageNameNew;
-                        $imageDestination = '../../images/products/'.$imageNameNew;
+                        $imageDestination = '../../images/all-products/'.$imageNameNew;
                         move_uploaded_file($imageTemp, $imageDestination);
     
                         // Use prepared statement to prevent SQL injection
