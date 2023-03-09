@@ -200,7 +200,7 @@
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
                 <h2 class="yot-mb-8 yot-resize-font-64">Home Hero Section</h2>
                 <div class="yot-text-center yot-pa-8">
-                    <button id="" class="yot-btn-blue1">Title</button>
+                    <button id="titleBtn" class="yot-btn-blue1">Title</button>
                     <button id="" class="yot-btn-blue1">Sub Title</button>
                     <button id="" class="yot-btn-blue1">Image</button>
                 </div>
@@ -223,11 +223,53 @@
                         <img src="./asset/images/undraw_designer_girl_re_h54c.svg" alt="" width="300" height="300">
                     </div>
                 </section>
+
+                <!-- Create Update Delete Container Sub Title-->
+                <div id="createBgContainerTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+                <div id="createFormContainerTitle" class="yot-overlay-mid-container" style="display:none;">
+                    <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                        <!-- Title -->
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                            <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
+                            <i id="createCloseFormIconTitle" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                        </div>
+
+                        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="title">Title</label>
+                            <select class="yot-form-select yot-form-select-option" name="selectOptionTitle" id="selectOptionTitle">
+                                <option value="create">Create</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                            </select>
+                        </div>
+
+                        <!-- Create Form Container -->
+                        <div id="createDisplayContainerTitle">
+                            <form id="createFormTitle">
+                                <div class="yot-form-group">
+                                    <textarea class="yot-form-input yot-tff-sas" type="text" name="title" id="title" style="height:100px;resize:none;" ></textarea>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <input class="yot-btn-blue1" type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Update Container -->
+                        <div id="updateDisplayContainerTitle" style="display:none"></div>
+
+                        <!-- Delete Container -->
+                        <div id="deleteDisplayContainerTitle" style="display:none"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
     <script src="./asset/js/all/global.js"></script>
+
+    <script src="./asset/js/index-page-hero-section/create-title.js"></script>
 </body>
 </html>
