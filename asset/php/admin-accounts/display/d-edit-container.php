@@ -60,22 +60,6 @@
                                     <input class="yot-form-input" type="text" name="emailEdit" id="emailEdit" value="'.$row["email"].'">
                                 </div>
             
-                                <!-- Label and Password Err Old-->
-                                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="password">Old Password</label>
-                                    <div class="yot-flex yot-flex-fd-c">
-                                        <span id="passwordMin8ErrOldEdit" class="yot-tc-red yot-text-end" style="display:none">Password needs minimum 8 characters.</span>
-                                        <span id="passwordEmptyErrOldEdit" class="yot-tc-red yot-text-end" style="display:none">The password field is required.</span>
-                                    </div>
-                                </div>
-            
-                                <!-- Old Password -->
-                                <div class="yot-form-group yot-form-group-container">
-                                    <input class="yot-form-input" type="password" name="passwordOldEdit" id="passwordOldEdit"  style="padding-left: 40px;padding-right: 40px;">
-                                    <i class="fa-solid fa-lock yot-form-group-icon-left yot-text-fs-xxl"></i>
-                                    <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showPasswordOld"></i>
-                                </div>
-
                                 <!-- Label and Password Err New-->
                                 <div class="yot-flex yot-flex-ai-c-jc-sb">
                                     <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="password">New Password</label>
