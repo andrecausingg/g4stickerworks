@@ -8,8 +8,8 @@ $(document).ready(function(){
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/services-page/create--Title.php", // replace with the URL of your form processing script
-                data: { Title: Title }, // send the Title field value as data
+                url: "../../../../g4stickerworks/asset/php/index-page-hero-section/create-title.php", // replace with the URL of your form processing script
+                data: { title: title }, // send the Title field value as data
                 success: function(response) {
                     console.log(response);
                     const responseVarChar = response.trim();                
@@ -21,9 +21,8 @@ $(document).ready(function(){
                             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
 
-                        // $("#displayTitle").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data.php");
-                        // $("#updateDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/services-page/display/d-update--Title.php");
-                        // $("#deleteDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/services-page/display/d-delete--Title.php");
+                        $("#updateDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-update-title.php");
+                        $("#deleteDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-delete-title.php");
                     }
                     // do something with the server response (e.g. show a success message)
                 },

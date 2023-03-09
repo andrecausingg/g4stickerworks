@@ -216,7 +216,7 @@
                         <p class="yot-resize-font-18">Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins</p>
                     </div>
 
-                    <div class="index-hero-bg" style="height:500px"></div>
+                    <div class="index-hero-bg" style="top:150px"></div>
 
                     <!-- Image -->
                     <div class="yot-col-50">
@@ -267,9 +267,38 @@
         </div>
     </div>
 
+    <!-- Success Container-->
+    <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Insertion:</h3>
+            <i id="createSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully inserted.</p>
+    </div>
+
+    <!-- Delete Container-->
+    <div id="deleteSuccessAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Deletion:</h3>
+            <i id="deleteSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully deleted.</p>
+    </div>
+
+    <!-- Success Update Container-->
+    <div id="updateSuccessAlert" class="yot-bg-orange yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Update:</h3>
+            <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully updated.</p>
+    </div>
+
 
     <script src="./asset/js/all/global.js"></script>
 
+    <script src="./asset/js/index-page-hero-section/display/d-data.js"></script>
     <script src="./asset/js/index-page-hero-section/create-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/delete-title.js"></script>
 </body>
 </html>
