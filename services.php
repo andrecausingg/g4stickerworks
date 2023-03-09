@@ -67,14 +67,26 @@
             <a href="index" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Home</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
-        <div class="yot-mb-16">
-            <a href="product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Product</a>
+        <div class="yot-mb-16">                 
+            <!-- Pages -->        
+            <div class="yot-mb-8">
+                <div class="pagesPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-cursor-pointer">
+                    <span style="font-size: 36px; font-weight: bolder;">Products</span>
+                    <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightPages"></i></span>
+                </div>
+                <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
+                    <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
+                    <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
+                    <a href="sticker-labels" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
+                    <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
+                </div>
+            </div>
         </div>
         <div class="yot-mb-16">
             <a href="services" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Services</a>
         </div>
         <div class="yot-mb-16">
-            <a href="contact" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
+            <a href="contact-us" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
         </div>
         <div class="yot-mb-16">
             <a href="about-us" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">About Us</a>

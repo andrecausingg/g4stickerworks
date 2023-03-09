@@ -76,10 +76,10 @@
                     <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
                 </div>
                 <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Decals</a>
-                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
-                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
-                    <a href="#" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
+                    <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Decals</a>
+                    <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
+                    <a href="sticker-labels" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
+                    <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
                 </div>
             </div>
         </div>
