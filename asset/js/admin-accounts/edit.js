@@ -22,19 +22,18 @@ $(document).ready(function(){
                     var dataVar = data.trim();
     
                     if(dataVar == "edited"){
-                        $("#bgEditContainer").hide();
-                        $("#editFormContainerCutFile").hide();
-                        $("#successAlertCutFile").hide();
-                        $("#deleteAlertCutFile").hide();
-                        $("#successEditAlertCutFile").show();
+                        $("#editbgContainer").hide();
+                        $("#editformContainer").hide();
+
+                        $("#successAlertInsert").hide();
+                        $("#successAlertDelete").hide();
+                        $("#successAlertEdit").show();
     
                         setTimeout(function() {
-                            $("#successEditAlertCutFile").hide(); // Show the element after 10 seconds
+                            $("#successAlertEdit").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
-                        // Display The Data of Cut File
-                        $("#displayCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-cut-file.php");
-                        // Display the total of Cut file
-                        $("#totalCutFile").load("../../../../../g4stickerworks/asset/php/cut-file/display/d-total.php");
+
+
                     }
                 }
             })
@@ -99,71 +98,47 @@ $(document).ready(function(){
     });
 
     // // Validation
-    // $(document).on('keyup', '#emailEdit', validateFieldsEmail);
+    $(document).on('keyup', '#emailEdit', validateFieldsEmail);
     // $(document).on('keyup', '#passwordOldEdit', validateFieldsPasswordOld);
     // $(document).on('keyup', '#passwordNewEdit', validateFieldsPasswordNew);
 
     // // Function validate Email
-    // function validateFieldsEmail(){
-    //     var email = $('#emailEdit').val().trim();
-    //     var trustedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'aol.com', 'triots.com'];
+    function validateFieldsEmail(){
+        var email = $('#emailEdit').val().trim();
+        var trustedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'aol.com', 'triots.com'];
 
-    //     if(!validateEmail(email)){
-    //         $('#emailInvalidErrEdit').show();
-    //         $('#emailEdit').css('border-color', 'hsl(4, 95%, 56%)');
-    //     }
+        if(!validateEmail(email)){
+            $('#emailInvalidErrEdit').show();
+            $('#emailEdit').css('border-color', 'hsl(4, 95%, 56%)');
+        }
         
-    //     if(!validateEmailDomain(email)){
-    //         $('#emailDomainEmailErrEdit').show();
-    //         $('#emailEdit').css('border-color', 'hsl(4, 95%, 56%)');
-    //     }
+        if(!validateEmailDomain(email)){
+            $('#emailDomainEmailErrEdit').show();
+            $('#emailEdit').css('border-color', 'hsl(4, 95%, 56%)');
+        }
         
-    //     if (email == ''){
-    //         $('#emailEmptyErrEdit').show();
-    //         $('#emailEdit').css('border-color', 'hsl(4, 95%, 56%)');
-    //     }
+        if (email == ''){
+            $('#emailEmptyErrEdit').show();
+            $('#emailEdit').css('border-color', 'hsl(4, 95%, 56%)');
+        }
 
-    //     if(email != ""){
-    //         $.ajax({
-    //             url: '../../../../g4stickerworks/asset/php/admin-accounts/display/d-email-exist.php',
-    //             type: 'POST',
-    //             data: { 
-    //                 email: email,
-    //             },
-    //             success: function (data){
-    //                 console.log(data);
-    //                 var dataVar = data.trim();
-    //                 if(dataVar == "emailExist"){
-    //                     $("#emailExistErrEdit").show();
-    //                     $('#emailEdit').css('border-color', 'hsl(4, 95%, 56%)');
-    //                 }else{
-    //                     $("#emailExistErrEdit").hide();
-    //                     if(validateEmail(email) && validateEmailDomain(email) && email != '' && $("#emailExistErrEdit").css("display") === "none"){
-    //                         $('#emailEmptyErrEdit, #emailInvalidErrEdit, #emailDomainEmailErrEdit, #emailExistErrEdit').hide();
-    //                         $('#emailEdit').css('border-color', 'hsl(122, 39%, 49%)');
-    //                     }
-    //                 }
-    //             }
-    //         })
-    //     }
+        if(validateEmail(email) && validateEmailDomain(email) && email != '' && $("#emailExistErr").css("display") === "none"){
+            $('#emailEmptyErrEdit, #emailInvalidErrEdit, #emailDomainEmailErrEdit, #emailExistErr').hide();
+            $('#emailEdit').css('border-color', 'hsl(122, 39%, 49%)');
+        }
 
-    //     if(validateEmail(email) && validateEmailDomain(email) && email != '' && $("#emailExistErr").css("display") === "none"){
-    //         $('#emailEmptyErrEdit, #emailInvalidErrEdit, #emailDomainEmailErrEdit, #emailExistErr').hide();
-    //         $('#emailEdit').css('border-color', 'hsl(122, 39%, 49%)');
-    //     }
+        // Invalid Function
+        function validateEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            return regex.test(email);
+        }
 
-    //     // Invalid Function
-    //     function validateEmail(email) {
-    //         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    //         return regex.test(email);
-    //     }
-
-    //     // Trusted Domain Only
-    //     function validateEmailDomain(email) {
-    //         var domain = email.split('@')[1];
-    //         return trustedDomains.includes(domain);
-    //     }
-    // }
+        // Trusted Domain Only
+        function validateEmailDomain(email) {
+            var domain = email.split('@')[1];
+            return trustedDomains.includes(domain);
+        }
+    }
 
     // // Function validate Password Old
     // function validateFieldsPasswordOld(){
