@@ -15,12 +15,16 @@ $(document).ready(function(){
                     const responseVarChar = response.trim();                
                     if(responseVarChar == "created"){
                         $("#createFormTitle").trigger("reset");
+
                         $("#createSuccessAlert").show();
+                        $("#updateSuccessAlert").hide();
+                        $("#deleteSuccessAlert").hide();
 
                         setTimeout(function() {
                             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
 
+                        $("#titleDisplay").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-title.php");
                         $("#updateDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-update-title.php");
                         $("#deleteDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-delete-title.php");
                     }

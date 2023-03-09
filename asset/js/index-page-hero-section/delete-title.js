@@ -18,6 +18,12 @@ $(document).ready(function(){
                             $("#deleteSuccessAlert").hide(); // Show the element after 10 seconds
                         }, 10000); // 10000 milliseconds = 10 seconds
 
+                        
+                        $("#createSuccessAlert").hide();
+                        $("#updateSuccessAlert").hide();
+                        $("#deleteSuccessAlert").show();
+
+                        $("#titleDisplay").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-title.php");
                         $("#updateDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-update-title.php");
                         $("#deleteDisplayContainerTitle").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-delete-title.php");
                     }
