@@ -7,16 +7,18 @@ $(document).ready(function(){
         const emailEdit = $('#emailEdit').val().trim();
         const passwordNewEdit = $('#passwordNewEdit').val().trim();
 
+
         if(idEdit != "" && emailEdit != "" && passwordNewEdit != ""){
             $.ajax({
-                url: '../../../../g4stickerworks/asset/php/cut-file/edit.php',
+                url: '../../../../g4stickerworks/asset/php/admin-accounts/edit.php',
                 type: 'POST',
                 data: { 
                     id: idEdit,
-                    emailEdit: emailEdit,
-                    passwordNewEdit: passwordNewEdit,
+                    email: emailEdit,
+                    password: passwordNewEdit,
                 },
                 success: function (data){
+                    console.log(data);
                     var dataVar = data.trim();
     
                     if(dataVar == "edited"){
@@ -84,7 +86,7 @@ $(document).ready(function(){
 
     // Hide / Show password New
     $(document).on("click", "#showPasswordNew", function() {
-        var passwordInput = $('#passwordNew');
+        var passwordInput = $('#passwordNewEdit');
         var icon = $(this);
         
         if (passwordInput.attr('type') === 'password') {

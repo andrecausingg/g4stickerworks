@@ -39,11 +39,11 @@
             $conn = $classConnDB->conn();
 
             // prepare the SQL statement with placeholders 
-            $sql = "UPDATE user_tbl SET email = ?, email = ? WHERE user_id = ?";
+            $sql = "UPDATE user_tbl SET email = ?, password = ? WHERE user_id = ?";
             // create a prepared statement
             $stmt = $conn->prepare($sql);
             // bind the parameters to the placeholders
-            $stmt->bind_param("sii", $this->email, $this->password, $this->id);
+            $stmt->bind_param("ssi", $this->email, $this->password, $this->id);
 
             // Execute the statement
             if($stmt->execute()){
