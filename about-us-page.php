@@ -201,8 +201,8 @@
         <div class="g-main-item-right" style="padding: 24px;">
             <!-- Title with Btn Form-->
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
-                <h2 class="yot-mb-16 yot-resize-font-64">About Us Page</h2>
-                <div class="yot-text-center yot-pa-16">
+                <h2 class="yot-mb-8 yot-resize-font-64">About Us Page</h2>
+                <div class="yot-text-center yot-pa-8">
                     <button id="subTitleBtn" class="yot-btn-blue1">Sub Title</button>
                     <button id="imagesBtn" class="yot-btn-blue1">Images</button>
                 </div>
