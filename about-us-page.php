@@ -300,7 +300,6 @@
                         <div id="deleteDisplayContainerImage" style="overflow-y:scroll; height:300px; display:none;"></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
