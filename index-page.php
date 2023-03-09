@@ -201,7 +201,7 @@
                 <h2 class="yot-mb-8 yot-resize-font-64">Home Hero Section</h2>
                 <div class="yot-text-center yot-pa-8">
                     <button id="titleBtn" class="yot-btn-blue1">Title</button>
-                    <button id="" class="yot-btn-blue1">Sub Title</button>
+                    <button id="subTitleBtn" class="yot-btn-blue1">Sub Title</button>
                     <button id="" class="yot-btn-blue1">Image</button>
                 </div>
             </div>
@@ -213,7 +213,7 @@
                     <!-- Description -->
                     <div class="yot-tc-white yot-col-50" >
                         <h1 id="titleDisplay" class="yot-resize-font-64 yot-mb-16" style="line-height: 1;"></h1>
-                        <p class="yot-resize-font-18">Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins</p>
+                        <p id="subTitle" class="yot-resize-font-18">Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins</p>
                     </div>
 
                     <div class="index-hero-bg" style="top:150px"></div>
@@ -224,7 +224,7 @@
                     </div>
                 </section>
 
-                <!-- Create Update Delete Container Sub Title-->
+                <!-- Create Update Delete Container Title-->
                 <div id="createBgContainerTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
                 <div id="createFormContainerTitle" class="yot-overlay-mid-container" style="display:none;">
                     <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -261,6 +261,46 @@
 
                         <!-- Delete Container -->
                         <div id="deleteDisplayContainerTitle" style="display:none"></div>
+                    </div>
+                </div>
+
+                <!-- Create Update Delete Container Sub Title-->
+                <div id="createBgContainerSubTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+                <div id="createFormContainerSubtitle" class="yot-overlay-mid-container" style="display:none;">
+                    <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                        <!-- Title -->
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                            <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
+                            <i id="createCloseFormIconSubtitle" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                        </div>
+
+                        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="subTitle">Sub Title</label>
+                            <select class="yot-form-select yot-form-select-option" name="selectOptionSubTitle" id="selectOptionSubTitle">
+                                <option value="create">Create</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                            </select>
+                        </div>
+
+                        <!-- Create Form Container -->
+                        <div id="createDisplayContainerSubTitle">
+                            <form id="createFormSubTitle">
+                                <div class="yot-form-group">
+                                    <textarea class="yot-form-input yot-tff-sas subTitle" type="text" name="subTitle" id="subTitle" style="height:100px;resize:none;" ></textarea>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <input class="yot-btn-blue1" type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Update Container -->
+                        <div id="updateDisplayContainerSubTitle" style="display:none"></div>
+
+                        <!-- Delete Container -->
+                        <div id="deleteDisplayContainerSubTitle" style="display:none"></div>
                     </div>
                 </div>
             </div>
@@ -302,5 +342,9 @@
     <script src="./asset/js/index-page-hero-section/create-title.js"></script>
     <script src="./asset/js/index-page-hero-section/update-title.js"></script>
     <script src="./asset/js/index-page-hero-section/delete-title.js"></script>
+
+    <script src="./asset/js/index-page-hero-section/create-sub-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/update-sub-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/delete-sub-title.js"></script>
 </body>
 </html>
