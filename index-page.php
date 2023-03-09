@@ -212,7 +212,7 @@
                 <section class="yot-row yot-flex-ai-c" style="padding:0;">
                     <!-- Description -->
                     <div class="yot-tc-white yot-col-50" >
-                        <h1 id="titleDisplay" class="yot-resize-font-64 yot-mb-16" style="line-height: 1;-webkit-text-stroke: 2px black;"></h1>
+                        <h1 id="titleDisplay" class="yot-resize-font-64 yot-mb-16"></h1>
                         <p id="subTitle" class="yot-resize-font-18"></p>
                     </div>
 

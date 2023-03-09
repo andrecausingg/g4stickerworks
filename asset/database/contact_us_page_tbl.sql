@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2023 at 10:05 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Mar 09, 2023 at 01:59 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,14 +33,14 @@ CREATE TABLE `contact_us_page_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contact_us_page_tbl`
 --
 
 INSERT INTO `contact_us_page_tbl` (`contact_us_page_id`, `sub_title`, `image`, `created_at_varchar`, `created_at`) VALUES
-(9, 'At our company, we value communication and are always eager to hear from our clients. Whether you have questions about our services, need a quote, or just want to say hello, we encourage you to get in touch. You can reach us by phone, email, or through our Social Media Pages. Our friendly and knowledgeable team is available to assist you with any inquiries you may have, and we strive to respond to all messages as quickly as possible. We look forward to hearing from you and working together to achieve your goals. Contact us today and let us start a conversation!', '', 'Mar 04, 2023 09:00:14 AM', '2023-03-04 09:00:14');
+(1, 'At our company, we value communication and are always eager to hear from our clients. Whether you have questions about our services, need a quote, or just want to say hello, we encourage you to get in touch. You can reach us by phone, email, or through our Social Media Pages. Our friendly and knowledgeable team is available to assist you with any inquiries you may have, and we strive to respond to all messages as quickly as possible. We look forward to hearing from you and working together to achieve your goals. Contact us today and let us start a conversation!', '', 'Mar 09, 2023 08:51:06 PM', '2023-03-09 20:51:06');
 
 --
 -- Indexes for dumped tables
@@ -60,7 +60,7 @@ ALTER TABLE `contact_us_page_tbl`
 -- AUTO_INCREMENT for table `contact_us_page_tbl`
 --
 ALTER TABLE `contact_us_page_tbl`
-  MODIFY `contact_us_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `contact_us_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

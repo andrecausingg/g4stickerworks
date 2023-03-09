@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2023 at 10:05 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Mar 09, 2023 at 01:59 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,7 +37,7 @@ CREATE TABLE `all_footer_tbl` (
   `address` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `all_footer_tbl`
@@ -49,7 +49,7 @@ INSERT INTO `all_footer_tbl` (`all_footer_id`, `facebook`, `tiktok`, `instagram`
 (18, '', '', '', '', '09123456799', '', 'Feb 28, 2023 02:52:30 PM', '2023-02-28 14:52:30'),
 (26, '', 'https://www.tiktok.com/@g4stickerwork/', '', '', '', '', 'Feb 28, 2023 06:34:27 PM', '2023-02-28 18:34:27'),
 (42, '', '', '', '', '', 'Blk2 Lot7 Sarmiento Homes, Muzon, San Jose del Monte City, Bulacan, San Jose del Monte, Philippines 0932 350 8154', 'Mar 01, 2023 02:21:08 PM', '2023-03-01 14:21:08'),
-(44, 'https://www.facebook.com/G4StickerWorks/', '', '', '', '', '', 'Mar 03, 2023 01:12:18 PM', '2023-03-03 13:12:18');
+(44, 'https://www.facebook.com/G4StickerWorks', '', '', '', '', '', 'Mar 03, 2023 01:12:18 PM', '2023-03-03 13:12:18');
 
 --
 -- Indexes for dumped tables

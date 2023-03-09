@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 04, 2023 at 10:05 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Mar 09, 2023 at 01:59 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,15 +33,15 @@ CREATE TABLE `about_us_page_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `about_us_page_tbl`
 --
 
 INSERT INTO `about_us_page_tbl` (`about_us_page_id`, `sub_title`, `image`, `created_at_varchar`, `created_at`) VALUES
-(7, 'Our printing service specializes in providing high-quality printing solutions for businesses of all sizes. With state-of-the-art printing technology and a team of experienced professionals, we offer a wide range of printing services including flyers, brochures, business cards, and more. We are committed to delivering exceptional results on time and within budget, and we pride ourselves on our attention to detail and personalized customer service. Whether you need a small print run or a large-scale project, we are here to help you achieve your printing goals.', '', 'Mar 04, 2023 09:24:20 AM', '2023-03-04 09:24:20'),
-(10, '', '64029e402da874.45614478.jpg', 'Mar 04, 2023 09:26:24 AM', '2023-03-04 09:26:24');
+(1, 'Our printing service specializes in providing high-quality printing solutions for businesses of all sizes. With state-of-the-art printing technology and a team of experienced professionals, we offer a wide range of printing services including flyers, brochures, business cards, and more. We are committed to delivering exceptional results on time and within budget, and we pride ourselves on our attention to detail and personalized customer service. Whether you need a small print run or a large-scale project, we are here to help you achieve your printing goals.', '', 'Mar 09, 2023 08:50:43 PM', '2023-03-09 20:50:43'),
+(2, '', '6409d6f270ec98.69372437.jpg', 'Mar 09, 2023 08:54:10 PM', '2023-03-09 20:54:10');
 
 -- --------------------------------------------------------
 
@@ -59,7 +59,7 @@ CREATE TABLE `all_footer_tbl` (
   `address` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `all_footer_tbl`
@@ -71,7 +71,7 @@ INSERT INTO `all_footer_tbl` (`all_footer_id`, `facebook`, `tiktok`, `instagram`
 (18, '', '', '', '', '09123456799', '', 'Feb 28, 2023 02:52:30 PM', '2023-02-28 14:52:30'),
 (26, '', 'https://www.tiktok.com/@g4stickerwork/', '', '', '', '', 'Feb 28, 2023 06:34:27 PM', '2023-02-28 18:34:27'),
 (42, '', '', '', '', '', 'Blk2 Lot7 Sarmiento Homes, Muzon, San Jose del Monte City, Bulacan, San Jose del Monte, Philippines 0932 350 8154', 'Mar 01, 2023 02:21:08 PM', '2023-03-01 14:21:08'),
-(44, 'https://www.facebook.com/G4StickerWorks/', '', '', '', '', '', 'Mar 03, 2023 01:12:18 PM', '2023-03-03 13:12:18');
+(44, 'https://www.facebook.com/G4StickerWorks', '', '', '', '', '', 'Mar 03, 2023 01:12:18 PM', '2023-03-03 13:12:18');
 
 -- --------------------------------------------------------
 
@@ -85,14 +85,14 @@ CREATE TABLE `contact_us_page_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `contact_us_page_tbl`
 --
 
 INSERT INTO `contact_us_page_tbl` (`contact_us_page_id`, `sub_title`, `image`, `created_at_varchar`, `created_at`) VALUES
-(9, 'At our company, we value communication and are always eager to hear from our clients. Whether you have questions about our services, need a quote, or just want to say hello, we encourage you to get in touch. You can reach us by phone, email, or through our Social Media Pages. Our friendly and knowledgeable team is available to assist you with any inquiries you may have, and we strive to respond to all messages as quickly as possible. We look forward to hearing from you and working together to achieve your goals. Contact us today and let us start a conversation!', '', 'Mar 04, 2023 09:00:14 AM', '2023-03-04 09:00:14');
+(1, 'At our company, we value communication and are always eager to hear from our clients. Whether you have questions about our services, need a quote, or just want to say hello, we encourage you to get in touch. You can reach us by phone, email, or through our Social Media Pages. Our friendly and knowledgeable team is available to assist you with any inquiries you may have, and we strive to respond to all messages as quickly as possible. We look forward to hearing from you and working together to achieve your goals. Contact us today and let us start a conversation!', '', 'Mar 09, 2023 08:51:06 PM', '2023-03-09 20:51:06');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,7 @@ CREATE TABLE `cut_file_tbl` (
   `job_no` int(11) NOT NULL,
   `create_at_varchar` varchar(255) NOT NULL,
   `create_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cut_file_tbl`
@@ -261,9 +261,28 @@ CREATE TABLE `decals_tbl` (
   `decals_type` varchar(255) NOT NULL,
   `brand` varchar(255) NOT NULL,
   `model` text NOT NULL,
-  `create_at_varchar` varchar(255) NOT NULL,
-  `create_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `image` varchar(255) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `decals_tbl`
+--
+
+INSERT INTO `decals_tbl` (`decals_id`, `decals_type`, `brand`, `model`, `image`, `created_at_varchar`, `created_at`) VALUES
+(1, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bb8f10bea3.78795006.png', 'Mar 07, 2023 12:20:31 PM', '2023-03-07 12:20:31'),
+(2, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bb977298c9.18335667.png', 'Mar 07, 2023 12:20:39 PM', '2023-03-07 12:20:39'),
+(3, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bb9dec8492.53467059.png', 'Mar 07, 2023 12:20:45 PM', '2023-03-07 12:20:45'),
+(4, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bba89781a3.92569797.png', 'Mar 07, 2023 12:20:56 PM', '2023-03-07 12:20:56'),
+(5, 'Stock Decals', 'Honda', 'Honda BeAT', '6406c9b1705bb0.98756266.png', 'Mar 07, 2023 01:20:49 PM', '2023-03-07 13:20:49'),
+(6, 'Stock Decals', 'Yamaha', 'Yamaha Tracer 900', '6406c9be111850.36106499.png', 'Mar 07, 2023 01:21:02 PM', '2023-03-07 13:21:02'),
+(7, 'Stock Decals', 'Honda', 'Honda TMX125 Alpha', '6406c9c6626cd0.30072475.png', 'Mar 07, 2023 01:21:10 PM', '2023-03-07 13:21:10'),
+(8, 'Stock Decals', 'Suzuki Philippines', 'Suzuki GSX-S750', '6406c9d3492310.34241827.png', 'Mar 07, 2023 01:21:23 PM', '2023-03-07 13:21:23'),
+(9, 'Full Decals', 'Honda', 'Honda BeAT', '6409d716cdca15.32704372.png', 'Mar 09, 2023 08:54:46 PM', '2023-03-09 20:54:46'),
+(10, 'Full Decals', 'Honda', 'Honda Click', '6409d71c9a5fa5.78445877.png', 'Mar 09, 2023 08:54:52 PM', '2023-03-09 20:54:52'),
+(11, 'Full Decals', 'Honda', 'Honda Genio', '6409d723531f13.61018914.png', 'Mar 09, 2023 08:54:59 PM', '2023-03-09 20:54:59'),
+(12, 'Full Decals', 'Honda', 'Honda PCX', '6409d7299d6c36.23381233.png', 'Mar 09, 2023 08:55:05 PM', '2023-03-09 20:55:05');
 
 -- --------------------------------------------------------
 
@@ -277,26 +296,53 @@ CREATE TABLE `gallery_page_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `gallery_page_tbl`
 --
 
 INSERT INTO `gallery_page_tbl` (`gallery_page_id`, `caption`, `image`, `created_at_varchar`, `created_at`) VALUES
-(8, 'Looking for a reliable printing service for your business needs? Look no further than our shop. Our high-quality prints are sure to make your business stand out, whether you need business cards, flyers, or brochures. Using the latest printing technology, we ensure that your prints are vibrant and crisp, and our printing experts can assist with design and layout to create a professional and eye-catching final product. Fast turnaround times and competitive pricing make us the go-to printing solution for businesses of all sizes. Trust us to handle all your printing needs with the utmost care and attention to detail.', '', 'Mar 03, 2023 03:33:44 PM', '2023-03-03 15:33:44'),
-(10, '', '6401aa97899655.28756253.jpg', 'Mar 03, 2023 04:06:47 PM', '2023-03-03 16:06:47'),
-(11, '', '6401aa9b43dff0.13231437.jpg', 'Mar 03, 2023 04:06:51 PM', '2023-03-03 16:06:51'),
-(12, '', '6401aa9d79fd27.97937089.jpg', 'Mar 03, 2023 04:06:53 PM', '2023-03-03 16:06:53'),
-(13, '', '6401aa9f9b4fc7.82034501.jpg', 'Mar 03, 2023 04:06:55 PM', '2023-03-03 16:06:55'),
-(14, '', '6401aaa1de2406.91285324.jpg', 'Mar 03, 2023 04:06:57 PM', '2023-03-03 16:06:57'),
-(15, '', '6401aaa43e7f24.35836009.jpg', 'Mar 03, 2023 04:07:00 PM', '2023-03-03 16:07:00'),
-(16, '', '6401aaa8520f51.82207732.jpg', 'Mar 03, 2023 04:07:04 PM', '2023-03-03 16:07:04'),
-(17, '', '6401aaaa827510.07452434.jpg', 'Mar 03, 2023 04:07:06 PM', '2023-03-03 16:07:06'),
-(18, '', '6401aaadbc0513.86131870.jpg', 'Mar 03, 2023 04:07:09 PM', '2023-03-03 16:07:09'),
-(19, '', '6401aab0addec1.01503950.jpg', 'Mar 03, 2023 04:07:12 PM', '2023-03-03 16:07:12'),
-(20, '', '6401aab5464439.53154062.jpg', 'Mar 03, 2023 04:07:17 PM', '2023-03-03 16:07:17'),
-(21, '', '6401aab92b74c9.77015741.jpg', 'Mar 03, 2023 04:07:21 PM', '2023-03-03 16:07:21');
+(1, 'Looking for a reliable printing service for your business needs? Look no further than our shop. Our high-quality prints are sure to make your business stand out, whether you need business cards, flyers, or brochures. Using the latest printing technology, we ensure that your prints are vibrant and crisp, and our printing experts can assist with design and layout to create a professional and eye-catching final product. Fast turnaround times and competitive pricing make us the go-to printing solution for businesses of all sizes. Trust us to handle all your printing needs with the utmost care and attention to detail.', '', 'Mar 09, 2023 08:50:15 PM', '2023-03-09 20:50:15'),
+(2, '', '6409d69a12aa28.91234818.jpg', 'Mar 09, 2023 08:52:42 PM', '2023-03-09 20:52:42'),
+(3, '', '6409d69c84e3a3.22065871.jpg', 'Mar 09, 2023 08:52:44 PM', '2023-03-09 20:52:44'),
+(4, '', '6409d69edc6207.90923810.jpg', 'Mar 09, 2023 08:52:46 PM', '2023-03-09 20:52:46'),
+(5, '', '6409d6a3c8e8f9.86121267.jpg', 'Mar 09, 2023 08:52:51 PM', '2023-03-09 20:52:51'),
+(6, '', '6409d6a85bab01.61215956.jpg', 'Mar 09, 2023 08:52:56 PM', '2023-03-09 20:52:56'),
+(7, '', '6409d6ab64f9a6.33413693.jpg', 'Mar 09, 2023 08:52:59 PM', '2023-03-09 20:52:59'),
+(8, '', '6409d6b00aaac2.92059925.jpg', 'Mar 09, 2023 08:53:04 PM', '2023-03-09 20:53:04'),
+(9, '', '6409d6b34fab63.37208418.jpg', 'Mar 09, 2023 08:53:07 PM', '2023-03-09 20:53:07'),
+(10, '', '6409d6b6b597d1.88605119.jpg', 'Mar 09, 2023 08:53:10 PM', '2023-03-09 20:53:10'),
+(11, '', '6409d6b9a91175.57908947.jpg', 'Mar 09, 2023 08:53:13 PM', '2023-03-09 20:53:13'),
+(12, '', '6409d6bdbf1284.51036117.jpg', 'Mar 09, 2023 08:53:17 PM', '2023-03-09 20:53:17'),
+(13, '', '6409d6c133f159.86693104.jpg', 'Mar 09, 2023 08:53:21 PM', '2023-03-09 20:53:21'),
+(14, '', '6409d6c406f1e8.74615967.jpg', 'Mar 09, 2023 08:53:24 PM', '2023-03-09 20:53:24'),
+(15, '', '6409d6d86afad4.26400008.jpg', 'Mar 09, 2023 08:53:44 PM', '2023-03-09 20:53:44'),
+(16, '', '6409d6daca30e3.20640542.jpg', 'Mar 09, 2023 08:53:46 PM', '2023-03-09 20:53:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_hero_section_tbl`
+--
+
+CREATE TABLE `home_hero_section_tbl` (
+  `home_hero_section_id` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `sub_title` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `home_hero_section_tbl`
+--
+
+INSERT INTO `home_hero_section_tbl` (`home_hero_section_id`, `title`, `sub_title`, `image`, `created_at_varchar`, `created_at`) VALUES
+(1, 'WE DESIGN,PRINT and INSTALL', '', '', 'Mar 09, 2023 08:57:12 PM', '2023-03-09 20:57:12'),
+(2, '', 'Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins', '', 'Mar 09, 2023 08:57:23 PM', '2023-03-09 20:57:23'),
+(3, '', '', '6409d7be75b312.93406830.svg', 'Mar 09, 2023 08:57:34 PM', '2023-03-09 20:57:34');
 
 -- --------------------------------------------------------
 
@@ -310,16 +356,15 @@ CREATE TABLE `services_page_tbl` (
   `content` text NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `services_page_tbl`
 --
 
 INSERT INTO `services_page_tbl` (`services_id`, `sub_title`, `content`, `created_at_varchar`, `created_at`) VALUES
-(2, '', '', 'Mar 04, 2023 11:13:18 AM', '2023-03-04 11:13:18'),
-(4, '', 'Tarpaulin Printing,  Sticker,  Printing,  Wall Decor,  Office Glass Decor,  Product Labels,  Sintra Board Printing,  Motorcycle &amp; Car,  Company Vehicle,  Wrapping &amp; Customize Decals', 'Mar 04, 2023 11:29:30 AM', '2023-03-04 11:29:30'),
-(5, 'Our printing service offers a wide range of printing services to meet the needs of businesses and individuals. From digital printing to offset printing, we have the technology and expertise to handle any project. We specialize in printing marketing materials such as business cards, brochures, and flyers, as well as larger format items like banners and posters. In addition to printing, we also offer design services to ensure that your materials look their best. Finally, we provide a range of finishing options such as binding, laminating, and embossing to add that extra touch of professionalism. Whatever your printing needs, we have the services to make your project a success.', '', 'Mar 04, 2023 11:29:43 AM', '2023-03-04 11:29:43');
+(1, 'Our printing service offers a wide range of printing services to meet the needs of businesses and individuals. From digital printing to offset printing, we have the technology and expertise to handle any project. We specialize in printing marketing materials such as business cards, brochures, and flyers, as well as larger format items like banners and posters. In addition to printing, we also offer design services to ensure that your materials look their best. Finally, we provide a range of finishing options such as binding, laminating, and embossing to add that extra touch of professionalism. Whatever your printing needs, we have the services to make your project a success.', '', 'Mar 09, 2023 08:51:46 PM', '2023-03-09 20:51:46'),
+(2, '', 'Tarpaulin Printing, Sticker, Printing, Wall Decor, Office Glass Decor, Product Labels, Sintra Board Printing, Motorcycle and Car, Company Vehicle, Wrapping and Customize Decals', 'Mar 09, 2023 08:51:53 PM', '2023-03-09 20:51:53');
 
 -- --------------------------------------------------------
 
@@ -334,14 +379,14 @@ CREATE TABLE `user_tbl` (
   `role` varchar(20) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_tbl`
 --
 
 INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `role`, `created_at_varchar`, `created_at`) VALUES
-(16, 'a@gmail.com', 'asdasdasdasda', 'admin', 'Feb 25, 2023 05:35:51 PM', '2023-02-25 17:35:51');
+(1, 'admin@gmail.com', 'admin@gmail.com', 'admin', 'Mar 09, 2023 08:56:07 PM', '2023-03-09 20:56:07');
 
 --
 -- Indexes for dumped tables
@@ -384,6 +429,12 @@ ALTER TABLE `gallery_page_tbl`
   ADD PRIMARY KEY (`gallery_page_id`);
 
 --
+-- Indexes for table `home_hero_section_tbl`
+--
+ALTER TABLE `home_hero_section_tbl`
+  ADD PRIMARY KEY (`home_hero_section_id`);
+
+--
 -- Indexes for table `services_page_tbl`
 --
 ALTER TABLE `services_page_tbl`
@@ -403,7 +454,7 @@ ALTER TABLE `user_tbl`
 -- AUTO_INCREMENT for table `about_us_page_tbl`
 --
 ALTER TABLE `about_us_page_tbl`
-  MODIFY `about_us_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `about_us_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `all_footer_tbl`
@@ -415,7 +466,7 @@ ALTER TABLE `all_footer_tbl`
 -- AUTO_INCREMENT for table `contact_us_page_tbl`
 --
 ALTER TABLE `contact_us_page_tbl`
-  MODIFY `contact_us_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `contact_us_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cut_file_tbl`
@@ -427,25 +478,31 @@ ALTER TABLE `cut_file_tbl`
 -- AUTO_INCREMENT for table `decals_tbl`
 --
 ALTER TABLE `decals_tbl`
-  MODIFY `decals_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `decals_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `gallery_page_tbl`
 --
 ALTER TABLE `gallery_page_tbl`
-  MODIFY `gallery_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `gallery_page_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `home_hero_section_tbl`
+--
+ALTER TABLE `home_hero_section_tbl`
+  MODIFY `home_hero_section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `services_page_tbl`
 --
 ALTER TABLE `services_page_tbl`
-  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_tbl`
 --
 ALTER TABLE `user_tbl`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
