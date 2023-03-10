@@ -176,14 +176,14 @@
         <!-- Hero Section -->
         <section class="yot-row yot-flex-ai-c" style="padding:0;">
             <!-- Description -->
-            <div class="yot-tc-white  yot-col-50" >
-                <h1 class="yot-resize-font-64 yot-mb-16" style="line-height: 1;">WE DESIGN,PRINT and INSTALL</h1>
-                <p class="yot-resize-font-18">Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins</p>
+            <div class="yot-tc-white yot-col-50" >
+                <h1 id="titleDisplayIndexHero" class="yot-resize-font-64 yot-mb-16"></h1>
+                <p id="subTitleIndexHero" class="yot-resize-font-18"></p>
             </div>
 
             <!-- Image -->
             <div class="yot-col-50">
-                <img src="./asset/images/undraw_designer_girl_re_h54c.svg" alt="" width="300" height="300">
+                <div id="imageDisplayIndexHero"></div>
             </div>
         </section>
 
