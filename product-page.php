@@ -217,8 +217,7 @@
                         <h3 class="yot-tc-white">Temporary Plate No.</h3>
                     </div>
                     <div>
-                        <button class="yot-btn-white1 yot-mb-8">acrylic</button>
-                        <button class="yot-btn-white1 yot-mb-8">Yero</button>
+                        <button id="TempPlateFormBtn" class="yot-btn-white1 yot-mb-8">Temp Plate Form</button>
                     </div>
                 </div>
 
@@ -228,7 +227,7 @@
                         <h3 class="yot-tc-white">Product Sticker Labels</h3>
                     </div>
                     <div>
-                        <button class="yot-btn-white1 yot-mb-8">Soviener</button>
+                        <button id="TempPlateFormBtn" class="yot-btn-white1 yot-mb-8">Psl Form</button>
                     </div>
                 </div>
 
@@ -369,7 +368,55 @@
                 </div>
             </div>
 
-            
+            <!-- Create Container Template-->
+            <div id="createBgContainerTempPlate" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+            <div id="createFormContainerTempPlate" class="yot-overlay-mid-container" style="display:none;">
+                <div id="mainFormContainer" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                    <!-- Title -->
+                    <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                        <h2 id="titleCaptionDecals" class="yot-tc-blue1">CREATE</h2>
+
+                        <i id="createCloseFormIconTempPlate" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                    </div>
+
+                    <!-- Select Create Update Delete Form -->
+                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                        <h2>Temporary Plate</h2>
+                        <select class="yot-form-select yot-form-select-option" name="selectOptionDecals" id="selectOptionDecals">
+                            <option value="create">Create</option>
+                            <option value="update">Update</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                    </div>
+
+                    <!-- Create Form Container -->
+                    <div id="createDisplayContainerTempPlate">
+                        <form id="createFormTempPlate">
+                            <!-- Select TempPlate -->
+                            <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="tempPlate">Temporary Plate</label>
+                                <select class="yot-form-select yot-form-select-option yot-w-50"  name="tempPlate" id="tempPlate">
+                                    <option value="">- Select TempPlate -</option>
+                                    <option value="Acrylic">Acrylic</option>
+                                    <option value="Steel">Steel</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Update Container -->
+                    <div id="updateDisplayContainerTempPlate" style="display:none;">
+                        <!-- Table For Delete-->
+                        <div class="yot-w-100" id="updateDisplayTempPlate" style="overflow-y:scroll;max-height:400px; "></div>
+                    </div>
+
+                    <!-- Delete Container -->
+                    <div id="deleteDisplayContainerTempPlate" style="display:none;">
+                        <!-- Table For Delete-->
+                        <div class="yot-w-100" id="deleteDisplayTempPlate" style="overflow-y:scroll;max-height:400px; "></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
