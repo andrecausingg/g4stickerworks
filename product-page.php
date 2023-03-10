@@ -243,7 +243,7 @@
                 </div>
             </div>
             
-            <!-- Create Container Decals-->
+            <!-- Create Update Delete Container Decals-->
             <div id="createBgContainerDecals" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
             <div id="createFormContainerDecals" class="yot-overlay-mid-container" style="display:none;">
                 <div id="mainFormContainer" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -369,7 +369,7 @@
                 </div>
             </div>
 
-            <!-- Create Container Template-->
+            <!-- Create Update Delete Container Template-->
             <div id="createBgContainerTempPlate" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
             <div id="createFormContainerTempPlate" class="yot-overlay-mid-container" style="display:none;">
                 <div id="mainFormContainerTempPlate" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -426,6 +426,67 @@
                     <div id="deleteDisplayContainerTempPlate" style="display:none;">
                         <!-- Table For Delete-->
                         <div class="yot-w-100" id="deleteDisplayTempPlate" style="overflow-y:scroll;max-height:400px; "></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Create Update Delete Container Product Sticker Labels-->
+            <div id="createBgContainerPsl" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+            <div id="createFormContainerPsl" class="yot-overlay-mid-container" style="display:none;">
+                <div id="mainFormContainerPsl" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                    <!-- Title -->
+                    <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                        <h2 id="titleCaptionPsl" class="yot-tc-blue1">CREATE</h2>
+
+                        <i id="createCloseFormIconPsl" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                    </div>
+
+                    <!-- Select Create Update Delete Form -->
+                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                        <h2>Temporary Plate</h2>
+                        <select class="yot-form-select yot-form-select-option" name="selectOptionPsl" id="selectOptionPsl">
+                            <option value="create">Create</option>
+                            <option value="update">Update</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                    </div>
+
+                    <!-- Create Form Container -->
+                    <div id="createDisplayContainerPsl">
+                        <form id="createFormPsl">
+                            <!-- Select Psl -->
+                            <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Psl">Temporary Plate</label>
+                                <select class="yot-form-select yot-form-select-option yot-w-50"  name="selectPsl" id="selectPsl">
+                                    <option value="">- Select -</option>
+                                    <option value="Acrylic">Acrylic</option>
+                                    <option value="Steel">Steel</option>
+                                </select>
+                            </div>
+
+                            <!-- Select upload Image -->
+                            <div class="yot-form-group yot-flex-fd-c-ai-c">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImagePsl">Upload Image</label>
+                                <input class="yot-form-input" type="file" name="imagePsl" id="imagePsl">
+                            </div>
+
+                            <!-- Submit Btn -->
+                            <div class="yot-text-center">
+                                <input class="yot-btn-blue1" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Update Container -->
+                    <div id="updateDisplayContainerPsl" style="display:none;">
+                        <!-- Table For Delete-->
+                        <div class="yot-w-100" id="updateDisplayPsl" style="overflow-y:scroll;max-height:400px; "></div>
+                    </div>
+
+                    <!-- Delete Container -->
+                    <div id="deleteDisplayContainerPsl" style="display:none;">
+                        <!-- Table For Delete-->
+                        <div class="yot-w-100" id="deleteDisplayPsl" style="overflow-y:scroll;max-height:400px; "></div>
                     </div>
                 </div>
             </div>
