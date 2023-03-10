@@ -343,7 +343,8 @@
                             </div>
 
                             <!-- Select upload Image -->
-                            <div class="yot-form-group uploadImageContainerDecals" style="display:none">
+                            <div class="yot-form-group yot-flex-fd-c-ai-c uploadImageContainerDecals" style="display:none">.
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImageDecals">Upload Image</label>
                                 <input class="yot-form-input" type="file" name="imageDecals" id="imageDecals">
                             </div>
 
@@ -371,10 +372,10 @@
             <!-- Create Container Template-->
             <div id="createBgContainerTempPlate" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
             <div id="createFormContainerTempPlate" class="yot-overlay-mid-container" style="display:none;">
-                <div id="mainFormContainer" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <div id="mainFormContainerTempPlate" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                     <!-- Title -->
                     <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                        <h2 id="titleCaptionDecals" class="yot-tc-blue1">CREATE</h2>
+                        <h2 id="titleCaptionTempPlate" class="yot-tc-blue1">CREATE</h2>
 
                         <i id="createCloseFormIconTempPlate" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                     </div>
@@ -382,7 +383,7 @@
                     <!-- Select Create Update Delete Form -->
                     <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                         <h2>Temporary Plate</h2>
-                        <select class="yot-form-select yot-form-select-option" name="selectOptionDecals" id="selectOptionDecals">
+                        <select class="yot-form-select yot-form-select-option" name="selectOptionTempPlate" id="selectOptionTempPlate">
                             <option value="create">Create</option>
                             <option value="update">Update</option>
                             <option value="delete">Delete</option>
@@ -395,11 +396,22 @@
                             <!-- Select TempPlate -->
                             <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c">
                                 <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="tempPlate">Temporary Plate</label>
-                                <select class="yot-form-select yot-form-select-option yot-w-50"  name="tempPlate" id="tempPlate">
-                                    <option value="">- Select TempPlate -</option>
+                                <select class="yot-form-select yot-form-select-option yot-w-50"  name="selectTempPlate" id="selectTempPlate">
+                                    <option value="">- Select -</option>
                                     <option value="Acrylic">Acrylic</option>
                                     <option value="Steel">Steel</option>
                                 </select>
+                            </div>
+
+                            <!-- Select upload Image -->
+                            <div class="yot-form-group yot-flex-fd-c-ai-c">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImageTempPlate">Upload Image</label>
+                                <input class="yot-form-input" type="file" name="imageTempPlate" id="imageTempPlate">
+                            </div>
+
+                            <!-- Submit Btn -->
+                            <div class="yot-text-center">
+                                <input class="yot-btn-blue1" type="submit" value="Submit">
                             </div>
                         </form>
                     </div>
@@ -475,11 +487,14 @@
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-
+    <script src="./asset/js/product-page/display/d-data.js"></script>
     <script src="./asset/js/product-page/create-decals.js"></script>
     <script src="./asset/js/product-page/update-decals.js"></script>
     <script src="./asset/js/product-page/delete-decals.js"></script>
 
-    <script src="./asset/js/product-page/display/d-data.js"></script>
+    <script src="./asset/js/product-page/create-temp-plate.js"></script>
+    <script src="./asset/js/product-page/update-temp-plate.js"></script>
+    <script src="./asset/js/product-page/delete-temp-plate.js"></script>
+
 </body>
 </html>
