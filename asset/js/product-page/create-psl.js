@@ -74,7 +74,7 @@ $(document).ready(function(){
     });
 
     // Show Create Bg and Form
-    $("#PslFormBtn").click(function(){
+    $("#pslFormBtn").click(function(){
         $("#createBgContainerPsl").show();
         $("#createFormContainerPsl").show();
     });

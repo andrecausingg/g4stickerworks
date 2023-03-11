@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 11, 2023 at 04:06 AM
+-- Generation Time: Mar 11, 2023 at 04:25 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `psl_table`
+-- Table structure for table `sticker_label_tbl`
 --
 
-CREATE TABLE `psl_table` (
+CREATE TABLE `sticker_label_tbl` (
   `psl_id` int(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
@@ -39,9 +39,9 @@ CREATE TABLE `psl_table` (
 --
 
 --
--- Indexes for table `psl_table`
+-- Indexes for table `sticker_label_tbl`
 --
-ALTER TABLE `psl_table`
+ALTER TABLE `sticker_label_tbl`
   ADD PRIMARY KEY (`psl_id`);
 
 --
@@ -49,9 +49,9 @@ ALTER TABLE `psl_table`
 --
 
 --
--- AUTO_INCREMENT for table `psl_table`
+-- AUTO_INCREMENT for table `sticker_label_tbl`
 --
-ALTER TABLE `psl_table`
+ALTER TABLE `sticker_label_tbl`
   MODIFY `psl_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 

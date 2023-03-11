@@ -221,17 +221,17 @@
                     </div>
                 </div>
 
-                <!-- Sticker 1-->
+                <!-- Product Sticker Labels -->
                 <div class="yot-bg-blue1 yot-mb-8 over-view-item3 yot-text-center" style="border-radius: 8px; padding: 8px;">
                     <div class="yot-mb-8">
-                        <h3 class="yot-tc-white">Product Sticker Labels</h3>
+                        <h3 class="yot-tc-white">Sticker Labels</h3>
                     </div>
                     <div>
-                        <button id="TempPlateFormBtn" class="yot-btn-white1 yot-mb-8">Psl Form</button>
+                        <button id="pslFormBtn" class="yot-btn-white1 yot-mb-8">Sticker Labels Form</button>
                     </div>
                 </div>
 
-                <!-- Sticker 2-->
+                <!-- Tarpauline -->
                 <div class="yot-bg-blue1 yot-mb-8 over-view-item3 yot-text-center" style="border-radius: 8px; padding: 8px;">
                     <div class="yot-mb-8">
                         <h3 class="yot-tc-white">Tarpauline</h3>
@@ -443,7 +443,7 @@
 
                     <!-- Select Create Update Delete Form -->
                     <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                        <h2>Temporary Plate</h2>
+                        <h2>Sticker Labels</h2>
                         <select class="yot-form-select yot-form-select-option" name="selectOptionPsl" id="selectOptionPsl">
                             <option value="create">Create</option>
                             <option value="update">Update</option>
@@ -454,16 +454,6 @@
                     <!-- Create Form Container -->
                     <div id="createDisplayContainerPsl">
                         <form id="createFormPsl">
-                            <!-- Select Psl -->
-                            <div class="yot-form-group yot-flex yot-flex-fd-c-ai-c">
-                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Psl">Temporary Plate</label>
-                                <select class="yot-form-select yot-form-select-option yot-w-50"  name="selectPsl" id="selectPsl">
-                                    <option value="">- Select -</option>
-                                    <option value="Acrylic">Acrylic</option>
-                                    <option value="Steel">Steel</option>
-                                </select>
-                            </div>
-
                             <!-- Select upload Image -->
                             <div class="yot-form-group yot-flex-fd-c-ai-c">
                                 <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImagePsl">Upload Image</label>
@@ -556,6 +546,8 @@
     <script src="./asset/js/product-page/create-temp-plate.js"></script>
     <script src="./asset/js/product-page/update-temp-plate.js"></script>
     <script src="./asset/js/product-page/delete-temp-plate.js"></script>
+
+    <script src="./asset/js/product-page/create-psl.js"></script>
 
 </body>
 </html>
