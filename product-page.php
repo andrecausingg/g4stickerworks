@@ -431,20 +431,20 @@
             </div>
 
             <!-- Create Update Delete Container Product Sticker Labels-->
-            <div id="createBgContainerPsl" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-            <div id="createFormContainerPsl" class="yot-overlay-mid-container" style="display:none;">
-                <div id="mainFormContainerPsl" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+            <div id="createBgContainerStickerLabel" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+            <div id="createFormContainerStickerLabel" class="yot-overlay-mid-container" style="display:none;">
+                <div id="mainFormContainerStickerLabel" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                     <!-- Title -->
                     <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                        <h2 id="titleCaptionPsl" class="yot-tc-blue1">CREATE</h2>
+                        <h2 id="titleCaptionStickerLabel" class="yot-tc-blue1">CREATE</h2>
 
-                        <i id="createCloseFormIconPsl" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                        <i id="createCloseFormIconStickerLabel" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                     </div>
 
                     <!-- Select Create Update Delete Form -->
                     <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                         <h2>Sticker Labels</h2>
-                        <select class="yot-form-select yot-form-select-option" name="selectOptionPsl" id="selectOptionPsl">
+                        <select class="yot-form-select yot-form-select-option" name="selectOptionStickerLabel" id="selectOptionStickerLabel">
                             <option value="create">Create</option>
                             <option value="update">Update</option>
                             <option value="delete">Delete</option>
@@ -452,12 +452,12 @@
                     </div>
 
                     <!-- Create Form Container -->
-                    <div id="createDisplayContainerPsl">
-                        <form id="createFormPsl">
+                    <div id="createDisplayContainerStickerLabel">
+                        <form id="createFormStickerLabel">
                             <!-- Select upload Image -->
                             <div class="yot-form-group yot-flex-fd-c-ai-c">
-                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImagePsl">Upload Image</label>
-                                <input class="yot-form-input" type="file" name="imagePsl" id="imagePsl">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImageStickerLabel">Upload Image</label>
+                                <input class="yot-form-input" type="file" name="imageStickerLabel" id="imageStickerLabel">
                             </div>
 
                             <!-- Submit Btn -->
@@ -468,15 +468,15 @@
                     </div>
 
                     <!-- Update Container -->
-                    <div id="updateDisplayContainerPsl" style="display:none;">
+                    <div id="updateDisplayContainerStickerLabel" style="display:none;">
                         <!-- Table For Delete-->
-                        <div class="yot-w-100" id="updateDisplayPsl" style="overflow-y:scroll;max-height:400px; "></div>
+                        <div class="yot-w-100" id="updateDisplayStickerLabel" style="overflow-y:scroll;max-height:400px; "></div>
                     </div>
 
                     <!-- Delete Container -->
-                    <div id="deleteDisplayContainerPsl" style="display:none;">
+                    <div id="deleteDisplayContainerStickerLabel" style="display:none;">
                         <!-- Table For Delete-->
-                        <div class="yot-w-100" id="deleteDisplayPsl" style="overflow-y:scroll;max-height:400px; "></div>
+                        <div class="yot-w-100" id="deleteDisplayStickerLabel" style="overflow-y:scroll;max-height:400px; "></div>
                     </div>
                 </div>
             </div>

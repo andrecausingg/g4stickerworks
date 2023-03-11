@@ -1,14 +1,14 @@
 $(document).ready(function(){
     // Listen for form submit event
-    $('#createFormPsl').submit(function(event) {
+    $('#createFormStickerLabel').submit(function(event) {
         event.preventDefault(); // Prevent default form submission behavior
 
-        const selectPsl = $("#selectPsl").val().trim();
+        const selectStickerLabel = $("#selectStickerLabel").val().trim();
 
         // Create form data object
         var formData = new FormData(this);
 
-        if(selectPsl != ""){
+        if(selectStickerLabel != ""){
             // Send AJAX request to server
             $.ajax({
                 type: 'POST',
@@ -38,7 +38,7 @@ $(document).ready(function(){
     });
 
     // Show the Selected Form Container
-    $("#selectOptionPsl").change(function() {
+    $("#selectOptionStickerLabel").change(function() {
         var selectedValue = $(this).val(); // get the value of the selected option
         var containers = ["create", "update", "delete"];
         var captions = ["CREATE", "UPDATE", "DELETE"];
@@ -50,39 +50,39 @@ $(document).ready(function(){
             var containerID = containers[i] + "DisplayContainer"; // get the ID of the container
             if (selectedValue == containers[i]) {
                 $("#" + containerID).show(); // show the corresponding container
-                $("#titleCaptionPsl").text(captions[i]); // change the title caption to match the selected option
+                $("#titleCaptionStickerLabel").text(captions[i]); // change the title caption to match the selected option
             } else {
                 $("#" + containerID).hide(); // hide the other containers
             }
         }
         if (selectedValue == "create") {
-            $("#mainFormContainerPsl").removeClass("yot-overlay-mid-container-form-tablet-size-up");
-            $("#createDisplayContainerPsl").show(); // show the create container
-            $("#updateDisplayContainerPsl").hide(); // hide the update container
-            $("#deleteDisplayContainerPsl").hide(); // hide the delete container
+            $("#mainFormContainerStickerLabel").removeClass("yot-overlay-mid-container-form-tablet-size-up");
+            $("#createDisplayContainerStickerLabel").show(); // show the create container
+            $("#updateDisplayContainerStickerLabel").hide(); // hide the update container
+            $("#deleteDisplayContainerStickerLabel").hide(); // hide the delete container
         } else if (selectedValue == "update") {
-            $("#mainFormContainerPsl").addClass("yot-overlay-mid-container-form-tablet-size-up");
-            $("#createDisplayContainerPsl").hide(); // hide the create container
-            $("#updateDisplayContainerPsl").show(); // show the update container
-            $("#deleteDisplayContainerPsl").hide(); // hide the delete container
+            $("#mainFormContainerStickerLabel").addClass("yot-overlay-mid-container-form-tablet-size-up");
+            $("#createDisplayContainerStickerLabel").hide(); // hide the create container
+            $("#updateDisplayContainerStickerLabel").show(); // show the update container
+            $("#deleteDisplayContainerStickerLabel").hide(); // hide the delete container
         } else if (selectedValue == "delete") {
-            $("#mainFormContainerPsl").addClass("yot-overlay-mid-container-form-tablet-size-up");
-            $("#createDisplayContainerPsl").hide(); // hide the create container
-            $("#updateDisplayContainerPsl").hide(); // hide the update container
-            $("#deleteDisplayContainerPsl").show(); // show the delete container
+            $("#mainFormContainerStickerLabel").addClass("yot-overlay-mid-container-form-tablet-size-up");
+            $("#createDisplayContainerStickerLabel").hide(); // hide the create container
+            $("#updateDisplayContainerStickerLabel").hide(); // hide the update container
+            $("#deleteDisplayContainerStickerLabel").show(); // show the delete container
         }
     });
 
     // Show Create Bg and Form
-    $("#pslFormBtn").click(function(){
-        $("#createBgContainerPsl").show();
-        $("#createFormContainerPsl").show();
+    $("#StickerLabelFormBtn").click(function(){
+        $("#createBgContainerStickerLabel").show();
+        $("#createFormContainerStickerLabel").show();
     });
 
     // Hide Create Bg and Form
-    $("#createCloseFormIconPsl").click(function(){
-        $("#createBgContainerPsl").hide();
-        $("#createFormContainerPsl").hide();
+    $("#createCloseFormIconStickerLabel").click(function(){
+        $("#createBgContainerStickerLabel").hide();
+        $("#createFormContainerStickerLabel").hide();
     });
 
     // Hide All Alert
@@ -100,10 +100,10 @@ $(document).ready(function(){
         }, 10000); // 10000 milliseconds = 10 seconds
         
         // Create select tag
-        $('#selectPsl').val('');
+        $('#selectStickerLabel').val('');
 
-        $("#updateDisplayPsl").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-temp-plate.php");
-        $("#deleteDisplayPsl").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-temp-plate.php");
+        $("#updateDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-temp-plate.php");
+        $("#deleteDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-temp-plate.php");
     }
 
     function hideErrImgTooBig(){
