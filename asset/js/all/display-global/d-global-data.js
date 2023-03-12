@@ -1,9 +1,13 @@
 $(document).ready(function(){
+    // Temporary Plate
+    $("#temporaryPlateDisplay").load("../../../../../g4stickerworks/asset/php/product-page/display/d-temporary-plate.php");
+    $("#stickerLabelDisplay").load("../../../../../g4stickerworks/asset/php/product-page/display/d-sticker-label.php");
+    $("#tarpaulineDisplay").load("../../../../../g4stickerworks/asset/php/product-page/display/d-tarpauline.php");
+
     // Index Hero Section
     $("#titleDisplayIndexHero").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-title.php");
     $("#subTitleIndexHero").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-sub-title.php");
     $("#imageDisplayIndexHero").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-images.php");
-
 
     // Decals
     $("#allDecalsProduct").load("../../../../../g4stickerworks/asset/php/product-page/display/d-decals.php");

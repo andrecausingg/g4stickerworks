@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decals</title>
+    <title>Tarpauline</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -35,10 +35,10 @@
                         <span class="tarpaulinNavLink yot-text-fs-xl">Products</span>
                     </div>
                     <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -111px;">
-                        <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Decals</a>
+                        <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-mb-8 yot-active-bbh1">Decals</a>
                         <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
                         <a href="sticker-label" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
-                        <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
+                        <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Tarpauline</a>
                     </div>
                 </div> <span class="yot-mlr-4"></span>
                 <a href="services" class="yot-text-fs-xl yot-active-bbh1">Services</a> <span class="yot-mlr-4"></span>
@@ -76,10 +76,10 @@
                     <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
                 </div>
                 <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                    <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Decals</a>
+                    <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
                     <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
                     <a href="sticker-label" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
-                    <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
+                    <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Tarpauline</a>
                 </div>
             </div>
         </div>
@@ -176,58 +176,13 @@
         <!-- Product Section -->
         <section>
             <!-- Title And Btn -->
-            <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                <h1 id="decalsTitle" class="yot-resize-font-64 yot-tc-blue1">All Decals</h1>
-
-                <!-- Decals Filter Btn-->
-                <button id="decalsFilterBtn" class="yot-btn-blue1 yot-mb-16">Filters</button>
+            <div class="yot-flex yot-flex-ai-c-jc-c yot-mb-16">
+                <h1 id="decalsTitle" class="yot-resize-font-64 yot-tc-blue1">Tarpauline</h1>
             </div>
 
-            <!-- Brand and Model Title -->
-            <div id="brandAndMotorCycleTitle" class="yot-mb-16">
-                <h3 id="brandTitleDecals"></h3>
-                <h3 id="motorCycleTitle"></h3>
-            </div>
-
-            <!-- All Decals Products -->
-            <section id="allDecalsProduct"></section>
+            <!-- All Temporary Plate -->
+            <section id="tarpaulineDisplay"></section>
         </section>
-    </div>
-
-    <!-- Filter Container -->
-    <div id="filterBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-    <div id="filterContainer" class="yot-overlay-mid-container" style="display:none;">
-        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form ">
-            <div class="yot-mb-8 yot-text-center">
-                <i id="filterContainerCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-            </div>
-
-            <!-- Filter Containers -->
-            <div class="yot-flex yot-flex-fd-c-ai-c">
-                <!-- Select Container -->
-                <div class="yot-mb-8 yot-text-center">
-                    <h3 class="yot-mb-4">Decals</h3>
-                    <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
-                        <option value="">- Select Decals -</option>
-                        <option value="Full Decals">Full Decals</option>
-                        <option value="Stock Decals">Stock Decals</option>
-                        <option value="Sticker Mags">Sticker Mags</option>
-                    </select>
-                </div>
-
-                <!-- Select Brand Container -->
-                <div class="yot-mb-8 yot-text-center" id="brandContainer" style="display: none;">
-                    <h3 class="yot-mb-4">Brand</h3>
-                    <select class="yot-form-select yot-form-select-option" name="brandSelect" id="brandSelect"></select>
-                </div>
-
-                <!-- Select Model Container -->
-                <div class="yot-text-center" id="modelContainer" style="display: none;">
-                    <h3 class="yot-mb-4">Model</h3>
-                    <select class="yot-form-select yot-form-select-option" name="modelSelect" id="modelSelect"></select>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Footer -->

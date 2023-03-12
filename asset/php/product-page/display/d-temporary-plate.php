@@ -15,7 +15,7 @@ class classDisplayData{
         $count = 0; // initialize counter variable
         
         // DISPLAY
-        $stmt = $conn->prepare("SELECT * FROM decals_tbl WHERE image <> '' ORDER BY decals_id DESC");
+        $stmt = $conn->prepare("SELECT * FROM temp_plate_tbl WHERE image <> '' ORDER BY temp_plate_id DESC");
         $stmt->execute();
         $result = $stmt->get_result();
 
