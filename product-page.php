@@ -227,7 +227,7 @@
                         <h3 class="yot-tc-white">Sticker Labels</h3>
                     </div>
                     <div>
-                        <button id="pslFormBtn" class="yot-btn-white1 yot-mb-8">Sticker Labels Form</button>
+                        <button id="stickerLabelFormBtn" class="yot-btn-white1 yot-mb-8">Sticker Labels Form</button>
                     </div>
                 </div>
 
@@ -433,7 +433,7 @@
             <!-- Create Update Delete Container Product Sticker Labels-->
             <div id="createBgContainerStickerLabel" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
             <div id="createFormContainerStickerLabel" class="yot-overlay-mid-container" style="display:none;">
-                <div id="mainFormContainerStickerLabel" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <div  class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                     <!-- Title -->
                     <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
                         <h2 id="titleCaptionStickerLabel" class="yot-tc-blue1">CREATE</h2>
@@ -547,7 +547,7 @@
     <script src="./asset/js/product-page/update-temp-plate.js"></script>
     <script src="./asset/js/product-page/delete-temp-plate.js"></script>
 
-    <script src="./asset/js/product-page/create-psl.js"></script>
+    <script src="./asset/js/product-page/create-sticker-label.js"></script>
 
 </body>
 </html>

@@ -3,38 +3,34 @@ $(document).ready(function(){
     $('#createFormStickerLabel').submit(function(event) {
         event.preventDefault(); // Prevent default form submission behavior
 
-        const selectStickerLabel = $("#selectStickerLabel").val().trim();
-
         // Create form data object
         var formData = new FormData(this);
 
-        if(selectStickerLabel != ""){
-            // Send AJAX request to server
-            $.ajax({
-                type: 'POST',
-                url: '../../../../g4stickerworks/asset/php/product-page/create-temp-plate.php',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(response) {
-                    const responseVar = response.trim();
-                    if(responseVar == "created"){
-                        resetForm();
-                    }else if(responseVar == 'imagetoolarge'){
-                        hideErrImgTooBig();
-                    }else if(responseVar == 'errorUploadingimage'){
-                        hideErroruploadingimage();
-                    }else if(responseVar == 'invalidfiletype'){
-                        hideInvalidfiletype();
-                    }
-                    // Handle success response here
-                },
-                error: function(xhr, status, error) {
-                    console.error(error); // Log error
-                    // Handle error response here
+        // Send AJAX request to server
+        $.ajax({
+            type: 'POST',
+            url: '../../../../g4stickerworks/asset/php/product-page/create-sticker-label.php',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                const responseVar = response.trim();
+                if(responseVar == "created"){
+                    resetForm();
+                }else if(responseVar == 'imagetoolarge'){
+                    hideErrImgTooBig();
+                }else if(responseVar == 'errorUploadingimage'){
+                    hideErroruploadingimage();
+                }else if(responseVar == 'invalidfiletype'){
+                    hideInvalidfiletype();
                 }
-            });
-        }
+                // Handle success response here
+            },
+            error: function(xhr, status, error) {
+                console.error(error); // Log error
+                // Handle error response here
+            }
+        });
     });
 
     // Show the Selected Form Container
@@ -74,7 +70,7 @@ $(document).ready(function(){
     });
 
     // Show Create Bg and Form
-    $("#StickerLabelFormBtn").click(function(){
+    $("#stickerLabelFormBtn").click(function(){
         $("#createBgContainerStickerLabel").show();
         $("#createFormContainerStickerLabel").show();
     });
