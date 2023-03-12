@@ -193,17 +193,6 @@
             <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
                 <div class="yot-tc-blue1">
                     <h1 class="yot-resize-font-64">PRODUCTS</h1>
-                    <p class="yot-resize-font-18 yot-mb-16">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, aut rem a praesentium natus</p>
-                    <button class="yot-btn-blue1">View More</button>
-                </div>
-
-                <div>
-                    <select class="yot-btn-blue1" name="" id="">
-                        <option value="">Decals</option>
-                        <option value="">Tarpaulin</option>
-                        <option value="">Tarpaulin</option>
-                        <option value="">Tarpaulin</option>
-                    </select>
                 </div>
             </div>
 
@@ -211,30 +200,18 @@
             <div class="yot-row">
                 <div class="yot-col-25">
                     <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Color: Blue</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
                 </div>
 
                 <div class="yot-col-25">
                     <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Color: Blue</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
                 </div>
 
                 <div class="yot-col-25">
                     <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Color: Blue</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
                 </div>
 
                 <div class="yot-col-25">
                     <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                    <p>Name: mio i 125</p>
-                    <p>Color: Blue</p>
-                    <p>Description: Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum tempore excepturi molestias eos deserunt commodi labore similique</p>
                 </div>
             </div>
             
