@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cut File</title>
+    <title>Visitor</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -58,7 +58,7 @@
                         <a href="orders" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Orders</a>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
+                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bb-blue">Visitors</a>
                     </div>
                 </div>
             </div>
@@ -104,13 +104,13 @@
                 <div class="yot-pl-48">
                     <!-- Work -->
                     <div class="yot-mb-8">
-                        <div class="workPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-active-bbh1 yot-cursor-pointer">
+                        <div class="workPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
                             <span style="font-size: 24px; font-weight: bolder;">Work</span>
-                            <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightWork"></i></span>
+                            <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightWork"></i></span>
                         </div>
-                        <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
+                        <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                             <!-- <a href="job" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a> -->
-                            <a href="cut-file" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
+                            <a href="cut-file" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
                         <a href="orders" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Orders</a>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="">Visitors</a>
+                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bb-blue">Visitors</a>
                     </div>
                 </div>
             </div>
@@ -185,13 +185,13 @@
                 <div class="yot-pl-48">
                     <!-- Work -->
                     <div class="yot-mb-8">
-                        <div class="workPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-active-bbh1 yot-cursor-pointer">
+                        <div class="workPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
                             <span style="font-size: 24px; font-weight: bolder;">Work</span>
-                            <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightWork"></i></span>
+                            <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightWork"></i></span>
                         </div>
-                        <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
+                        <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                             <!-- <a href="job" class="yot-mb-8 yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a> -->
-                            <a href="cut-file" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
+                            <a href="cut-file" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
                         </div>
                     </div>
                 </div>
@@ -200,11 +200,10 @@
 
         <!-- Right -->
         <div class="g-main-item-right" style="padding: 24px;">
-
             <div>
                 <div class="yot-flex-tab yot-flex-ai-c-jc-sb yot-mb-8">
                     <!-- Title -->
-                    <h2 class="yot-mb-8 yot-resize-font-64">Cut File</h2>
+                    <h2 class="yot-mb-8 yot-resize-font-64">Visitor</h2>
     
                    <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-mlr-4">
                         <div class="yot-form-group yot-mr-4">
@@ -228,54 +227,16 @@
                     <!--  -->
                     <div class="yot-bg-white yot-mb-8 over-view-item1 yot-mb-8" style="border-radius: 8px; padding: 16px;">
                         <div class="yot-flex yot-flex-ai-c-jc-sb ">
-                            <h3 class="yot-tc-black">Total Cut Files</h3>
-                            <div class="yot-text-end yot-mt-8">
-                                <button id="createBtnCutFile" class="yot-btn-blue1">Create</button>
-                            </div>
+                            <h3 class="yot-tc-black">Total Visitors</h3>
                         </div>
-                        <h2 id="totalCutFile" class="yot-tc-black">0</span>
+                        <h2 id="totalVisitor" class="yot-tc-black">0</span>
                     </div>
                 </div>
             </div>
 
             <!-- Table -->
-            <div class="yot-w-100" id="displayCutFile" style="max-height:500px; overflow-y:scroll"></div>
+            <div class="yot-w-100" id="visitorDisplay" style="max-height:500px; overflow-y:scroll"></div>
         </div>
-
-        <!-- Create Container -->
-        <div id="bgCreateContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-        <div id="createFormContainerCutFile" class="yot-overlay-mid-container" style="display:none;">
-            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                <form id="createFormCutFile">
-                    <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                        <h2 class="yot-tc-blue1">CREATE</h2>
-                        <i id="closeCutFileFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-                    </div>
-
-                    <!-- Job Name -->
-                    <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Job Name</label>
-                        <input class="yot-form-input" type="text" name="jobName" id="jobName">
-                    </div>
-
-                    <!-- Job No -->
-                    <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobNum">Job No.</label>
-                        <input class="yot-form-input" type="text" name="jobNum" id="jobNum">
-                    </div>
-
-                    <div class="yot-text-center">
-                        <input class="yot-btn-blue1" type="submit" value="Submit">
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Delete Container -->
-        <div class="displayDeleteContainerCutFile"></div>
-
-        <!-- Edit Container -->
-        <div class="displayEditContainerCutFile"></div>
     </div>
 
     <!-- Success Container-->
@@ -308,7 +269,6 @@
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
 
-    <script src="./asset/js/cut-file/cut-file.js"></script>
-    <script src="./asset/js/cut-file/display/d-cut-file.js"></script>
+    <script src="./asset/js/visitor/display/d-data.js"></script>
 </body>
 </html>

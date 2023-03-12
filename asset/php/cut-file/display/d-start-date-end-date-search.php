@@ -82,7 +82,10 @@
     
                 echo '</table>';
             } else {
-                echo "No results found.";
+                echo '<div class="yot-flex yot-flex-fd-c-ai-c">
+                <h1>No Result Found</h1>
+                <img src="../../../../../g4stickerworks/asset/images/undraw_empty_re_opql.svg" alt="" style="width:300px; height:300px">
+            </div>';
             }
         }
     }
