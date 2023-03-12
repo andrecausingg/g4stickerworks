@@ -15,10 +15,11 @@
 
             echo '
                 <table class="yot-table-blue-theme">
-                <tr>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
+                    <tr>
+                        <th>Image</th>
+                        <th>Date and Time</th>
+                        <th>Action</th>
+                    </tr>
             ';
             
             // DISPLAY
@@ -28,10 +29,11 @@
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        <td><img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt=""></td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-trash yot-text-fs-xxl yot-mlr-8 yot-active-bbh1 deleteIconImage" data-id="'. htmlspecialchars($row["sticker_label_id"]).'"></i>
+                        <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
+                            <img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt="">
                         </td>
+                        <td>'.htmlspecialchars($row["created_at_varchar"]).'</td>
+                        <td><button class="yot-btn-blue1 deleteIconStickerLabel" data-id="'. htmlspecialchars($row["sticker_label_id"]).'">Delete</button></td>
                     </tr>
                 ';
             }

@@ -96,10 +96,10 @@ $(document).ready(function(){
         }, 10000); // 10000 milliseconds = 10 seconds
         
         // Create select tag
-        $('#selectStickerLabel').val('');
-
-        $("#updateDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-temp-plate.php");
-        $("#deleteDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-temp-plate.php");
+        $('#imageStickerLabel').val('');
+        
+        $("#updateDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-sticker-label.php");
+        $("#deleteDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-sticker-label.php");
     }
 
     function hideErrImgTooBig(){

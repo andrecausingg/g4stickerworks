@@ -15,11 +15,11 @@
 
             echo '
                 <table class="yot-table-blue-theme">
-                <tr>
-                    <th>Upload File</th>
-                    <th>Image</th>
-                    <th>Action</th>
-                </tr>
+                    <tr>
+                        <th>Image</th>
+                        <th>Date And Time</th>
+                        <th>Action</th>
+                    </tr>
             ';
             
             // DISPLAY
@@ -29,14 +29,13 @@
             while($row = $result->fetch_assoc()){
                 echo'
                     <tr>
-                        <td>
-                            <input data-id="'.htmlspecialchars($row["sticker_label_id"]).'" class="yot-form-input" type="file" name="imageUpdate" id="imageUpdate">
-                        </td>
-                        <td>
+                        <td class="pp-table-images yot-flex yot-flex-fd-c-ai-c">
                             <img src="../../../../../g4stickerworks/asset/images/all-products/'.$row["image"].'" alt="">
+                            <input data-id="'.htmlspecialchars($row["sticker_label_id"]).'" class="yot-form-input" type="file" name="imageUpdateStickerLabel" id="imageUpdateStickerLabel">
                         </td>
+                        <td>'.htmlspecialchars($row["created_at_varchar"]).'</td>
                         <td>
-                            <button class="yot-btn-blue1 updateIconImage yot-text-fs-xsm" data-id="'. htmlspecialchars($row["sticker_label_id"]).'">Update</button>
+                            <button class="yot-btn-blue1 updateIconImageStickerLabel yot-text-fs-xsm" data-id="'. htmlspecialchars($row["sticker_label_id"]).'">Update</button>
                         </td>
                     </tr>
                 ';
