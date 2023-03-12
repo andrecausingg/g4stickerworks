@@ -237,8 +237,7 @@
                         <h3 class="yot-tc-white">Tarpauline</h3>
                     </div>
                     <div>
-                        <button class="yot-btn-white1 yot-mb-8">Pack</button>
-                        <button class="yot-btn-white1 yot-mb-8">Costumize</button>
+                        <button id="tarpaulineFormBtn" class="yot-btn-white1 yot-mb-8">Tarp Form</button>
                     </div>
                 </div>
             </div>
@@ -480,6 +479,58 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Create Update Delete Container Tarpauline-->
+            <div id="createBgContainerTarpauline" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+            <div id="createFormContainerTarpauline" class="yot-overlay-mid-container" style="display:none;">
+                <div id="mainFormContainerTarpauline" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                    <!-- Title -->
+                    <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                        <h2 id="titleCaptionTarpauline" class="yot-tc-blue1">CREATE</h2>
+
+                        <i id="createCloseFormIconTarpauline" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                    </div>
+
+                    <!-- Select Create Update Delete Form -->
+                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                        <h2>Tarpauline</h2>
+                        <select class="yot-form-select yot-form-select-option" name="selectOptionTarpauline" id="selectOptionTarpauline">
+                            <option value="create">Create</option>
+                            <option value="update">Update</option>
+                            <option value="delete">Delete</option>
+                        </select>
+                    </div>
+
+                    <!-- Create Form Container -->
+                    <div id="createDisplayContainerTarpauline">
+                        <form id="createFormTarpauline">
+                            <!-- Select upload Image -->
+                            <div class="yot-form-group yot-flex-fd-c-ai-c">
+                                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImageTarpauline">Upload Image</label>
+                                <input class="yot-form-input" type="file" name="imageTarpauline" id="imageTarpauline">
+                            </div>
+
+                            <!-- Submit Btn -->
+                            <div class="yot-text-center">
+                                <input class="yot-btn-blue1" type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Update Container -->
+                    <div id="updateDisplayContainerTarpauline" style="display:none;">
+                        <!-- Table For Delete-->
+                        <div class="yot-w-100" id="updateDisplayTarpauline" style="overflow-y:scroll;max-height:400px; "></div>
+                    </div>
+
+                    <!-- Delete Container -->
+                    <div id="deleteDisplayContainerTarpauline" style="display:none;">
+                        <!-- Table For Delete-->
+                        <div class="yot-w-100" id="deleteDisplayTarpauline" style="overflow-y:scroll;max-height:400px; "></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -550,5 +601,9 @@
     <script src="./asset/js/product-page/create-sticker-label.js"></script>
     <script src="./asset/js/product-page/update-sticker-label.js"></script>
     <script src="./asset/js/product-page/delete-sticker-label.js"></script>
+
+    <script src="./asset/js/product-page/create-tarpauline.js"></script>
+    <script src="./asset/js/product-page/update-tarpauline.js"></script>
+    <script src="./asset/js/product-page/delete-tarpauline.js"></script>
 </body>
 </html>

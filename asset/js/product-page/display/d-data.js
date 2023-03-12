@@ -7,4 +7,7 @@ $(document).ready(function(){
 
     $("#updateDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-sticker-label.php");
     $("#deleteDisplayStickerLabel").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-sticker-label.php");
+
+    $("#updateDisplayContainerTarpauline").load("../../../../../g4stickerworks/asset/php/product-page/display/d-update-tarpauline.php");
+    $("#deleteDisplayContainerTarpauline").load("../../../../../g4stickerworks/asset/php/product-page/display/d-delete-tarpauline.php");
 });
