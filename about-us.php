@@ -37,7 +37,7 @@
                     <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -111px;">
                         <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
                         <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
-                        <a href="sticker-labels" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
+                        <a href="sticker-label" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
                         <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
                     </div>
                 </div> <span class="yot-mlr-4"></span>
@@ -79,7 +79,7 @@
                 <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                     <a href="decals" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Decals</a>
                     <a href="temporary-plate" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Temporary Plate</a>
-                    <a href="sticker-labels" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
+                    <a href="sticker-label" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Sticker Labels</a>
                     <a href="tarpauline" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Tarpauline</a>
                 </div>
             </div>

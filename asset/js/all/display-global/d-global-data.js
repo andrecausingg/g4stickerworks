@@ -9,6 +9,8 @@ $(document).ready(function(){
     $("#subTitleIndexHero").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-sub-title.php");
     $("#imageDisplayIndexHero").load("../../../../../g4stickerworks/asset/php/index-page-hero-section/display/d-images.php");
 
+    $("#randProductDisplay").load("../../../../../g4stickerworks/asset/php/product-page/display/d-rand-product.php");
+
     // Decals
     $("#allDecalsProduct").load("../../../../../g4stickerworks/asset/php/product-page/display/d-decals.php");
 

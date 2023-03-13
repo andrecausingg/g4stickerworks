@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2023 at 02:00 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Mar 13, 2023 at 04:34 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,17 +31,21 @@ CREATE TABLE `user_tbl` (
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `is_verified` tinyint(1) NOT NULL,
   `role` varchar(20) NOT NULL,
+  `first_name` varchar(80) NOT NULL,
+  `last_name` varchar(80) NOT NULL,
+  `phone_number` int(15) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_tbl`
 --
 
-INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `role`, `created_at_varchar`, `created_at`) VALUES
-(1, 'admin@gmail.com', 'admin@gmail.com', 'admin', 'Mar 09, 2023 08:56:07 PM', '2023-03-09 20:56:07');
+INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `is_verified`, `role`, `first_name`, `last_name`, `phone_number`, `created_at_varchar`, `created_at`) VALUES
+(1, 'admin@gmail.com', 'admin@gmail.com', 0, 'admin', '', '', 0, 'Mar 09, 2023 08:56:07 PM', '2023-03-09 20:56:07');
 
 --
 -- Indexes for dumped tables
