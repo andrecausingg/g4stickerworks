@@ -21,8 +21,8 @@ class classDisplayData{
         while($row = $result->fetch_assoc()){
             echo'
                 <!-- Img -->
-                <div class="yot-col-50 yot-mb-8" style="margin:auto auto;">
-                    <img src="../../../../../g4stickerworks/asset/images/'.$row["image"].'" alt="" width="300" height="300">
+                <div class="yot-mb-8">
+                    <img src="../../../../../g4stickerworks/asset/images/'.$row["image"].'" alt="" style="width: 300px; height: 300px; border-radius: 50%; margin:auto;">
                 </div>
             ';
         }

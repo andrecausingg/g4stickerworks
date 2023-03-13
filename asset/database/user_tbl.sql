@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2023 at 04:34 AM
+-- Generation Time: Mar 13, 2023 at 09:08 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -31,7 +31,7 @@ CREATE TABLE `user_tbl` (
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `is_verified` tinyint(1) NOT NULL,
+  `status` tinyint(1) NOT NULL,
   `role` varchar(20) NOT NULL,
   `first_name` varchar(80) NOT NULL,
   `last_name` varchar(80) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `user_tbl` (
 -- Dumping data for table `user_tbl`
 --
 
-INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `is_verified`, `role`, `first_name`, `last_name`, `phone_number`, `created_at_varchar`, `created_at`) VALUES
+INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `status`, `role`, `first_name`, `last_name`, `phone_number`, `created_at_varchar`, `created_at`) VALUES
 (1, 'admin@gmail.com', 'admin@gmail.com', 0, 'admin', '', '', 0, 'Mar 09, 2023 08:56:07 PM', '2023-03-09 20:56:07');
 
 --
