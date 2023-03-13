@@ -108,20 +108,20 @@
     <div class="bgLogInSignUp yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
     <div id="logInContainer" class="yot-overlay-mid-container" style="display: none;">
         <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-            <form>
+            <form id="logInForm">
                 <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
                     <h2 class="yot-tc-blue1">Log In</h2>
                     <i id="closeLogInIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
                 <!-- Email -->
                 <div class="yot-form-group">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="email">Email</label>
-                    <input class="yot-form-input" type="email" name="" id="">
+                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="emailLogIn">Email</label>
+                    <input class="yot-form-input" type="email" name="emailLogIn" id="emailLogIn">
                 </div>
                 <!-- Password -->
                 <div class="yot-form-group">
                     <label class="yot-text-fs-xl" style="font-weight: bolder;" for="password">Password</label>
-                    <input class="yot-form-input" type="password" name="" id="">
+                    <input class="yot-form-input" type="password" name="passwordLogIn" id="passwordLogIn">
                 </div>
 
                 <div class="yot-mb-16 yot-flex yot-flex-ai-c-jc-sb">
@@ -139,25 +139,25 @@
     <!-- Sign Up -->
     <div id="signUpContainer" class="yot-overlay-mid-container" style="display: none;">
         <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-            <form>
+            <form id="signUpForm">
                 <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
                     <h2 class="yot-tc-blue1">Sign Up</h2>
                     <i id="closeSignUpIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
                 <!-- Email -->
                 <div class="yot-form-group">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="email">Email</label>
-                    <input class="yot-form-input" type="email" name="" id="">
+                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="emailSignUp">Email</label>
+                    <input class="yot-form-input" type="email" name="emailSignUp" id="emailSignUp">
                 </div>
                 <!-- Password -->
                 <div class="yot-form-group">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="password">Password</label>
-                    <input class="yot-form-input" type="password" name="" id="">
+                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="passwordSignUp">Password</label>
+                    <input class="yot-form-input" type="password" name="passwordSignUp" id="passwordSignUp">
                 </div>
                 <!-- Confirm Password -->
                 <div class="yot-form-group">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="password">Confirm Password</label>
-                    <input class="yot-form-input" type="password" name="" id="">
+                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="confirmPasswordSignUp">Confirm Password</label>
+                    <input class="yot-form-input" type="password" name="confirmPasswordSignUp" id="confirmPasswordSignUp">
                 </div>
 
                 <div class="yot-mb-16 yot-flex yot-flex-ai-c-jc-sb">
@@ -166,7 +166,7 @@
                 </div>
 
                 <div class="yot-text-center">
-                    <input class="yot-btn-blue1" type="submit" value="Log In">
+                    <input class="yot-btn-blue1" type="submit" value="Sign Up">
                 </div>
             </form>
         </div>
