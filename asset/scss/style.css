@@ -49,6 +49,9 @@
   .yot-overlay-mid-container-form-tablet-size-up {
     width: 720px !important;
   }
+  .yot-form-container {
+    width: 400px !important;
+  }
   .over-view-container {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -721,6 +724,10 @@ i {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.yot-form-container {
+  width: 300px;
 }
 
 .yot-form-group {
