@@ -8,7 +8,8 @@
     class classSendVerCodeEmail{
         function sendVerCodeEmail(){
             //Load Composer's autoloader
-            require_once '../helper/library/PHPMailer/vendor/autoload.php';
+            // require_once '../helper/library/PHPMailer/vendor/autoload.php';
+            require_once '../helper/vendor/autoload.php';
             // Database Connection
             require_once '../helper/global/global.php';
 

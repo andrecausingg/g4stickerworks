@@ -1,6 +1,5 @@
 <?php
     session_start();
-
     if(isset($_POST["email"]) && isset($_POST["password"])){
         $email = sanitize($_POST["email"]);
         $password = sanitize($_POST["password"]);
