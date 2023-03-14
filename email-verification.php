@@ -51,5 +51,6 @@
             </div>
     </div>
     <script src="./asset/js/all/global.js"></script>
+
 </body>
 </html>

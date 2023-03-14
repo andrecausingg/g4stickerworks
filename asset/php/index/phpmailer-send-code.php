@@ -20,12 +20,14 @@
             // Class
             $classConnDB = new classConnDB();
 
+            // Variable
+            $conn = $classConnDB->conn();
 
             if(isset($_SESSION["signUpUserEmail"])){
                 $email = $_SESSION["signUpUserEmail"];
             
                 // Sanitize user input using prepared statements
-                $stmt = $classConnDB->conn()->prepare("SELECT * FROM users_tbl WHERE email = ?");
+                $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE email = ?");
                 $stmt->bind_param("s", $email);
                 $stmt->execute();
                 $result = $stmt->get_result();
@@ -49,7 +51,7 @@
                         
                             //Recipients
                             $mail->setFrom('from@example.com', 'Mailer');
-                            $mail->addAddress('andrecausing33@gmail.com', 'Joe User');     //Add a recipient
+                            $mail->addAddress($row["email"], 'Joe User');     //Add a recipient
                             $mail->addAddress('ellen@example.com');               //Name is optional
                             $mail->addReplyTo('info@example.com', 'Information');
                             $mail->addCC('cc@example.com');
@@ -62,11 +64,12 @@
                             //Content
                             $mail->isHTML(true);                                  //Set email format to HTML
                             $mail->Subject = 'Here is the subject';
-                            $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+                            $mail->Body    = 'This is the HTML message body <b>'. $row['activate_code'] .'</b>';
                             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
                         
-                            $mail->send();
-                            echo 'Message has been sent';
+                            if($mail->send()){
+                                echo "sent";
+                            }   
                         } catch (Exception $e) {
                             echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                         }

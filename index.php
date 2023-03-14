@@ -118,7 +118,6 @@
                     <!-- Error Email-->
                     <div class="yot-text-end">
                         <span class="yot-tc-red yot-text-end" id="validateEmailErrLogIn" style="display: none;">Invalid email.<br></span> 
-                        <span class="yot-tc-red yot-text-end" id="domainEmailErrLogIn" style="display: none;">Email is not from a trusted domain.<br></span> 
                         <span class="yot-tc-red yot-text-end" id="existEmailErrLogIn" style="display: none;">Email is already exist.<br></span>
                     </div>
                 </div>
@@ -179,7 +178,7 @@
                     <!-- Error Email-->
                     <div class="yot-text-end">
                         <span class="yot-tc-red yot-text-end" id="validateEmailErrSignUp" style="display: none;">Invalid email.<br></span> 
-                        <span class="yot-tc-red yot-text-end" id="domainEmailErrSignUp" style="display: none;">Email is not from a trusted domain.<br></span> 
+                        <span class="yot-tc-red yot-text-end" id="domainEmailErrSignUp" style="display: none;">Email is not from a trusted domain.<br>Allowed only are "gmail.com", "yahoo.com", "outlook.com", "aol.com", "triots.com"<br></span> 
                         <span class="yot-tc-red yot-text-end" id="existEmailErrSignUp" style="display: none;">Email is already exist.<br></span>
                     </div>
                 </div>
@@ -228,10 +227,14 @@
                 </div>
 
                 <!-- Submit -->
-                <div class="yot-text-center">
+                <div class="yot-text-center" id="submitSignUpBtn">
                     <input class="yot-btn-blue1" type="submit" value="Sign Up">
                 </div>
             </form>
+
+            <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisSignUpBtn" style="display: none;">
+                <button class="yot-btn-dis yot-flex yot-flex-ai-c">Signing Up <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
+            </div>
         </div>
     </div>
 

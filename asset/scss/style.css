@@ -988,10 +988,10 @@ i {
   letter-spacing: 0.1875rem;
 }
 
-.yot-loader {
+.yot-loader-blue1 {
   border: 5px solid hsl(0, 0%, 100%);
   border-radius: 50%;
-  border-top: 5px solid hsl(23, 100%, 50%);
+  border-top: 5px solid hsl(221, 70%, 45%);
   width: 24px;
   height: 24px; /* Safari */
   animation: spin 2s linear infinite;
