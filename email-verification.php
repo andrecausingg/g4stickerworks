@@ -21,36 +21,36 @@
 <body>
 
     <div class="yot-overlay-mid-container">
-            <!-- Create Form Container -->
-            <div class="yot-form-container">
-                <!-- Profile -->
-                <div class="yot-mb-8">
-                    <h1 class="yot-tc-blue1">Welcome User</h1>
-                    <h2 class="yot-tc-blue1">You're One step away and good to go.</h2>
-                </div>
-
-                <!-- Password and Confirm Password Error -->
-                <div class="yot-text-center yot-mtb-16">
-                    <span class="yot-tc-red yot-text-end yot-text-fs-l" id="" style="display: none;">The verification code is Incorrect!<br></span> 
-                </div>
-                
-                <form id="emailVerificationForm">
-                    <!-- First Name -->
-                    <div class="yot-form-group">
-                        <div class="yot-mb-4 yot-flex yot-flex-ai-c-jc-sb">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="verificationCode">Verification Code</label>
-                            <button class="yot-btn-blue1">Resend Code</button>
-                        </div>
-                        <input class="yot-form-input" type="text" name="" id="" maxlength="6">
-                    </div>
-
-                    <div class="yot-text-center">
-                        <input class="yot-btn-blue1" type="submit" value="Submit">
-                    </div>
-                </form>
+        <!-- Create Form Container -->
+        <div class="yot-form-container">
+            <!-- Profile -->
+            <div class="yot-mb-8">
+                <h2 class="yot-tc-blue1">Please verify your email address by entering the code we sent to you.</h2>
             </div>
-    </div>
-    <script src="./asset/js/all/global.js"></script>
 
+            <!-- Password and Confirm Password Error -->
+            <div class="yot-text-center yot-mtb-16">
+                <span class="yot-tc-red yot-text-end yot-text-fs-l" id="" style="display: none;">The verification code is Incorrect!<br></span> 
+                <span class="yot-tc-green yot-text-end yot-text-fs-l" id="resendCodeAlert" style="display: none;">Resend Code After <span id="count">30</span>sec<br></span> 
+            </div>
+
+            <div class="yot-form-group">
+                <div class="yot-mb-4 yot-flex yot-flex-ai-c-jc-sb">
+                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="verificationCode">Verification Code</label>
+                    <button id="resendCode" class="yot-btn-blue1">Resend Code</button>
+                </div>
+                <input class="yot-form-input" type="text" name="" id="" maxlength="6">
+            </div>
+            
+            <form id="emailVerificationForm">
+                <!-- Submit -->
+                <div class="yot-text-center">
+                    <input class="yot-btn-blue1" type="submit" value="Sign Up">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./asset/js/email-verification/email-verification.js"></script>
 </body>
 </html>

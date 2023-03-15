@@ -29,13 +29,20 @@ $(document).ready(function(){
                     password: password
                 }, // send the Content field value as data
                 success: function(response){
-                    console.log(response);
                     var responseVarChar = response.trim();                
                     if(responseVarChar == "emailExist"){
                         $("#submitDisSignUpBtn").hide();
                         $("#submitSignUpBtn").show();
                         $("#existEmailErrSignUp").show();
                         $('#emailSignUp').val("").css('border-color', 'hsl(4, 95%, 56%)');
+                    }else if(responseVarChar == "sendingCode"){
+                        localStorage.setItem("email", email);
+                        localStorage.setItem("statusEmail", "sendingCode");
+                        window.location.href = '../../../../g4stickerworks/email-verification';
+                    }else{
+                        localStorage.setItem("email", email);
+                        localStorage.setItem("statusEmail", "notSendingCode");
+                        window.location.href = '../../../../g4stickerworks/email-verification';
                     }
                     // do something with the server response (e.g. show a success message)
                 },
@@ -181,7 +188,7 @@ $(document).ready(function(){
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/index/signup-exist-email.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/index/signup-check-is-exist-email.php", // replace with the URL of your form processing script
                 data: { 
                     email: email,
                 }, // send the Content field value as data
@@ -193,6 +200,7 @@ $(document).ready(function(){
                         $('#emailSignUp').css('border-color', 'hsl(4, 95%, 56%)');
                     }else if(responseVarChar == 'sendingCode'){
                         localStorage.setItem("email", email);
+                        localStorage.setItem("statusEmail", "sendingCode");
                         window.location.href = '../../../../g4stickerworks/email-verification';
                     }else{
                         $('#existEmailErrSignUp, #validateEmailErrSignUp, #domainEmailErrSignUp').hide();

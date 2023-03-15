@@ -232,6 +232,7 @@
                 </div>
             </form>
 
+            <!-- Disable btn -->
             <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisSignUpBtn" style="display: none;">
                 <button class="yot-btn-dis yot-flex yot-flex-ai-c">Signing Up <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
             </div>
