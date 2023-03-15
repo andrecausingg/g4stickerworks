@@ -34,20 +34,23 @@
                 <span class="yot-tc-green yot-text-end yot-text-fs-l" id="resendCodeAlert" style="display: none;">Resend Code After <span id="count">30</span>sec<br></span> 
             </div>
 
-            <div class="yot-form-group">
-                <div class="yot-mb-4 yot-flex yot-flex-ai-c-jc-sb">
-                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="verificationCode">Verification Code</label>
-                    <button id="resendCode" class="yot-btn-blue1">Resend Code</button>
-                </div>
-                <input class="yot-form-input" type="text" name="" id="" maxlength="6">
+            <div class="yot-mb-4 yot-flex yot-flex-ai-c-jc-sb">
+                <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="verificationCode">Verification Code</label>
+                <button id="resendCode" class="yot-btn-blue1">Resend Code</button>
             </div>
+
             
             <form id="emailVerificationForm">
+                <div class="yot-form-group">
+                    <input class="yot-form-input" type="text" name="" id="" maxlength="6">
+                </div>
+
                 <!-- Submit -->
                 <div class="yot-text-center">
                     <input class="yot-btn-blue1" type="submit" value="Sign Up">
                 </div>
             </form>
+            
         </div>
     </div>
 

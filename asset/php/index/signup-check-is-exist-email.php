@@ -24,10 +24,6 @@
             $this->email = $email;
         }
 
-        public function getEmail() {
-            return $this->email;
-        }
-
         function create(){
             require_once "../helper/global/global.php";
         
