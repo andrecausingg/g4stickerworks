@@ -5,14 +5,17 @@ $(document).ready(function () {
     var emailLocalStorage = localStorage.getItem("email");
     var statusEmailLocalStorage = localStorage.getItem("statusEmail");
 
-    if (!emailLocalStorage || !statusEmailLocalStorage){
+    if (emailLocalStorage != "" || statusEmailLocalStorage != ""){
+        // This Condition check if to send code emmidiatly 
+        // This is old user didnt verify there email
         if(statusEmailLocalStorage == "sendingCode"){
+            console.log("sendingCode");
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
                 url: "../../../../g4stickerworks/asset/php/index/signup-send-verification-code.php", // replace with the URL of your form processing script
                 data: { 
-                    email: email,
+                    email: emailLocalStorage,
                 }, // send the Content field value as data
                 success: function(response){
                     console.log(response);
@@ -20,6 +23,8 @@ $(document).ready(function () {
                     
                     if(responseVarChar == "emailNotExist"){
                         window.location.href = '../../../../g4stickerworks/404';
+                    }else{
+                        localStorage.setItem("statusEmail", "sentCode");
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -27,38 +32,29 @@ $(document).ready(function () {
                     // do something to handle the error (e.g. display an error message to the user)
                 }
             });
+        // New user 
         }else{
             // ID on form signUp
-            $('#signUpForm').submit(function(e){
+            $('#emailVerificationForm').submit(function(e){
                 e.preventDefault();
 
-                $("#submitDisSignUpBtn").show();
-                $("#submitSignUpBtn").hide();
+                var verificationCode = $("#verificationCode").val().trim();
+
+                $("#submitDisEmailVerContainer").show();
+                $("#submitEmailVerContainer").hide();
 
                 // send the form data to the server with AJAX
                 $.ajax({
                     type: "POST", // use the POST method
-                    url: "../../../../g4stickerworks/asset/php/index/signup.php", // replace with the URL of your form processing script
+                    url: "../../../../g4stickerworks/asset/php/email-verification/email-verification.php", // replace with the URL of your form processing script
                     data: { 
-                        email: email,
-                        password: password
+                        email: emailLocalStorage,
+                        verificationCode: verificationCode,
                     }, // send the Content field value as data
                     success: function(response){
+                        console.log(response);
                         var responseVarChar = response.trim();                
-                        if(responseVarChar == "emailExist"){
-                            $("#submitDisSignUpBtn").hide();
-                            $("#submitSignUpBtn").show();
-                            $("#existEmailErrSignUp").show();
-                            $('#emailSignUp').val("").css('border-color', 'hsl(4, 95%, 56%)');
-                        }else if(responseVarChar == "sendingCode"){
-                            localStorage.setItem("email", email);
-                            localStorage.setItem("statusEmail", "sendingCode");
-                            window.location.href = '../../../../g4stickerworks/email-verification';
-                        }else{
-                            localStorage.setItem("email", email);
-                            localStorage.setItem("statusEmail", "notSendingCode");
-                            window.location.href = '../../../../g4stickerworks/email-verification';
-                        }
+                        
                         // do something with the server response (e.g. show a success message)
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
@@ -146,4 +142,11 @@ $(document).ready(function () {
         });
     }
 
+
+    // Allow Number 
+    $("#verificationCode").click(function(event){
+        if (event.which < 48 || event.which > 57) {
+            event.preventDefault();
+        }
+    });
 });

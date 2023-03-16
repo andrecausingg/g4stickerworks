@@ -42,14 +42,19 @@
             
             <form id="emailVerificationForm">
                 <div class="yot-form-group">
-                    <input class="yot-form-input" type="text" name="" id="" maxlength="6">
+                    <input class="yot-form-input" type="text" name="verificationCode" id="verificationCode" maxlength="6">
                 </div>
 
                 <!-- Submit -->
-                <div class="yot-text-center">
+                <div class="yot-text-center" id="submitEmailVerContainer">
                     <input class="yot-btn-blue1" type="submit" value="Sign Up">
                 </div>
             </form>
+
+            <!-- Disable btn -->
+            <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisEmailVerContainer" style="display: none;">
+                <button class="yot-btn-dis yot-flex yot-flex-ai-c">Signing Up <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
+            </div>
             
         </div>
     </div>
