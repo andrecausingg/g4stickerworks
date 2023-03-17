@@ -480,5 +480,6 @@
     
     <script src="./asset/js/index/signup.js"></script>
     <script src="./asset/js/index/login.js"></script>
+    <script src="./asset/js/index/forgot-password.js"></script>
 </body>
 </html>

@@ -1,27 +1,20 @@
 $(document).ready(function () {
-    $('#logInForm').submit(function(e){
+    $('#forgotPasswordForm').submit(function(e){
         e.preventDefault();
 
-        var loginEmail = $('#emailLogIn').val().trim();
+        var emailForgotPassword = $('#emailForgotPassword').val().trim();
+        console.log("xzczxc");
 
         $.ajax({
             url: '../../../../g4stickerworks/asset/php/index/login.php',
             type: 'POST',
             data: { 
-                email: loginEmail,
-                password: logInPassword,
+                email: emailForgotPassword,
             },
             success: function (response){
+                console.log(response);
                 var responseVarChar = response.trim();
-                if(responseVarChar == 'accountNotFound'){
-                    $('#accountNotFoundErr').show();
-                }else if(responseVarChar == 'emailorPasswordIsIncorrect'){
-                    $('#emailOrPassIncorrectErr').show();
-                }else if(responseVarChar == "newUser"){
-                    window.location.href = '../../../../g4stickerworks/new-user';
-                }else{
-                    window.location.href = '../../../../g4stickerworks/user-product';
-                }
+                
             }
         })
     });

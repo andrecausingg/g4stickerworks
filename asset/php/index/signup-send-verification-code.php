@@ -47,7 +47,6 @@
             }
         }
 
-
         function sendVerCodeEmail(){
             // Database Connection
             require_once "../helper/global/global.php";

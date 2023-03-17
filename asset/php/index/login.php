@@ -1,26 +1,23 @@
 <?php
-    // Start the session
-    session_start();
+    if (isset($_POST["email"])){
+        
+        $classForgotPassword = new ClassForgotPassword($_POST["email"]);
 
-    if (isset($_POST["email"]) && isset($_POST["password"])) {
-        $classLogin = new ClassLogin($_POST["email"], $_POST['password']);
         try {
-            $classLogin->verifyPassword();
+            $classForgotPassword->verifyPassword();
         } catch (Exception $e) {
             echo $e->getMessage();
         }
     }
 
-    // Start of classSignUp
-    class classLogin{
+    class classForgotPassword{
         // Properties
         private $email;
         private $password;
 
         // Method
-        function __construct($email, $password){
+        function __construct($email){
             $this->email = $email;
-            $this->password = $password;
         }
 
         function verifyPassword(){
