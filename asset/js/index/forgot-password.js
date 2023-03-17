@@ -3,7 +3,6 @@ $(document).ready(function () {
         e.preventDefault();
 
         var loginEmail = $('#emailLogIn').val().trim();
-        var logInPassword = $('#passwordLogIn').val().trim();
 
         $.ajax({
             url: '../../../../g4stickerworks/asset/php/index/login.php',
@@ -25,33 +24,5 @@ $(document).ready(function () {
                 }
             }
         })
-    });
-
-    // Show Password Log In
-    $('#showPasswordLogIn').click(function() {
-        var passwordInput = $('#passwordLogIn');
-        var icon = $(this);
-        
-        if (passwordInput.attr('type') === 'password') {
-            passwordInput.attr('type', 'text');
-            icon.toggleClass('fa-eye-slash fa-eye');
-        } else {
-            passwordInput.attr('type', 'password');
-            icon.toggleClass('fa-eye fa-eye-slash');
-        }
-    });
-
-    // Show Confirm Password Sign Up
-    $('#showConfirmPasswordLogIn').click(function() {
-        var passwordInput = $('#confirmPasswordLogIn');
-        var icon = $(this);
-        
-        if (passwordInput.attr('type') === 'password') {
-            passwordInput.attr('type', 'text');
-            icon.toggleClass('fa-eye-slash fa-eye');
-        } else {
-            passwordInput.attr('type', 'password');
-            icon.toggleClass('fa-eye fa-eye-slash');
-        }
     });
 });

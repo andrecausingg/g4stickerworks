@@ -2,9 +2,13 @@
     // Start the session
     session_start();
 
-    if((isset($_POST["email"])) && (isset($_POST["password"]))){
-        $classLogin = new classLogin($_POST["email"],$_POST['password']);
-        $classLogin->verifyPassword();
+    if (isset($_POST["email"]) && isset($_POST["password"])) {
+        $classLogin = new ClassLogin($_POST["email"], $_POST['password']);
+        try {
+            $classLogin->verifyPassword();
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
     }
 
     // Start of classSignUp
@@ -21,29 +25,31 @@
 
         function verifyPassword(){
             require_once "../helper/global/global.php";
+            $conn = (new classConnDB())->conn();
             
-            $classConnDB = new classConnDB();
-
-            $check_email_table = mysqli_query($classConnDB->conn(), "SELECT * FROM users_tbl WHERE email ='$this->email'");
-            $check_email_row = mysqli_num_rows($check_email_table); // Get the data on specific row database
-
-            if($check_email_row > 0){
-                $check_email = mysqli_query($classConnDB->conn(), "SELECT * FROM users_tbl WHERE email = '$this->email'");
-                while($row = mysqli_fetch_assoc($check_email)){
-                    $id = $row["id"];
-                    $password = $row["password"];
-
-                    if($password == $this->password){
-                        // Session
-                        $_SESSION["id"] = $id;
-                        echo "Verified";
-                    // Input user password and password in data base not match generate Error
+            // Check if the email exists in the database
+            $stmt =  $conn->prepare("SELECT * FROM user_tbl WHERE email = ?");
+            $stmt->bind_param("s", $this->email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+        
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                
+                // Verify the password
+                if($row["password"] == $this->password) {
+                    // Session
+                    $_SESSION["id"] = $row["user_id"];
+                    if($row["first_name"] == ""){
+                        echo "newUser";
                     }else{
-                        echo "EmailorPasswordIsIncorrect";
+                        echo "set";
                     }
-                } // End of While 
-            }else{
-                echo "AccountNotFound";
+                }else {
+                    throw new Exception("emailorPasswordIsIncorrect");
+                }
+            } else {
+                throw new Exception("accountNotFound");
             }
         }
     }

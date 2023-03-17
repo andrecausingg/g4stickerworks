@@ -112,29 +112,16 @@
                     <i id="closeLogInIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
 
-                <!-- Email error -->
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="emailLogIn">Email</label>
-                    <!-- Error Email-->
-                    <div class="yot-text-end">
-                        <span class="yot-tc-red yot-text-end" id="validateEmailErrLogIn" style="display: none;">Invalid email.<br></span> 
-                        <span class="yot-tc-red yot-text-end" id="existEmailErrLogIn" style="display: none;">Email is already exist.<br></span>
-                    </div>
+                <!-- Error Email-->
+                <div class="yot-text-center yot-mb-8">
+                    <span class="yot-tc-red yot-text-end yot-text-fs-l" id="accountNotFoundErr" style="display: none;">Account not found.<br></span> 
+                    <span class="yot-tc-red yot-text-end yot-text-fs-l" id="emailOrPassIncorrectErr" style="display: none;">Email or password is incorrect.<br></span>
                 </div>
 
                 <!-- Email -->
                 <div class="yot-form-group yot-form-group-container">
                     <input class="yot-form-input" type="email" name="emailLogIn" id="emailLogIn" style="padding-left:38px;">
                     <i class="fa-solid fa-envelope yot-form-group-icon-left yot-text-fs-xxl"></i>
-                </div>
-
-                <!-- Password Error -->
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="passwordLogIn">Password</label>
-                    <!-- Error Password-->
-                    <div class="yot-text-end">
-                        <span class="yot-tc-red yot-text-end" id="less8CharPassErrLogIn" style="display: none;">The password must be at least 8 characters long.<br></span> 
-                    </div>
                 </div>
 
                 <!-- Password -->
@@ -490,7 +477,8 @@
     <script src="./asset/js/all/display-global/d-global-data.js"></script>
 
     <script src="./asset/js/index/index.js"></script>
+    
     <script src="./asset/js/index/signup.js"></script>
-
+    <script src="./asset/js/index/login.js"></script>
 </body>
 </html>

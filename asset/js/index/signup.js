@@ -136,7 +136,7 @@ $(document).ready(function(){
         }
     });
 
-    // Show password Sign Up
+    // Show Password Sign Up
     $('#showPasswordSignUp').click(function() {
         var passwordInput = $('#passwordSignUp');
         var icon = $(this);
@@ -150,7 +150,7 @@ $(document).ready(function(){
         }
     });
 
-    // Show password Sign Up
+    // Show Confirm Password Sign Up
     $('#showConfirmPasswordSignUp').click(function() {
         var passwordInput = $('#confirmPasswordSignUp');
         var icon = $(this);

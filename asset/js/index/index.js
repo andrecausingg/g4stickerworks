@@ -57,4 +57,5 @@ $(document).ready(function(){
         $(".bgLogInSignUp").hide();
         $("#logInContainer").hide();
     });
+    
 });

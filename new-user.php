@@ -25,7 +25,6 @@
             <div class="yot-form-container">
                 <!-- Profile -->
                 <div class="yot-mb-8">
-                    <h1 class="yot-tc-blue1">Welcome User </h1>
                     <h2 class="yot-tc-blue1">You're One step away and good to go.</h2>
                 </div>
                 
