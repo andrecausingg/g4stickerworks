@@ -9,7 +9,6 @@ $(document).ready(function () {
         // This Condition check if to send code emmidiatly 
         // This is old user didnt verify there email
         if(statusEmailLocalStorage == "sendingCode"){
-            console.log("sendingCode");
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
@@ -18,7 +17,6 @@ $(document).ready(function () {
                     email: emailLocalStorage,
                 }, // send the Content field value as data
                 success: function(response){
-                    console.log(response);
                     var responseVarChar = response.trim();   
                     
                     if(responseVarChar == "emailNotExist"){
@@ -52,8 +50,16 @@ $(document).ready(function () {
                         verificationCode: verificationCode,
                     }, // send the Content field value as data
                     success: function(response){
-                        console.log(response);
-                        var responseVarChar = response.trim();                
+                        var responseVarChar = response.trim();     
+                        
+                        if(responseVarChar == "verified"){
+                            $("#successEmailVerifiedContainer").show();
+                            $("#emailVerificationFormContainer").hide();
+                        }else{
+                            $("#submitDisEmailVerContainer").hide();
+                            $("#submitEmailVerContainer").show();
+                            $("#verificationCodeErr").show();
+                        }
                         
                         // do something with the server response (e.g. show a success message)
                     },
@@ -69,6 +75,26 @@ $(document).ready(function () {
     // Condition to click resend code btn
     if(statusTimeLocalStorage == "finish"){
         $("#resendCode").click(function () {
+            if(emailLocalStorage != ""){
+                // send the form data to the server with AJAX
+                $.ajax({
+                    type: "POST", // use the POST method
+                    url: "../../../../g4stickerworks/asset/php/email-verification/resend-verification-code.php", // replace with the URL of your form processing script
+                    data: { 
+                        email: emailLocalStorage
+                    }, // send the Content field value as data
+                    success: function(response){
+                        var responseVarChar = response.trim();     
+                      
+                        // do something with the server response (e.g. show a success message)
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
+                        // do something to handle the error (e.g. display an error message to the user)
+                    }
+                });
+            }
+
             $("#resendCode").prop("disabled", true);
             $("#resendCode").removeClass("yot-btn-blue1");
             $("#resendCode").addClass("yot-btn-dis");
@@ -116,6 +142,24 @@ $(document).ready(function () {
         }, 1000); // 1000 milliseconds = 1 second
     }else{
         $("#resendCode").click(function () {
+            if(emailLocalStorage != ""){
+                // send the form data to the server with AJAX
+                $.ajax({
+                    type: "POST", // use the POST method
+                    url: "../../../../g4stickerworks/asset/php/email-verification/resend-verification-code.php", // replace with the URL of your form processing script
+                    data: { 
+                        email: emailLocalStorage
+                    }, // send the Content field value as data
+                    success: function(response){
+                        // do something with the server response (e.g. show a success message)
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
+                        // do something to handle the error (e.g. display an error message to the user)
+                    }
+                });
+            }
+
             $("#resendCode").prop("disabled", true);
             $("#resendCode").removeClass("yot-btn-blue1");
             $("#resendCode").addClass("yot-btn-dis");
@@ -148,5 +192,9 @@ $(document).ready(function () {
         if (event.which < 48 || event.which > 57) {
             event.preventDefault();
         }
+    });
+
+    $("#loginNav").click(function(){
+        window.location.href = '../../../../g4stickerworks/index';  
     });
 });

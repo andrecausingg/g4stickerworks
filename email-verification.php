@@ -19,8 +19,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
 <body>
+    <!-- Verified Container -->
+    <div id="successEmailVerifiedContainer" class="yot-overlay-mid-container yot-z-index-1" style="display:none;">
+        <div class="yot-overlay-mid-child yot-pa-16 yot-overlay-mid-container-form yot-text-center">
+            <h2>Congratulations, your email address has been verified successfully!</h2>
+            <h4 class="yot-mb-8">You may now proceed to log in to your account.</h4>
+            <div>
+                <button class="yot-btn-blue1" id="loginNav">Log In</button>
+            </div>
+        </div>
+    </div>
 
-    <div class="yot-overlay-mid-container">
+    <div class="yot-overlay-mid-container" id="emailVerificationFormContainer">
         <!-- Create Form Container -->
         <div class="yot-form-container">
             <!-- Profile -->
@@ -30,7 +40,7 @@
 
             <!-- Password and Confirm Password Error -->
             <div class="yot-text-center yot-mtb-16">
-                <span class="yot-tc-red yot-text-end yot-text-fs-l" id="" style="display: none;">The verification code is Incorrect!<br></span> 
+                <span class="yot-tc-red yot-text-end yot-text-fs-l" id="verificationCodeErr" style="display: none;">The verification code is Incorrect!<br></span> 
                 <span class="yot-tc-green yot-text-end yot-text-fs-l" id="resendCodeAlert" style="display: none;">Resend Code After <span id="count">30</span>sec<br></span> 
             </div>
 
@@ -38,7 +48,6 @@
                 <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="verificationCode">Verification Code</label>
                 <button id="resendCode" class="yot-btn-blue1">Resend Code</button>
             </div>
-
             
             <form id="emailVerificationForm">
                 <div class="yot-form-group">
@@ -55,7 +64,6 @@
             <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisEmailVerContainer" style="display: none;">
                 <button class="yot-btn-dis yot-flex yot-flex-ai-c">Signing Up <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
             </div>
-            
         </div>
     </div>
 
