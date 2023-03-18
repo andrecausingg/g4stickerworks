@@ -22,7 +22,7 @@ $(document).ready(function () {
                     window.location.href = '../../../../g4stickerworks/new-user';
                 }else if(responseVarChar == "set"){
                     window.location.href = '../../../../g4stickerworks/user-product';
-                }else{
+                }else if(responseVarChar == "admin"){
                     window.location.href = '../../../../g4stickerworks/overview';
                 }
             }

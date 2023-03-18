@@ -25,7 +25,7 @@ class classDisplayData{
         ';
         
         // DISPLAY
-        $stmt = $conn->prepare("SELECT * FROM user_tbl ORDER BY user_id DESC");
+        $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE role = 'admin' ORDER BY user_id DESC");
         $stmt->execute();
         $result = $stmt->get_result();
         while($row = $result->fetch_assoc()){

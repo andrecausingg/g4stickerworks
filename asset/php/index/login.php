@@ -46,14 +46,16 @@
                     // Session
                     $_SESSION["id"] = $row["user_id"];
                     
-                    if($row["role"] == "admin"){
+                    if($row["role"] == "admin" && $row["status"] == "activated"){
                         echo "admin";
-                    }else{
+                    }else if($row["role"] == "user" && $row["status"] == "activated"){
                         if($row["first_name"] == ""){
                             echo "newUser";
                         }else{
                             echo "set";
                         }
+                    }else{
+                        echo "accountNotFound";
                     }
                 }else {
                     echo "passwordIsIncorrect" ;

@@ -12,11 +12,6 @@ $(document).ready(function(){
             lastName != "" && validateLastName(lastName) &&
             phoneNumber != "" && validatePhoneNumber(phoneNumber)){
 
-                console.log(firstName);
-                console.log(lastName);
-                console.log(phoneNumber);
-
-                
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
@@ -28,20 +23,10 @@ $(document).ready(function(){
                 }, // send the Content field value as data
                 success: function(response) {
                     console.log(response);
-                    // const responseVarChar = response.trim();                
-                    // if(responseVarChar == "created"){
-                    //     $("#createFormContent").trigger("reset");
-                    //     $("#createSuccessAlert").show();
-
-                    //     setTimeout(function() {
-                    //         $("#createSuccessAlert").hide(); // Show the element after 10 seconds
-                    //     }, 10000); // 10000 milliseconds = 10 seconds
-
-                    //     // $("#displayContent").load("../../../../../g4stickerworks/asset/php/services-page/display/d-data-content.php");
-                    //     // $("#updateDisplayContainerContent").load("../../../../../g4stickerworks/asset/php/services-page/display/d-update-content.php");
-                    //     // $("#deleteDisplayContainerContent").load("../../../../../g4stickerworks/asset/php/services-page/display/d-delete-content.php");
-                    // }
-                    // do something with the server response (e.g. show a success message)
+                    const responseVarChar = response.trim();     
+                    if(responseVarChar == "updated"){
+                        window.location.href = '../../../../g4stickerworks/user-product.html';
+                    }           
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     console.error("Form submission failed: " + textStatus, errorThrown); // log error message to the console
