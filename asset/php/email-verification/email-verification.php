@@ -31,10 +31,11 @@ class classEmailVerification{
         require_once "../helper/global/global.php";
 
         $conn = (new classConnDB())->conn();
+        $sixDigitCode = (new classSixDigitCode())->sixDigitCodeF();
 
         $activated = "activated";
 
-        $stmt = $conn->prepare("SELECT status, activate_code FROM user_tbl WHERE email = ?");
+        $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE email = ?");
         $stmt->bind_param("s", $this->email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -42,12 +43,12 @@ class classEmailVerification{
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 if($row["activate_code"] == $this->verificationCode){
-                    // prepare the SQL statement with placeholders for the job name, job number, datetime varchar, and datetime
-                    $sql = "UPDATE user_tbl SET status = ? WHERE email = ?";
+                    // prepare the SQL statement with placeholders 
+                    $sql = "UPDATE user_tbl SET status = ?, activate_code = ? WHERE email = ?";
                     // create a prepared statement
                     $stmt2 = $conn->prepare($sql);
                     // bind the parameters to the placeholders
-                    $stmt2->bind_param("ss", $activated, $this->email);
+                    $stmt2->bind_param("sss", $activated, $sixDigitCode, $this->email);
 
                     // Execute the statement
                     if($stmt2->execute()){

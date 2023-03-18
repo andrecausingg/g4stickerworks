@@ -5,13 +5,19 @@
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    if (isset($_POST["email"])) {
-        $classForgotPassword = new classForgotPassword($_POST["email"]);
-        try {
-            $classForgotPassword->sendCode();
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+    if (isset($_POST["email"])){
+        $email = sanitize($_POST["email"]);
+        
+        $classForgotPassword = new ClassForgotPassword($email);
+        $classForgotPassword->forgotPasswordSendUpdatePassLink();
+    }
+
+    // Sanitize Input
+    function sanitize($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
     class classForgotPassword{
@@ -19,12 +25,13 @@
         private $email;
 
         // Method
-        function __construct($email, $password){
+        function __construct($email){
             $this->email = $email;
         }
 
-        function sendCode(){
+        function forgotPasswordSendUpdatePassLink(){
             require_once "../helper/global/global.php";
+            
             $conn = (new classConnDB())->conn();
             
             // Check if the email exists in the database
@@ -34,16 +41,16 @@
             $result = $stmt->get_result();
         
             if ($result->num_rows > 0) {
-                $this->sendVerCodeEmail();
-            } else {
-                throw new Exception("accountNotFound");
+                $this->sendLinkKey();
+            }else{
+                echo "accountNotFound";
             }
         }
     }
 
 
 
-    function sendVerCodeEmail(){
+    function sendLinkKey(){
         // Database Connection
         require_once "../helper/global/global.php";
         //Load Composer's autoloader
@@ -97,7 +104,7 @@
                     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
                 
                     if($mail->send()){
-                        echo "sentCode";
+                        echo "sentLinkUpdatePass";
                         $stmt->close();
                         $conn->close();
                     }   

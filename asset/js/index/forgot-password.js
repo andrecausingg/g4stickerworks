@@ -3,10 +3,10 @@ $(document).ready(function () {
         e.preventDefault();
 
         var emailForgotPassword = $('#emailForgotPassword').val().trim();
-        console.log("xzczxc");
+        console.log(emailForgotPassword);
 
         $.ajax({
-            url: '../../../../g4stickerworks/asset/php/index/login.php',
+            url: '../../../../g4stickerworks/asset/php/forgot-password.php',
             type: 'POST',
             data: { 
                 email: emailForgotPassword,

@@ -1,23 +1,29 @@
 <?php
-    if (isset($_POST["email"])){
-        
-        $classForgotPassword = new ClassForgotPassword($_POST["email"]);
+    if (isset($_POST["email"])  && ($_POST["password"])){
+        $email = sanitize($_POST["email"]);
+        $password = sanitize($_POST["password"]);
 
-        try {
-            $classForgotPassword->verifyPassword();
-        } catch (Exception $e) {
-            echo $e->getMessage();
-        }
+        $classForgotPassword = new ClassForgotPassword($email, $password);
+        $classForgotPassword->verifyPassword();
     }
 
+    // Sanitize Input
+    function sanitize($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    
     class classForgotPassword{
         // Properties
         private $email;
         private $password;
 
         // Method
-        function __construct($email){
+        function __construct($email, $password){
             $this->email = $email;
+            $this->password = $password;
         }
 
         function verifyPassword(){
@@ -37,16 +43,17 @@
                 if($row["password"] == $this->password) {
                     // Session
                     $_SESSION["id"] = $row["user_id"];
+                    
                     if($row["first_name"] == ""){
                         echo "newUser";
                     }else{
                         echo "set";
                     }
                 }else {
-                    throw new Exception("emailorPasswordIsIncorrect");
+                    echo "passwordIsIncorrect" ;
                 }
             } else {
-                throw new Exception("accountNotFound");
+                echo "accountNotFound";
             }
         }
     }

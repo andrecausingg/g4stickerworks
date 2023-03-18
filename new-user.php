@@ -1,3 +1,9 @@
+<?php
+    require_once("./asset/php/new-user/new-user.php");
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

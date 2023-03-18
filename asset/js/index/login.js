@@ -16,7 +16,7 @@ $(document).ready(function () {
                 var responseVarChar = response.trim();
                 if(responseVarChar == 'accountNotFound'){
                     $('#accountNotFoundErr').show();
-                }else if(responseVarChar == 'emailorPasswordIsIncorrect'){
+                }else if(responseVarChar == 'passwordIsIncorrect'){
                     $('#emailOrPassIncorrectErr').show();
                 }else if(responseVarChar == "newUser"){
                     window.location.href = '../../../../g4stickerworks/new-user';

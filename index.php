@@ -115,7 +115,7 @@
                 <!-- Error Email-->
                 <div class="yot-text-center yot-mb-8">
                     <span class="yot-tc-red yot-text-end yot-text-fs-l" id="accountNotFoundErr" style="display: none;">Account not found.<br></span> 
-                    <span class="yot-tc-red yot-text-end yot-text-fs-l" id="emailOrPassIncorrectErr" style="display: none;">Email or password is incorrect.<br></span>
+                    <span class="yot-tc-red yot-text-end yot-text-fs-l" id="emailOrPassIncorrectErr" style="display: none;">Password is incorrect.<br></span>
                 </div>
 
                 <!-- Email -->
@@ -192,6 +192,7 @@
                     <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showPasswordSignUp"></i>
                 </div>
 
+                <!-- Confirm Password Err -->
                 <div class="yot-flex yot-flex-ai-c-jc-sb    ">
                     <label class="yot-text-fs-xl" style="font-weight: bolder;" for="confirmPasswordSignUp">Confirm Password</label>
                     <!-- Error Password-->

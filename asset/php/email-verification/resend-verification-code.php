@@ -40,8 +40,22 @@
             $stmt->execute();
             $result = $stmt->get_result();
 
-            if ($result->num_rows > 0) {
-                $this->sendVerCodeEmail();
+            if ($result->num_rows > 0){
+                // prepare the SQL statement with placeholders 
+                $sql = "UPDATE user_tbl SET status = ?, activate_code = ? WHERE email = ?";
+                // create a prepared statement
+                $stmt2 = $conn->prepare($sql);
+                // bind the parameters to the placeholders
+                $stmt2->bind_param("sss", $activated, $sixDigitCode, $this->email);
+
+                // Execute the statement
+                if($stmt2->execute()){
+                    $this->sendVerCodeEmail();
+                    $stmt2->close();
+                } else {
+                    echo "failed";
+                    $stmt2->close();
+                }
             }else{
                 echo "emailNotExist";
             }

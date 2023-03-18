@@ -50,6 +50,7 @@ $(document).ready(function () {
                         verificationCode: verificationCode,
                     }, // send the Content field value as data
                     success: function(response){
+                        console.log(response);      
                         var responseVarChar = response.trim();     
                         
                         if(responseVarChar == "verified"){
