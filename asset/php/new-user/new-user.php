@@ -5,7 +5,7 @@
         $phoneNumber = sanitize($_POST["phoneNumber"]);
 
         $classNewUser = new classNewUser($firstName, $lastName, $phoneNumber);
-        $classNewUser->create();
+        $classNewUser->update();
     }
 
     // Sanitize Input
@@ -28,7 +28,7 @@
         }
 
 
-        function create(){
+        function update(){
             require_once "../helper/global/global.php";
         
             $conn = (new classConnDB())->conn();
@@ -42,7 +42,7 @@
             $stmt->bind_param("ssii", $first_name, $last_name, $phone_number, $id);
             // Execute the query
             if($stmt->execute()){
-                echo"created";
+                echo"updated";
                 // Close the statement and database connection
                 $stmt->close();
                 $conn->close();
