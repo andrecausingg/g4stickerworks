@@ -20,8 +20,10 @@ $(document).ready(function () {
                     $('#emailOrPassIncorrectErr').show();
                 }else if(responseVarChar == "newUser"){
                     window.location.href = '../../../../g4stickerworks/new-user';
-                }else{
+                }else if(responseVarChar == "set"){
                     window.location.href = '../../../../g4stickerworks/user-product';
+                }else{
+                    window.location.href = '../../../../g4stickerworks/overview';
                 }
             }
         })

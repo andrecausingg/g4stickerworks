@@ -111,7 +111,7 @@
     // Login Session Verification 404
     class classSessionLogin{
         function sessionLogin(){
-            require_once './assets/php/index/login.php';
+            require_once "/xampp/htdocs/g4stickerworks/asset/php/index/login.php";
 
             if(!isset($_SESSION["id"])){
                 echo "<script>window.location.href='404';</script>";

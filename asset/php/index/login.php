@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     if (isset($_POST["email"])  && ($_POST["password"])){
         $email = sanitize($_POST["email"]);
         $password = sanitize($_POST["password"]);
@@ -44,10 +46,14 @@
                     // Session
                     $_SESSION["id"] = $row["user_id"];
                     
-                    if($row["first_name"] == ""){
-                        echo "newUser";
+                    if($row["role"] == "admin"){
+                        echo "admin";
                     }else{
-                        echo "set";
+                        if($row["first_name"] == ""){
+                            echo "newUser";
+                        }else{
+                            echo "set";
+                        }
                     }
                 }else {
                     echo "passwordIsIncorrect" ;

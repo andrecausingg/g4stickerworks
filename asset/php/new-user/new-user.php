@@ -1,12 +1,24 @@
 <?php
-    // require_once("../index/login.php");
-    // require_once("../../php/index/login.php");
-    // require_once("../../../asset/php/index/login.php");
-    // require_once("../../../../g4stickerworks/asset/php/index/login.php");
+    if(isset($_POST["firstName"]) && isset($_POST["lastName"]) && isset($_POST["phoneNumber"])){
+        $firstName = sanitize($_POST["firstName"]);
+        $lastName = sanitize($_POST["lastName"]);
+        $phoneNumber = sanitize($_POST["phoneNumber"]);
 
-    if(isset($_SESSION["id"])){
-        echo"set";
-    }else{
-        die("Access Denied!");
+        $classNewUser = new classNewUser();
+        $classNewUser->create();
+    }
+
+    // Sanitize Input
+    function sanitize($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    class classNewUser{
+        function create(){
+            
+        }
     }
 ?>
