@@ -8,7 +8,7 @@
     if(isset($_POST["email"])){
         $email = sanitize($_POST["email"]);
         $classSendVerificationCode = new classSendVerificationCode($email);
-        $classSendVerificationCode->create();
+        $classSendVerificationCode->updateCode();
     }
 
     // Sanitize Input
@@ -29,7 +29,7 @@
             $this->email = $email;
         }
 
-        function create(){
+        function updateCode(){
             require_once "../helper/global/global.php";
         
             $conn = (new classConnDB())->conn();
@@ -43,7 +43,7 @@
             if ($result->num_rows > 0){
                 // prepare the SQL statement with placeholders 
                 $sql = "UPDATE user_tbl SET status = ?, activate_code = ? WHERE email = ?";
-                // create a prepared statement
+                // updateCode a prepared statement
                 $stmt2 = $conn->prepare($sql);
                 // bind the parameters to the placeholders
                 $stmt2->bind_param("sss", $activated, $sixDigitCode, $this->email);
@@ -83,7 +83,7 @@
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()){
                     
-                    //Create an instance; passing `true` enables exceptions
+                    //updateCode an instance; passing `true` enables exceptions
                     $mail = new PHPMailer(true);
                     
                     try {

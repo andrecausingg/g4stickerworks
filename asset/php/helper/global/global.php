@@ -122,7 +122,7 @@
     // Login User Session return I.D
     class classSessionUserID{
         function sessionUserID(){
-            require_once './assets/php/index/login.php';
+            require_once "/xampp/htdocs/g4stickerworks/asset/php/index/login.php";
 
             if(isset($_SESSION["id"])){
                 return $_SESSION["id"];
