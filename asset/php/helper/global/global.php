@@ -1,4 +1,11 @@
 <?php 
+    class classQueryUrlRand{
+        function queryUrlRand(){
+            $random_string = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 20);
+            return $random_string;
+        }
+    }
+
     // Database Connection
     class classConnDB{
         // Properties
@@ -14,28 +21,6 @@
                 echo "FAILED TO CONNECT TO MYSQL: " . mysqli_connect_error();
             }
             return $connection;
-        }
-    }
-
-    // Database Connection PDO
-    class classConnDBPDO{
-        private $host = 'localhost';
-        private $dbname = '';
-        private $username = 'root';
-        private $password = '';
-        private $pdo;
-
-        public function __construct() {
-            try {
-                $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->username, $this->password);
-                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                die('Connection Failed: ' . $e->getMessage());
-            }
-        }
-
-        public function getConnection() {
-            return $this->pdo;
         }
     }
 

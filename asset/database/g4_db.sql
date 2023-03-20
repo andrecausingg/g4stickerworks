@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2023 at 01:59 PM
+-- Generation Time: Mar 20, 2023 at 02:06 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -266,24 +266,6 @@ CREATE TABLE `decals_tbl` (
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `decals_tbl`
---
-
-INSERT INTO `decals_tbl` (`decals_id`, `decals_type`, `brand`, `model`, `image`, `created_at_varchar`, `created_at`) VALUES
-(1, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bb8f10bea3.78795006.png', 'Mar 07, 2023 12:20:31 PM', '2023-03-07 12:20:31'),
-(2, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bb977298c9.18335667.png', 'Mar 07, 2023 12:20:39 PM', '2023-03-07 12:20:39'),
-(3, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bb9dec8492.53467059.png', 'Mar 07, 2023 12:20:45 PM', '2023-03-07 12:20:45'),
-(4, 'Full Decals', 'Yamaha', 'Yamaha Mio i 125', '6406bba89781a3.92569797.png', 'Mar 07, 2023 12:20:56 PM', '2023-03-07 12:20:56'),
-(5, 'Stock Decals', 'Honda', 'Honda BeAT', '6406c9b1705bb0.98756266.png', 'Mar 07, 2023 01:20:49 PM', '2023-03-07 13:20:49'),
-(6, 'Stock Decals', 'Yamaha', 'Yamaha Tracer 900', '6406c9be111850.36106499.png', 'Mar 07, 2023 01:21:02 PM', '2023-03-07 13:21:02'),
-(7, 'Stock Decals', 'Honda', 'Honda TMX125 Alpha', '6406c9c6626cd0.30072475.png', 'Mar 07, 2023 01:21:10 PM', '2023-03-07 13:21:10'),
-(8, 'Stock Decals', 'Suzuki Philippines', 'Suzuki GSX-S750', '6406c9d3492310.34241827.png', 'Mar 07, 2023 01:21:23 PM', '2023-03-07 13:21:23'),
-(9, 'Full Decals', 'Honda', 'Honda BeAT', '6409d716cdca15.32704372.png', 'Mar 09, 2023 08:54:46 PM', '2023-03-09 20:54:46'),
-(10, 'Full Decals', 'Honda', 'Honda Click', '6409d71c9a5fa5.78445877.png', 'Mar 09, 2023 08:54:52 PM', '2023-03-09 20:54:52'),
-(11, 'Full Decals', 'Honda', 'Honda Genio', '6409d723531f13.61018914.png', 'Mar 09, 2023 08:54:59 PM', '2023-03-09 20:54:59'),
-(12, 'Full Decals', 'Honda', 'Honda PCX', '6409d7299d6c36.23381233.png', 'Mar 09, 2023 08:55:05 PM', '2023-03-09 20:55:05');
-
 -- --------------------------------------------------------
 
 --
@@ -369,6 +351,46 @@ INSERT INTO `services_page_tbl` (`services_id`, `sub_title`, `content`, `created
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sticker_label_tbl`
+--
+
+CREATE TABLE `sticker_label_tbl` (
+  `sticker_label_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tarpauline_tbl`
+--
+
+CREATE TABLE `tarpauline_tbl` (
+  `tarpauline_id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp_plate_tbl`
+--
+
+CREATE TABLE `temp_plate_tbl` (
+  `temp_plate_id` int(11) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_tbl`
 --
 
@@ -376,7 +398,14 @@ CREATE TABLE `user_tbl` (
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
+  `status` varchar(10) DEFAULT NULL,
+  `activate_code` int(6) NOT NULL,
+  `activate_key` varchar(255) NOT NULL,
+  `update_pass_key` varchar(255) NOT NULL,
   `role` varchar(20) NOT NULL,
+  `first_name` varchar(80) NOT NULL,
+  `last_name` varchar(80) NOT NULL,
+  `phone_number` varchar(15) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -385,8 +414,14 @@ CREATE TABLE `user_tbl` (
 -- Dumping data for table `user_tbl`
 --
 
-INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `role`, `created_at_varchar`, `created_at`) VALUES
-(1, 'admin@gmail.com', 'admin@gmail.com', 'admin', 'Mar 09, 2023 08:56:07 PM', '2023-03-09 20:56:07');
+INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `status`, `activate_code`, `activate_key`, `update_pass_key`, `role`, `first_name`, `last_name`, `phone_number`, `created_at_varchar`, `created_at`) VALUES
+(1, 'aprhokwmdzvyczt@valanides.com', 'aprhokwmdzvyczt@valanides.com', NULL, 114425, '', '', 'user', '', '', '', 'Mar 20, 2023 06:41:00 PM', '2023-03-20 18:41:00'),
+(2, 'lvncjfh@valanides.com', 'lvncjfh@valanides.com', NULL, 205624, '', '', 'user', '', '', '', 'Mar 20, 2023 06:41:55 PM', '2023-03-20 18:41:55'),
+(3, 'vcedwcnictyvkbt@valanides.com', 'vcedwcnictyvkbt@valanides.com', NULL, 595266, '', '', 'user', '', '', '', 'Mar 20, 2023 06:44:04 PM', '2023-03-20 18:44:04'),
+(4, 'goavugc@valanides.com', 'goavugc@valanides.com', 'activated', 709717, '', '', 'user', '', '', '', 'Mar 20, 2023 06:45:10 PM', '2023-03-20 18:45:10'),
+(5, 'ynqhnscvpt@valanides.com', 'ynqhnscvpt@valanides.com', 'activated', 142297, '', '', 'user', '', '', '', 'Mar 20, 2023 06:49:44 PM', '2023-03-20 18:49:44'),
+(6, 'llxalaj@valanides.com', 'llxalaj@valanides.com', 'activated', 458217, '', '', 'user', '', '', '', 'Mar 20, 2023 06:53:05 PM', '2023-03-20 18:53:05'),
+(7, 'xdjcamphmex@valanides.com', 'xdjcamphmex@valanides.com', 'activated', 945493, '', 'iaztsnreulqkwmycvdhx', 'user', '', '', '', 'Mar 20, 2023 06:53:31 PM', '2023-03-20 18:53:31');
 
 --
 -- Indexes for dumped tables
@@ -441,6 +476,24 @@ ALTER TABLE `services_page_tbl`
   ADD PRIMARY KEY (`services_id`);
 
 --
+-- Indexes for table `sticker_label_tbl`
+--
+ALTER TABLE `sticker_label_tbl`
+  ADD PRIMARY KEY (`sticker_label_id`);
+
+--
+-- Indexes for table `tarpauline_tbl`
+--
+ALTER TABLE `tarpauline_tbl`
+  ADD PRIMARY KEY (`tarpauline_id`);
+
+--
+-- Indexes for table `temp_plate_tbl`
+--
+ALTER TABLE `temp_plate_tbl`
+  ADD PRIMARY KEY (`temp_plate_id`);
+
+--
 -- Indexes for table `user_tbl`
 --
 ALTER TABLE `user_tbl`
@@ -478,7 +531,7 @@ ALTER TABLE `cut_file_tbl`
 -- AUTO_INCREMENT for table `decals_tbl`
 --
 ALTER TABLE `decals_tbl`
-  MODIFY `decals_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `decals_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `gallery_page_tbl`
@@ -499,10 +552,28 @@ ALTER TABLE `services_page_tbl`
   MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `sticker_label_tbl`
+--
+ALTER TABLE `sticker_label_tbl`
+  MODIFY `sticker_label_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tarpauline_tbl`
+--
+ALTER TABLE `tarpauline_tbl`
+  MODIFY `tarpauline_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `temp_plate_tbl`
+--
+ALTER TABLE `temp_plate_tbl`
+  MODIFY `temp_plate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `user_tbl`
 --
 ALTER TABLE `user_tbl`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

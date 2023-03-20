@@ -39,7 +39,6 @@
     <div class="yot-overlay-mid-container" id="emailVerificationFormContainer">
         <!-- Create Form Container -->
         <div class="yot-form-container">
-            <!-- Profile -->
             <div class="yot-mb-8">
                 <h2 class="yot-tc-blue1">Please verify your email address by entering the code we sent to you.</h2>
             </div>

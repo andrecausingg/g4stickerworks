@@ -236,14 +236,16 @@
                     <i id="closeForgotPassword" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
 
+                <div class="yot-mb-8 yot-text-center">
+                    <span class="yot-tc-green yot-text-fs-l" id="sentVerificationKeyAlert" style="display: none;">Verification Key Link has been sent<br></span> 
+                </div>
+
                 <!-- Email error -->
                 <div class="yot-flex yot-flex-ai-c-jc-sb">
                     <label class="yot-text-fs-xl" style="font-weight: bolder;" for="emailForgotPassword">Email</label>
                     <!-- Error Email-->
                     <div class="yot-text-end">
-                        <span class="yot-tc-red yot-text-end" id="validateEmailErrForgotPassword" style="display: none;">Invalid email.<br></span> 
-                        <span class="yot-tc-red yot-text-end" id="domainEmailErrForgotPassword" style="display: none;">Email is not from a trusted domain.<br></span> 
-                        <span class="yot-tc-red yot-text-end" id="existEmailErrForgotPassword" style="display: none;">Email is already exist.<br></span>
+                        <span class="yot-tc-red yot-text-end" id="emailDoesntExist" style="display: none;">Email doesn't Exist.<br></span>
                     </div>
                 </div>
 

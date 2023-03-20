@@ -22,7 +22,7 @@
     <!-- Verified Container -->
     <div id="successEmailVerifiedContainer" class="yot-overlay-mid-container yot-z-index-1" style="display:none;">
         <div class="yot-overlay-mid-child yot-pa-16 yot-overlay-mid-container-form yot-text-center">
-            <h2>Congratulations, your email address has been verified successfully!</h2>
+            <h2>Congratulations, your password has been successfully updated!</h2>
             <h4 class="yot-mb-8">You may now proceed to log in to your account.</h4>
             <div>
                 <button class="yot-btn-blue1" id="loginNav">Log In</button>
@@ -35,7 +35,7 @@
         <div class="yot-form-container">
             <!-- Profile -->
             <div class="yot-mb-8">
-                <h2 class="yot-tc-blue1">Please enter your new password to update it in the form below.</h2>
+                <h2 class="yot-tc-blue1">Please enter your new password in the form below to update it.</h2>
             </div>
 
             <!-- Password and Confirm Password Error -->

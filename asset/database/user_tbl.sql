@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2023 at 11:47 PM
+-- Generation Time: Mar 20, 2023 at 02:07 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,7 +38,7 @@ CREATE TABLE `user_tbl` (
   `role` varchar(20) NOT NULL,
   `first_name` varchar(80) NOT NULL,
   `last_name` varchar(80) NOT NULL,
-  `phone_number` int(15) NOT NULL,
+  `phone_number` varchar(15) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -48,15 +48,13 @@ CREATE TABLE `user_tbl` (
 --
 
 INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `status`, `activate_code`, `activate_key`, `update_pass_key`, `role`, `first_name`, `last_name`, `phone_number`, `created_at_varchar`, `created_at`) VALUES
-(1, 'admin@gmail.com', 'admin@gmail.com', NULL, 0, '', '', 'admin', '', '', 0, 'Mar 09, 2023 08:56:07 PM', '2023-03-09 20:56:07'),
-(2, 'rlsqbsyst@valanides.com', 'rlsqbsyst@valanides.com', NULL, 108756, '', '', '', '', '', 0, 'Mar 14, 2023 04:36:06 PM', '2023-03-14 16:36:06'),
-(3, 'afjozbc@valanides.com', 'afjozbc@valanides.com', NULL, 538042, '', '', '', '', '', 0, 'Mar 14, 2023 04:39:33 PM', '2023-03-14 16:39:33'),
-(4, 'bggtvfvqrh@valanides.com', 'bggtvfvqrh@valanides.com', 'activated', 417867, '', '', '', '', '', 0, 'Mar 14, 2023 05:16:04 PM', '2023-03-14 17:16:04'),
-(7, 'bauclqugpxwpk@valanides.com', 'bauclqugpxwpk@valanides.com', NULL, 443163, '', '', 'user', '', '', 0, 'Mar 15, 2023 06:37:00 AM', '2023-03-15 06:37:00'),
-(8, 'gkplvbt@valanides.com', 'gkplvbt@valanides.com', NULL, 352814, '', '', 'user', '', '', 0, 'Mar 15, 2023 06:42:46 AM', '2023-03-15 06:42:46'),
-(9, 'dcxnreykjy@valanides.com', 'dcxnreykjy@valanides.com', NULL, 875248, '', '', 'user', '', '', 0, 'Mar 15, 2023 06:43:31 AM', '2023-03-15 06:43:31'),
-(10, 'vdsltm@valanides.com', 'vdsltm@valanides.com', NULL, 782484, '', '', 'user', '', '', 0, 'Mar 15, 2023 06:44:31 AM', '2023-03-15 06:44:31'),
-(11, 'cutbgvdpcklv@valanides.com', 'cutbgvdpcklv@valanides.com', NULL, 709652, '', '', 'user', '', '', 0, 'Mar 15, 2023 12:34:43 PM', '2023-03-15 12:34:43');
+(1, 'aprhokwmdzvyczt@valanides.com', 'aprhokwmdzvyczt@valanides.com', NULL, 114425, '', '', 'user', '', '', '', 'Mar 20, 2023 06:41:00 PM', '2023-03-20 18:41:00'),
+(2, 'lvncjfh@valanides.com', 'lvncjfh@valanides.com', NULL, 205624, '', '', 'user', '', '', '', 'Mar 20, 2023 06:41:55 PM', '2023-03-20 18:41:55'),
+(3, 'vcedwcnictyvkbt@valanides.com', 'vcedwcnictyvkbt@valanides.com', NULL, 595266, '', '', 'user', '', '', '', 'Mar 20, 2023 06:44:04 PM', '2023-03-20 18:44:04'),
+(4, 'goavugc@valanides.com', 'goavugc@valanides.com', 'activated', 709717, '', '', 'user', '', '', '', 'Mar 20, 2023 06:45:10 PM', '2023-03-20 18:45:10'),
+(5, 'ynqhnscvpt@valanides.com', 'ynqhnscvpt@valanides.com', 'activated', 142297, '', '', 'user', '', '', '', 'Mar 20, 2023 06:49:44 PM', '2023-03-20 18:49:44'),
+(6, 'llxalaj@valanides.com', 'llxalaj@valanides.com', 'activated', 458217, '', '', 'user', '', '', '', 'Mar 20, 2023 06:53:05 PM', '2023-03-20 18:53:05'),
+(7, 'xdjcamphmex@valanides.com', 'xdjcamphmex@valanides.com', 'activated', 945493, '', 'iaztsnreulqkwmycvdhx', 'user', '', '', '', 'Mar 20, 2023 06:53:31 PM', '2023-03-20 18:53:31');
 
 --
 -- Indexes for dumped tables
@@ -76,7 +74,7 @@ ALTER TABLE `user_tbl`
 -- AUTO_INCREMENT for table `user_tbl`
 --
 ALTER TABLE `user_tbl`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

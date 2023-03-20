@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2023 at 03:10 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Mar 20, 2023 at 02:07 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `cut_file_tbl` (
   `job_no` int(11) NOT NULL,
   `create_at_varchar` varchar(255) NOT NULL,
   `create_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cut_file_tbl`
@@ -50,7 +50,7 @@ INSERT INTO `cut_file_tbl` (`cut_file_id`, `job_name`, `job_no`, `create_at_varc
 (9, 'hinirbog sandigan', 2069, 'Mar 03, 2023 05:41:09 PM', '2023-03-03 17:41:09'),
 (10, 'motor ni juan black', 2073, 'Mar 03, 2023 05:41:15 PM', '2023-03-03 17:41:15'),
 (11, 'eswell 36pcs', 2080, 'Mar 03, 2023 05:41:23 PM', '2023-03-03 17:41:23'),
-(12, 'motoronda 105pcs', 1818, 'Mar 03, 2023 05:41:29 PM', '2023-03-03 17:41:29'),
+(12, 'motoronda 105pcs', 1819, 'Mar 03, 2023 05:41:29 PM', '2023-03-03 17:41:29'),
 (13, 'pusong matulungin', 1108, 'Mar 03, 2023 05:41:35 PM', '2023-03-03 17:41:35'),
 (14, 'pawer wheels', 1820, 'Mar 03, 2023 05:41:41 PM', '2023-03-03 17:41:41'),
 (15, 'fermata', 945, 'Mar 03, 2023 05:42:42 PM', '2023-03-03 17:42:42'),
@@ -175,38 +175,7 @@ INSERT INTO `cut_file_tbl` (`cut_file_id`, `job_name`, `job_no`, `create_at_varc
 (135, 'real talk 119', 1893, 'Mar 04, 2023 03:52:48 PM', '2023-03-04 15:52:48'),
 (136, 'peeker', 1887, 'Mar 04, 2023 03:52:59 PM', '2023-03-04 15:52:59'),
 (137, 'family 1', 1456, 'Mar 04, 2023 03:53:12 PM', '2023-03-04 15:53:12'),
-(138, 'nars 102 pcs', 1957, 'Mar 04, 2023 03:53:30 PM', '2023-03-04 15:53:30'),
-(139, 'nasaktan-pinaasa-184pcs-2x2', 3797, 'Mar 09, 2023 10:51:38 AM', '2023-03-09 10:51:38'),
-(140, 'heart-break-176pcs-2x2', 3798, 'Mar 09, 2023 10:51:52 AM', '2023-03-09 10:51:52'),
-(141, 'inlove-168pcs-2x2', 3799, 'Mar 09, 2023 10:52:02 AM', '2023-03-09 10:52:02'),
-(142, 'single-176pcs-2x2', 3800, 'Mar 09, 2023 10:52:16 AM', '2023-03-09 10:52:16'),
-(143, 'taken-176pcs-2x2', 3801, 'Mar 09, 2023 11:14:00 AM', '2023-03-09 11:14:00'),
-(144, 'iamsad-176pcs-2x2', 3803, 'Mar 09, 2023 11:14:15 AM', '2023-03-09 11:14:15'),
-(145, 'happy-176pcs-2x2', 3804, 'Mar 09, 2023 11:14:39 AM', '2023-03-09 11:14:39'),
-(146, 'angry-176pcs-2x2', 3806, 'Mar 09, 2023 11:14:58 AM', '2023-03-09 11:14:58'),
-(147, 'gusto-ko-176pcs-2x2', 3807, 'Mar 09, 2023 11:15:19 AM', '2023-03-09 11:15:19'),
-(148, 'iloveyou-176pcs-2x2', 3808, 'Mar 09, 2023 11:15:34 AM', '2023-03-09 11:15:34'),
-(149, 'la pob 239-350', 3829, 'Mar 09, 2023 11:15:46 AM', '2023-03-09 11:15:46'),
-(150, 'artsmoto-108pcs', 3832, 'Mar 09, 2023 11:15:56 AM', '2023-03-09 11:15:56'),
-(151, 'toda-toda-logo', 3833, 'Mar 09, 2023 11:16:12 AM', '2023-03-09 11:16:12'),
-(152, 'lanz new', 1629, 'Mar 09, 2023 11:16:19 AM', '2023-03-09 11:16:19'),
-(153, 'ph-looper 45pcs', 3834, 'Mar 09, 2023 11:16:43 AM', '2023-03-09 11:16:43'),
-(154, 'outrow-logo-hindi mabasa234pcs', 3835, 'Mar 09, 2023 11:17:01 AM', '2023-03-09 11:17:01'),
-(155, 'black-orange-coffee44pcs', 3847, 'Mar 09, 2023 11:17:14 AM', '2023-03-09 11:17:14'),
-(156, 'flavored coffee 44pcs', 3848, 'Mar 09, 2023 11:17:37 AM', '2023-03-09 11:17:37'),
-(157, 'non-coffee44pcs', 3850, 'Mar 09, 2023 11:17:52 AM', '2023-03-09 11:17:52'),
-(158, 'rizal holo 50 pcs', 3879, 'Mar 09, 2023 11:18:09 AM', '2023-03-09 11:18:09'),
-(159, 'nectar 48pcs', 3927, 'Mar 09, 2023 11:18:17 AM', '2023-03-09 11:18:17'),
-(160, '5ft peach puff pizzulu 29pcs', 3920, 'Mar 09, 2023 11:18:34 AM', '2023-03-09 11:18:34'),
-(161, 'juan moto ave 112pcs', 3953, 'Mar 09, 2023 11:18:45 AM', '2023-03-09 11:18:45'),
-(162, 'mr by 144', 3967, 'Mar 09, 2023 11:18:54 AM', '2023-03-09 11:18:54'),
-(163, 'stremeng 184 pcs black', 4044, 'Mar 09, 2023 11:19:08 AM', '2023-03-09 11:19:08'),
-(164, 'love-max-8in1', 4054, 'Mar 09, 2023 11:19:31 AM', '2023-03-09 11:19:31'),
-(165, 'love-max-15in1-44cs', 4064, 'Mar 09, 2023 11:19:50 AM', '2023-03-09 11:19:50'),
-(166, 'french-cone-1x1-2x2', 4059, 'Mar 09, 2023 11:19:59 AM', '2023-03-09 11:19:59'),
-(167, 'french-cone-2x2', 4060, 'Mar 09, 2023 11:20:07 AM', '2023-03-09 11:20:07'),
-(168, 'allen-logo-144pcs', 4064, 'Mar 09, 2023 11:20:21 AM', '2023-03-09 11:20:21'),
-(169, 'boss-reid-108pcs', 4067, 'Mar 09, 2023 11:20:28 AM', '2023-03-09 11:20:28');
+(138, 'nars 102 pcs', 1957, 'Mar 04, 2023 03:53:30 PM', '2023-03-04 15:53:30');
 
 --
 -- Indexes for dumped tables
@@ -226,7 +195,7 @@ ALTER TABLE `cut_file_tbl`
 -- AUTO_INCREMENT for table `cut_file_tbl`
 --
 ALTER TABLE `cut_file_tbl`
-  MODIFY `cut_file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
+  MODIFY `cut_file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
