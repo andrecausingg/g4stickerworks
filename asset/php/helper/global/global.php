@@ -100,9 +100,9 @@
     // Email Verification 404
     class classSessionEmailSignup{
         function sessionEmailSignup(){
-            require_once './assets/php/index/signup.php';
+            require_once "/xampp/htdocs/g4stickerworks/asset/php/index/signup.php";
 
-            if(!isset($_SESSION["signUpUserEmail"])){
+            if(!isset($_SESSION["emailCheckExistSignUp"]) && !isset($_SESSION["emailSignUp"])){
                 echo "<script>window.location.href='404';</script>";
             }
         }

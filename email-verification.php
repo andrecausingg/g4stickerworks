@@ -1,3 +1,9 @@
+<?php
+    require_once("./asset/php/helper/global/global.php");
+    $classSessionEmailSignup = new classSessionEmailSignup();
+    $classSessionEmailSignup->sessionEmailSignup();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

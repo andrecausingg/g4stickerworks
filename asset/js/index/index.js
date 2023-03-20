@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    localStorage.setItem("timeLeft", 30);
+
     // Show Log In Form
     $(".logInSpan").click(function(){
         $('body').css('overflow', 'hidden'); 
