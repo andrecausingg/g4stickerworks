@@ -39,7 +39,7 @@
                         <div class="yot-bg-white yot-col-50 yot-ma-4" style="border-radius: 10px; padding:16px;">
                             <div class="yot-flex yot-flex-ai-c-jc-sb">
                                 <h3>Name</h3>
-                                <i class="fa-solid fa-user yot-text-fs-xxl yot-active-bbh1"></i>
+                                <i id="iconFNameAndLName" class="fa-solid fa-user yot-text-fs-xxl yot-active-bbh1"></i>
                             </div>
                             <h4>'.$row["first_name"]. " " . $row["last_name"]. '</h4>
                         </div>

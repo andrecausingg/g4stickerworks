@@ -102,7 +102,24 @@
     <!-- Profile Container -->
     <div id="displayProfileInfo" class="yot-content-space-margin-t-120 yot-container yot-overlay-mid-container-form-tablet-size-up"></div>
 
+    <!-- Update Container First and Last Name-->
+    <div id="updateBgContainerForm" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+        <div id="updateContainerFormFNameAndLName" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 class="yot-tc-blue1">Update</h2>
+                    <i id="updateCloseFormIconFNameAndLName" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainerFNameAndLName"></div>
+            </div>
+        </div>
+    </div>
+
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/profile/display/d-data.js"></script>
+    <script src="./asset/js/profile/update-fname-lname.js"></script>
 </body>
 </html>
