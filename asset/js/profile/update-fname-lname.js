@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    // // Attach submit event listener to the form
-    $("#createFormNewUser").submit(function(e) {
+    // Attach submit event listener to the form
+    $(document).on("submit", "#updateFormProfile", function(e){
         e.preventDefault(); // prevent the default form submission
         
         // Sanitize user input
@@ -13,17 +13,25 @@ $(document).ready(function(){
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/new-user/new-user.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/profile/update-fname-lname.php", // replace with the URL of your form processing script
                 data: { 
                     firstName: firstName, 
                     lastName: lastName, 
-                    phoneNumber: phoneNumber, 
                 }, // send the Content field value as data
                 success: function(response) {
                     console.log(response);
                     const responseVarChar = response.trim();     
                     if(responseVarChar == "updated"){
-                        window.location.href = '../../../../g4stickerworks/user-product.html';
+                        $("#updateSuccessAlert").show();
+
+                        setTimeout(function() {
+                            $("#updateSuccessAlert").hide(); // Show the element after 10 seconds
+                        }, 10000); // 10000 milliseconds = 10 seconds
+
+                        $("#displayProfileInfo").load("../../../../../g4stickerworks/asset/php/profile/display/d-profile.php");
+                        $("#updateDisplayContainerFNameAndLName").load("../../../../../g4stickerworks/asset/php/profile/display/d-fname-lname.php");
+                        $("#updateDisplayContainerPhoneNumber").load("../../../../../g4stickerworks/asset/php/profile/display/d-phone-number.php");
+                        $("#updateDisplayContainerEmail").load("../../../../../g4stickerworks/asset/php/profile/display/d-email.php");
                     }           
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -65,6 +73,10 @@ $(document).ready(function(){
         }
     });
 
+    $("#updateSuccessAlertCloseIcon").click(function(){
+        $("#updateSuccessAlert").hide();
+    });
+
     // Show Form Update First name and Last Name
     $(document).on("click", "#iconFNameAndLName", function(){
         $('body').css('overflow', 'hidden'); 
@@ -72,6 +84,7 @@ $(document).ready(function(){
         $("#updateContainerFormFNameAndLName").show();
     });
 
+    // Hide Form Update First name and Last Name
     $(document).on("click", "#updateCloseFormIconFNameAndLName", function(){
         $('body').css('overflow', 'auto'); 
         $("#updateBgContainerForm").hide();

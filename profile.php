@@ -99,11 +99,12 @@
         </div>
     </div>
 
-    <!-- Profile Container -->
+    <!-- Profile Container Data -->
     <div id="displayProfileInfo" class="yot-content-space-margin-t-120 yot-container yot-overlay-mid-container-form-tablet-size-up"></div>
 
     <!-- Update Container First and Last Name-->
     <div id="updateBgContainerForm" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+        <!-- Update First Name and Last Name Container -->
         <div id="updateContainerFormFNameAndLName" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
                 <!-- Title -->
@@ -116,10 +117,63 @@
                 <div id="updateDisplayContainerFNameAndLName"></div>
             </div>
         </div>
+
+        <!-- Update Phone Number -->
+        <div id="updateContainerFormPhoneNumber" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 class="yot-tc-blue1">Update</h2>
+                    <i id="updateCloseFormIconPhoneNumber" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainerPhoneNumber"></div>
+            </div>
+        </div>
+
+        <!-- Update Email -->
+        <div id="updateContainerFormEmail" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 class="yot-tc-blue1">Update</h2>
+                    <i id="updateCloseFormIconEmail" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainerEmail"></div>
+            </div>
+        </div>
+
+        <!-- Update Password -->
+        <div id="updateContainerFormPassword" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 class="yot-tc-blue1">Update</h2>
+                    <i id="updateCloseFormIconPassword" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainerPassword"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Update Container-->
+    <div id="updateSuccessAlert" class="yot-bg-orange yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Update:</h3>
+            <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The record was successfully updated.</p>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/profile/display/d-data.js"></script>
     <script src="./asset/js/profile/update-fname-lname.js"></script>
+    <script src="./asset/js/profile/update-phone-number.js"></script>
+    <script src="./asset/js/profile/update-email.js"></script>
 </body>
 </html>

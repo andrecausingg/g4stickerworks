@@ -1,10 +1,9 @@
 <?php
-    if(isset($_POST["firstName"]) && isset($_POST["lastName"])){
-        $firstName = sanitizee($_POST["firstName"]);
-        $lastName = sanitizee($_POST["lastName"]);
+    if(isset($_POST["emailProfile"])){
+        $email = sanitizee($_POST["emailProfile"]);
 
-        $classFNameAndLastName = new classFNameAndLastName($firstName, $lastName);
-        $classFNameAndLastName->update();
+        $classEmail = new classEmail($email);
+        $classEmail->update();
     }
 
     // Sanitize Input
@@ -15,13 +14,11 @@
         return $data;
     }
 
-    class classFNameAndLastName{
-        private $firstName;
-        private $lastName;
+    class classEmail{
+        private $email;
 
-        public function __construct($firstName, $lastName){
-            $this->firstName = $firstName;
-            $this->lastName = $lastName;
+        public function __construct($email){
+            $this->email = $email;
         }
 
         function update(){
@@ -31,9 +28,9 @@
             $id = (new classSessionUserID())->sessionUserID();
 
             // Prepare the query
-            $stmt = $conn->prepare("UPDATE user_tbl SET first_name=?, last_name=? WHERE user_id=?");
+            $stmt = $conn->prepare("UPDATE user_tbl SET email=? WHERE user_id=?");
             // Bind the parameters
-            $stmt->bind_param("ssi", $this->firstName, $this->lastName, $id);
+            $stmt->bind_param("si", $this->email, $id);
             // Execute the query
             if($stmt->execute()){
                 echo"updated";

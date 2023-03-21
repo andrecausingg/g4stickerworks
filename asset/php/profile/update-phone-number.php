@@ -1,10 +1,9 @@
 <?php
-    if(isset($_POST["firstName"]) && isset($_POST["lastName"])){
-        $firstName = sanitizee($_POST["firstName"]);
-        $lastName = sanitizee($_POST["lastName"]);
+    if(isset($_POST["phoneNumber"])){
+        $phoneNumber = sanitizee($_POST["phoneNumber"]);
 
-        $classFNameAndLastName = new classFNameAndLastName($firstName, $lastName);
-        $classFNameAndLastName->update();
+        $classPhoneNumber = new classPhoneNumber($phoneNumber);
+        $classPhoneNumber->update();
     }
 
     // Sanitize Input
@@ -15,13 +14,11 @@
         return $data;
     }
 
-    class classFNameAndLastName{
-        private $firstName;
-        private $lastName;
+    class classPhoneNumber{
+        private $phoneNumber;
 
-        public function __construct($firstName, $lastName){
-            $this->firstName = $firstName;
-            $this->lastName = $lastName;
+        public function __construct($phoneNumber){
+            $this->phoneNumber = $phoneNumber;
         }
 
         function update(){
@@ -31,9 +28,9 @@
             $id = (new classSessionUserID())->sessionUserID();
 
             // Prepare the query
-            $stmt = $conn->prepare("UPDATE user_tbl SET first_name=?, last_name=? WHERE user_id=?");
+            $stmt = $conn->prepare("UPDATE user_tbl SET phone_number=? WHERE user_id=?");
             // Bind the parameters
-            $stmt->bind_param("ssi", $this->firstName, $this->lastName, $id);
+            $stmt->bind_param("ii", $this->phoneNumber, $id);
             // Execute the query
             if($stmt->execute()){
                 echo"updated";
