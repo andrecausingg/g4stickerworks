@@ -37,6 +37,8 @@ $(document).ready(function(){
             });
         }else{
             validateFieldsPassword();
+            validateFieldsPassword();
+
         }
 
         // Function validate Password
