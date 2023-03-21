@@ -1,3 +1,9 @@
+<?php
+    require_once("./asset/php/helper/global/global.php");
+    $classCheckUrlQueryExist = new classCheckUrlQueryExist();
+    $classCheckUrlQueryExist->checkQueryUrlExist();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +26,7 @@
 </head>
 <body>
     <!-- Verified Container -->
-    <div id="successEmailVerifiedContainer" class="yot-overlay-mid-container yot-z-index-1" style="display:none;">
+    <div id="successUpdatePassContainer" class="yot-overlay-mid-container yot-z-index-1" style="display:none;">
         <div class="yot-overlay-mid-child yot-pa-16 yot-overlay-mid-container-form yot-text-center">
             <h2>Congratulations, your password has been successfully updated!</h2>
             <h4 class="yot-mb-8">You may now proceed to log in to your account.</h4>
@@ -30,7 +36,7 @@
         </div>
     </div>
 
-    <div class="yot-overlay-mid-container" id="emailVerificationFormContainer">
+    <div class="yot-overlay-mid-container" id="updatePassFormContainer">
         <!-- Create Form Container -->
         <div class="yot-form-container">
             <!-- Profile -->
@@ -83,14 +89,14 @@
                 </div>
 
                 <!-- Submit -->
-                <div class="yot-text-center" id="submitSignUpBtn">
+                <div class="yot-text-center" id="submitUpdatePasswordBtn">
                     <input class="yot-btn-blue1" type="submit" value="Submit">
                 </div>
             </form>
 
             <!-- Disable btn -->
-            <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisEmailVerContainer" style="display: none;">
-                <button class="yot-btn-dis yot-flex yot-flex-ai-c">Signing Up <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
+            <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisUpdatePasswordBtn" style="display: none;">
+                <button class="yot-btn-dis yot-flex yot-flex-ai-c">Submitting <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
             </div>
         </div>
     </div>

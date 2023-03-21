@@ -1,49 +1,38 @@
 $(document).ready(function(){
     // ID on form signUp
-    $('#signUpForm').submit(function(e){
+    $('#updatePasswordForm').submit(function(e){
         e.preventDefault();
 
         // Values
-        var email = $('#emailSignUp').val().trim();
-        var password = $('#passwordSignUp').val().trim();
-        var confirmPassword = $('#confirmPasswordSignUp').val().trim();
+        var password = $('#passwordUpdatePassword').val().trim();
+        var confirmPassword = $('#confirmPasswordUpdatePassword').val().trim();
+        var urlParams = new URLSearchParams(window.location.search);
+        var vKey = urlParams.get('vKey');
 
-        // 
-        var trustedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'aol.com', 'triots.com', 'valanides.com'];
-
-
-        if(email != "" && validateEmail(email) && validateEmailDomain(email) && 
+        if(
             password.length >= 8 && password != "" && 
             confirmPassword.length >= 8 && confirmPassword != "" &&
             password == confirmPassword
         ){
-            $("#submitDisSignUpBtn").show();
-            $("#submitSignUpBtn").hide();
+            $("#submitDisUpdatePasswordBtn").show();
+            $("#submitUpdatePasswordBtn").hide();
 
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/index/signup.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/update-password/update-password.php", // replace with the URL of your form processing script
                 data: { 
-                    email: email,
-                    password: password
+                    vKey: vKey,
+                    password: password,
                 }, // send the Content field value as data
                 success: function(response){
-                    var responseVarChar = response.trim();                
-                    if(responseVarChar == "emailExist"){
-                        $("#submitDisSignUpBtn").hide();
-                        $("#submitSignUpBtn").show();
-                        $("#existEmailErrSignUp").show();
-                        $('#emailSignUp').val("").css('border-color', 'hsl(4, 95%, 56%)');
-                    }else if(responseVarChar == "sendingCode"){
-                        localStorage.setItem("email", email);
-                        localStorage.setItem("statusEmail", "sendingCode");
-                        window.location.href = '../../../../g4stickerworks/email-verification';
-                    }else{
-                        localStorage.setItem("email", email);
-                        localStorage.setItem("statusEmail", "notSendingCode");
-                        window.location.href = '../../../../g4stickerworks/email-verification';
+                    var responseVarChar = response.trim();      
+
+                    if(responseVarChar == "updated"){
+                        $("#successUpdatePassContainer").show();
+                        $("#updatePassFormContainer").hide();
                     }
+                    
                     // do something with the server response (e.g. show a success message)
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -52,88 +41,51 @@ $(document).ready(function(){
                 }
             });
         }
-
-        validateFieldsEmail();
         validateFieldsPassword();
         validateFieldsConfirmPassword();
 
-        // Function validate Email
-        function validateFieldsEmail(){
-            if(!validateEmail(email)){
-                $('#validateEmailErrSignUp').show();
-                $('#emailSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-            }
-            
-            if(!validateEmailDomain(email)){
-                $('#domainEmailErrSignUp').show();
-                $('#emailSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-            }
-            
-            if(validateEmail(email) && validateEmailDomain(email)){
-                $('#validateEmailErrSignUp, #domainEmailErrSignUp').hide();
-                $('#emailSignUp').css('border-color', 'hsl(122, 39%, 49%)');
-            }
-
-            // Invalid Function
-            function validateEmail(email) {
-                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-                return regex.test(email);
-            }
-
-            // Trusted Domain Only
-            function validateEmailDomain(email) {
-                var domain = email.split('@')[1];
-                return trustedDomains.includes(domain);
-            }
-        }
 
         // Function validate Password
         function validateFieldsPassword(){
+            var password = $('#passwordUpdatePassword').val().trim();
+            var confirmPassword = $('#confirmPasswordUpdatePassword').val().trim();
+            
             if (password.length < 8) {
                 $('#less8CharPassErrSignUp').show();
-                $('#passwordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
+                $('#passwordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
             }else if(password != confirmPassword){
                 $("#passwordAndConfirmPasswordErr").show();
-                $('#passwordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-                $('#confirmPasswordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
+                $('#passwordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
+                $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
             }else{
                 $("#passwordAndConfirmPasswordErr").hide();
                 $('#less8CharConfirmPassErrSignUp').hide();
                 $('#less8CharPassErrSignUp').hide();
-                $('#passwordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
-                $('#confirmPasswordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
+                $('#passwordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
+                $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
             }
         }
 
         // Function validate Confirm Password
-        function validateFieldsConfirmPassword(){
-            if (confirmPassword.length < 8) {
-                $('#less8CharConfirmPassErrSignUp').show();
-                $('#confirmPasswordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-            }else if(password != confirmPassword){
-                $("#passwordAndConfirmPasswordErr").show();
-                $('#passwordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-                $('#confirmPasswordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-            }else{
-                $("#passwordAndConfirmPasswordErr").hide();
-                $('#less8CharConfirmPassErrSignUp').hide();
-                $('#less8CharPassErrSignUp').hide();
-                $('#passwordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
-                $('#confirmPasswordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
-            }
+    function validateFieldsConfirmPassword(){
+        var password = $('#passwordUpdatePassword').val().trim();
+        var confirmPassword = $('#confirmPasswordUpdatePassword').val().trim();
+        
+        if (confirmPassword.length < 8) {
+            $('#less8CharConfirmPassErrSignUp').show();
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
+        }else if(password != confirmPassword){
+            $("#passwordAndConfirmPasswordErr").show();
+            $('#passwordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
+        }else{
+            $("#passwordAndConfirmPasswordErr").hide();
+            $('#less8CharConfirmPassErrSignUp').hide();
+            $('#less8CharPassErrSignUp').hide();
+            $('#passwordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
         }
-
-        // Invalid Function
-        function validateEmail(email) {
-            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-            return regex.test(email);
-        }
-
-        // Trusted Domain Only
-        function validateEmailDomain(email) {
-            var domain = email.split('@')[1];
-            return trustedDomains.includes(domain);
-        }
+    }
     });
 
     // Show Password Sign Up
@@ -151,7 +103,7 @@ $(document).ready(function(){
     });
 
     // Show Confirm Password Sign Up
-    $('#showConfirmPasswordUpdatePassword').click(function() {
+    $('#showconfirmPasswordUpdatePassword').click(function() {
         var passwordInput = $('#confirmPasswordUpdatePassword');
         var icon = $(this);
         
@@ -164,48 +116,52 @@ $(document).ready(function(){
         }
     });
 
-    $('#passwordSignUp').keyup(validateFieldsPassword);
-    $('#confirmPasswordSignUp').keyup(validateFieldsConfirmPassword);
+    $('#passwordUpdatePassword').keyup(validateFieldsPassword);
+    $('#confirmPasswordUpdatePassword').keyup(validateFieldsConfirmPassword);
 
     // Function validate Password
     function validateFieldsPassword(){
-        var password = $('#passwordSignUp').val().trim();
-        var confirmPassword = $('#confirmPasswordSignUp').val().trim();
+        var password = $('#passwordUpdatePassword').val().trim();
+        var confirmPassword = $('#confirmPasswordUpdatePassword').val().trim();
         
         if (password.length < 8) {
             $('#less8CharPassErrSignUp').show();
-            $('#passwordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
+            $('#passwordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
         }else if(password != confirmPassword){
             $("#passwordAndConfirmPasswordErr").show();
-            $('#passwordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-            $('#confirmPasswordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
+            $('#passwordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
         }else{
             $("#passwordAndConfirmPasswordErr").hide();
             $('#less8CharConfirmPassErrSignUp').hide();
             $('#less8CharPassErrSignUp').hide();
-            $('#passwordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
-            $('#confirmPasswordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
+            $('#passwordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
         }
     }
 
     // Function validate Confirm Password
     function validateFieldsConfirmPassword(){
-        var password = $('#passwordSignUp').val().trim();
-        var confirmPassword = $('#confirmPasswordSignUp').val().trim();
+        var password = $('#passwordUpdatePassword').val().trim();
+        var confirmPassword = $('#confirmPasswordUpdatePassword').val().trim();
         
         if (confirmPassword.length < 8) {
             $('#less8CharConfirmPassErrSignUp').show();
-            $('#confirmPasswordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
         }else if(password != confirmPassword){
             $("#passwordAndConfirmPasswordErr").show();
-            $('#passwordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
-            $('#confirmPasswordSignUp').css('border-color', 'hsl(4, 95%, 56%)');
+            $('#passwordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(4, 95%, 56%)');
         }else{
             $("#passwordAndConfirmPasswordErr").hide();
             $('#less8CharConfirmPassErrSignUp').hide();
             $('#less8CharPassErrSignUp').hide();
-            $('#passwordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
-            $('#confirmPasswordSignUp').css('border-color', 'hsl(122, 39%, 49%)');
+            $('#passwordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
+            $('#confirmPasswordUpdatePassword').css('border-color', 'hsl(122, 39%, 49%)');
         }
     }
+
+    $("#loginNav").click(function(){
+        window.location.href = '../../../../g4stickerworks/index';  
+    });
 });

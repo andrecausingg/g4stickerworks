@@ -62,7 +62,7 @@
             $conn = (new classConnDB())->conn();
             $sixDigitCode = (new classSixDigitCode())->sixDigitCodeF();
 
-            $stmt = $conn->prepare("SELECT status FROM user_tbl WHERE email = ?");
+            $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE email = ?");
             $stmt->bind_param("s", $this->emailCheckExist);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -100,7 +100,7 @@
             $dateTimeVarChar = (new classDateTime())->getDateTime();
             $role = 'user';
         
-            $stmt = $conn->prepare("SELECT status FROM user_tbl WHERE email = ?");
+            $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE email = ?");
             $stmt->bind_param("s", $this->email);
             $stmt->execute();
             $result = $stmt->get_result();

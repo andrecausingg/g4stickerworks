@@ -1,4 +1,43 @@
 <?php 
+    // Check if correct query
+    class classCheckUrlQueryExist {
+        private $classConnDB;
+        
+        function __construct() {
+            $this->classConnDB = new classConnDB();
+        }
+
+        function checkQueryUrlExist() {
+            if(isset($_GET['vKey'])) {
+                $vKey = $_GET['vKey'];
+            
+                // create a new instance of classConnDB
+                $classConnDB = new classConnDB();
+                $conn = $classConnDB->conn();
+            
+                // prepare and execute the SQL statement with parameter binding
+                $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE update_pass_key = ?");
+                $stmt->bind_param("s", $vKey);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+                // check if there are any matching records
+                if ($result->num_rows > 0) {
+                    
+                } else {
+                    // redirect to 404 page
+                    echo "<script>window.location.href='404';</script>";
+                }
+            
+                // close the statement and database connection
+                $stmt->close();
+                $conn->close();
+            }
+            
+        }
+    }
+
+    // Random Url Query
     class classQueryUrlRand{
         function queryUrlRand(){
             $random_string = substr(str_shuffle("abcdefghijklmnopqrstuvwxyz"), 0, 20);

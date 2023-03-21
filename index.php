@@ -262,10 +262,16 @@
                 </div>
 
                 <!-- Submit -->
-                <div class="yot-text-center">
+                <div class="yot-text-center" id="forgotPasswordSubmitContainer">
                     <input class="yot-btn-blue1" type="submit" value="Submit">
                 </div>
             </form>
+
+            <!-- Disable btn -->
+            <div class="yot-flex yot-flex-fd-c-ai-c" id="forgotPasswordDisSubmitContainer" style="display: none;">
+                <button class="yot-btn-dis yot-flex yot-flex-ai-c">Submitting<span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
+            </div>
+
         </div>
     </div>
 
