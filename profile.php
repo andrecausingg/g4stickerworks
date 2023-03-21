@@ -1,3 +1,10 @@
+<?php
+    require_once("./asset/php/helper/global/global.php");
+    $classSessionLogin = new classSessionLogin();
+    $classSessionLogin->sessionLogin();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,63 +100,9 @@
     </div>
 
     <!-- Profile Container -->
-    <div class="yot-content-space-margin-t-120 yot-container yot-overlay-mid-container-form-tablet-size-up">
-        <!-- Personal Informatio and Security Container -->
-        <div class="yot-img-circle-128 yot-mb-16">
-            <img src="./asset/images/g4works-logo.png" alt="">
-            <h1>Red Grey</h1>
-        </div>
-
-        <!-- Title Personal Information-->
-        <div>
-            <h1 class="yot-mb-8 yot-tc-blue1">Personal Information</h1>
-        </div>
-
-        <!-- Name And Phone Number Container -->
-        <div class="yot-row"  style="padding: 0;">
-            <!-- Name -->
-            <div class="yot-bg-white yot-col-50 yot-ma-4" style="border-radius: 10px; padding:16px;">
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <h3>Name</h3>
-                    <i class="fa-solid fa-user yot-text-fs-xxl yot-active-bbh1"></i>
-                </div>
-                <h4>Red Grey</h4>
-            </div>
-
-            <!-- Phone Number -->
-            <div class="yot-bg-white yot-col-50 yot-ma-4" style="border-radius: 10px; padding:16px;">
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <h3>Phone Number</h3>
-                    <i class="fa-solid fa-mobile yot-text-fs-xxl yot-active-bbh1"></i>
-                </div>
-                <h4>09123456789</h4>
-            </div>
-        </div>
-
-        <!-- Title Security -->
-        <div>
-            <h1 class="yot-mb-8 yot-tc-blue1">Security</h1>
-        </div>
-
-        <div class="yot-row"  style="padding: 0;">
-            <div class="yot-bg-white yot-col-50 yot-ma-4" style="border-radius: 10px; padding:16px;">
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <h3>Email</h3>
-                    <i class="fa-solid fa-envelope yot-text-fs-xxl yot-active-bbh1"></i>
-                </div>
-                <h4>redgrey@gmail.com</h4>
-            </div>
-
-            <div class="yot-bg-white yot-col-50 yot-ma-4" style="border-radius: 10px; padding:16px;">
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <h3>Password</h3>
-                    <i class="fa-solid fa-key yot-text-fs-xxl yot-active-bbh1"></i>
-                </div>
-                <h4>***********</h4>
-            </div>
-        </div>
-    </div>
+    <div id="displayProfileInfo" class="yot-content-space-margin-t-120 yot-container yot-overlay-mid-container-form-tablet-size-up"></div>
 
     <script src="./asset/js/all/global.js"></script>
+    <script src="./asset/js/profile/display/d-data.js"></script>
 </body>
 </html>
