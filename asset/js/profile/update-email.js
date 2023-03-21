@@ -76,14 +76,14 @@ $(document).ready(function(){
         }
     });
 
-    // Show Form Update First name and Last Name
+    // Show Form Update Email
     $(document).on("click", "#iconEmail", function(){
         $('body').css('overflow', 'hidden'); 
         $("#updateBgContainerForm").show();
         $("#updateContainerFormEmail").show();
     });
 
-    // Hide Form Update First name and Last Name
+    // Hide Form Update Email
     $(document).on("click", "#updateCloseFormIconEmail", function(){
         $('body').css('overflow', 'auto'); 
         $("#updateBgContainerForm").hide();

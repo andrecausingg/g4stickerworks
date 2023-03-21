@@ -24,34 +24,34 @@
         
                         <!-- Password Error -->
                         <div class="yot-flex yot-flex-ai-c-jc-sb">
-                            <label class="yot-text-fs-xl" style="font-weight: bolder;" for="passwordUpdatePassword">New Password</label>
+                            <label class="yot-text-fs-xl" style="font-weight: bolder;" for="passwordUpdatePasswordProfile">New Password</label>
                             <!-- Error Password-->
                             <div class="yot-text-end">
-                                <span class="yot-tc-red yot-text-end" id="less8CharPassErrUpdatePassword" style="display: none;">The password must be at least 8 characters long.<br></span> 
+                                <span class="yot-tc-red yot-text-end" id="less8CharPassErrUpdatePasswordProfile" style="display: none;">The password must be at least 8 characters long.<br></span> 
                             </div>
                         </div>
         
                         <!-- Password -->
                         <div class="yot-form-group yot-form-group-container">
-                            <input class="yot-form-input" type="password" name="passwordUpdatePassword" id="passwordUpdatePassword" style="padding:14px 38px;">
+                            <input class="yot-form-input" type="password" name="passwordUpdatePasswordProfile" id="passwordUpdatePasswordProfile" style="padding:14px 38px;">
                             <i class="fa-solid fa-lock yot-form-group-icon-left yot-text-fs-xxl"></i>
-                            <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showPasswordUpdatePassword"></i>
+                            <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showPasswordUpdatePasswordProfile"></i>
                         </div>
         
                         <!-- Confirm Password Err -->
                         <div class="yot-flex yot-flex-ai-c-jc-sb    ">
-                            <label class="yot-text-fs-xl" style="font-weight: bolder;" for="confirmPasswordUpdatePassword">New Confirm Password</label>
+                            <label class="yot-text-fs-xl" style="font-weight: bolder;" for="confirmPasswordUpdatePasswordProfile">New Confirm Password</label>
                             <!-- Error Password-->
                             <div class="yot-text-end">
-                                <span class="yot-tc-red yot-text-end" id="less8CharConfirmPassErrUpdatePassword" style="display: none;">The confirm password must be at least 8 characters long.<br></span> 
+                                <span class="yot-tc-red yot-text-end" id="less8CharConfirmPassErrUpdatePasswordProfile" style="display: none;">The confirm password must be at least 8 characters long.<br></span> 
                             </div>
                         </div>
         
                         <!-- Confirm Password -->
                         <div class="yot-form-group yot-form-group-container">
-                            <input class="yot-form-input" type="password" name="confirmPasswordUpdatePassword" id="confirmPasswordUpdatePassword" style="padding:14px 38px;">
+                            <input class="yot-form-input" type="password" name="confirmPasswordUpdatePasswordProfile" id="confirmPasswordUpdatePasswordProfile" style="padding:14px 38px;">
                             <i class="fa-solid fa-lock yot-form-group-icon-left yot-text-fs-xxl"></i>
-                            <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showConfirmPasswordUpdatePassword"></i>
+                            <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showConfirmPasswordUpdatePasswordProfile"></i>
                         </div>
 
                         <div class="yot-text-center">

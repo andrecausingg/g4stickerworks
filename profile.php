@@ -175,5 +175,6 @@
     <script src="./asset/js/profile/update-fname-lname.js"></script>
     <script src="./asset/js/profile/update-phone-number.js"></script>
     <script src="./asset/js/profile/update-email.js"></script>
+    <script src="./asset/js/profile/update-password.js"></script>
 </body>
 </html>
