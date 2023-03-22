@@ -120,7 +120,7 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightWork"></i></span>
                         </div>
                         <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="job" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a>
+                            <!-- <a href="job" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a> -->
                             <a href="cut-file" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
                         </div>
                     </div>
@@ -245,7 +245,7 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightWork"></i></span>
                         </div>
                         <div class="jobContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="job" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a>
+                            <!-- <a href="job" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Job</a> -->
                             <a href="cut-file" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Cut File</a>
                         </div>
                     </div>
@@ -301,9 +301,7 @@
             <div class="yot-w-100" style="overflow-x: auto;">
                 <table class="yot-table-blue-theme">
                     <tr>
-                      <th>Order</th>
-                      <th>Name</th>
-                      <th>Job</th>
+                      <th>Order No.</th>
                       <th>Size (Inches)</th>
                       <th>Pcs</th>
                       <th>Total</th>
@@ -315,8 +313,6 @@
     
                     <tr>
                         <td>20231</td>
-                        <td>Mark Cruz</td>
-                        <td>Tarp</td>
                         <td>36w x 36h</td>
                         <td>1</td>
                         <td>100.00</td>
