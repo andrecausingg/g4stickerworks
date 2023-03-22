@@ -1,18 +1,21 @@
 $(document).ready(function(){
     // Attach submit event listener to the form
-    $(document).on("submit", "#updateFormEmail", function(e){
+    $(document).on("submit", "#updateFormPassword", function(e){
         e.preventDefault(); // prevent the default form submission
         
         // Sanitize user input
-        var emailProfile = $("#emailProfile").val().trim();
+        var password = $('#passwordUpdatePasswordProfile').val().trim();
+        var confirmPassword = $('#confirmPasswordUpdatePasswordProfile').val().trim();
 
-        if(emailProfile != "" && validateFieldsEmail(emailProfile)){
+        if(password != "" && validateFieldsPassword(password) &&
+            confirmPassword != "" && validateFieldsConfirmPassword(confirmPassword)
+        ){
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/profile/update-email.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/profile/update-password.php", // replace with the URL of your form processing script
                 data: { 
-                    emailProfile: emailProfile, 
+                    password: password, 
                 }, // send the Content field value as data
                 success: function(response) {
                     console.log(response);
@@ -28,6 +31,7 @@ $(document).ready(function(){
                         $("#updateDisplayContainerFNameAndLName").load("../../../../../g4stickerworks/asset/php/profile/display/d-fname-lname.php");
                         $("#updateDisplayContainerPhoneNumber").load("../../../../../g4stickerworks/asset/php/profile/display/d-phone-number.php");
                         $("#updateDisplayContainerEmail").load("../../../../../g4stickerworks/asset/php/profile/display/d-email.php");
+                        $("#updateDisplayContainerPassword").load("../../../../../g4stickerworks/asset/php/profile/display/d-password.php");
                     }           
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -37,7 +41,7 @@ $(document).ready(function(){
             });
         }else{
             validateFieldsPassword();
-            validateFieldsPassword();
+            validateFieldsConfirmPassword();
 
         }
 
@@ -49,16 +53,19 @@ $(document).ready(function(){
             if (password.length < 8) {
                 $('#less8CharPassErrUpdatePasswordProfile').show();
                 $('#passwordUpdatePasswordProfile').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
             }else if(password != confirmPassword){
                 $("#passwordAndConfirmPasswordErr").show();
                 $('#passwordUpdatePasswordProfile').css('border-color', 'hsl(4, 95%, 56%)');
                 $('#confirmPasswordUpdatePasswordProfile').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
             }else{
                 $("#passwordAndConfirmPasswordErr").hide();
                 $('#less8CharConfirmPassErrUpdatePasswordProfile').hide();
                 $('#less8CharPassErrUpdatePasswordProfile').hide();
                 $('#passwordUpdatePasswordProfile').css('border-color', 'hsl(122, 39%, 49%)');
                 $('#confirmPasswordUpdatePasswordProfile').css('border-color', 'hsl(122, 39%, 49%)');
+                return true;
             }
         }
 
@@ -70,16 +77,19 @@ $(document).ready(function(){
             if (confirmPassword.length < 8) {
                 $('#less8CharConfirmPassErrUpdatePasswordProfile').show();
                 $('#confirmPasswordUpdatePasswordProfile').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
             }else if(password != confirmPassword){
                 $("#passwordAndConfirmPasswordErr").show();
                 $('#passwordUpdatePasswordProfile').css('border-color', 'hsl(4, 95%, 56%)');
                 $('#confirmPasswordUpdatePasswordProfile').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
             }else{
                 $("#passwordAndConfirmPasswordErr").hide();
                 $('#less8CharConfirmPassErrUpdatePasswordProfile').hide();
                 $('#less8CharPassErrUpdatePasswordProfile').hide();
                 $('#passwordUpdatePasswordProfile').css('border-color', 'hsl(122, 39%, 49%)');
                 $('#confirmPasswordUpdatePasswordProfile').css('border-color', 'hsl(122, 39%, 49%)');
+                return true;
             }
         }
     });
