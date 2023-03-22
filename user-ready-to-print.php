@@ -1,3 +1,9 @@
+<?php
+    require_once("./asset/php/helper/global/global.php");
+    $classSessionLogin = new classSessionLogin();
+    $classSessionLogin->sessionLogin();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,27 +39,28 @@
 
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
-                <a href="user-product.html" class="yot-text-fs-xl yot-active-bbh1">Products</a> <span class="yot-mlr-8"></span>
+                <a href="user-product" class="yot-text-fs-xl yot-active-bbh1">Products</a> <span class="yot-mlr-4"></span>
+
                 <!-- Tarpaulin -->
                 <div style="position: relative">
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bb-blue yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">Tarpaulin</span>
                     </div>
                     <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -111px;">
-                        <a href="ready-to-print.html" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Ready To Print</a>
-                        <a href="make-layout.html" class="yot-text-fs-xl yot-active-bbh1">Make Layout</a>
+                        <a href="user-ready-to-print" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Ready To Print</a>
+                        <a href="user-make-layout" class="yot-text-fs-xl yot-active-bbh1">Make Layout</a>
                     </div>
-                </div> 
+                </div> <span class="yot-mlr-4"></span>
 
-                <span class="yot-mlr-8"></span>
-                
-                <a href="profile.html" class="yot-text-fs-xl yot-active-bbh1">Profile</a> <span class="yot-mlr-8"></span>
+                <a href="user-sticker" class="yot-text-fs-xl yot-active-bbh1">Sticker</a> <span class="yot-mlr-4"></span>
+                <a href="user-temporary-plate" class="yot-text-fs-xl yot-active-bbh1">Temporary Plate</a> <span class="yot-mlr-4"></span>
             </div>
 
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex yot-flex-ai-c">
-                <a href="my-cart.html" class="yot-text-fs-xl yot-active-bbh1">My Cart </a> <span class="yot-mlr-4">|</span>
-                <a href="my-orders.html" class="yot-text-fs-xl yot-active-bbh1">My Orders</a>
+                <a href="user-profile" class="yot-text-fs-xl yot-active-bbh1">Profile</a> <span class="yot-mlr-4">|</span>
+                <a href="user-my-cart" class="yot-text-fs-xl yot-active-bbh1">My Cart </a> <span class="yot-mlr-4">|</span>
+                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a>
             </div>
 
             <!-- Hamburger -->
@@ -62,6 +69,9 @@
             </div>
         </nav>
     </header>
+
+
+
 
     <!-- Overlay Mobile -->
     <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1 overlayLeftSideBar" style="display:none"></div>

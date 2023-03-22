@@ -14,6 +14,20 @@ $(document).ready(function(){
         }
     });
 
+    // Order Container | Drop Down Nav
+    $(".orderPageContainerOverView").click(function(){
+        $(".orderPageContainerOverView").toggleClass("yot-active-bb-blue");
+        $(".orderContainerOverView").toggle();
+
+        if($(".faAngleRightOrder").hasClass("fa-angle-right")){
+            $(".faAngleRightOrder").removeClass("fa-angle-right");
+            $(".faAngleRightOrder").addClass("fa-angle-down");
+        }else{
+            $(".faAngleRightOrder").removeClass("fa-angle-down");
+            $(".faAngleRightOrder").addClass("fa-angle-right");
+        }
+    });
+
     // Accounts Container | Drop Down Nav
     $(".accountPageContainerOverView").click(function(){
         $(".accountPageContainerOverView").toggleClass("yot-active-bb-blue");

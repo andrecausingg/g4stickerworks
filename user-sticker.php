@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temporary Plate</title>
+    <title>Sticker</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -50,8 +50,8 @@
                         <a href="user-make-layout" class="yot-text-fs-xl yot-active-bbh1">Make Layout</a>
                     </div>
                 </div> <span class="yot-mlr-4"></span>
-                <a href="user-sticker" class="yot-text-fs-xl yot-active-bbh1">Sticker</a> <span class="yot-mlr-4"></span>
-                <a href="user-temporary-plate" class="yot-text-fs-xl yot-active-bb-blue">Temporary Plate</a> <span class="yot-mlr-4"></span>
+                <a href="user-sticker" class="yot-text-fs-xl yot-active-bb-blue">Sticker</a> <span class="yot-mlr-4"></span>
+                <a href="user-temporary-plate" class="yot-text-fs-xl yot-active-bbh1">Temporary Plate</a> <span class="yot-mlr-4"></span>
             </div>
 
             <!-- Nav Links -->
@@ -105,102 +105,7 @@
 
     <!-- Main -->
     <div class="yot-content-space-margin-t-120 yot-container">
-        <div class="yot-text-center">
-            <h1 class="yot-resize-font-64">Standard Format</h1>
-        </div>
-
-        <div class="yot-row yot-bg-white1">
-            <div class="yot-col-25 yot-text-center" style="padding:16px;">
-                <h2>Format 1</h2>
-                <img src="./asset/images/temp-plate-mvfile.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
-            </div>
-            <div class="yot-col-25 yot-text-center" style="padding:16px;">
-                <h2>Format 2</h2>
-                <img src="./asset/images/temp-plate-number.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
-            </div>
-            <div class="yot-col-25 yot-text-center" style="padding:16px;">
-                <h2>Format 3</h2>
-                <img src="./asset/images/temp-plate-num-temporary-plate.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
-            </div>
-            <div class="yot-col-25 yot-text-center" style="padding:16px;">
-                <h2>Format 4</h2>
-                <img src="./asset/images/temp-plate-num-virtual-plate.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
-            </div>
-        </div>
-
-        <!-- Create Container -->
-        <div id="bgCreateContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-        <div id="createFormContainerCutFile" class="yot-overlay-mid-container" style="display:none;">
-            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                <form id="createFormCutFile">
-                    <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                        <h2 class="yot-tc-blue1">CREATE</h2>
-                        <i id="closeCutFileFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-                    </div>
-
-                    <!-- Job Name -->
-                    <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Job Name</label>
-                        <input class="yot-form-input" type="text" name="jobName" id="jobName">
-                    </div>
-
-                    <!-- Job No -->
-                    <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobNum">Job No.</label>
-                        <input class="yot-form-input" type="text" name="jobNum" id="jobNum">
-                    </div>
-
-                    <div class="yot-text-center">
-                        <input class="yot-btn-blue1" type="submit" value="Submit">
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <!-- Temporary Plate -->
-        <div id="signUpContainer" class="yot-overlay-mid-container" style="display:none">
-            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                <form id="signUpForm">
-                    <div class="yot-flex yot-flex-jc-sb">
-                        <!-- Type of Plate -->
-                        <div class="yot-form-group">
-                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
-                                <option value="">- Select Plate -</option>
-                                <option value="">Steel</option>
-                                <option value="">Acrylic</option>
-                            </select>
-                        </div>
-
-                        <!-- Format Plate-->
-                        <div class="yot-form-group">
-                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Format</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
-                                <option value="">- Select Format -</option>
-                                <option value="">format-1</option>
-                                <option value="">format-2</option>
-                                <option value="">format-3</option>
-                                <option value="">format-4</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Submit -->
-                    <div class="yot-text-center" id="submitSignUpBtn">
-                        <input class="yot-btn-blue1" type="submit" value="Submit">
-                    </div>
-                </form>
-
-                <!-- Disable btn -->
-                <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisSignUpBtn" style="display: none;">
-                    <button class="yot-btn-dis yot-flex yot-flex-ai-c">Submitting <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
     <script src="./asset/js/all/global.js"></script>
