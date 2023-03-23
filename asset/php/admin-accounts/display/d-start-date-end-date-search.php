@@ -39,31 +39,37 @@ class ClassSearch{
         $conn = $classConnDB->conn();
     
         // Create query
-        $query = "SELECT * FROM user_tbl WHERE role = 'admin'";
-        $queryParams = array();
+        $query = "SELECT * FROM user_tbl";
 
-        if (!empty($this->search)) {
+        // Create an array of conditions to be added to the query
+        $queryConditions = array();
+
+        // Add a condition to the query if the search parameter is not empty
+        if (isset($this->search) && !empty($this->search)) {
             $search = $this->search;
-            $queryParams[] = "email LIKE '%$search%'";
+            $queryConditions[] = "email LIKE '%$search%'";
         }
 
-        if ($this->startDate !== "undefined--undefined") {
+        // Add a condition to the query if the startDate parameter is not empty
+        if (isset($this->startDate) && $this->startDate !== "undefined--undefined") {
             $startDate = $this->startDate;
-            $queryParams[] = "DATE(created_at) >= '$startDate'";
+            $queryConditions[] = "DATE(created_at) >= '$startDate'";
         }
 
-        if ($this->endDate !== "undefined--undefined") {
+        // Add a condition to the query if the endDate parameter is not empty
+        if (isset($this->endDate) && $this->endDate !== "undefined--undefined") {
             $endDate = $this->endDate;
-            $queryParams[] = "DATE(created_at) <= '$endDate'";
+            $queryConditions[] = "DATE(created_at) <= '$endDate'";
         }
 
-        if (!empty($queryParams)) {
-            $query .= " WHERE " . implode(" AND ", $queryParams);
+        // If there are any conditions to be added to the query, add them to the query string
+        if (!empty($queryConditions)) {
+            $query .= " WHERE " . implode(" AND ", $queryConditions);
         }
-    
-        // Add the ORDER BY clause to sort the results by user_id in descending order
-        $query .= " ORDER BY user_id DESC";
-    
+
+        // Add the ORDER BY clause to sort the results by user_id in descending order, and filter by the 'admin' role
+        $query .= " AND role = 'admin' ORDER BY user_id DESC";
+
         // Execute query
         $result = mysqli_query($conn, $query);
     
@@ -95,7 +101,12 @@ class ClassSearch{
     
             echo '</table>';
         } else {
-            echo "No results found.";
+            echo '
+                <div class="yot-flex yot-flex-fd-c-ai-c">
+                    <h1>No Result Found</h1>
+                    <img src="../../../../../g4stickerworks/asset/images/undraw_empty_re_opql.svg" alt="" style="width:300px; height:300px">
+                </div>
+            ';
         }
     }
     

@@ -25,7 +25,7 @@ $(document).ready(function(){
                     console.log(response);
                     const responseVarChar = response.trim();     
                     if(responseVarChar == "updated"){
-                        window.location.href = '../../../../g4stickerworks/user-product.html';
+                        window.location.href = '../../../../g4stickerworks/user-product';
                     }           
                 },
                 error: function(jqXHR, textStatus, errorThrown) {

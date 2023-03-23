@@ -70,14 +70,11 @@
         </nav>
     </header>
 
-
-
-
     <!-- Overlay Mobile -->
     <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1 overlayLeftSideBar" style="display:none"></div>
     <div id="overlayMobileIndex" class="yot-w-75 yot-flex yot-flex-fd-c  yot-vh-100 yot-bg-white yot-overlay-left yot-pa-16 overlayLeftSideBar" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin: 8px 0px 16px 0px;">
-            <a href="user-product.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Products</a>
+            <a href="user-product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Products</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
         <!-- Tarpaulin -->
@@ -87,18 +84,24 @@
                 <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRight"></i></span>
             </div>
             <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                <a href="ready-to-print.html" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
-                <a href="make-layout.html" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
+                <a href="user-ready-to-print" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
+                <a href="user-make-layout" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
             </div>
         </div>
         <div class="yot-mb-16">
-            <a href="profile.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Profile</a>
+            <a href="user-sticker" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Sticker</a>
         </div>
         <div class="yot-mb-16">
-            <a href="my-cart.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;"></i>My Cart </a>
+            <a href="user-temporary-plate" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Temporary Plate</a>
         </div>
         <div class="yot-mb-16">
-            <a href="my-orders.html" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">My Orders</a>
+            <a href="user-profile" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Profile</a>
+        </div>
+        <div class="yot-mb-16">
+            <a href="user-my-cart" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;"></i>My Cart </a>
+        </div>
+        <div class="yot-mb-16">
+            <a href="user-my-orders" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">My Orders</a>
         </div>
     </div>
 
