@@ -39,7 +39,7 @@ class ClassSearch{
         $conn = $classConnDB->conn();
     
         // Create query
-        $query = "SELECT * FROM user_tbl WHERE role = 'admin'";
+        $query = "SELECT * FROM user_tbl ";
         $queryParams = array();
 
         if (!empty($this->search)) {

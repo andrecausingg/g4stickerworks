@@ -109,49 +109,126 @@
             <h1 class="yot-resize-font-64">Standard Format</h1>
         </div>
 
+        <!-- Format -->
         <div class="yot-row yot-bg-white1">
             <div class="yot-col-25 yot-text-center" style="padding:16px;">
                 <h2>Format 1</h2>
                 <img src="./asset/images/temp-plate-mvfile.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
+                <button id="formatOneBtn" class="yot-btn-blue1">Select</button>
             </div>
             <div class="yot-col-25 yot-text-center" style="padding:16px;">
                 <h2>Format 2</h2>
                 <img src="./asset/images/temp-plate-number.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
+                <button id="formatTwoBtn" class="yot-btn-blue1">Select</button>
             </div>
             <div class="yot-col-25 yot-text-center" style="padding:16px;">
                 <h2>Format 3</h2>
                 <img src="./asset/images/temp-plate-num-temporary-plate.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
+                <button id="formatThreeBtn" class="yot-btn-blue1">Select</button>
             </div>
             <div class="yot-col-25 yot-text-center" style="padding:16px;">
                 <h2>Format 4</h2>
                 <img src="./asset/images/temp-plate-num-virtual-plate.png" alt="">
-                <button class="yot-btn-blue1">Select</button>
+                <button id="formatFourBtn" class="yot-btn-blue1">Select</button>
             </div>
         </div>
 
-        <!-- Create Container -->
+        <!-- Format 1 Create Container -->
         <div id="bgCreateContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-        <div id="createFormContainerCutFile" class="yot-overlay-mid-container" style="display:none;">
+        <div id="createFormContainerFormatOne" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                <form id="createFormCutFile">
+                <form id="createFormFormatOne">
                     <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                        <h2 class="yot-tc-blue1">CREATE</h2>
-                        <i id="closeCutFileFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                        <h2 class="yot-tc-blue1">Format 1</h2>
+                        <i id="closeFormatOneFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                     </div>
 
-                    <!-- Job Name -->
+                    <!-- Registered -->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Job Name</label>
-                        <input class="yot-form-input" type="text" name="jobName" id="jobName">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="staus">Status</label>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateF" id="statusPlateF" value="Registered" disabled>
                     </div>
 
-                    <!-- Job No -->
+                    <!-- Type of Plate -->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobNum">Job No.</label>
-                        <input class="yot-form-input" type="text" name="jobNum" id="jobNum">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
+                        <select class="yot-form-input" name="selectDecals" id="selectDecals">
+                            <option value="">- Select Plate -</option>
+                            <option value="">Steel</option>
+                            <option value="">Acrylic</option>
+                        </select>
+                    </div>
+
+                    <!-- MV File -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="mvFile">MV File</label>
+                        <div class="yot-flex yot-flex-ai-c">
+                            <input class="yot-form-input yot-w-33-33" type="text" name="mvFileFourDigit" id="mvFileFourDigit" maxlength="4">
+                            <span class="yot-mlr-8"><div style="border:3px solid black; width:15px;"></div></span>
+                            <input class="yot-form-input yot-w-66-66" type="text" name="mvFileSevenDigit" id="mvFileSevenDigit" maxlength="7">
+                        </div>
+                    </div>
+
+                    <!-- Region -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="region">Region</label>
+                        <input class="yot-form-input" type="text" name="region" id="region">
+                    </div>
+
+                    <!-- Dealer -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="dealer">Dealer</label>
+                        <input class="yot-form-input" type="text" name="dealer" id="dealer">
+                    </div>
+
+                    <div class="yot-text-center">
+                        <input class="yot-btn-blue1" type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Format 2 Create Container -->
+        <div id="createFormContainerFormatTwo" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <form id="createFormFormatTwo">
+                    <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                        <h2 class="yot-tc-blue1">Format 2</h2>
+                        <i id="closeFormatTwoFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                    </div>
+
+                    <!-- Registered -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="staus">Status</label>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateF" id="statusPlateF" value="Registered" disabled>
+                    </div>
+
+                    <!-- Type of Plate -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
+                        <select class="yot-form-input" name="selectDecals" id="selectDecals">
+                            <option value="">- Select Plate -</option>
+                            <option value="">Steel</option>
+                            <option value="">Acrylic</option>
+                        </select>
+                    </div>
+
+                    <!-- Registered No. -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNum">Registered No.</label>
+                        <input class="yot-form-input" type="text" name="registeredNum" id="registeredNum">
+                    </div>
+
+                    <!-- Region -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="region">Region</label>
+                        <input class="yot-form-input" type="text" name="region" id="region">
+                    </div>
+
+                    <!-- Dealer -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="dealer">Dealer</label>
+                        <input class="yot-form-input" type="text" name="dealer" id="dealer">
                     </div>
 
                     <div class="yot-text-center">
@@ -161,53 +238,100 @@
             </div>
         </div>
 
-        <!-- Temporary Plate -->
-        <div id="signUpContainer" class="yot-overlay-mid-container" style="display:none">
+        <!-- Format 3 Create Container -->
+        <div id="createFormContainerFormatThree" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                <form id="signUpForm">
-                    <div class="yot-flex yot-flex-jc-sb">
-                        <!-- Type of Plate -->
-                        <div class="yot-form-group">
-                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
-                                <option value="">- Select Plate -</option>
-                                <option value="">Steel</option>
-                                <option value="">Acrylic</option>
-                            </select>
-                        </div>
-
-                        <!-- Format Plate-->
-                        <div class="yot-form-group">
-                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Format</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectDecals" id="selectDecals">
-                                <option value="">- Select Format -</option>
-                                <option value="">format-1</option>
-                                <option value="">format-2</option>
-                                <option value="">format-3</option>
-                                <option value="">format-4</option>
-                            </select>
-                        </div>
+                <form id="createFormFormatThree">
+                    <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                        <h2 class="yot-tc-blue1">Format 3</h2>
+                        <i id="closeFormatThreeFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                     </div>
 
-                    <!-- Submit -->
-                    <div class="yot-text-center" id="submitSignUpBtn">
+                    <!-- Registered -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="staus">Status</label>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateF" id="statusPlateF" value="Registered" disabled>
+                    </div>
+
+                    <!-- Type of Plate -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
+                        <select class="yot-form-input" name="selectDecals" id="selectDecals">
+                            <option value="">- Select Plate -</option>
+                            <option value="">Steel</option>
+                            <option value="">Acrylic</option>
+                        </select>
+                    </div>
+
+                    <!-- Registered No. -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNum">Registered No.</label>
+                        <input class="yot-form-input" type="text" name="registeredNum" id="registeredNum">
+                    </div>
+
+                    <!-- Status Plate -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="statusPlate">Status Plate</label>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateTemporaryPlate" id="statusPlateTemporaryPlate" value="Temporary Plate" disabled>
+                    </div>
+
+                    <div class="yot-text-center">
                         <input class="yot-btn-blue1" type="submit" value="Submit">
                     </div>
                 </form>
+            </div>
+        </div>
 
-                <!-- Disable btn -->
-                <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisSignUpBtn" style="display: none;">
-                    <button class="yot-btn-dis yot-flex yot-flex-ai-c">Submitting <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
-                </div>
+        <!-- Format 4 Create Container -->
+        <div id="createFormContainerFormatFour" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <form id="createFormFormatFour">
+                    <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                        <h2 class="yot-tc-blue1">Format 4</h2>
+                        <i id="closeFormatFourFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                    </div>
+
+                    <!-- Registered -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="staus">Status</label>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateF" id="statusPlateF" value="Registered" disabled>
+                    </div>
+
+                    <!-- Type of Plate -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
+                        <select class="yot-form-input" name="selectDecals" id="selectDecals">
+                            <option value="">- Select Plate -</option>
+                            <option value="">Steel</option>
+                            <option value="">Acrylic</option>
+                        </select>
+                    </div>
+
+                    <!-- Registered No. -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNum">Registered No.</label>
+                        <input class="yot-form-input" type="text" name="registeredNum" id="registeredNum">
+                    </div>
+
+                    <!-- Status Plate -->
+                    <div class="yot-form-group">
+                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="statusPlate">Status Plate</label>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateTemporaryPlate" id="statusPlateTemporaryPlate" value="Virtual Plate" disabled>
+                    </div>
+
+                    <div class="yot-text-center">
+                        <input class="yot-btn-blue1" type="submit" value="Submit">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/profile/display/d-data.js"></script>
-    <script src="./asset/js/profile/update-fname-lname.js"></script>
-    <script src="./asset/js/profile/update-phone-number.js"></script>
-    <script src="./asset/js/profile/update-email.js"></script>
-    <script src="./asset/js/profile/update-password.js"></script>
+    <script src="./asset/js/user-temporary-plate/create-format-1.js"></script>
+    <script src="./asset/js/user-temporary-plate/create-format-2.js"></script>
+    <script src="./asset/js/user-temporary-plate/create-format-3.js"></script>
+    <script src="./asset/js/user-temporary-plate/create-format-4.js"></script>
+
 </body>
 </html>

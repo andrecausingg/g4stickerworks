@@ -181,6 +181,7 @@
         </div>
     </div>
 
+    <!-- 
     <footer class="yot-footer yot-container yot-pa-16 yot-bg-white" style="left:0; right:0;">
         <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin:auto; position: relative;">
                 <h3>Total 135.00</h3>
@@ -188,7 +189,7 @@
                 <button class="yot-btn-blue1">Pay Now</button>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>

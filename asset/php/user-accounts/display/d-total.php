@@ -13,8 +13,8 @@
             // Variable
             $conn = $classConnDB->conn();
     
-            // prepare the SQL statement with placeholders for the job name, job number, datetime varchar, and datetime
-            $sql = "SELECT COUNT(*) FROM user_tbl WHERE role='admin' ";
+            // prepare the SQL statement with placeholders 
+            $sql = "SELECT COUNT(*) FROM user_tbl WHERE role = 'user' ";
     
             // create a prepared statement
             $stmt = $conn->prepare($sql);

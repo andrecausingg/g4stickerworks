@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin-Accounts</title>
+    <title>User-Accounts</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -228,11 +228,11 @@
                 <div class="yot-bg-white yot-mb-8 over-view-item1 yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <div class="yot-flex yot-flex-ai-c-jc-sb ">
                         <h3 class="yot-tc-black">Accounts</h3>
-                        <div class="yot-text-end yot-mt-8">
+                        <!-- <div class="yot-text-end yot-mt-8">
                             <button id="createBtn" class="yot-btn-blue1">Create</button>
-                        </div>
+                        </div> -->
                     </div>
-                    <h2 id="totalAdminAccounts" class="yot-tc-black">0</span>
+                    <h2 id="totalAccounts" class="yot-tc-black">0</span>
                 </div>
             </div>
 
@@ -328,11 +328,11 @@
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
 
-    <script src="./asset/js/admin-accounts/insert.js"></script>
-    <script src="./asset/js/admin-accounts/edit.js"></script>
-    <script src="./asset/js/admin-accounts/delete.js"></script>
+    <script src="./asset/js/user-accounts/insert.js"></script>
+    <script src="./asset/js/user-accounts/edit.js"></script>
+    <script src="./asset/js/user-accounts/delete.js"></script>
 
-    <script src="./asset/js/admin-accounts/display/d-admin-accounts.js"></script>
-    <script src="./asset/js/admin-accounts/display/d-search-start-date-end-date.js"></script>
+    <script src="./asset/js/user-accounts/display/d-user-accounts.js"></script>
+    <script src="./asset/js/user-accounts/display/d-search-start-date-end-date.js"></script>
 </body>
 </html>
