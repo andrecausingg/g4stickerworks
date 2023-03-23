@@ -109,7 +109,7 @@
     <div class="yot-content-space-margin-t-120 yot-container">
         <!-- Title-->
         <div class="yot-text-center yot-tc-blue1 yot-mb-16">
-            <h1 class="yot-resize-font-64">Ready to Print</h1>
+            <h1 class="yot-resize-font-64">Tarpauline <br> Ready to Print</h1>
         </div>
 
         <div class="yot-container">
