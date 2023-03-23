@@ -144,10 +144,17 @@
             </div>
 
             <div class="yot-col-50" style="margin: auto;">
+                <!-- Widht and Height -->
                 <div class="yot-flex yot-flex-ai-c">
                     <div class="yot-form-group yot-w-50">
                         <label for="width"><h4>Width(Foot)</h4></label>
                         <input class="yot-form-input" type="text" name="" id="">
+
+                        <!-- Proportion Width -->
+                        <div class="yot-flex yot-flex-ai-c-jc-s">
+                            <input type="checkbox" id="widthProportion" name="widthProportion" value="widthProportion" value="Width Proportion">
+                            <label for="widthProportion"><h5>Proportion</h5></label>
+                        </div>
                     </div>
 
                     <h4 class="yot-ma-16" style="margin-top: 34px;">X</h4>
@@ -155,6 +162,12 @@
                     <div class="yot-form-group yot-w-50">
                         <label for="height"><h4>Height(Foot)</h4></label>
                         <input class="yot-form-input" type="text" name="" id="">
+
+                        <!-- Proportion Height -->
+                        <div class="yot-flex yot-flex-ai-c-jc-s">
+                            <input type="checkbox" id="heightProportion" name="heightProportion" value="Height Proportion">
+                            <label for="heightProportion"><h5>Proportion</h5></label>
+                        </div>
                     </div>
                 </div>
 
@@ -170,6 +183,12 @@
                     </div>
                 </div>
 
+                <!-- Price -->
+                <div class="yot-form-group yot-text-center  ">
+                    <h1>Total Price</h1>
+                    <h1>0.00</h1>
+                </div>
+
                 <div>
                     <div class="yot-form-group yot-w-100">
                         <label for="quantity"><h4>Message</h4></label>
@@ -178,7 +197,6 @@
                 </div>
 
                 <div class="yot-text-center">
-                    <!-- <a class="yot-btn-blue1" href="https://www.pornhub.com/">Add to Cart</a> -->
                     <button class="yot-btn-blue1">Add to Cart</button>
                 </div>
             </div>

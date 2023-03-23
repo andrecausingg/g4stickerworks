@@ -105,14 +105,91 @@
 
     <!-- Main -->
     <div class="yot-content-space-margin-t-120 yot-container">
-        
+        <!-- Title-->
+        <div class="yot-text-center yot-tc-blue1 yot-mb-16">
+            <h1 class="yot-resize-font-64">Sticker</h1>
+        </div>
+
+        <div class="yot-container">
+            <div class="yot-row">
+                <!-- Upload Image -->
+                <div class="yot-col-50 yot-mb-16">
+                    <div class="yot-bg-white image-container-RTP yot-mb-16">
+                        <img src="./asset/images/g4works-logo.png" alt="" >
+                    </div>
+                    <div class="yot-text-center">
+                        <button class="yot-btn-blue1">Upload Image</button>
+                    </div>
+                </div>
+                
+                <div class="yot-col-50">
+                    <!-- Widht and Height -->
+                    <div class="yot-flex yot-flex-ai-c">
+                        <div class="yot-form-group yot-w-50">
+                            <label for="width"><h4>Width(Inch)</h4></label>
+                            <input class="yot-form-input" type="text" name="" id="">
+
+                            <!-- Proportion Width -->
+                            <div class="yot-flex yot-flex-ai-c-jc-s">
+                                <input type="checkbox" id="widthProportion" name="widthProportion" value="widthProportion" value="Width Proportion">
+                                <label for="widthProportion"><h5>Proportion</h5></label>
+                            </div>
+                        </div>
+
+                        <h4 class="yot-ma-16" style="margin-top: 34px;">X</h4>
+
+                        <div class="yot-form-group yot-w-50">
+                            <label for="height"><h4>Height(Inch)</h4></label>
+                            <input class="yot-form-input" type="text" name="" id="">
+
+                            <!-- Proportion Height -->
+                            <div class="yot-flex yot-flex-ai-c-jc-s">
+                                <input type="checkbox" id="heightProportion" name="heightProportion" value="Height Proportion">
+                                <label for="heightProportion"><h5>Proportion</h5></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="yot-flex yot-flex-ai-c">
+                        <div class="yot-form-group yot-w-50">
+                            <label for="quantity"><h4>Quantity</h4></label>
+                            <input class="yot-form-input" type="text" name="" id="">
+                        </div>
+                        <span class="yot-mlr-4"></span>
+                        <div class="yot-form-group yot-w-50">
+                            <label for="dateWantToGet"><h4>Date want to get</h4></label>
+                            <input type="text" name="" class="datepicker yot-form-input" placeholder="Month/Day/Year">
+                        </div>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="yot-form-group yot-text-center  ">
+                        <h1>Total Price</h1>
+                        <h1>0.00</h1>
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <div class="yot-form-group yot-w-100">
+                            <label for="quantity"><h4>Message</h4></label>
+                            <textarea class="yot-form-input" style="resize: none; height: 150px;" name="" id=""></textarea>
+                        </div>
+                    </div>
+
+                    <div class="yot-text-center">
+                        <button class="yot-btn-blue1">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+
+            </div>
+        </div>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/profile/display/d-data.js"></script>
-    <script src="./asset/js/profile/update-fname-lname.js"></script>
-    <script src="./asset/js/profile/update-phone-number.js"></script>
-    <script src="./asset/js/profile/update-email.js"></script>
-    <script src="./asset/js/profile/update-password.js"></script>
+    <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
 </body>
 </html>

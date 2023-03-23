@@ -105,8 +105,9 @@
 
     <!-- Main -->
     <div class="yot-content-space-margin-t-120 yot-container">
-        <div class="yot-text-center">
-            <h1 class="yot-resize-font-64">Standard Format</h1>
+        <!-- Title-->
+        <div class="yot-text-center yot-tc-blue1 yot-mb-16">
+            <h1 class="yot-resize-font-64">Temporary Plate</h1>
         </div>
 
         <!-- Format -->
