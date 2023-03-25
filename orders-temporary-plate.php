@@ -301,23 +301,28 @@
             <!-- Table -->
             <div class="yot-w-100" style="overflow-x: auto;">
                 <table class="yot-table-blue-theme">
+                    <!-- Table Header -->
                     <tr>
-                      <th>Order No.</th>
-                      <th>Format</th>   
-                      <th>Mv-File</th>
-                      <th>Register No.</th>
-                      <th>Region</th>
-                      <th>Delear</th>
-                      <th>Status Plate</th>
-                      <th>Total</th>
-                      <th>Status</th>
-                      <th>Payment</th>
-                      <th>Date and Time</th>
-                      <th>Action</th>
+                        <th>User I.D</th>
+                        <th>Order No.</th>
+                        <th>Type Of Plate</th>
+                        <th>Format</th>   
+                        <th>Mv-File</th>
+                        <th>Register No.</th>
+                        <th>Region</th>
+                        <th>Delear</th>
+                        <th>Status Plate</th>
+                        <th>Total Price</th>
+                        <th>Page</th>
+                        <th>Status</th>
+                        <th>Payment</th>
+                        <th>Created</th>
                     </tr>
     
                     <tr>
-                        <td>20231</td>
+                        <td>1</td>
+                        <td>20231BNxzb1529!123</td>
+                        <td>Steel</td>
                         <td>Format 1</td>
                         <td>0301-1234567</td>
                         <td></td>
@@ -325,18 +330,16 @@
                         <td>YAMAHA</td>
                         <td></td>
                         <td>100.00</td>
+                        <td>Cart</td>
                         <td>PENDING</td>
                         <td>DONE</td>
-                        <td>Feb 11, 2023</td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-eye yot-text-fs-xxl yot-active-bbh1"></i>
-                            <i class="fa-solid fa-rectangle-xmark yot-text-fs-xxl yot-mlr-8 yot-active-bbh1"></i>
-                            <i class="fa-solid fa-circle-check yot-text-fs-xxl yot-active-bbh1"></i>
-                        </td>
+                        <td>Mar 20, 2023 06:41:00 PM</td>
                     </tr>
 
                     <tr>
-                        <td>20231</td>
+                        <td>1</td>
+                        <td>20231BNxzb1529!123</td>
+                        <td>Steel</td>
                         <td>Format 2</td>
                         <td></td>
                         <td>1XAJXA</td>
@@ -344,18 +347,16 @@
                         <td>YAMAHA</td>
                         <td></td>
                         <td>100.00</td>
+                        <td>Cart</td>
                         <td>PENDING</td>
                         <td>DONE</td>
-                        <td>Feb 11, 2023</td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-eye yot-text-fs-xxl yot-active-bbh1"></i>
-                            <i class="fa-solid fa-rectangle-xmark yot-text-fs-xxl yot-mlr-8 yot-active-bbh1"></i>
-                            <i class="fa-solid fa-circle-check yot-text-fs-xxl yot-active-bbh1"></i>
-                        </td>
+                        <td>Mar 20, 2023 06:41:00 PM</td>
                     </tr>
 
                     <tr>
-                        <td>20231</td>
+                        <td>1</td>
+                        <td>20231BNxzb1529!123</td>
+                        <td>Steel</td>
                         <td>Format 3</td>
                         <td></td>
                         <td>1XAJXA</td>
@@ -363,18 +364,16 @@
                         <td></td>
                         <td>TEMPORARY Plate</td>
                         <td>100.00</td>
+                        <td>Cart</td>
                         <td>PENDING</td>
                         <td>DONE</td>
-                        <td>Feb 11, 2023</td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-eye yot-text-fs-xxl yot-active-bbh1"></i>
-                            <i class="fa-solid fa-rectangle-xmark yot-text-fs-xxl yot-mlr-8 yot-active-bbh1"></i>
-                            <i class="fa-solid fa-circle-check yot-text-fs-xxl yot-active-bbh1"></i>
-                        </td>
+                        <td>Mar 20, 2023 06:41:00 PM</td>
                     </tr>
 
                     <tr>
-                        <td>20231</td>
+                        <td>1</td>
+                        <td>20231BNxzb1529!123</td>
+                        <td>Steel</td>
                         <td>Format 4</td>
                         <td></td>
                         <td>1XAJXA</td>
@@ -382,14 +381,10 @@
                         <td></td>
                         <td>VIRTUAL PLATE</td>
                         <td>100.00</td>
+                        <td>Cart</td>
                         <td>PENDING</td>
                         <td>DONE</td>
-                        <td>Feb 11, 2023</td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-eye yot-text-fs-xxl yot-active-bbh1"></i>
-                            <i class="fa-solid fa-rectangle-xmark yot-text-fs-xxl yot-mlr-8 yot-active-bbh1"></i>
-                            <i class="fa-solid fa-circle-check yot-text-fs-xxl yot-active-bbh1"></i>
-                        </td>
+                        <td>Mar 20, 2023 06:41:00 PM</td>
                     </tr>
                 </table>
             </div>

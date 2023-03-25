@@ -39,36 +39,38 @@ class ClassSearch{
         $conn = $classConnDB->conn();
     
         // Create query
-        $query = "SELECT * FROM user_tbl";
-
-        // Create an array of conditions to be added to the query
-        $queryConditions = array();
+        $query = "SELECT * FROM user_tbl ";
+        $queryParams = array();
 
         // Add a condition to the query if the search parameter is not empty
         if (isset($this->search) && !empty($this->search)) {
             $search = $this->search;
-            $queryConditions[] = "email LIKE '%$search%'";
+            $queryParams[] = "email LIKE '%$search%'";
         }
 
         // Add a condition to the query if the startDate parameter is not empty
         if (isset($this->startDate) && $this->startDate !== "undefined--undefined") {
             $startDate = $this->startDate;
-            $queryConditions[] = "DATE(created_at) >= '$startDate'";
+            $queryParams[] = "DATE(created_at) >= '$startDate'";
         }
 
         // Add a condition to the query if the endDate parameter is not empty
         if (isset($this->endDate) && $this->endDate !== "undefined--undefined") {
             $endDate = $this->endDate;
-            $queryConditions[] = "DATE(created_at) <= '$endDate'";
+            $queryParams[] = "DATE(created_at) <= '$endDate'";
         }
 
-        // If there are any conditions to be added to the query, add them to the query string
-        if (!empty($queryConditions)) {
-            $query .= " WHERE " . implode(" AND ", $queryConditions);
+        // Add the WHERE clause to the query if any conditions were added
+        if (!empty($queryParams)) {
+            $query .= " WHERE " . implode(" AND ", $queryParams);
         }
 
-        // Add the ORDER BY clause to sort the results by user_id in descending order, and filter by the 'admin' role
-        $query .= " AND role = 'admin' ORDER BY user_id DESC";
+        if($this->search == ""){
+            $query .= "WHERE role='admin' ORDER BY user_id DESC ";
+        }else{
+            // Add the ORDER BY clause to sort the results by user_id in descending order, and filter by the 'user' role
+            $query .= " AND role = 'admin' ORDER BY user_id DESC";
+        }
 
         // Execute query
         $result = mysqli_query($conn, $query);

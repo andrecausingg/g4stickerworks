@@ -1,4 +1,23 @@
 <?php 
+    // Unique Order Id
+    class classUniqueOrderId{
+        public function uniqueOrderId(){
+            // Set the prefix and date format
+            $prefix = 'G4';
+            $date_format = 'YmdHis';
+            // Generate the date code
+            $date_code = date($date_format);
+            // Generate a random string
+            $random_str = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 8);
+            // Generate a unique ID
+            $unique_id = mt_rand(100000000000000, 999999999999999);
+            // Concatenate the order number
+            $order_no = $prefix . $date_code . $random_str . $unique_id;
+        
+            return $order_no;
+        }
+    }
+
     // Check if correct query
     class classCheckUrlQueryExist {
         private $classConnDB;

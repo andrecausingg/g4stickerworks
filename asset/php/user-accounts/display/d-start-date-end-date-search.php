@@ -65,10 +65,13 @@ class ClassSearch{
             $query .= " WHERE " . implode(" AND ", $queryParams);
         }
 
-        // Add the ORDER BY clause to sort the results by user_id in descending order, and filter by the 'user' role
-        $query .= " AND role = 'user' ORDER BY user_id DESC";
+        if($this->search == ""){
+            $query .= "WHERE role='user' ORDER BY user_id DESC ";
+        }else{
+            // Add the ORDER BY clause to sort the results by user_id in descending order, and filter by the 'user' role
+            $query .= " AND role = 'user' ORDER BY user_id DESC";
+        }
 
-    
         // Execute query
         $result = mysqli_query($conn, $query);
     
