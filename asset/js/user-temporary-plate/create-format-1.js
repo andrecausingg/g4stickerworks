@@ -261,24 +261,24 @@ $(document).ready(function(){
 
     function loopRegionSelectTag(){
         var regions = [
-            'Region I',
-            'Region II',
-            'Region III',
-            'Region IV-A',
-            'Region IV-B',
-            'Region V',
-            'Region VI',
-            'Region VII',
-            'Region VIII',
-            'Region IX',
-            'Region X',
-            'Region XI',
-            'Region XII',
-            'Region XIII',
+            'REGION I',
+            'REGION II',
+            'REGION III',
+            'REGION IV-A',
+            'REGION IV-B',
+            'REGION V',
+            'REGION VI',
+            'REGION VII',
+            'REGION VIII',
+            'REGION IX',
+            'REGION X',
+            'REGION XI',
+            'REGION XII',
+            'REGION XIII',
             'BARMM',
             'CAR',
             'NCR'
-          ];
+        ];
           
           $.each(regions, function(index, region) {
             $('#regionFormatOne').append($('<option>', {
@@ -293,8 +293,8 @@ $(document).ready(function(){
         setTimeout(function() {
             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
         }, 10000); // 10000 milliseconds = 10 seconds
-        $("#bgCreateContainer").hide();
-        $("#createFormContainerFormatOne").hide();
+        // $("#bgCreateContainer").hide();
+        // $("#createFormContainerFormatOne").hide();
         $('#typeOfPlateFormatOne, #mvFileFourDigitFormatOne, #mvFileSevenDigitFormatOne, #regionFormatOne, #dealerFormatOne').val("");
         $('#typeOfPlateFormatOne, #mvFileFourDigitFormatOne, #mvFileSevenDigitFormatOne, #regionFormatOne, #dealerFormatOne').css('border-color', 'hsl(207, 90%, 54%)');
     }
