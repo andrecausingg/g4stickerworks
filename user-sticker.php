@@ -114,23 +114,23 @@
             <div class="yot-row">
                 <!-- Upload Image -->
                 <div class="yot-col-50 yot-mb-16">
-                    <div class="yot-bg-white image-container-RTP yot-mb-16">
-                        <img src="./asset/images/g4works-logo.png" alt="" >
+                    <!-- Display Image -->
+                    <div id="displayImageSticker" class="yot-bg-white image-container-RTP yot-mb-16">
                     </div>
                     <div class="yot-text-center">
-                        <button class="yot-btn-blue1">Upload Image</button>
+                        <button id="uploadImageButton" class="yot-btn-blue1">Upload Image</button>
                     </div>
                 </div>
-                
+
                 <div class="yot-col-50">
                     <!-- Widht and Height -->
                     <div class="yot-flex yot-flex-ai-c">
                         <div class="yot-form-group yot-w-50">
                             <label for="width"><h4>Width(Inch)</h4></label>
-                            <input class="yot-form-input" type="text" name="" id="">
+                            <input class="yot-form-input" type="text" name="width" id="width">
 
                             <!-- Proportion Width -->
-                            <div class="yot-flex yot-flex-ai-c-jc-s">
+                            <div class="yot-flex yot-flex-ai-c-jc-s" style="display:none">
                                 <input type="checkbox" id="widthProportion" name="widthProportion" value="widthProportion" value="Width Proportion">
                                 <label for="widthProportion"><h5>Proportion</h5></label>
                             </div>
@@ -140,10 +140,10 @@
 
                         <div class="yot-form-group yot-w-50">
                             <label for="height"><h4>Height(Inch)</h4></label>
-                            <input class="yot-form-input" type="text" name="" id="">
+                            <input class="yot-form-input" type="text" name="height" id="height">
 
                             <!-- Proportion Height -->
-                            <div class="yot-flex yot-flex-ai-c-jc-s">
+                            <div class="yot-flex yot-flex-ai-c-jc-s" style="display:none">
                                 <input type="checkbox" id="heightProportion" name="heightProportion" value="Height Proportion">
                                 <label for="heightProportion"><h5>Proportion</h5></label>
                             </div>
@@ -154,42 +154,43 @@
                     <div class="yot-flex yot-flex-ai-c">
                         <div class="yot-form-group yot-w-50">
                             <label for="quantity"><h4>Quantity</h4></label>
-                            <input class="yot-form-input" type="text" name="" id="">
+                            <input class="yot-form-input" type="text" name="quantity" id="quantity">
                         </div>
-                        <span class="yot-mlr-4"></span>
+                        <span class="yot-mlr-8"></span>
                         <div class="yot-form-group yot-w-50">
-                            <label for="dateWantToGet"><h4>Date want to get</h4></label>
-                            <input type="text" name="" class="datepicker yot-form-input" placeholder="Month/Day/Year">
+                            <label for="quantity"><h4>Cover</h4></label>
+                            <select class="yot-form-input" name="cover" id="cover">
+                                <option value="">- Select Cover -</option>
+                                <option value="yes">Lamanited</option>
+                                <option value="no">Not Lamanited</option>
+                            </select>
                         </div>
                     </div>
 
-                    <!-- Price -->
-                    <div class="yot-form-group yot-text-center  ">
-                        <h1>Total Price</h1>
-                        <h1>0.00</h1>
+                    <div class="yot-form-group">
+                        <!-- Price -->
+                        <div class="yot-text-center">
+                            <h2>Total Price</h2>
+                            <h2 id="totalPrice">0.00</h2>
+                        </div>
                     </div>
 
                     <!-- Message -->
-                    <div>
-                        <div class="yot-form-group yot-w-100">
-                            <label for="quantity"><h4>Message</h4></label>
-                            <textarea class="yot-form-input" style="resize: none; height: 150px;" name="" id=""></textarea>
-                        </div>
+                    <div class="yot-form-group">
+                        <label for="quantity"><h4>Message</h4></label>
+                        <textarea class="yot-form-input" style="resize: none; height: 150px;" name="" id=""></textarea>
                     </div>
 
                     <div class="yot-text-center">
-                        <button class="yot-btn-blue1">Add to Cart</button>
+                        <!-- <input class="yot-btn-blue1" type="submit" value="Submit"> -->
+                        <button id="cal">Add to Cart</button>
                     </div>
                 </div>
-            </div>
-
-            <div>
-
             </div>
         </div>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
+    <script src="./asset/js/user-sticker/create.js"></script>
 </body>
 </html>

@@ -150,29 +150,47 @@
                         <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateFormatOne" id="statusPlateFormatOne" value="Registered" disabled>
                     </div>
 
-                    <!-- Type of Plate -->
+                    <!-- Type of Plate and Quantity-->
                     <div class="yot-form-group">
                         <div class="yot-flex yot-flex-ai-c-jc-sb">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="typeOfPlate">Type of Plate</label>
-                            <span class="yot-tc-red yot-text-end" id="emptyErrTypeOfPlateFormatOne" style="display: none;">Type of Plate is required.<br></span>
+                            <!-- Type of Plate -->
+                            <div class="yot-flex yot-flex-fd-c yot-text-start yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="typeOfPlate">Type of Plate</label>
+                                    <span class="yot-tc-red" id="emptyErrTypeOfPlateFormatOne" style="display: none;">Type of Plate field is required.<br></span>
+                                </div>
+                                <select class="yot-form-input" name="typeOfPlateFormatOne" id="typeOfPlateFormatOne">
+                                    <option value="">- Select Plate -</option>
+                                    <option value="Acrylic">Acrylic</option>
+                                    <option value="Steel">Steel</option>
+                                </select>
+                            </div>
+
+                            <span class="yot-mlr-4"></span>
+
+                            <!-- Quantity -->
+                            <div class="yot-flex yot-flex-fd-c yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="quantityFormatOne">Quantity</label>
+                                    <span class="yot-tc-red" id="emptyErrQuantityFormatOne" style="display: none;">Quantity field is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="quantityFormatOne" id="quantityFormatOne">
+                            </div>
                         </div>
-                        <select class="yot-form-input" name="typeOfPlateFormatOne" id="typeOfPlateFormatOne">
-                            <option value="">- Select Plate -</option>
-                            <option value="Acrylic">Acrylic</option>
-                            <option value="Steel">Steel</option>
-                        </select>
                     </div>
 
                     <!-- MV File -->
                     <div class="yot-form-group">
                         <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <!-- Err Mv File Four Digit -->
                             <div class="yot-text-start">
+                                <label class="yot-mb-4 yot-text-center" style="font-weight: bolder;" for="mvFileFourDigitFormatOne"> <span class="yot-text-fs-xl ">MV File</span> <br> <span class="yot-text-fs-tiny">Four Digit</span><br></label>
                                 <span class="yot-tc-red yot-text-start" id="emptyErrMvFileFourDigitFormatOne" style="display: none;">This Field is required.<br></span>
                                 <span class="yot-tc-red yot-text-end" id="lessFourErrMvFileFourDigitFormatOne" style="display: none;">This Field must four digit.<br></span>
                             </div>
-                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="mvFileFormatOne">MV File</label>
                             <!-- Err Mv File Seven Digit -->
                             <div class="yot-text-end">
+                                <label class="yot-mb-4 yot-text-center" style="font-weight: bolder;" for="mvFileSecenDigitFormatOne"> <span class="yot-text-fs-xl ">MV File Seven Digit</span> <br> <span class="yot-text-fs-tiny">Seven Digit</span><br></label>
                                 <span class="yot-tc-red yot-text-end" id="emptyErrMvFileSevenDigitFormatOne" style="display: none;">This Field is required.<br></span>
                                 <span class="yot-tc-red yot-text-end" id="lessSevenErrMvFileSevenDigitFormatOne" style="display: none;">This Field must seven digit.<br></span>
                             </div>
@@ -184,24 +202,39 @@
                         </div>
                     </div>
 
-                    <!-- Region -->
+                    <!-- Region and Dealer-->
                     <div class="yot-form-group">
                         <div class="yot-flex yot-flex-ai-c-jc-sb">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="regionFormatOne">Region</label>
-                            <span class="yot-tc-red" id="emptyErrRegionFormatOne" style="display: none;">Region is required.<br></span>
+                            <!-- Region -->
+                            <div>
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="regionFormatOne">Region</label>
+                                    <span class="yot-tc-red" id="emptyErrRegionFormatOne" style="display: none;">Region is required.<br></span>
+                                </div>
+                                <select class="yot-form-input" name="regionFormatOne" id="regionFormatOne">
+                                    <option value="">- Select Region -</option>
+                                </select>
+                            </div>
+
+                            <span class="yot-mlr-4"></span>
+
+                            <!-- Dealer -->
+                            <div>
+                                <div class="yot-flex yot-flex-fd-c yot-text-end">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="dealerFormatOne">Dealer</label>
+                                    <span class="yot-tc-red" id="emptyErrDealerFormatOne" style="display: none;">Dealer is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="dealerFormatOne" id="dealerFormatOne">
+                            </div>
                         </div>
-                        <select class="yot-form-input" name="regionFormatOne" id="regionFormatOne">
-                            <option value="">- Select Region -</option>
-                        </select>
                     </div>
 
-                    <!-- Dealer -->
+                    <!-- Total Price -->
                     <div class="yot-form-group">
                         <div class="yot-flex yot-flex-ai-c-jc-sb">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="dealerFormatOne">Dealer</label>
-                            <span class="yot-tc-red" id="emptyErrDealerFormatOne" style="display: none;">Dealer is required.<br></span>
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="totalPriceOne">Total Price</label>
+                            <h2 id="totalPriceFormatOne">0.00</h2>
                         </div>
-                        <input class="yot-form-input" type="text" name="dealerFormatOne" id="dealerFormatOne">
                     </div>
 
                     <div class="yot-text-center">
@@ -226,32 +259,77 @@
                         <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateF" id="statusPlateF" value="Registered" disabled>
                     </div>
 
-                    <!-- Type of Plate -->
+                    <!-- Type of Plate and Quantity-->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
-                        <select class="yot-form-input" name="" id="">
-                            <option value="">- Select Plate -</option>
-                            <option value="">Steel</option>
-                            <option value="">Acrylic</option>
-                        </select>
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <!-- Type of Plate -->
+                            <div class="yot-flex yot-flex-fd-c yot-text-start yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="typeOfPlate">Type of Plate</label>
+                                    <span class="yot-tc-red" id="emptyErrTypeOfPlateFormatTwo" style="display: none;">Type of Plate field is required.<br></span>
+                                </div>
+                                <select class="yot-form-input" name="typeOfPlateFormatTwo" id="typeOfPlateFormatTwo">
+                                    <option value="">- Select Plate -</option>
+                                    <option value="Acrylic">Acrylic</option>
+                                    <option value="Steel">Steel</option>
+                                </select>
+                            </div>
+
+                            <span class="yot-mlr-4"></span>
+
+                            <!-- Quantity -->
+                            <div class="yot-flex yot-flex-fd-c yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="quantityFormatTwo">Quantity</label>
+                                    <span class="yot-tc-red" id="emptyErrQuantityFormatTwo" style="display: none;">Quantity field is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="quantityFormatTwo" id="quantityFormatTwo">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Registered No. -->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNum">Registered No.</label>
-                        <input class="yot-form-input" type="text" name="registeredNum" id="registeredNum">
+                        <div class="yot-flex yot-flex-fd-c">
+                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNumFormatTwo">Registered No.</label>
+                            <span class="yot-tc-red" id="emptyErrRegisteredNumFormatTwo" style="display: none;">Registered No. Field is required<br></span>
+                        </div>
+                        <input class="yot-form-input" type="text" name="registeredNumFormatTwo" id="registeredNumFormatTwo">
                     </div>
 
-                    <!-- Region -->
+                    <!-- Region and Dealer-->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="region">Region</label>
-                        <input class="yot-form-input" type="text" name="region" id="region">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <!-- Region -->
+                            <div>
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="regionFormatTwo">Region</label>
+                                    <span class="yot-tc-red" id="emptyErrRegionFormatTwo" style="display: none;">Region is required.<br></span>
+                                </div>
+                                <select class="yot-form-input" name="regionFormatTwo" id="regionFormatTwo">
+                                    <option value="">- Select Region -</option>
+                                </select>
+                            </div>
+
+                            <span class="yot-mlr-4"></span>
+
+                            <!-- Dealer -->
+                            <div>
+                                <div class="yot-flex yot-flex-fd-c yot-text-end">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="dealerFormatTwo">Dealer</label>
+                                    <span class="yot-tc-red" id="emptyErrDealerFormatTwo" style="display: none;">Dealer is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="dealerFormatTwo" id="dealerFormatTwo">
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Dealer -->
+                    <!-- Total Price -->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="dealer">Dealer</label>
-                        <input class="yot-form-input" type="text" name="dealer" id="dealer">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="totalPriceTwo">Total Price</label>
+                            <h2 id="totalPriceFormatTwo">0.00</h2>
+                        </div>
                     </div>
 
                     <div class="yot-text-center">
@@ -276,26 +354,56 @@
                         <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateF" id="statusPlateF" value="Registered" disabled>
                     </div>
 
-                    <!-- Type of Plate -->
+                    <!-- Type of Plate and Quantity-->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
-                        <select class="yot-form-input" name="" id="">
-                            <option value="">- Select Plate -</option>
-                            <option value="">Steel</option>
-                            <option value="">Acrylic</option>
-                        </select>
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <!-- Type of Plate -->
+                            <div class="yot-flex yot-flex-fd-c yot-text-start yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="typeOfPlate">Type of Plate</label>
+                                    <span class="yot-tc-red" id="emptyErrTypeOfPlateFormatThree" style="display: none;">Type of Plate field is required.<br></span>
+                                </div>
+                                <select class="yot-form-input" name="typeOfPlateFormatThree" id="typeOfPlateFormatThree">
+                                    <option value="">- Select Plate -</option>
+                                    <option value="Acrylic">Acrylic</option>
+                                    <option value="Steel">Steel</option>
+                                </select>
+                            </div>
+
+                            <span class="yot-mlr-4"></span>
+
+                            <!-- Quantity -->
+                            <div class="yot-flex yot-flex-fd-c yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="quantityFormatThree">Quantity</label>
+                                    <span class="yot-tc-red" id="emptyErrQuantityFormatThree" style="display: none;">Quantity field is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="quantityFormatThree" id="quantityFormatThree">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Registered No. -->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNum">Registered No.</label>
-                        <input class="yot-form-input" type="text" name="registeredNum" id="registeredNum">
+                        <div class="yot-flex yot-flex-fd-c">
+                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNumFormatThree">Registered No.</label>
+                            <span class="yot-tc-red" id="emptyErrRegisteredNumFormatThree" style="display: none;">Registered No. Field is required<br></span>
+                        </div>
+                        <input class="yot-form-input" type="text" name="registeredNumFormatThree" id="registeredNumFormatThree">
                     </div>
 
                     <!-- Status Plate -->
                     <div class="yot-form-group">
                         <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="statusPlate">Status Plate</label>
-                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateTemporaryPlate" id="statusPlateTemporaryPlate" value="TEMPORARY PLATE" disabled>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateTemporaryPlateThree" id="statusPlateTemporaryPlateThree" value="TEMPORARY PLATE" disabled>
+                    </div>
+
+                    <!-- Total Price -->
+                    <div class="yot-form-group">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="totalPriceThree">Total Price</label>
+                            <h2 id="totalPriceFormatThree">0.00</h2>
+                        </div>
                     </div>
 
                     <div class="yot-text-center">
@@ -320,26 +428,56 @@
                         <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateF" id="statusPlateF" value="Registered" disabled>
                     </div>
 
-                    <!-- Type of Plate -->
+                    <!-- Type of Plate and Quantity-->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="jobName">Type of Plate</label>
-                        <select class="yot-form-input" name="" id="">
-                            <option value="">- Select Plate -</option>
-                            <option value="">Steel</option>
-                            <option value="">Acrylic</option>
-                        </select>
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <!-- Type of Plate -->
+                            <div class="yot-flex yot-flex-fd-c yot-text-start yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="typeOfPlate">Type of Plate</label>
+                                    <span class="yot-tc-red" id="emptyErrTypeOfPlateFormatFour" style="display: none;">Type of Plate field is required.<br></span>
+                                </div>
+                                <select class="yot-form-input" name="typeOfPlateFormatFour" id="typeOfPlateFormatFour">
+                                    <option value="">- Select Plate -</option>
+                                    <option value="Acrylic">Acrylic</option>
+                                    <option value="Steel">Steel</option>
+                                </select>
+                            </div>
+
+                            <span class="yot-mlr-4"></span>
+
+                            <!-- Quantity -->
+                            <div class="yot-flex yot-flex-fd-c yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="quantityFormatFour">Quantity</label>
+                                    <span class="yot-tc-red" id="emptyErrQuantityFormatFour" style="display: none;">Quantity field is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="quantityFormatFour" id="quantityFormatFour">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Registered No. -->
                     <div class="yot-form-group">
-                        <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNum">Registered No.</label>
-                        <input class="yot-form-input" type="text" name="registeredNum" id="registeredNum">
+                        <div class="yot-flex yot-flex-fd-c">
+                            <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="registeredNumFormatFour">Registered No.</label>
+                            <span class="yot-tc-red" id="emptyErrRegisteredNumFormatFour" style="display: none;">Registered No. Field is required<br></span>
+                        </div>
+                        <input class="yot-form-input" type="text" name="registeredNumFormatFour" id="registeredNumFormatFour">
                     </div>
 
                     <!-- Status Plate -->
                     <div class="yot-form-group">
                         <label class="yot-text-fs-xl yot-mb-4 yot-text-center" style="font-weight: bolder;" for="statusPlate">Status Plate</label>
-                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateTemporaryPlate" id="statusPlateTemporaryPlate" value="VIRTUAL PLATE" disabled>
+                        <input class="yot-form-input" style="border:1px solid hsl(122, 39%, 49%); font-weight:bolder;" type="text" name="statusPlateTemporaryPlateFour" id="statusPlateTemporaryPlateFour" value="VIRTUAL PLATE" disabled>
+                    </div>
+
+                    <!-- Total Price -->
+                    <div class="yot-form-group">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="totalPriceFour">Total Price</label>
+                            <h2 id="totalPriceFormatFour">0.00</h2>
+                        </div>
                     </div>
 
                     <div class="yot-text-center">

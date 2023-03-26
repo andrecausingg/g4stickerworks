@@ -10,10 +10,43 @@
             // Generate a random string
             $random_str = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 8);
             // Generate a unique ID
-            $unique_id = mt_rand(100000000000000, 999999999999999);
+            $unique_id = mt_rand(100000, 999999);
             // Concatenate the order number
             $order_no = $prefix . $date_code . $random_str . $unique_id;
         
+            return $order_no;
+        }
+
+        function generateOrderNumber() {
+            // Set the prefix and date format
+            $prefix = 'G4';
+            $date_format = 'YmdHis';
+            // Generate the date code
+            $date_code = date($date_format);
+            // Generate a random string
+            $random_str = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 8);
+            // Initialize the unique ID
+            $unique_id = '';
+            // Initialize the order number
+            $order_no = '';
+            // Connect to the database and retrieve the last unique ID
+            $conn = new mysqli("localhost", "username", "password", "dbname");
+            $result = $conn->query("SELECT MAX(unique_id) FROM orders");
+            if ($result->num_rows > 0) {
+                $row = $result->fetch_assoc();
+                $last_id = $row["MAX(unique_id)"];
+                // Generate a new unique ID if the last one has been used before
+                do {
+                    $unique_id = mt_rand(100000000000000, 999999999999999);
+                } while ($unique_id == $last_id);
+            } else {
+                // Generate a new unique ID if there are no previous orders
+                $unique_id = mt_rand(100000000000000, 999999999999999);
+            }
+            // Close the database connection
+            $conn->close();
+            // Concatenate the order number
+            $order_no = $prefix . $date_code . $random_str . $unique_id;
             return $order_no;
         }
     }

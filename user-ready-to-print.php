@@ -13,7 +13,7 @@
     <title>Ready To Print</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/asset/images/g4works-favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
 
     <!-- Css -->
     <link rel="stylesheet" href="./asset/scss/style.css">
@@ -23,11 +23,6 @@
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-    <!-- Date Picker -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -115,11 +110,11 @@
         <div class="yot-container">
             <div class="yot-row">
                 <div class="yot-col-50 yot-mb-16">
-                    <div class="yot-bg-white image-container-RTP yot-mb-16">
-                        <img src="./asset/images/vms.png" alt="" >
+                    <div id="displayImageTarpReadyToPrint" class="yot-bg-white image-container-RTP yot-mb-16">
+
                     </div>
                     <div class="yot-text-center">
-                        <button class="yot-btn-blue1">Upload Image</button>
+                        <button id="uploadImageButton" class="yot-btn-blue1">Upload Image</button>
                     </div>
                 </div>
                 
@@ -128,45 +123,38 @@
                     <div class="yot-flex yot-flex-ai-c">
                         <div class="yot-form-group yot-w-50">
                             <label for="width"><h4>Width(Foot)</h4></label>
-                            <input class="yot-form-input" type="text" name="" id="">
-
+                            <input class="yot-form-input" type="text" name="width" id="width">
                             <!-- Proportion Width -->
-                            <div class="yot-flex yot-flex-ai-c-jc-s">
+                            <!-- <div class="yot-flex yot-flex-ai-c-jc-s">
                                 <input type="checkbox" id="widthProportion" name="widthProportion" value="widthProportion" value="Width Proportion">
                                 <label for="widthProportion"><h5>Proportion</h5></label>
-                            </div>
+                            </div> -->
                         </div>
 
                         <h4 class="yot-ma-16" style="margin-top: 34px;">X</h4>
 
                         <div class="yot-form-group yot-w-50">
                             <label for="height"><h4>Height(Foot)</h4></label>
-                            <input class="yot-form-input" type="text" name="" id="">
+                            <input class="yot-form-input" type="text" name="height" id="height">
 
                             <!-- Proportion Height -->
-                            <div class="yot-flex yot-flex-ai-c-jc-s">
+                            <!-- <div class="yot-flex yot-flex-ai-c-jc-s">
                                 <input type="checkbox" id="heightProportion" name="heightProportion" value="Height Proportion">
                                 <label for="heightProportion"><h5>Proportion</h5></label>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
                     <div class="yot-flex yot-flex-ai-c">
                         <div class="yot-form-group yot-w-50">
                             <label for="quantity"><h4>Quantity</h4></label>
-                            <input class="yot-form-input" type="text" name="" id="">
+                            <input class="yot-form-input" type="text" name="quantity" id="quantity">
                         </div>
                         <span class="yot-mlr-4"></span>
-                        <div class="yot-form-group yot-w-50">
-                            <label for="dateWantToGet"><h4>Date want to get</h4></label>
-                            <input type="text" name="" class="datepicker yot-form-input" placeholder="Month/Day/Year">
+                        <div class="yot-form-group yot-w-50 yot-text-center">
+                            <h3>Total Price</h3>
+                            <h2 id="totalPrice">0.00</h2>
                         </div>
-                    </div>
-
-                    <!-- Price -->
-                    <div class="yot-form-group yot-text-center">
-                        <h1>Total Price</h1>
-                        <h1>0.00</h1>
                     </div>
 
                     <div>
@@ -190,6 +178,6 @@
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
+    <script src="./asset/js/user-ready-to-print/create.js"></script>
 </body>
 </html>

@@ -2,7 +2,8 @@ $(document).ready(function(){
     $('#createFormFormatOne').submit(function(e){
         e.preventDefault();
 
-        var typeOfPlateFormatOne = $('#typeOfPlateFormatOne').val().trim();
+        var typeOfPlateFormatOne = $('#typeOfPlateFormatOne').val().trim().toUpperCase();
+        var quantityFormatOne = $('#quantityFormatOne').val().trim();
         var mvFileFourDigitFormatOne = $('#mvFileFourDigitFormatOne').val().trim();
         var mvFileSevenDigitFormatOne = $('#mvFileSevenDigitFormatOne').val().trim();
         var regionFormatOne = $('#regionFormatOne').val().trim();
@@ -11,6 +12,7 @@ $(document).ready(function(){
         var mvFileFormatOne = mvFileFourDigitFormatOne + "-" + mvFileSevenDigitFormatOne;
 
         if(typeOfPlateFormatOne != "" && validateTypeOfPlateFormatOne() &&
+            quantityFormatOne != "" && validateQuantityFormatOne() &&
             mvFileFourDigitFormatOne != "" && validateMvFileFourDigitFormatOne() &&
             mvFileSevenDigitFormatOne != "" && validateMvFileSevenDigitFormatOne() &&
             regionFormatOne != "" && validateRegionFormatOne() &&
@@ -19,15 +21,17 @@ $(document).ready(function(){
             // send the form data to the server with AJAX
             $.ajax({
                 type: "POST", // use the POST method
-                url: "../../../../g4stickerworks/asset/php/user-temporary-plate/create.php", // replace with the URL of your form processing script
+                url: "../../../../g4stickerworks/asset/php/user-temporary-plate/create-format-one.php", // replace with the URL of your form processing script
                 data: { 
                     typeOfPlateFormatOne: typeOfPlateFormatOne,
+                    quantityFormatOne: quantityFormatOne,
                     mvFileFormatOne: mvFileFormatOne,
                     regionFormatOne: regionFormatOne,
                     dealerFormatOne: dealerFormatOne,
 
                 }, // send the Content field value as data
                 success: function(response){
+                    console.log(response);
                     var responseVarChar = response.trim();     
                     if(responseVarChar == "created"){
                         resetForm();
@@ -41,6 +45,7 @@ $(document).ready(function(){
             });
         }else{
             validateTypeOfPlateFormatOne();
+            validateQuantityFormatOne();
             validateMvFileFourDigitFormatOne();
             validateMvFileSevenDigitFormatOne();
             validateRegionFormatOne();
@@ -58,6 +63,21 @@ $(document).ready(function(){
                 }else{
                     $("#emptyErrTypeOfPlateFormatOne").hide();
                     $('#typeOfPlateFormatOne').css('border-color', 'hsl(122, 39%, 49%)');
+                    return true;
+                }
+            }
+
+            // Function Quantity
+            function validateQuantityFormatOne(){
+                var quantityFormatOne = $('#quantityFormatOne').val().trim();
+        
+                if(quantityFormatOne == ""){
+                    $("#emptyErrQuantityFormatOne").show();
+                    $('#quantityFormatOne').css('border-color', 'hsl(4, 95%, 56%)');
+                    return false;
+                }else{
+                    $("#emptyErrQuantityFormatOne").hide();
+                    $('#quantityFormatOne').css('border-color', 'hsl(122, 39%, 49%)');
                     return true;
                 }
             }
@@ -141,10 +161,11 @@ $(document).ready(function(){
 
     // Validation
     $('#typeOfPlateFormatOne').change(validateTypeOfPlateFormatOne);
+    $('#quantityFormatOne').keyup(validateQuantityFormatOne);
     $('#mvFileFourDigitFormatOne').keyup(validateMvFileFourDigitFormatOne);
     $('#mvFileSevenDigitFormatOne').keyup(validateMvFileSevenDigitFormatOne);
     $('#regionFormatOne').change(validateRegionFormatOne);
-    $('#dealerFormatOne').change(validateDealer);
+    $('#dealerFormatOne').keyup(validateDealer);
 
     // Function Type of Plate
     function validateTypeOfPlateFormatOne(){
@@ -159,6 +180,20 @@ $(document).ready(function(){
         }
     }
 
+    // Function Quantity
+    function validateQuantityFormatOne(){
+        computeTotalPrice();
+        var quantityFormatOne = $('#quantityFormatOne').val().trim();
+
+        if(quantityFormatOne == ""){
+            $("#emptyErrQuantityFormatOne").show();
+            $('#quantityFormatOne').css('border-color', 'hsl(4, 95%, 56%)');
+        }else{
+            $("#emptyErrQuantityFormatOne").hide();
+            $('#quantityFormatOne').css('border-color', 'hsl(122, 39%, 49%)');
+        }
+    }
+    
     // Function MvFile 4 DIgit
     function validateMvFileFourDigitFormatOne(){
         var mvFileFourDigitFormatOne = $('#mvFileFourDigitFormatOne').val().trim();
@@ -225,6 +260,14 @@ $(document).ready(function(){
         }
     }
 
+    // Allow Number Quantity
+    $("#quantityFormatOne").on("input", function() {
+        var regex = /[^0-9]/g;
+        if ($(this).val().match(regex)) {
+            $(this).val($(this).val().replace(regex, ''));
+        }
+    });
+
     // Allow Number Four Digit
     $("#mvFileFourDigitFormatOne").on("input", function() {
         var regex = /[^0-9]/g;
@@ -243,8 +286,16 @@ $(document).ready(function(){
 
     // Show Format One Form
     $("#formatOneBtn").click(function(){
+        $('body').css('overflow', 'hidden'); 
         $("#bgCreateContainer").show();
         $("#createFormContainerFormatOne").show();
+    });
+
+    // Hide Format One Form
+    $("#closeFormatOneFormIcon").click(function(){
+        $('body').css('overflow', 'auto'); 
+        $("#bgCreateContainer").hide();
+        $("#createFormContainerFormatOne").hide();
     });
 
     // Hide Success Add to Cart 
@@ -252,12 +303,8 @@ $(document).ready(function(){
         $("#createSuccessAlert").hide();
     });
 
-    $("#closeFormatOneFormIcon").click(function(){
-        $("#bgCreateContainer").hide();
-        $("#createFormContainerFormatOne").hide();
-    });
-
     loopRegionSelectTag();
+    computeTotalPrice();
 
     function loopRegionSelectTag(){
         var regions = [
@@ -289,13 +336,23 @@ $(document).ready(function(){
     }
 
     function resetForm(){
+        $("#totalPrice").html("0.00");
         $("#createSuccessAlert").show();
         setTimeout(function() {
             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
         }, 10000); // 10000 milliseconds = 10 seconds
         // $("#bgCreateContainer").hide();
         // $("#createFormContainerFormatOne").hide();
-        $('#typeOfPlateFormatOne, #mvFileFourDigitFormatOne, #mvFileSevenDigitFormatOne, #regionFormatOne, #dealerFormatOne').val("");
-        $('#typeOfPlateFormatOne, #mvFileFourDigitFormatOne, #mvFileSevenDigitFormatOne, #regionFormatOne, #dealerFormatOne').css('border-color', 'hsl(207, 90%, 54%)');
+        $('#typeOfPlateFormatOne, #quantityFormatOne, #mvFileFourDigitFormatOne, #mvFileSevenDigitFormatOne, #regionFormatOne, #dealerFormatOne').val("");
+        $('#typeOfPlateFormatOne, #quantityFormatOne, #mvFileFourDigitFormatOne, #mvFileSevenDigitFormatOne, #regionFormatOne, #dealerFormatOne').css('border-color', 'hsl(207, 90%, 54%)');
+    }
+
+    function computeTotalPrice() {
+        var quantityFormatOne = parseFloat($('#quantityFormatOne').val().trim());
+        var totalPrice = (250.00 * quantityFormatOne).toFixed(2);
+        if(isNaN(totalPrice)){
+            totalPrice = 0.00;
+        }
+        $("#totalPriceFormatOne").html(totalPrice);
     }
 });
