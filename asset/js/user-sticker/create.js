@@ -106,6 +106,64 @@ $(document).ready(function() {
         }
     }
 
+    // Validation
+    $('#width').keyup(validateWidth);
+    $('#height').keyup(validateHeight);
+    $('#quantity').keyup(validateQuantity);
+    $('#cover').change(validateCover);
+
+    // Function Width
+    function validateWidth(){
+        var width = $('#width').val().trim();
+
+        if(width == ""){
+            $("#emptyErrWidth").show();
+            $('#width').css('border-color', 'hsl(4, 95%, 56%)');
+        }else{
+            $("#emptyErrWidth").hide();
+            $('#width').css('border-color', 'hsl(122, 39%, 49%)');
+        }
+    }
+
+    // Function Height
+    function validateHeight(){
+        var height = $('#height').val().trim();
+
+        if(height == ""){
+            $("#emptyErrHeight").show();
+            $('#height').css('border-color', 'hsl(4, 95%, 56%)');
+        }else{
+            $("#emptyErrHeight").hide();
+            $('#height').css('border-color', 'hsl(122, 39%, 49%)');
+        }
+    }
+
+    // Function Quantity
+    function validateQuantity(){
+        var quantity = $('#quantity').val().trim();
+
+        if(quantity == ""){
+            $("#emptyErrQuantity").show();
+            $('#quantity').css('border-color', 'hsl(4, 95%, 56%)');
+        }else{
+            $("#emptyErrQuantity").hide();
+            $('#quantity').css('border-color', 'hsl(122, 39%, 49%)');
+        }
+    }
+    
+    // Function Cover
+    function validateCover(){
+        var cover = $('#cover').val().trim();
+
+        if(cover == ""){
+            $("#emptyErrCover").show();
+            $('#cover').css('border-color', 'hsl(4, 95%, 56%)');
+        }else{
+            $("#emptyErrCover").hide();
+            $('#cover').css('border-color', 'hsl(122, 39%, 49%)');
+        }
+    }
+
     // Upload Image 
     $('#uploadImageButton').on('click', function() {
         $('<input type="file" accept="image/*">').on('change', function() {

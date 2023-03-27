@@ -126,7 +126,11 @@
                     <!-- Widht and Height -->
                     <div class="yot-flex yot-flex-ai-c">
                         <div class="yot-form-group yot-w-50">
-                            <label for="width"><h4>Width(Inch)</h4></label>
+                                <!-- Label and Err Width -->
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label for="width"><h4>Width(Inch)</h4></label>
+                                    <span class="yot-tc-red" id="emptyErrWidth" style="display: none;">Width field is required.<br></span>
+                                </div>
                             <input class="yot-form-input" type="text" name="width" id="width">
 
                             <!-- Proportion Width -->
@@ -139,9 +143,12 @@
                         <h4 class="yot-ma-16" style="margin-top: 34px;">X</h4>
 
                         <div class="yot-form-group yot-w-50">
-                            <label for="height"><h4>Height(Inch)</h4></label>
+                            <!-- Label and Err Height -->
+                            <div class="yot-flex yot-flex-fd-c">
+                                <label for="height"><h4>Height(Inch)</h4></label>
+                                <span class="yot-tc-red" id="emptyErrHeight" style="display: none;">Height field is required.<br></span>
+                            </div>
                             <input class="yot-form-input" type="text" name="height" id="height">
-
                             <!-- Proportion Height -->
                             <div class="yot-flex yot-flex-ai-c-jc-s" style="display:none">
                                 <input type="checkbox" id="heightProportion" name="heightProportion" value="Height Proportion">
@@ -153,12 +160,20 @@
                     <!-- Quantity -->
                     <div class="yot-flex yot-flex-ai-c">
                         <div class="yot-form-group yot-w-50">
-                            <label for="quantity"><h4>Quantity</h4></label>
+                            <!-- Label and Err Quantity -->
+                            <div class="yot-flex yot-flex-fd-c">
+                                <label for="quantity"><h4>Quantity</h4></label>
+                                <span class="yot-tc-red" id="emptyErrQuantity" style="display: none;">Quantity field is required.<br></span>
+                            </div>
                             <input class="yot-form-input" type="text" name="quantity" id="quantity">
                         </div>
                         <span class="yot-mlr-8"></span>
                         <div class="yot-form-group yot-w-50">
-                            <label for="quantity"><h4>Cover</h4></label>
+                            <!-- Label and Err Cover -->
+                            <div class="yot-flex yot-flex-fd-c">
+                                <label for="cover"><h4>Cover</h4></label>
+                                <span class="yot-tc-red" id="emptyErrCover" style="display: none;">Cover field is required.<br></span>
+                            </div>
                             <select class="yot-form-input" name="cover" id="cover">
                                 <option value="">- Select Cover -</option>
                                 <option value="yes">Lamanited</option>
