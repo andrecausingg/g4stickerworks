@@ -113,13 +113,15 @@
                     <div id="displayImageTarpReadyToPrint" class="yot-bg-white image-container-RTP yot-mb-16">
 
                     </div>
-                    <div class="yot-text-center">
-                        <button id="uploadImageButton" class="yot-btn-blue1">Upload Image</button>
-                    </div>
+                    <!-- Form -->
+                    <form id="createReadyToPrintForm">
+                        <div class="yot-w-75" style="margin: auto;">
+                            <input class="yot-form-input" type="file" id="image" name="image">
+                        </div>
                 </div>
                 
                 <div class="yot-col-50">
-                    <form id="createReadyToPrintForm">
+                    
                         <!-- Widht and Height -->
                         <div class="yot-flex yot-flex-ai-c">
                             <!-- Width -->
@@ -176,7 +178,7 @@
                         <div>
                             <div class="yot-form-group yot-w-100">
                                 <label for="quantity"><h4>Message</h4></label>
-                                <textarea class="yot-form-input" style="resize: none; height: 150px;" name="" id=""></textarea>
+                                <textarea class="yot-form-input" style="resize: none; height: 150px;" name="message" id="message"></textarea>
                             </div>
                         </div>
 
@@ -185,7 +187,6 @@
                             <input class="yot-btn-blue1" type="submit" value="Add to Cart">
                         </div>
                     </form>
-
                 </div>
             </div>
 
@@ -194,6 +195,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Success Container-->
+    <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Add to Cart:</h3>
+            <i id="createSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The order has been successfully added to the cart.</p>
+    </div>
+
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/user-ready-to-print/create.js"></script>

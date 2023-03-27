@@ -49,6 +49,9 @@
   .yot-overlay-mid-container-form-tablet-size-up {
     width: 720px !important;
   }
+  .yot-container-w-tablet-size-up {
+    width: 500px !important;
+  }
   .yot-form-container {
     width: 400px !important;
   }
@@ -95,6 +98,11 @@
   .g-main-container .g-main-item-right {
     margin-left: 33.33%;
     width: 66.66% !important;
+  }
+  .cart-list-user-my-cart {
+    margin-left: 30% !important;
+    left: auto; /* Set to "auto" to remove the "left: 0" declaration */
+    height: 700px !important;
   }
 }
 /* 1200px */
@@ -1806,4 +1814,13 @@ i {
 .pp-table-images img {
   width: 150px !important;
   height: 150px !important;
+}
+
+.cart-list-user-my-cart {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 500px;
+  overflow-y: auto;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */

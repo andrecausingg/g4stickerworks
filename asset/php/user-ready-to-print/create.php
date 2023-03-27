@@ -1,49 +1,95 @@
 <?php
+    if (isset($_POST["width"]) && isset($_POST["height"]) && isset($_POST["quantity"]) && isset($_POST["message"])){
+        // Sanitize Input
+        $width = sanitize1($_POST["width"]);
+        $height = sanitize1($_POST["height"]);
+        $quantity = sanitize1($_POST["quantity"]);
+        $message = isset($_POST["message"]) ? sanitize1($_POST["message"]) : '';
 
+        // Handle Upload
+        $classUpload = new classUpload($width, $height, $quantity, $message);
+        $result = $classUpload->handle();
+    }
 
+    // Sanitize Input
+    function sanitize1($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
-class classUpload {
-    public function handle() {
-        // File Path
-        require_once "../helper/global/global.php";
+    class classUpload{
+        private $width;
+        private $height;
+        private $quantity;
+        private $message;
 
-        // Class
-        $classConnDB = new classConnDB();
-        $classDateTime = new classDateTime();
+        public function __construct($width, $height, $quantity, $message){
+            $this->width = $width;
+            $this->height = $height;
+            $this->quantity = $quantity;
+            $this->message = $message;
+        }
 
-        // Variable
-        $conn = $classConnDB->conn();
-        $dateTimeVarChar = $classDateTime->getDateTime();
+        public function handle(){
 
-        // Get form data
-        $width = $_POST['width'];
-        $height = $_POST['height'];
-        $quantity = $_POST['quantity'];
-        $imageData = $_POST['imageData'];
+            // Database Insertion Handling
+            require_once "../helper/global/global.php";
 
-        // Decode base64 image data
-        $imageData = str_replace('data:image/png;base64,', '', $imageData);
-        $imageData = str_replace(' ', '+', $imageData);
-        $decodedImageData = base64_decode($imageData);
+            // Class
+            $conn = (new classConnDB())->conn();
+            $dateTimeVarChar = (new classDateTime())->getDateTime();
+            $userId = (new classSessionUserID())->sessionUserID();
+            $uniqueId = (new classUniqueOrderId())->uniqueOrderId();
 
-        // Generate unique image name
-        $imageNameNew = uniqid('', true).'.png';
-        $imageDestination = '../../images/'.$imageNameNew;
-        file_put_contents($imageDestination, $decodedImageData);
+            $totalPrice = $this->width * $this->height * $this->quantity * 15.00;
 
-        // Use prepared statement to prevent SQL injection
-        $stmt = $conn->prepare("INSERT INTO ready_to_print_tbl (width, height, quantity, image, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, NOW())");
-        $stmt->bind_param("iiiss", $width, $height, $quantity, $imageNameNew, $dateTimeVarChar);
-        if($stmt->execute()){
-            if($stmt->affected_rows > 0){
-                $stmt->close();
-                $conn->close();
-                return "created";
+            $page = "CART";
+            $status = "PENDING";
+            $payment = "NONE";
+
+            $image = $_FILES['image'];
+        
+            if(!isset($image)){
+                echo 'putimagefirst';
+            }else{
+                $imageName = $image['name'];
+                $imageSize = $image['size'];
+                $imageTemp = $image['tmp_name'];
+                $imageError = $image['error'];
+                $imageType = $image['type'];
+                $imageExt = explode('.', $imageName);
+                $imageActualExt = strtolower(end($imageExt));
+                $allowed = array('jpg', 'jpeg', 'png');
+        
+                if(in_array($imageActualExt, $allowed)){
+                    if($imageError === 0){
+                        if($imageSize < 50000000){
+                            $imageNameNew = uniqid('', true).".".$imageActualExt;
+                            $imageDestination = '../../images/orders/'. $imageNameNew;
+                            move_uploaded_file($imageTemp, $imageDestination);
+        
+                            // Use prepared statement to prevent SQL injection
+                            $stmt = $conn->prepare("INSERT INTO order_ready_to_print_tbl (user_id, order_id_ready_to_print, width, height, image, message, quantity, total_price, page, status,  payment, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+                            $stmt->bind_param("isiissidssss", $userId, $uniqueId, $this->width, $this->height,  $imageNameNew, $this->message, $this->quantity, $totalPrice, $page, $status, $payment, $dateTimeVarChar);
+                            if($stmt->execute()){
+                                if($stmt->affected_rows > 0){
+                                    $stmt->close();
+                                    $conn->close();
+                                    echo "created";
+                                }
+                            }
+                        } else {
+                            echo 'imagetoolarge';
+                        }
+                    } else {
+                        echo 'errorUploadingimage';
+                    }
+                } else {
+                    echo 'invalidfiletype';
+                }
             }
-        } else {
-            return "errorUploadingData";
         }
     }
-}
-
 ?>

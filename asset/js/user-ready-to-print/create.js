@@ -1,31 +1,24 @@
 $(document).ready(function(){
-    $('#createReadyToPrintForm').submit(function(e){
-        e.preventDefault();
-        var width = $('#width').val().trim();
-        var height = $('#height').val().trim();
-        var quantity = $('#quantity').val().trim();
-        var imageData = $('#displayImageTarpReadyToPrint img').attr('src');
-        
-        // create form data object
-        var formData = new FormData();
-        formData.append('width', width);
-        formData.append('height', height);
-        formData.append('quantity', quantity);
-        formData.append('imageData', imageData);
-        
-        // send AJAX request
+    $('#createReadyToPrintForm').submit(function(event) {
+        event.preventDefault(); // prevent default form submission
+        var formData = new FormData(this); // create form data object
         $.ajax({
-            url: 'your_backend_endpoint_url',
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(response) {
-                // handle success response
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                // handle error response
+        url: '../../../../g4stickerworks/asset/php/user-ready-to-print/create.php',
+          type: 'POST',
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function(response) {
+            var responseVar = response;
+
+            if(responseVar == "created"){
+                resetForm();
             }
+
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(errorThrown); // handle error response from server
+          }
         });
     });
     
@@ -82,20 +75,13 @@ $(document).ready(function(){
     
         // Define price variable before using it in conditions
         var price = 15.00;
-        var totalWH = 0;
     
         if($("#width").val() === '' || $("#height").val() === '' || $("#quantity").val() === ''){
             totalPrice = 0;
         }
         else {
-            totalWH = width * height;
-            totalPrice = totalWH * price * quantity;
+            totalPrice = width * height * price * quantity;
         }
-    
-        console.log("widht:" + width);
-        console.log("height:" + height);
-        console.log("quantity:" + quantity);
-        console.log("totalPrice:" + totalPrice);
     
         // Update the price element with the calculated total price
     
@@ -105,15 +91,29 @@ $(document).ready(function(){
     });
 
     // Upload Image Sticker
-    $('#uploadImageButton').on('click', function() {
-        $('<input type="file" accept="image/*">').on('change', function() {
+    $('#image').change(function() {
         var file = this.files[0];
         var reader = new FileReader();
-        reader.onload = function() {
-            var image = $('<img>').attr('src', reader.result);
-            $('#displayImageTarpReadyToPrint').html(image);
+        reader.onload = function(e) {
+            $('#displayImageTarpReadyToPrint').html('<img src="' + e.target.result + '">');
         }
         reader.readAsDataURL(file);
-        }).click();
     });
+
+    $("#createSuccessAlertCloseIcon").click(function(){
+        $("#createSuccessAlert").hide();
+    });
+
+    function resetForm(){
+         // Clear image display
+        $('#displayImageTarpReadyToPrint').html('');
+        
+        $("#totalPrice").html("0.00");
+        $("#createSuccessAlert").show();
+        setTimeout(function() {
+            $("#createSuccessAlert").hide(); // Show the element after 10 seconds
+        }, 10000); // 10000 milliseconds = 10 seconds
+        $('#width, #height, #quantity, #image, #message').val("");
+        $('#width, #height, #quantity, #image, #message').css('border-color', 'hsl(207, 90%, 54%)');
+    }
 });

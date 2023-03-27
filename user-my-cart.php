@@ -104,94 +104,26 @@
     </div>
 
     <!-- My Cart Container -->
-    <div class="yot-content-space-margin-t-120 yot-container">
-        <!-- Title-->
-        <div class="yot-tc-blue1 yot-mb-16 yot-flex yot-flex-ai-c-jc-sb">
-            <h1 class="yot-resize-font-64">My Cart</h1>
-            <h1>1</h1>
-        </div>
-
-        <div class="yot-bg-white yot-pa-16 yot-row yot-flex-ai-c">
-            <div class="yot-col-33-33 yot-mb-16">
-                <!-- Title -->
-                <h3>Tarpauline</h3>
-                <div class="image-container-RTP" style="height: 150px;">
-                    <img src="./asset/images/vms.png" alt="">
-                </div>
-                <div class="yot-text-center">
-                    <button class="yot-btn-blue1">Edit</button> <span class="yot-mlr-4"></span>
-                    <button class="yot-btn-blue1">Delete</button>
-                </div>
-            </div>
-
-            <div class="yot-col-66-66">
-                <div class="yot-flex yot-flex-ai-c-jc-se yot-mb-16">
-                    <div>
-                        <h4>Size</h4>
-                        <span>36w x 36h</span>
-                    </div>
-
-                    <div>
-                        <h4>Quantity</h4>
-                        <span>1</span>
-                    </div>
-
-                    <div>
-                        <h4>Price</h4>
-                        <span>135.00</span>
-                    </div>
-
-                    <div>
-                        <h4>Received</h4>
-                        <span>Feb-02-2023</span>
-                    </div>
-                </div>
-
-                <div class="yot-row yot-flex-ai-c-jc-se yot-mb-16">
-                    <div class="yot-col-50 yot-mb-8 yot-flex yot-flex-ai-c-jc-se">
-                        <div>
-                            <h4>Contact No.</h4>
-                            <span>09123456789</span>
-                        </div>
-    
-                        <div>
-                            <h4>Description</h4>
-                            <span>Ready to print</span>
-                        </div>
-                    </div>
-
-                    <div class="yot-col-50 yot-mb-8 yot-flex yot-flex-ai-c-jc-se">
-                        <div>
-                            <h4>Copy Image</h4>
-                            <span>0</span>
-                        </div>
-        
-                        <div>
-                            <h4>Insert Image</h4>
-                            <span>0</span>
-                        </div>
-                    </div>
-                </div>
-
+    <div class="yot-content-space-margin-t-120 yot-container g-main-container">
+        <div class="yot-col-33-33 yot-pa-8 g-main-left">
+            <div class="yot-mb-4"></div>
+            <!-- Title-->
+            <div class="yot-row yot-flex-ai-c-jc-sb yot-container-w-tablet-size-up" style="margin: 0px auto 8px;">
                 <div>
-                    <h4>Message</h4>
-                    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem sit unde deserunt, doloremque eius architecto illum similique sint vitae eos voluptatum iste assumenda labore nam rem libero reprehenderit molestias molestiae.</span>
+                    <h1 class="yot-resize-font-64">My Cart</h1>
+                    <h1>Total Price: 135.00</h3>
+                    <button class="yot-btn-blue1">Pay Now</button>
                 </div>
             </div>
         </div>
+
+        <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
     </div>
 
-    <!-- 
-    <footer class="yot-footer yot-container yot-pa-16 yot-bg-white" style="left:0; right:0;">
-        <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin:auto; position: relative;">
-                <h3>Total 135.00</h3>
-            <div>
-                <button class="yot-btn-blue1">Pay Now</button>
-            </div>
-        </div>
-    </footer> -->
+    <div class="yot-mt-8"></div>
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
+    <script src="./asset/js/user-my-cart/display/d-data.js"></script>
 </body>
 </html>

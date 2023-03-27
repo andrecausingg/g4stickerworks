@@ -27,6 +27,10 @@
         width: 720px !important;
     }
 
+    .yot-container-w-tablet-size-up{
+        width: 500px !important;
+    }
+
     .yot-form-container{
         width: 400px !important;
     }
@@ -88,6 +92,12 @@
             margin-left: 33.33%;
             width: 66.66% !important;
         }
+    }
+
+    .cart-list-user-my-cart{
+        margin-left: 30% !important;
+        left: auto; /* Set to "auto" to remove the "left: 0" declaration */
+        height: 700px !important;
     }
 }
 

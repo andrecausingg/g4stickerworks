@@ -26,6 +26,7 @@
                         <th>Total Price</th>
                         <th>Page</th>
                         <th>Status</th>
+                        <th>Receipt</th>
                         <th>Payment</th>
                         <th>Created</th>
                     </tr>
@@ -34,11 +35,13 @@
             // DISPLAY
             $fetch_data = mysqli_query($classConnDB->conn(), "SELECT * FROM order_temp_plate_tbl ORDER BY order_temp_plate_id DESC");
             while($row = mysqli_fetch_assoc($fetch_data)){
-
+                $order = $row["order_id_temp_plate"]; // assuming $row["message"] contains the string you want to split
+                $split_order = chunk_split($order, 10, "\n"); // split the message into chunks of 50 characters, with a line break after each chunk
+                
                 echo'
                     <tr>
                         <td>'.$row["user_id"].'</td>
-                        <td>'.$row["order_id_temp_plate"].'</td>
+                        <td>'.$split_order.'</td>
                         <td>'.$row["type_of_plate"].'</td>
                         <td>'.$row["format"].'</td>
                         <td>'.$row["mv_file"].'</td>
@@ -50,6 +53,7 @@
                         <td>'.$row["total_price"].'</td>
                         <td>'.$row["page"].'</td>
                         <td>'.$row["status"].'</td>
+                        <td>'.$row["receipt"].'</td>
                         <td>'.$row["payment"].'</td>
                         <td>'.$row["created_at_varchar"].'</td>
                     </tr>
