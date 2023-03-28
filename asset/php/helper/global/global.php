@@ -8,7 +8,7 @@
             // Set the prefix and date format
             $prefix = 'G4';
             // Set the desired format for the date
-            $date_format = 'Ymd h:i:s a T';
+            $date_format = 'YmdhisAT';
             // Generate the date and time code
             $date_code = date($date_format);
             // Generate a random string

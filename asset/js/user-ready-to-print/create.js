@@ -20,11 +20,18 @@ $(document).ready(function(){
               processData: false,
               contentType: false,
               success: function(response) {
-                var responseVar = response;
-    
+                var responseVar = response.trim();
+
                 if(responseVar == "created"){
                     resetForm();
+                }else if(responseVar == 'imagetoolarge'){
+                    hideErrImgTooBig();
+                }else if(responseVar == 'errorUploadingimage'){
+                    hideErroruploadingimage();
+                }else if(responseVar == 'invalidfiletype'){
+                    hideInvalidfiletype();
                 }
+    
     
               },
               error: function(jqXHR, textStatus, errorThrown) {
@@ -92,9 +99,11 @@ $(document).ready(function(){
             if(image == ""){
                 $("#emptyErrImage").show();
                 $('#image').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
             }else{
                 $("#emptyErrImage").hide();
                 $('#image').css('border-color', 'hsl(122, 39%, 49%)');
+                return true;
             }
         }
 
@@ -205,7 +214,37 @@ $(document).ready(function(){
         setTimeout(function() {
             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
         }, 10000); // 10000 milliseconds = 10 seconds
-        $('#width, #height, #quantity, #image, #message').val("");
-        $('#width, #height, #quantity, #image, #message').css('border-color', 'hsl(207, 90%, 54%)');
+        $('#width, #height, #quantity, #image, #messagem, #image').val("");
+        $('#width, #height, #quantity, #image, #message, #image').css('border-color', 'hsl(207, 90%, 54%)');
     }
+
+    function hideErrImgTooBig(){
+        $('#errorImagetoolargeAlert').show();
+        $('#image').css('border-color', 'hsl(4, 95%, 56%)');
+        setTimeout(function(){
+            $('#errorImagetoolargeAlert').hide();
+        }, 5000);
+    }
+
+    function hideErroruploadingimage(){
+        $('#errorUploadingimageAlert').show();
+        $('#image').css('border-color', 'hsl(4, 95%, 56%)');
+        setTimeout(function(){
+            $('#errorUploadingimageAlert').hide();
+        }, 5000);
+    }
+
+    function hideInvalidfiletype(){
+        $('#invalidfiletypeAlert').show();
+        $('#image').css('border-color', 'hsl(4, 95%, 56%)');
+        setTimeout(function(){
+            $('#invalidfiletypeAlert').hide();
+        }, 5000);
+    }
+
+    $(".alertCloseIcon").click(function(){
+        $('#errorImagetoolargeAlert').hide();
+        $('#errorUploadingimageAlert').hide();
+        $('#invalidfiletypeAlert').hide();
+    });
 });

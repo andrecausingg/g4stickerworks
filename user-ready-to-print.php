@@ -209,6 +209,33 @@
         <p class="yot-text-fs-l">The order has been successfully added to the cart.</p>
     </div>
 
+    <!-- Error Container Invalid File Type -->
+    <div id="invalidfiletypeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Invalid File Type</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl alertCloseIcon"></i>
+        </div>
+        <p class="yot-text-fs-l">Only JPG, JPEG, and PNG files are allowed.</p>
+    </div>
+
+    <!-- Error Container Uploading Image -->
+    <div id="errorUploadingimageAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Uploading image</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl alertCloseIcon"></i>
+        </div>
+        <p class="yot-text-fs-l">There's Something Wrong!</p>
+    </div>
+
+    <!-- Error Container Invalidfiletype -->
+    <div id="errorImagetoolargeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error File too Big</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl alertCloseIcon"></i>
+        </div>
+        <p class="yot-text-fs-l">Allowed size is 50mb</p>
+    </div>
+
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/user-ready-to-print/create.js"></script>

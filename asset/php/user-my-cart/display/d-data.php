@@ -13,9 +13,11 @@
 
             $emptyTarp = 0;
             $emptyTempPlate = 0;
+            $page = 'CART';
+            $status = 'PENDING';
 
             // DISPLAY Tarpaulin Ready tO Print
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' ORDER BY order_ready_to_print_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_ready_to_print_id DESC");
             if(mysqli_num_rows($fetch_data) == 0){
                 $emptyTarp = 1;
             }else{
@@ -88,10 +90,10 @@
             }
             
             // DISPLAY Temporary Plate
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_temp_plate_tbl WHERE user_id = '$userId' ORDER BY order_temp_plate_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_temp_plate_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_temp_plate_id DESC");
             if(mysqli_num_rows($fetch_data) == 0){
                 $emptyTempPlate = 1;
-            }else{
+            }else if ($fetch_data){
                 while($row = mysqli_fetch_assoc($fetch_data)){
                     if($row["format"] == 'FORMAT 1'){
                         echo'
@@ -398,6 +400,8 @@
                         ';
                     }
                 }
+            }else{
+                echo "Error: " . mysqli_error($conn);
             }
             
             if($emptyTarp == 1 && $emptyTempPlate == 1){
