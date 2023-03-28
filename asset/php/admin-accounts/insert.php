@@ -54,7 +54,7 @@
                 echo "emailExist";
             }else{
                 // prepare the SQL statement with placeholders for the email, password, datetime varchar, and datetime
-                $sql = "INSERT INTO user_tbl (email, password, status, role, created_at_varchar, created_at) VALUES (?, ?, ?, ?, NOW())";
+                $sql = "INSERT INTO user_tbl (email, password, status, role, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, NOW())";
                 // create a prepared statement
                 $stmt = $conn->prepare($sql);
                 // bind the parameters to the placeholders

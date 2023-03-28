@@ -63,9 +63,9 @@
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
                     </div>
-                    <div class="yot-mb-16">
+                    <!-- <div class="yot-mb-16">
                         <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -157,9 +157,9 @@
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
                     </div>
-                    <div class="yot-mb-16">
+                    <!-- <div class="yot-mb-16">
                         <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
     
