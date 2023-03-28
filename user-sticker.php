@@ -87,10 +87,10 @@
             </div>
         </div>
         <div class="yot-mb-16">
-            <a href="user-sticker" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Sticker</a>
+            <a href="user-sticker" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Sticker</a>
         </div>
         <div class="yot-mb-16">
-            <a href="user-temporary-plate" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Temporary Plate</a>
+            <a href="user-temporary-plate" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Temporary Plate</a>
         </div>
         <div class="yot-mb-16">
             <a href="user-profile" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Profile</a>

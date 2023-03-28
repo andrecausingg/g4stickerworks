@@ -74,11 +74,11 @@
         </div>
         <!-- Tarpaulin -->
         <div class="yot-mb-8">
-            <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-cursor-pointer">
+            <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-active-bb-blue yot-cursor-pointer">
                 <span style="font-size: 36px; font-weight: bolder;">Tarpaulin</span>
-                <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRight"></i></span>
+                <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRight"></i></span>
             </div>
-            <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
+            <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c">
                 <a href="user-ready-to-print" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
                 <a href="user-make-layout" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
             </div>
@@ -116,6 +116,10 @@
                     <!-- Form -->
                     <form id="createReadyToPrintForm">
                         <div class="yot-w-75" style="margin: auto;">
+                            <div class="yot-flex yot-flex-fd-c-ai-c-jc-c">
+                                <label for="image"><h4>Upload Image</h4></label>
+                                <span class="yot-tc-red" id="emptyErrImage" style="display: none;">Upload Image field is required.<br></span>
+                            </div>
                             <input class="yot-form-input" type="file" id="image" name="image">
                         </div>
                 </div>

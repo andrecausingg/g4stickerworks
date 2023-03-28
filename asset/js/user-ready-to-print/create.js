@@ -1,31 +1,110 @@
 $(document).ready(function(){
     $('#createReadyToPrintForm').submit(function(event) {
         event.preventDefault(); // prevent default form submission
-        var formData = new FormData(this); // create form data object
-        $.ajax({
-        url: '../../../../g4stickerworks/asset/php/user-ready-to-print/create.php',
-          type: 'POST',
-          data: formData,
-          processData: false,
-          contentType: false,
-          success: function(response) {
-            var responseVar = response;
 
-            if(responseVar == "created"){
-                resetForm();
+        var width = $('#width').val().trim();
+        var height = $('#height').val().trim();
+        var quantity = $('#quantity').val().trim();
+        var image = $('#image').val().trim();
+
+        if(width != "" && validateWidth() &&
+            height != "" && validateHeight() &&
+            quantity != "" && validateQuantity() &&
+            image != "" && validateUploadImage()
+        ){
+            var formData = new FormData(this); // create form data object
+            $.ajax({
+            url: '../../../../g4stickerworks/asset/php/user-ready-to-print/create.php',
+              type: 'POST',
+              data: formData,
+              processData: false,
+              contentType: false,
+              success: function(response) {
+                var responseVar = response;
+    
+                if(responseVar == "created"){
+                    resetForm();
+                }
+    
+              },
+              error: function(jqXHR, textStatus, errorThrown) {
+                console.log(errorThrown); // handle error response from server
+              }
+            });
+        }else{
+            validateWidth();
+            validateHeight();
+            validateQuantity();
+            validateUploadImage();
+        }
+
+
+        // Function Width
+        function validateWidth(){
+            var width = $('#width').val().trim();
+
+            if(width == ""){
+                $("#emptyErrWidth").show();
+                $('#width').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
+            }else{
+                $("#emptyErrWidth").hide();
+                $('#width').css('border-color', 'hsl(122, 39%, 49%)');
+                return true;
             }
+        }
 
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            console.log(errorThrown); // handle error response from server
-          }
-        });
+        // Function Height
+        function validateHeight(){
+            var height = $('#height').val().trim();
+
+            if(height == ""){
+                $("#emptyErrHeight").show();
+                $('#height').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
+
+            }else{
+                $("#emptyErrHeight").hide();
+                $('#height').css('border-color', 'hsl(122, 39%, 49%)');
+                return true;
+            }
+        }
+
+        // Function Quantity
+        function validateQuantity(){
+            var quantity = $('#quantity').val().trim();
+
+            if(quantity == ""){
+                $("#emptyErrQuantity").show();
+                $('#quantity').css('border-color', 'hsl(4, 95%, 56%)');
+                return false;
+            }else{
+                $("#emptyErrQuantity").hide();
+                $('#quantity').css('border-color', 'hsl(122, 39%, 49%)');
+                return true;
+            }
+        }
+
+        // Function Image
+        function validateUploadImage(){
+            var image = $('#image').val().trim();
+
+            if(image == ""){
+                $("#emptyErrImage").show();
+                $('#image').css('border-color', 'hsl(4, 95%, 56%)');
+            }else{
+                $("#emptyErrImage").hide();
+                $('#image').css('border-color', 'hsl(122, 39%, 49%)');
+            }
+        }
+
     });
     
     // Validation
     $('#width').keyup(validateWidth);
     $('#height').keyup(validateHeight);
     $('#quantity').keyup(validateQuantity);
+    $('#image').change(validateUploadImage);
 
     // Function Width
     function validateWidth(){
@@ -63,6 +142,19 @@ $(document).ready(function(){
         }else{
             $("#emptyErrQuantity").hide();
             $('#quantity').css('border-color', 'hsl(122, 39%, 49%)');
+        }
+    }
+
+    // Function Image
+    function validateUploadImage(){
+        var image = $('#image').val().trim();
+
+        if(image == ""){
+            $("#emptyErrImage").show();
+            $('#image').css('border-color', 'hsl(4, 95%, 56%)');
+        }else{
+            $("#emptyErrImage").hide();
+            $('#image').css('border-color', 'hsl(122, 39%, 49%)');
         }
     }
 

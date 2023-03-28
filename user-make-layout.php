@@ -79,13 +79,13 @@
         </div>
         <!-- Tarpaulin -->
         <div class="yot-mb-8">
-            <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-cursor-pointer">
+            <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-active-bb-blue yot-cursor-pointer">
                 <span style="font-size: 36px; font-weight: bolder;">Tarpaulin</span>
-                <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRight"></i></span>
+                <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRight"></i></span>
             </div>
-            <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                <a href="ready-to-print" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
-                <a href="make-layout" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
+            <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c">
+                <a href="user-ready-to-print" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
+                <a href="user-make-layout" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
             </div>
         </div>
         <div class="yot-mb-16">

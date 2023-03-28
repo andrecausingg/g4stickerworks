@@ -13,7 +13,7 @@
     <title>User Products</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/asset/images/g4works-favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
 
     <!-- Css -->
     <link rel="stylesheet" href="./asset/scss/style.css">
