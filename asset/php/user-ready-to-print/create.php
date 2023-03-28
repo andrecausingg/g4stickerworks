@@ -67,7 +67,7 @@
                     if($imageError === 0){
                         if($imageSize < 50000000){
                             $imageNameNew = uniqid('', true).".".$imageActualExt;
-                            $imageDestination = '../../images/orders/'. $imageNameNew;
+                            $imageDestination = '../../images/all-orders/'. $imageNameNew;
                             move_uploaded_file($imageTemp, $imageDestination);
         
                             // Use prepared statement to prevent SQL injection

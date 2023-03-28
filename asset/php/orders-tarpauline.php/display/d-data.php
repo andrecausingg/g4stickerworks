@@ -42,7 +42,7 @@
                         <td>'.$split_order.'</td>
                         <td>'.$row["width"].'</td>
                         <td>'.$row["height"].'</td>
-                        <td><img src="../../../../../g4stickerworks/asset/images/orders/'.$row["image"].'" alt="" height="50"></td>
+                        <td><img src="../../../../../g4stickerworks/asset/images/all-orders/'.$row["image"].'" alt="" height="50"></td>
                         <td>'.$split_message.'</td>
                         <td>'.$row["quantity"].'</td>
                         <td>'.$row["total_price"].'</td>

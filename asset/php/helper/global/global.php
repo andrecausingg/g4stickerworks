@@ -2,13 +2,17 @@
     // Unique Order Id
     class classUniqueOrderId{
         public function uniqueOrderId(){
+            // Set the time zone to Philippine time
+            date_default_timezone_set('Asia/Manila');
+
             // Set the prefix and date format
             $prefix = 'G4';
-            $date_format = 'YmdHis';
-            // Generate the date code
+            // Set the desired format for the date
+            $date_format = 'Ymd h:i:s a T';
+            // Generate the date and time code
             $date_code = date($date_format);
             // Generate a random string
-            $random_str = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 8);
+            $random_str = substr(str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 5);
             // Generate a unique ID
             $unique_id = mt_rand(100000, 999999);
             // Concatenate the order number

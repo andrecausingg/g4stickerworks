@@ -69,8 +69,8 @@
     </header>
 
     <!-- Overlay Mobile -->
-    <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1 overlayLeftSideBar" style="display:none"></div>
-    <div id="overlayMobileIndex" class="yot-w-75 yot-flex yot-flex-fd-c  yot-vh-100 yot-bg-white yot-overlay-left yot-pa-16 overlayLeftSideBar" style="display:none">
+    <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1 overlayLeftSideBar z-index-1" style="display:none"></div>
+    <div id="overlayMobileIndex" class="yot-w-75 yot-flex yot-flex-fd-c  yot-vh-100 yot-bg-white yot-overlay-left yot-pa-16 z-index-1 overlayLeftSideBar" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin: 8px 0px 16px 0px;">
             <a href="user-product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Products</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
@@ -108,16 +108,19 @@
         <div class="yot-col-33-33 yot-pa-8 g-main-left">
             <div class="yot-mb-4"></div>
             <!-- Title-->
-            <div class="yot-row yot-flex-ai-c-jc-sb yot-container-w-tablet-size-up" style="margin: 0px auto 8px;">
-                <div>
-                    <h1 class="yot-resize-font-64">My Cart</h1>
-                    <h1>Total Price: 135.00</h3>
+            <div class="yot-row yot-flex-ai-c-jc-sb yot-container-w-tablet-size-up yot-pa-4" style="margin: 0px auto 8px;">
+                <div class="yot-flex yot-flex-fd-c-ai-c-jc-c" style="margin:auto">
+                    <h1>Total Price:</h1>
+                    <div style="font-size:40px; font-weight:bolder;">
+                        <i class="fa-solid fa-peso-sign"></i><span id="displayTotalPrice"></span>
+                    </div>
                     <button class="yot-btn-blue1">Pay Now</button>
                 </div>
             </div>
         </div>
 
-        <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
+        <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart">
+        </div>
     </div>
 
     <div class="yot-mt-8"></div>

@@ -38,6 +38,7 @@
             $conn = $classConnDB->conn();
             $dateTimeVarChar = $classDateTime->getDateTime();
             $role = "admin";
+            $status = "activated";
         
             // Prepare a statement to prevent mysqli injection
             $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE email = ?");
@@ -53,11 +54,11 @@
                 echo "emailExist";
             }else{
                 // prepare the SQL statement with placeholders for the email, password, datetime varchar, and datetime
-                $sql = "INSERT INTO user_tbl (email, password, role, created_at_varchar, created_at) VALUES (?, ?, ?, ?, NOW())";
+                $sql = "INSERT INTO user_tbl (email, password, status, role, created_at_varchar, created_at) VALUES (?, ?, ?, ?, NOW())";
                 // create a prepared statement
                 $stmt = $conn->prepare($sql);
                 // bind the parameters to the placeholders
-                $stmt->bind_param("ssss", $this->email, $this->password, $role, $dateTimeVarChar);
+                $stmt->bind_param("sssss", $this->email, $this->password, $status, $role, $dateTimeVarChar);
                 // execute the statement
                 if($stmt->execute()){
                     // close the prepared statement and database connection

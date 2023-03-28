@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2023 at 02:06 PM
+-- Generation Time: Mar 28, 2023 at 03:20 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -329,6 +329,57 @@ INSERT INTO `home_hero_section_tbl` (`home_hero_section_id`, `title`, `sub_title
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `order_ready_to_print_tbl`
+--
+
+CREATE TABLE `order_ready_to_print_tbl` (
+  `order_ready_to_print_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id_ready_to_print` varchar(255) NOT NULL,
+  `width` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `total_price` decimal(65,2) NOT NULL,
+  `page` varchar(20) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `receipt` varchar(255) NOT NULL,
+  `payment` varchar(20) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_temp_plate_tbl`
+--
+
+CREATE TABLE `order_temp_plate_tbl` (
+  `order_temp_plate_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id_temp_plate` varchar(255) NOT NULL,
+  `type_of_plate` varchar(50) NOT NULL,
+  `format` varchar(20) NOT NULL,
+  `mv_file` varchar(100) NOT NULL,
+  `register_num` varchar(100) NOT NULL,
+  `region` varchar(100) NOT NULL,
+  `dealer` varchar(100) NOT NULL,
+  `status_plate` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `total_price` decimal(65,2) NOT NULL,
+  `page` varchar(20) NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `receipt` varchar(255) NOT NULL,
+  `payment` varchar(20) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `services_page_tbl`
 --
 
@@ -415,13 +466,7 @@ CREATE TABLE `user_tbl` (
 --
 
 INSERT INTO `user_tbl` (`user_id`, `email`, `password`, `status`, `activate_code`, `activate_key`, `update_pass_key`, `role`, `first_name`, `last_name`, `phone_number`, `created_at_varchar`, `created_at`) VALUES
-(1, 'aprhokwmdzvyczt@valanides.com', 'aprhokwmdzvyczt@valanides.com', NULL, 114425, '', '', 'user', '', '', '', 'Mar 20, 2023 06:41:00 PM', '2023-03-20 18:41:00'),
-(2, 'lvncjfh@valanides.com', 'lvncjfh@valanides.com', NULL, 205624, '', '', 'user', '', '', '', 'Mar 20, 2023 06:41:55 PM', '2023-03-20 18:41:55'),
-(3, 'vcedwcnictyvkbt@valanides.com', 'vcedwcnictyvkbt@valanides.com', NULL, 595266, '', '', 'user', '', '', '', 'Mar 20, 2023 06:44:04 PM', '2023-03-20 18:44:04'),
-(4, 'goavugc@valanides.com', 'goavugc@valanides.com', 'activated', 709717, '', '', 'user', '', '', '', 'Mar 20, 2023 06:45:10 PM', '2023-03-20 18:45:10'),
-(5, 'ynqhnscvpt@valanides.com', 'ynqhnscvpt@valanides.com', 'activated', 142297, '', '', 'user', '', '', '', 'Mar 20, 2023 06:49:44 PM', '2023-03-20 18:49:44'),
-(6, 'llxalaj@valanides.com', 'llxalaj@valanides.com', 'activated', 458217, '', '', 'user', '', '', '', 'Mar 20, 2023 06:53:05 PM', '2023-03-20 18:53:05'),
-(7, 'xdjcamphmex@valanides.com', 'xdjcamphmex@valanides.com', 'activated', 945493, '', 'iaztsnreulqkwmycvdhx', 'user', '', '', '', 'Mar 20, 2023 06:53:31 PM', '2023-03-20 18:53:31');
+(1, 'mqmhdghe@valanides.com', 'mqmhdghe@valanides.com', 'activated', 541584, '', '', 'user', 'red', 'grey', '09123456789', 'Mar 28, 2023 09:08:03 PM', '2023-03-28 21:08:03');
 
 --
 -- Indexes for dumped tables
@@ -468,6 +513,18 @@ ALTER TABLE `gallery_page_tbl`
 --
 ALTER TABLE `home_hero_section_tbl`
   ADD PRIMARY KEY (`home_hero_section_id`);
+
+--
+-- Indexes for table `order_ready_to_print_tbl`
+--
+ALTER TABLE `order_ready_to_print_tbl`
+  ADD PRIMARY KEY (`order_ready_to_print_id`);
+
+--
+-- Indexes for table `order_temp_plate_tbl`
+--
+ALTER TABLE `order_temp_plate_tbl`
+  ADD PRIMARY KEY (`order_temp_plate_id`);
 
 --
 -- Indexes for table `services_page_tbl`
@@ -546,6 +603,18 @@ ALTER TABLE `home_hero_section_tbl`
   MODIFY `home_hero_section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `order_ready_to_print_tbl`
+--
+ALTER TABLE `order_ready_to_print_tbl`
+  MODIFY `order_ready_to_print_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `order_temp_plate_tbl`
+--
+ALTER TABLE `order_temp_plate_tbl`
+  MODIFY `order_temp_plate_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `services_page_tbl`
 --
 ALTER TABLE `services_page_tbl`
@@ -573,7 +642,7 @@ ALTER TABLE `temp_plate_tbl`
 -- AUTO_INCREMENT for table `user_tbl`
 --
 ALTER TABLE `user_tbl`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
