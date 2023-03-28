@@ -112,22 +112,33 @@
                     <h2 class="yot-tc-blue1">Log In</h2>
                     <i id="closeLogInIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
+
+                <!-- Error Email-->
+                <div class="yot-text-center yot-mb-8">
+                    <span class="yot-tc-red yot-text-end yot-text-fs-l" id="accountNotFoundErr" style="display: none;">Account not found.<br></span> 
+                    <span class="yot-tc-red yot-text-end yot-text-fs-l" id="emailOrPassIncorrectErr" style="display: none;">Password is incorrect.<br></span>
+                </div>
+
                 <!-- Email -->
-                <div class="yot-form-group">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="emailLogIn">Email</label>
-                    <input class="yot-form-input" type="email" name="emailLogIn" id="emailLogIn">
+                <div class="yot-form-group yot-form-group-container">
+                    <input class="yot-form-input" type="email" name="emailLogIn" id="emailLogIn" style="padding-left:38px;">
+                    <i class="fa-solid fa-envelope yot-form-group-icon-left yot-text-fs-xxl"></i>
                 </div>
+
                 <!-- Password -->
-                <div class="yot-form-group">
-                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="password">Password</label>
-                    <input class="yot-form-input" type="password" name="passwordLogIn" id="passwordLogIn">
+                <div class="yot-form-group yot-form-group-container">
+                    <input class="yot-form-input" type="password" name="passwordLogIn" id="passwordLogIn" style="padding:14px 38px;">
+                    <i class="fa-solid fa-lock yot-form-group-icon-left yot-text-fs-xxl"></i>
+                    <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showPasswordLogIn"></i>
                 </div>
 
+                <!-- Nav Form -->
                 <div class="yot-mb-16 yot-flex yot-flex-ai-c-jc-sb">
-                    <a href="#">Forgot Password?</a>
-                    <span class="yot-cursor-pointer" id="signUpSpan">Sign Up</span>
+                    <span class="yot-cursor-pointer forgotPasswordSpan">Forgot Password</span>
+                    <span class="yot-cursor-pointer signUpSpan">Sign Up</span>
                 </div>
 
+                <!-- Submit -->
                 <div class="yot-text-center">
                     <input class="yot-btn-blue1" type="submit" value="Log In">
                 </div>
@@ -143,31 +154,125 @@
                     <h2 class="yot-tc-blue1">Sign Up</h2>
                     <i id="closeSignUpIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                 </div>
-                <!-- Email -->
-                <div class="yot-form-group">
+
+                <!-- Password and Confirm Password Error -->
+                <div class="yot-text-center yot-mtb-8">
+                    <span class="yot-tc-red yot-text-end" id="passwordAndConfirmPasswordErr" style="display: none;">The password and confirm password not match!<br></span> 
+                </div>
+
+                <!-- Email error -->
+                <div class="yot-flex yot-flex-ai-c-jc-sb">
                     <label class="yot-text-fs-xl" style="font-weight: bolder;" for="emailSignUp">Email</label>
-                    <input class="yot-form-input" type="email" name="emailSignUp" id="emailSignUp">
+                    <!-- Error Email-->
+                    <div class="yot-text-end">
+                        <span class="yot-tc-red yot-text-end" id="validateEmailErrSignUp" style="display: none;">Invalid email.<br></span> 
+                        <span class="yot-tc-red yot-text-end" id="domainEmailErrSignUp" style="display: none;">Email is not from a trusted domain.<br>Allowed only are "gmail.com", "yahoo.com", "outlook.com", "aol.com", "triots.com"<br></span> 
+                        <span class="yot-tc-red yot-text-end" id="existEmailErrSignUp" style="display: none;">Email is already exist.<br></span>
+                    </div>
                 </div>
-                <!-- Password -->
-                <div class="yot-form-group">
+
+                <!-- Email -->
+                <div class="yot-form-group yot-form-group-container">
+                    <input class="yot-form-input" type="email" name="emailSignUp" id="emailSignUp" style="padding-left:38px;">
+                    <i class="fa-solid fa-envelope yot-form-group-icon-left yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Password Error -->
+                <div class="yot-flex yot-flex-ai-c-jc-sb">
                     <label class="yot-text-fs-xl" style="font-weight: bolder;" for="passwordSignUp">Password</label>
-                    <input class="yot-form-input" type="password" name="passwordSignUp" id="passwordSignUp">
+                    <!-- Error Password-->
+                    <div class="yot-text-end">
+                        <span class="yot-tc-red yot-text-end" id="less8CharPassErrSignUp" style="display: none;">The password must be at least 8 characters long.<br></span> 
+                    </div>
                 </div>
-                <!-- Confirm Password -->
-                <div class="yot-form-group">
+
+                <!-- Password -->
+                <div class="yot-form-group yot-form-group-container">
+                    <input class="yot-form-input" type="password" name="passwordSignUp" id="passwordSignUp" style="padding:14px 38px;">
+                    <i class="fa-solid fa-lock yot-form-group-icon-left yot-text-fs-xxl"></i>
+                    <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showPasswordSignUp"></i>
+                </div>
+
+                <!-- Confirm Password Err -->
+                <div class="yot-flex yot-flex-ai-c-jc-sb    ">
                     <label class="yot-text-fs-xl" style="font-weight: bolder;" for="confirmPasswordSignUp">Confirm Password</label>
-                    <input class="yot-form-input" type="password" name="confirmPasswordSignUp" id="confirmPasswordSignUp">
+                    <!-- Error Password-->
+                    <div class="yot-text-end">
+                        <span class="yot-tc-red yot-text-end" id="less8CharConfirmPassErrSignUp" style="display: none;">The confirm password must be at least 8 characters long.<br></span> 
+                    </div>
                 </div>
 
+                <!-- Confirm Password -->
+                <div class="yot-form-group yot-form-group-container">
+                    <input class="yot-form-input" type="password" name="confirmPasswordSignUp" id="confirmPasswordSignUp" style="padding:14px 38px;">
+                    <i class="fa-solid fa-lock yot-form-group-icon-left yot-text-fs-xxl"></i>
+                    <i class="fa-solid fa-eye-slash yot-form-group-icon-right yot-text-fs-xxl yot-active-icon yot-z-index-1" id="showConfirmPasswordSignUp"></i>
+                </div>
+
+                <!-- Nav Form -->   
                 <div class="yot-mb-16 yot-flex yot-flex-ai-c-jc-sb">
-                    <a href="#">Forgot Password?</a>
-                    <span class="yot-cursor-pointer" id="logInSpan">Log In</span>
+                    <span class="yot-cursor-pointer forgotPasswordSpan">Forgot Password</span>
+                    <span class="yot-cursor-pointer logInSpan">Log In</span>
                 </div>
 
-                <div class="yot-text-center">
+                <!-- Submit -->
+                <div class="yot-text-center" id="submitSignUpBtn">
                     <input class="yot-btn-blue1" type="submit" value="Sign Up">
                 </div>
             </form>
+
+            <!-- Disable btn -->
+            <div class="yot-flex yot-flex-fd-c-ai-c" id="submitDisSignUpBtn" style="display: none;">
+                <button class="yot-btn-dis yot-flex yot-flex-ai-c">Signing Up <span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forgot Password -->
+    <div id="forgotPasswordContainer" class="yot-overlay-mid-container" style="display: none;">
+        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+            <form id="forgotPasswordForm">
+                <div class="yot-mb-16 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 class="yot-tc-blue1">Forgot Password</h2>
+                    <i id="closeForgotPassword" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <div class="yot-mb-8 yot-text-center">
+                    <span class="yot-tc-green yot-text-fs-l" id="sentVerificationKeyAlert" style="display: none;">Verification Key Link has been sent<br></span> 
+                </div>
+
+                <!-- Email error -->
+                <div class="yot-flex yot-flex-ai-c-jc-sb">
+                    <label class="yot-text-fs-xl" style="font-weight: bolder;" for="emailForgotPassword">Email</label>
+                    <!-- Error Email-->
+                    <div class="yot-text-end">
+                        <span class="yot-tc-red yot-text-end" id="emailDoesntExist" style="display: none;">Email doesn't Exist.<br></span>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="yot-form-group yot-form-group-container">
+                    <input class="yot-form-input" type="email" name="emailForgotPassword" id="emailForgotPassword" style="padding-left:38px;">
+                    <i class="fa-solid fa-envelope yot-form-group-icon-left yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Nav Form -->
+                <div class="yot-mb-16 yot-flex yot-flex-ai-c-jc-sb">
+                    <span class="yot-cursor-pointer logInSpan">Log In</span>
+                    <span class="yot-cursor-pointer signUpSpan">Sign Up</span>
+                </div>
+
+                <!-- Submit -->
+                <div class="yot-text-center" id="forgotPasswordSubmitContainer">
+                    <input class="yot-btn-blue1" type="submit" value="Submit">
+                </div>
+            </form>
+
+            <!-- Disable btn -->
+            <div class="yot-flex yot-flex-fd-c-ai-c" id="forgotPasswordDisSubmitContainer" style="display: none;">
+                <button class="yot-btn-dis yot-flex yot-flex-ai-c">Submitting<span class="yot-mlr-4"></span> <div class="yot-loader-blue1"></div></button>
+            </div>
+
         </div>
     </div>
 
@@ -313,9 +418,12 @@
     </footer>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/login/login.js"></script>
+    <script src="./asset/js/all/display-global/d-global-data.js"></script>
+    <script src="./asset/js/index/index.js"></script>
+    <script src="./asset/js/index/signup.js"></script>
+    <script src="./asset/js/index/login.js"></script>
+    <script src="./asset/js/index/forgot-password.js"></script>
 
     <script src="./asset/js/decals/all-global/decals-containers.js"></script>
-    <script src="./asset/js/all/display-global/d-global-data.js"></script>
 </body>
 </html>
