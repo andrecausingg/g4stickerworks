@@ -87,10 +87,10 @@
             <a href="services" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Services</a>
         </div>
         <div class="yot-mb-16">
-            <a href="contact" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
+            <a href="contact-us" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Contact Us</a>
         </div>
         <div class="yot-mb-16">
-            <a href="about" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">About Us</a>
+            <a href="about-us" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">About Us</a>
         </div>
         <div class="yot-mb-16">
             <a href="gallery" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Gallery</a>
