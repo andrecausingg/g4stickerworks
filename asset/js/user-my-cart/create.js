@@ -2,11 +2,6 @@ $(document).ready(function(){
     var idSticker = localStorage.getItem("orderMainIdSticker");
     var idTarpaulin = localStorage.getItem("orderMainIdTarpaulin");
     var idTemporaryPlate = localStorage.getItem("orderMainIdTemporaryPlate");
-
-    $(document).on("click", ".cancelOrder", function() {
-        const id = $(this).data("id");
-        console.log(id);
-    });
     
     console.log(idSticker);
     console.log(idTarpaulin);

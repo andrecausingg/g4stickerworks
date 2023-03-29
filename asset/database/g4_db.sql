@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 03:20 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Mar 29, 2023 at 11:42 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,7 +33,7 @@ CREATE TABLE `about_us_page_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `about_us_page_tbl`
@@ -59,7 +59,7 @@ CREATE TABLE `all_footer_tbl` (
   `address` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `all_footer_tbl`
@@ -85,7 +85,7 @@ CREATE TABLE `contact_us_page_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `contact_us_page_tbl`
@@ -106,7 +106,7 @@ CREATE TABLE `cut_file_tbl` (
   `job_no` int(11) NOT NULL,
   `create_at_varchar` varchar(255) NOT NULL,
   `create_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `cut_file_tbl`
@@ -264,7 +264,7 @@ CREATE TABLE `decals_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -278,7 +278,7 @@ CREATE TABLE `gallery_page_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `gallery_page_tbl`
@@ -315,7 +315,7 @@ CREATE TABLE `home_hero_section_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `home_hero_section_tbl`
@@ -323,8 +323,7 @@ CREATE TABLE `home_hero_section_tbl` (
 
 INSERT INTO `home_hero_section_tbl` (`home_hero_section_id`, `title`, `sub_title`, `image`, `created_at_varchar`, `created_at`) VALUES
 (1, 'WE DESIGN,PRINT and INSTALL', '', '', 'Mar 09, 2023 08:57:12 PM', '2023-03-09 20:57:12'),
-(2, '', 'Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins', '', 'Mar 09, 2023 08:57:23 PM', '2023-03-09 20:57:23'),
-(3, '', '', '6409d7be75b312.93406830.svg', 'Mar 09, 2023 08:57:34 PM', '2023-03-09 20:57:34');
+(2, '', 'Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins', '', 'Mar 09, 2023 08:57:23 PM', '2023-03-09 20:57:23');
 
 -- --------------------------------------------------------
 
@@ -344,11 +343,38 @@ CREATE TABLE `order_ready_to_print_tbl` (
   `total_price` decimal(65,2) NOT NULL,
   `page` varchar(20) NOT NULL,
   `status` varchar(20) NOT NULL,
+  `reference_num` varchar(255) NOT NULL,
   `receipt` varchar(255) NOT NULL,
   `payment` varchar(20) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_sticker_tbl`
+--
+
+CREATE TABLE `order_sticker_tbl` (
+  `order_sticker_main_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id_sticker` varchar(255) NOT NULL,
+  `width` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `cover` varchar(20) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `total_price` decimal(65,2) NOT NULL,
+  `page` varchar(20) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `reference_num` varchar(255) NOT NULL,
+  `receipt` varchar(255) NOT NULL,
+  `payment` varchar(20) NOT NULL,
+  `created_at_varchar` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -371,11 +397,12 @@ CREATE TABLE `order_temp_plate_tbl` (
   `total_price` decimal(65,2) NOT NULL,
   `page` varchar(20) NOT NULL,
   `status` varchar(50) NOT NULL,
+  `reference_num` varchar(255) NOT NULL,
   `receipt` varchar(255) NOT NULL,
   `payment` varchar(20) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -389,7 +416,7 @@ CREATE TABLE `services_page_tbl` (
   `content` text NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `services_page_tbl`
@@ -410,7 +437,7 @@ CREATE TABLE `sticker_label_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -423,7 +450,7 @@ CREATE TABLE `tarpauline_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -437,7 +464,7 @@ CREATE TABLE `temp_plate_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -459,7 +486,7 @@ CREATE TABLE `user_tbl` (
   `phone_number` varchar(15) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_tbl`
@@ -519,6 +546,12 @@ ALTER TABLE `home_hero_section_tbl`
 --
 ALTER TABLE `order_ready_to_print_tbl`
   ADD PRIMARY KEY (`order_ready_to_print_id`);
+
+--
+-- Indexes for table `order_sticker_tbl`
+--
+ALTER TABLE `order_sticker_tbl`
+  ADD PRIMARY KEY (`order_sticker_main_id`);
 
 --
 -- Indexes for table `order_temp_plate_tbl`
@@ -607,6 +640,12 @@ ALTER TABLE `home_hero_section_tbl`
 --
 ALTER TABLE `order_ready_to_print_tbl`
   MODIFY `order_ready_to_print_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `order_sticker_tbl`
+--
+ALTER TABLE `order_sticker_tbl`
+  MODIFY `order_sticker_main_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order_temp_plate_tbl`

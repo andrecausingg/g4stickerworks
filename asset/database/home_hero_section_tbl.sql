@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2023 at 03:21 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Mar 29, 2023 at 11:42 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `home_hero_section_tbl` (
   `image` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `home_hero_section_tbl`
@@ -42,8 +42,7 @@ CREATE TABLE `home_hero_section_tbl` (
 
 INSERT INTO `home_hero_section_tbl` (`home_hero_section_id`, `title`, `sub_title`, `image`, `created_at_varchar`, `created_at`) VALUES
 (1, 'WE DESIGN,PRINT and INSTALL', '', '', 'Mar 09, 2023 08:57:12 PM', '2023-03-09 20:57:12'),
-(2, '', 'Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins', '', 'Mar 09, 2023 08:57:23 PM', '2023-03-09 20:57:23'),
-(3, '', '', '6409d7be75b312.93406830.svg', 'Mar 09, 2023 08:57:34 PM', '2023-03-09 20:57:34');
+(2, '', 'Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins', '', 'Mar 09, 2023 08:57:23 PM', '2023-03-09 20:57:23');
 
 --
 -- Indexes for dumped tables

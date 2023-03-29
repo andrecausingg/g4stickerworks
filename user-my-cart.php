@@ -169,11 +169,20 @@
         </div>
     </div>
 
+    <!-- Delete Container-->
+    <div id="successAlertDelete" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Cancel:</h3>
+            <i id="successAlertCloseIconDelete" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The Product was successfully cancel.</p>
+    </div>
 
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
     <script src="./asset/js/user-my-cart/display/d-data.js"></script>
     <script src="./asset/js/user-my-cart/create.js"></script>
+    <script src="./asset/js/user-my-cart/delete.js"></script>
 </body>
 </html>

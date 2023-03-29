@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2023 at 04:36 AM
+-- Generation Time: Mar 29, 2023 at 11:42 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `order_sticker_tbl` (
-  `order_sticker_id` int(11) NOT NULL,
+  `order_sticker_main_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `order_id_sticker` varchar(255) NOT NULL,
   `width` int(11) NOT NULL,
@@ -40,6 +40,7 @@ CREATE TABLE `order_sticker_tbl` (
   `total_price` decimal(65,2) NOT NULL,
   `page` varchar(20) NOT NULL,
   `status` varchar(20) NOT NULL,
+  `reference_num` varchar(255) NOT NULL,
   `receipt` varchar(255) NOT NULL,
   `payment` varchar(20) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
@@ -54,7 +55,7 @@ CREATE TABLE `order_sticker_tbl` (
 -- Indexes for table `order_sticker_tbl`
 --
 ALTER TABLE `order_sticker_tbl`
-  ADD PRIMARY KEY (`order_sticker_id`);
+  ADD PRIMARY KEY (`order_sticker_main_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -64,7 +65,7 @@ ALTER TABLE `order_sticker_tbl`
 -- AUTO_INCREMENT for table `order_sticker_tbl`
 --
 ALTER TABLE `order_sticker_tbl`
-  MODIFY `order_sticker_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_sticker_main_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
