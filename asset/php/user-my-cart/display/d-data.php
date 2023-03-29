@@ -17,6 +17,14 @@
             $page = 'CART';
             $status = 'PENDING';
 
+            $sticker = "sticker";
+            $tarpaulin = "tarpaulin";
+            $tempOne = "tempOne";
+            $tempTwo = "tempTwo";
+            $tempThree = "tempThree";
+            $tempFour = "tempFour";
+
+
             // DISPLAY Sticker
             $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_sticker_main_id DESC");
             if(mysqli_num_rows($fetch_data) == 0){
@@ -90,7 +98,7 @@
                         </div>
 
                         <div class="yot-text-center">
-                            <button class="yot-btn-blue1">Cancel</button>
+                            <button class="yot-btn-blue1 cancelOrder" data-id="'.$sticker."-".$row["order_sticker_main_id"].'" >Cancel</button>
                         </div>
                     </div>
                     ';
@@ -163,7 +171,7 @@
                         </div>
 
                         <div class="yot-text-center">
-                            <button class="yot-btn-blue1">Cancel</button>
+                            <button class="yot-btn-blue1 cancelOrder" data-id="'.$tarpaulin."-".$row["order_ready_to_print_id"].'" >Cancel</button>
                         </div>
                     </div>
                     ';
@@ -258,7 +266,7 @@
                                 </div>
 
                                 <div class="yot-text-center">
-                                    <button class="yot-btn-blue1">Cancel</button>
+                                    <button class="yot-btn-blue1 cancelOrder" data-id="'.$tarpaulin."-".$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -335,7 +343,7 @@
                                 </div>
 
                                 <div class="yot-text-center">
-                                    <button class="yot-btn-blue1">Cancel</button>
+                                    <button class="yot-btn-blue1 cancelOrder" data-id="'.$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -405,7 +413,7 @@
                                 </div>
 
                                 <div class="yot-text-center">
-                                    <button class="yot-btn-blue1">Cancel</button>
+                                    <button class="yot-btn-blue1 cancelOrder" data-id="'.$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -475,7 +483,7 @@
                                 </div>
 
                                 <div class="yot-text-center">
-                                    <button class="yot-btn-blue1">Cancel</button>
+                                    <button class="yot-btn-blue1 cancelOrder" data-id="'.$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -493,8 +501,6 @@
                     </div>
                 ';
             }
-            
-
         }
     }
 ?>
