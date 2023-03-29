@@ -163,4 +163,12 @@ $(document).ready(function(){
         }
         $("#totalPriceFormatFour").html(totalPrice);
     }
+
+    // Allow Number Quantity
+    $("#quantityFormatFour").on("input", function() {
+        var regex = /[^0-9]/g;
+        if ($(this).val().match(regex)) {
+            $(this).val($(this).val().replace(regex, ''));
+        }
+    });
 });

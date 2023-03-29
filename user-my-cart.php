@@ -107,6 +107,11 @@
     <div class="yot-content-space-margin-t-120 yot-container g-main-container">
         <div class="yot-col-33-33 yot-pa-8 g-main-left">
             <div class="yot-mb-4"></div>
+            <!-- Order I.D -->
+            <div id="allOrdersIdSticker"></div>
+            <div id="allOrdersIdTarpaulin"></div>
+            <div id="allOrdersIdTemporaryPlate"></div>
+
             <!-- Title-->
             <div class="yot-row yot-flex-ai-c-jc-sb yot-container-w-tablet-size-up yot-pa-4" style="margin: 0px auto 8px;">
                 <div class="yot-flex yot-flex-fd-c-ai-c-jc-c" style="margin:auto">
@@ -114,19 +119,61 @@
                     <div style="font-size:40px; font-weight:bolder;">
                         <i class="fa-solid fa-peso-sign"></i><span id="displayTotalPrice"></span>
                     </div>
-                    <button class="yot-btn-blue1">Pay Now</button>
+                    <div id="payNowBtn">
+                        <button class="yot-btn-blue1">Pay Now</button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart">
+        <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
+    </div>
+
+
+    <!-- Create Update Delete Sub Title Container -->
+    <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+        <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 id="titleCaption" class="yot-tc-blue1">Payment</h2>
+                    <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Create Form Container -->
+                <div id="createDisplayContainer">
+                    <form id="createPaymentForm">
+                        <!-- Reference No -->
+                        <div class="yot-form-group">
+                            <label for="referenceNo" class="yot-text-fs-l"><b>Reference No.</b></label>
+                            <input class="yot-form-input" type="text" name="" id="">
+                        </div>
+
+                        <div class="yot-form-group">
+                            <label for="uploadReceipt" class="yot-text-fs-l"><b>Upload Receipt</b></label>
+                            <input class="yot-form-input" type="file" name="" id="">
+                        </div>
+
+                        <div class="yot-text-center">
+                            <input class="yot-btn-blue1" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainer" style="display:none"></div>
+
+                <!-- Delete Container -->
+                <div id="deleteDisplayContainer" style="display:none"></div>
+            </div>
         </div>
     </div>
 
-    <div class="yot-mt-8"></div>
+
 
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
     <script src="./asset/js/user-my-cart/display/d-data.js"></script>
+    <script src="./asset/js/user-my-cart/create.js"></script>
 </body>
 </html>

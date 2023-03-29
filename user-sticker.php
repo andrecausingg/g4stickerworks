@@ -115,94 +115,110 @@
                 <!-- Upload Image -->
                 <div class="yot-col-50 yot-mb-16">
                     <!-- Display Image -->
-                    <div id="displayImageSticker" class="yot-bg-white image-container-RTP yot-mb-16">
-                    </div>
-                    <div class="yot-text-center">
-                        <button id="uploadImageButton" class="yot-btn-blue1">Upload Image</button>
-                    </div>
+                    <div id="displayImageSticker" class="yot-bg-white image-container-RTP yot-mb-16"></div>
+                    <!-- Form -->
+                    <form id="createStickerForm">
+                        <div class="yot-w-75" style="margin: auto;">
+                            <div class="yot-flex yot-flex-fd-c-ai-c-jc-c">
+                                <label for="image"><h4>Upload Image</h4></label>
+                                <span class="yot-tc-red" id="emptyErrImage" style="display: none;">Upload Image field is required.<br></span>
+                            </div>
+                            <input class="yot-form-input" type="file" id="imageSticker" name="imageSticker">
+                        </div>
                 </div>
 
                 <div class="yot-col-50">
-                    <!-- Widht and Height -->
-                    <div class="yot-flex yot-flex-ai-c">
-                        <div class="yot-form-group yot-w-50">
+                        <!-- Widht and Height -->
+                        <div class="yot-flex yot-flex-ai-c">
+                            <!-- Width -->
+                            <div class="yot-form-group yot-w-50">
                                 <!-- Label and Err Width -->
                                 <div class="yot-flex yot-flex-fd-c">
                                     <label for="width"><h4>Width(Inch)</h4></label>
                                     <span class="yot-tc-red" id="emptyErrWidth" style="display: none;">Width field is required.<br></span>
                                 </div>
-                            <input class="yot-form-input" type="text" name="width" id="width">
+                                <input class="yot-form-input" type="text" name="width" id="width">
+                                <!-- Proportion Width -->
+                                <!-- <div class="yot-flex yot-flex-ai-c-jc-s">
+                                    <input type="checkbox" id="widthProportion" name="widthProportion" value="widthProportion" value="Width Proportion">
+                                    <label for="widthProportion"><h5>Proportion</h5></label>
+                                </div> -->
+                            </div>
 
-                            <!-- Proportion Width -->
-                            <div class="yot-flex yot-flex-ai-c-jc-s" style="display:none">
-                                <input type="checkbox" id="widthProportion" name="widthProportion" value="widthProportion" value="Width Proportion">
-                                <label for="widthProportion"><h5>Proportion</h5></label>
+                            <h4 class="yot-ma-16" style="margin-top: 34px;">X</h4>
+
+                            <!-- Height -->
+                            <div class="yot-form-group yot-w-50">
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label for="height"><h4>Height(Inch)</h4></label>
+                                    <span class="yot-tc-red" id="emptyErrHeight" style="display: none;">Height field is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="height" id="height">
+
+                                <!-- Proportion Height -->
+                                <!-- <div class="yot-flex yot-flex-ai-c-jc-s">
+                                    <input type="checkbox" id="heightProportion" name="heightProportion" value="Height Proportion">
+                                    <label for="heightProportion"><h5>Proportion</h5></label>
+                                </div> -->
                             </div>
                         </div>
 
-                        <h4 class="yot-ma-16" style="margin-top: 34px;">X</h4>
-
-                        <div class="yot-form-group yot-w-50">
-                            <!-- Label and Err Height -->
-                            <div class="yot-flex yot-flex-fd-c">
-                                <label for="height"><h4>Height(Inch)</h4></label>
-                                <span class="yot-tc-red" id="emptyErrHeight" style="display: none;">Height field is required.<br></span>
+                        <!-- Quantity and Cover -->
+                        <div class="yot-flex yot-flex-ai-c">
+                            <div class="yot-form-group yot-w-50">
+                                <!-- Label and Err Quantity -->
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label for="quantity"><h4>Quantity</h4></label>
+                                    <span class="yot-tc-red" id="emptyErrQuantity" style="display: none;">Quantity field is required.<br></span>
+                                </div>
+                                <input class="yot-form-input" type="text" name="quantity" id="quantity">
                             </div>
-                            <input class="yot-form-input" type="text" name="height" id="height">
-                            <!-- Proportion Height -->
-                            <div class="yot-flex yot-flex-ai-c-jc-s" style="display:none">
-                                <input type="checkbox" id="heightProportion" name="heightProportion" value="Height Proportion">
-                                <label for="heightProportion"><h5>Proportion</h5></label>
+                            <span class="yot-mlr-8"></span>
+                            <div class="yot-form-group yot-w-50">
+                                <!-- Label and Err Cover -->
+                                <div class="yot-flex yot-flex-fd-c">
+                                    <label for="cover"><h4>Cover</h4></label>
+                                    <span class="yot-tc-red" id="emptyErrCover" style="display: none;">Cover field is required.<br></span>
+                                </div>
+                                <select class="yot-form-input" name="cover" id="cover">
+                                    <option value="">- Select Cover -</option>
+                                    <option value="YES">Lamanited</option>
+                                    <option value="NO">Not Lamanited</option>
+                                </select>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Quantity -->
-                    <div class="yot-flex yot-flex-ai-c">
-                        <div class="yot-form-group yot-w-50">
-                            <!-- Label and Err Quantity -->
-                            <div class="yot-flex yot-flex-fd-c">
-                                <label for="quantity"><h4>Quantity</h4></label>
-                                <span class="yot-tc-red" id="emptyErrQuantity" style="display: none;">Quantity field is required.<br></span>
+                        <div class="yot-form-group">
+                            <!-- Price -->
+                            <div class="yot-text-center">
+                                <h2>Total Price</h2>
+                                <h2 id="totalPrice">0.00</h2>
                             </div>
-                            <input class="yot-form-input" type="text" name="quantity" id="quantity">
                         </div>
-                        <span class="yot-mlr-8"></span>
-                        <div class="yot-form-group yot-w-50">
-                            <!-- Label and Err Cover -->
-                            <div class="yot-flex yot-flex-fd-c">
-                                <label for="cover"><h4>Cover</h4></label>
-                                <span class="yot-tc-red" id="emptyErrCover" style="display: none;">Cover field is required.<br></span>
-                            </div>
-                            <select class="yot-form-input" name="cover" id="cover">
-                                <option value="">- Select Cover -</option>
-                                <option value="yes">Lamanited</option>
-                                <option value="no">Not Lamanited</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div class="yot-form-group">
-                        <!-- Price -->
+                        <!-- Message -->
+                        <div class="yot-form-group">
+                            <label for="quantity"><h4>Message</h4></label>
+                            <textarea class="yot-form-input" style="resize: none; height: 150px;" name="message" id="message"></textarea>
+                        </div>
+
+                        <!-- Submit Btn -->
                         <div class="yot-text-center">
-                            <h2>Total Price</h2>
-                            <h2 id="totalPrice">0.00</h2>
+                            <input class="yot-btn-blue1" type="submit" value="Add to Cart">
                         </div>
-                    </div>
-
-                    <!-- Message -->
-                    <div class="yot-form-group">
-                        <label for="quantity"><h4>Message</h4></label>
-                        <textarea class="yot-form-input" style="resize: none; height: 150px;" name="" id=""></textarea>
-                    </div>
-
-                    <div class="yot-text-center">
-                        <!-- <input class="yot-btn-blue1" type="submit" value="Submit"> -->
-                        <button id="cal">Add to Cart</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Success Container-->
+    <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Add to Cart:</h3>
+            <i id="createSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The order has been successfully added to the cart.</p>
     </div>
 
     <script src="./asset/js/all/global.js"></script>

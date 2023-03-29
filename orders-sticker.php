@@ -287,54 +287,26 @@
             <!-- Container -->
             <div class="over-view-container yot-hide-for-small-mobile-down">
                 <!--  -->
-                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Pendings</h3>
                     <h2 class="yot-tc-black">0</span>
-                </div>
+                </div> -->
 
                 <!--  -->
-                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Cancel</h3>
                     <h2 class="yot-tc-black">0</span>
-                </div>
+                </div> -->
 
                 <!--  -->
-                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Done</h3>
                     <h2 class="yot-tc-black">0</span>
-                </div>
+                </div> -->
             </div>
 
             <!-- Table -->
-            <div class="yot-w-100" style="overflow-x: auto;">
-                <table class="yot-table-blue-theme">
-                    <tr>
-                      <th>Order No.</th>
-                      <th>Size (Inches)</th>
-                      <th>Pcs</th>
-                      <th>Total</th>
-                      <th>Status</th>
-                      <th>Payment</th>
-                      <th>Date and Time</th>
-                      <th>Action</th>
-                    </tr>
-    
-                    <tr>
-                        <td>20231</td>
-                        <td>36w x 36h</td>
-                        <td>1</td>
-                        <td>100.00</td>
-                        <td>PENDING</td>
-                        <td>DONE</td>
-                        <td>Feb 11, 2023</td>
-                        <td class="yot-flex">
-                            <i class="fa-solid fa-eye yot-text-fs-xxl yot-active-bbh1"></i>
-                            <i class="fa-solid fa-rectangle-xmark yot-text-fs-xxl yot-mlr-8 yot-active-bbh1"></i>
-                            <i class="fa-solid fa-circle-check yot-text-fs-xxl yot-active-bbh1"></i>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+            <div class="yot-w-100" id="displaySticker" style="max-height:650px; overflow-y:scroll"></div>
 
         </div>
     </div>
@@ -366,5 +338,6 @@
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/order/order.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
+    <script src="./asset/js/orders-sticker/display/d-order-sticker.js"></script>
 </body>
 </html>

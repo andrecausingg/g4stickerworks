@@ -109,10 +109,9 @@
 
         <div class="yot-container">
             <div class="yot-row">
+                <!-- Upload Image -->
                 <div class="yot-col-50 yot-mb-16">
-                    <div id="displayImageTarpReadyToPrint" class="yot-bg-white image-container-RTP yot-mb-16">
-
-                    </div>
+                    <div id="displayImageTarpReadyToPrint" class="yot-bg-white image-container-RTP yot-mb-16"></div>
                     <!-- Form -->
                     <form id="createReadyToPrintForm">
                         <div class="yot-w-75" style="margin: auto;">
@@ -125,7 +124,6 @@
                 </div>
                 
                 <div class="yot-col-50">
-                    
                         <!-- Widht and Height -->
                         <div class="yot-flex yot-flex-ai-c">
                             <!-- Width -->
@@ -192,10 +190,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-
-            <div>
-
             </div>
         </div>
     </div>

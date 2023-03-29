@@ -21,7 +21,7 @@ $(document).ready(function(){
               contentType: false,
               success: function(response) {
                 var responseVar = response.trim();
-
+                console.log(responseVar);
                 if(responseVar == "created"){
                     resetForm();
                 }else if(responseVar == 'imagetoolarge'){
@@ -31,7 +31,6 @@ $(document).ready(function(){
                 }else if(responseVar == 'invalidfiletype'){
                     hideInvalidfiletype();
                 }
-    
     
               },
               error: function(jqXHR, textStatus, errorThrown) {
@@ -214,7 +213,7 @@ $(document).ready(function(){
         setTimeout(function() {
             $("#createSuccessAlert").hide(); // Show the element after 10 seconds
         }, 10000); // 10000 milliseconds = 10 seconds
-        $('#width, #height, #quantity, #image, #messagem, #image').val("");
+        $('#width, #height, #quantity, #image, #message, #image').val("");
         $('#width, #height, #quantity, #image, #message, #image').css('border-color', 'hsl(207, 90%, 54%)');
     }
 
@@ -246,5 +245,13 @@ $(document).ready(function(){
         $('#errorImagetoolargeAlert').hide();
         $('#errorUploadingimageAlert').hide();
         $('#invalidfiletypeAlert').hide();
+    });
+
+    // Allow Number Width Height Quanity
+    $("#width, #height, #quantity").on("input", function() {
+        var regex = /[^0-9]/g;
+        if ($(this).val().match(regex)) {
+            $(this).val($(this).val().replace(regex, ''));
+        }
     });
 });

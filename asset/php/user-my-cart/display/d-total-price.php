@@ -11,10 +11,17 @@
             $conn = (new classConnDB())->conn();
             $userId = (new classSessionUserID())->sessionUserID();
 
+            $totalPriceSticker = 0;
             $totalPriceReadyToPrint = 0;
             $totalPricetemporaryPlate = 0;
             $page = 'CART';
             $status = 'PENDING';
+
+            // DISPLAY Sticker
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_sticker_main_id DESC");
+            while($row = mysqli_fetch_assoc($fetch_data)){
+                $totalPriceSticker += $row["total_price"]; 
+            }
 
             // DISPLAY Tarpaulin Ready tO Print
             $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_ready_to_print_id DESC");
@@ -28,7 +35,7 @@
                 $totalPricetemporaryPlate += $row["total_price"]; 
             }
 
-            $totalPrice = $totalPriceReadyToPrint + $totalPricetemporaryPlate;
+            $totalPrice = $totalPriceReadyToPrint + $totalPricetemporaryPlate + $totalPriceSticker;
 
             echo number_format($totalPrice, 2, '.', '');
         }

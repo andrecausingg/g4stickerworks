@@ -11,10 +11,91 @@
             $conn = (new classConnDB())->conn();
             $userId = (new classSessionUserID())->sessionUserID();
 
+            $emptySticker = 0;
             $emptyTarp = 0;
             $emptyTempPlate = 0;
             $page = 'CART';
             $status = 'PENDING';
+
+            // DISPLAY Sticker
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_sticker_main_id DESC");
+            if(mysqli_num_rows($fetch_data) == 0){
+                $emptySticker = 1;
+            }else{
+                while($row = mysqli_fetch_assoc($fetch_data)){
+                    
+                    echo'
+                    <!-- Sticker -->
+                    <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0px auto 8px;">
+                        <div class="yot-flex">
+                            <div class="yot-w-50 yot-mb-8">
+                                <!-- Title -->
+                                <div class="yot-text-center">
+                                    <h4>STICKER</h4>
+                                </div>
+                                <div class="image-container-RTP" style="height: 150px;">
+                                    <img src="../../../../../g4stickerworks/asset/images/all-orders/'.$row["image"].'" alt="">
+                                </div>
+                            </div>
+        
+                            <div class="yot-w-50 yot-mb-8">
+                                <div class="yot-flex yot-flex-fd-c yot-mb-8">
+                                    <div class="yot-flex yot-flex-ai-c">
+                                        <div class="yot-mb-4">
+                                            <h5>Width<span style="font-size:12px">(Inch)</span></h5>
+                                            <span>'.$row["width"].'</span>
+                                        </div>
+            
+                                        <span class="yot-mlr-4"></span>
+            
+                                        <div class="yot-mb-4">
+                                            <h5>Height<span style="font-size:12px">(Inch)</span></h5>
+                                            <span>'.$row["height"].'</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="yot-flex yot-flex-ai-c">
+                                        <div class="yot-mb-4">
+                                            <h5>Quantity</h5>
+                                            <span>'.$row["quantity"].'</span>
+                                        </div>
+                                        
+                                        <span class="yot-mlr-4"></span>
+
+                                        <div class="yot-mb-4">
+                                            <h5>Price</h5>
+                                            <span>'.$row["total_price"].'</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <h4>Message</h4>
+                            <span>'.$row["message"].'</span>
+                        </div>
+                        
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
+                            <div class="yot-mb-4">
+                                <div>
+                                    <h5>Order I.D</h5>
+                                    <span>'.$row["order_id_sticker"].'</span>
+                                </div>
+                                <div>
+                                    <h5>Order Date and Time</h5>
+                                    <span>'.$row["created_at_varchar"].'</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="yot-text-center">
+                            <button class="yot-btn-blue1">Cancel</button>
+                        </div>
+                    </div>
+                    ';
+                }
+            }
 
             // DISPLAY Tarpaulin Ready tO Print
             $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_ready_to_print_id DESC");
@@ -79,10 +160,10 @@
                                     <span>'.$row["created_at_varchar"].'</span>
                                 </div>
                             </div>
-                        
-                            <div class="yot-text-end">
-                                <button class="yot-btn-blue1">Cancel</button>
-                            </div>
+                        </div>
+
+                        <div class="yot-text-center">
+                            <button class="yot-btn-blue1">Cancel</button>
                         </div>
                     </div>
                     ';
@@ -174,10 +255,10 @@
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
                                     </div>
-                                
-                                    <div class="yot-text-end">
-                                        <button class="yot-btn-blue1">Cancel</button>
-                                    </div>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <button class="yot-btn-blue1">Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -251,10 +332,10 @@
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
                                     </div>
-                                
-                                    <div class="yot-text-end">
-                                        <button class="yot-btn-blue1">Cancel</button>
-                                    </div>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <button class="yot-btn-blue1">Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -321,10 +402,10 @@
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
                                     </div>
-                                
-                                    <div class="yot-text-end">
-                                        <button class="yot-btn-blue1">Cancel</button>
-                                    </div>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <button class="yot-btn-blue1">Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -391,10 +472,10 @@
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
                                     </div>
-                                
-                                    <div class="yot-text-end">
-                                        <button class="yot-btn-blue1">Cancel</button>
-                                    </div>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <button class="yot-btn-blue1">Cancel</button>
                                 </div>
                             </div>
                         ';
@@ -404,7 +485,7 @@
                 echo "Error: " . mysqli_error($conn);
             }
             
-            if($emptyTarp == 1 && $emptyTempPlate == 1){
+            if($emptyTarp == 1 && $emptyTempPlate == 1 && $emptySticker){
                 echo '
                     <div class="yot-flex yot-flex-fd-c-ai-c">
                         <h1>Empty Cart</h1>
@@ -413,6 +494,7 @@
                 ';
             }
             
+
         }
     }
 ?>
