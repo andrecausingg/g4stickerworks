@@ -7,6 +7,7 @@ $(document).ready(function(){
     console.log(idTarpaulin);
     console.log(idTemporaryPlate);
 
+
     // Close Payment Form
     $("#payNowBtn").click(function(){
         $("#createBgContainer").show();

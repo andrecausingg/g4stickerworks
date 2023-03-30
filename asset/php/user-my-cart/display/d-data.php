@@ -11,177 +11,57 @@
             $conn = (new classConnDB())->conn();
             $userId = (new classSessionUserID())->sessionUserID();
 
-            $emptySticker = 0;
-            $emptyTarp = 0;
-            $emptyTempPlate = 0;
+            $emptyCart = 0;
+
             $page = 'CART';
             $status = 'PENDING';
 
-            $sticker = "sticker";
-            $tarpaulin = "tarpaulinOne";
+            $order_table_ids = []; // Create an empty array to store the IDs
+
+            // DISPLAY All Orders in Cart
+            $fetch_data = mysqli_query($conn, "SELECT * FROM cart_tbl WHERE user_id = '$userId' ORDER BY cart_id DESC");
+            if(mysqli_num_rows($fetch_data) == 0){
+                $emptyCart = 1;
+            }else{
+                while($row = mysqli_fetch_assoc($fetch_data)){
+                    $order_table_id = $row["order_table_id"];
+                    $order_table_name = $row["order_table_name"];
+    
+                    if($order_table_name == "temporaryplate"){
+                        $this->getTemporaryPlate($order_table_id, $userId, $conn, $page, $status);
+                    }
+                    
+                    if($order_table_name == "tarpaulin"){
+                        $this->getTarpaulin($order_table_id, $userId, $conn, $page, $status);
+                    }   
+    
+                    if($order_table_name == "sticker"){
+                        $this->getSticker($order_table_id, $userId, $conn, $page, $status);
+                    }
+                }
+            }
+
+            // Empty Cart Display Image Empty
+            if($emptyCart == 1){
+                echo '
+                    <div class="yot-flex yot-flex-fd-c-ai-c">
+                        <h1>Empty Cart</h1>
+                        <img src="../../../../../g4stickerworks/asset/images/undraw_empty_cart_co35.svg" alt="" style="width:300px; height:300px">
+                    </div>
+                ';
+            }
+        }
+
+        // Display all order Temporary Plate
+        public function getTemporaryPlate($order_table_id, $userId, $conn, $page, $status){
             $tempOne = "temporaryPlate";
             $tempTwo = "temporaryPlate";
             $tempThree = "temporaryPlate";
             $tempFour = "temporaryPlate";
 
-            // DISPLAY Sticker
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_sticker_main_id DESC");
-            if(mysqli_num_rows($fetch_data) == 0){
-                $emptySticker = 1;
-            }else{
-                while($row = mysqli_fetch_assoc($fetch_data)){
-                    
-                    echo'
-                    <!-- Sticker -->
-                    <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0px auto 8px;">
-                        <div class="yot-flex">
-                            <div class="yot-w-50 yot-mb-8">
-                                <!-- Title -->
-                                <div class="yot-text-center">
-                                    <h4>STICKER</h4>
-                                </div>
-                                <div class="image-container-RTP" style="height: 150px;">
-                                    <img src="../../../../../g4stickerworks/asset/images/all-orders/'.$row["image"].'" alt="">
-                                </div>
-                            </div>
-        
-                            <div class="yot-w-50 yot-mb-8">
-                                <div class="yot-flex yot-flex-fd-c yot-mb-8">
-                                    <div class="yot-flex yot-flex-ai-c">
-                                        <div class="yot-mb-4">
-                                            <h5>Width<span style="font-size:12px">(Inch)</span></h5>
-                                            <span>'.$row["width"].'</span>
-                                        </div>
-            
-                                        <span class="yot-mlr-4"></span>
-            
-                                        <div class="yot-mb-4">
-                                            <h5>Height<span style="font-size:12px">(Inch)</span></h5>
-                                            <span>'.$row["height"].'</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="yot-flex yot-flex-ai-c">
-                                        <div class="yot-mb-4">
-                                            <h5>Quantity</h5>
-                                            <span>'.$row["quantity"].'</span>
-                                        </div>
-                                        
-                                        <span class="yot-mlr-4"></span>
-
-                                        <div class="yot-mb-4">
-                                            <h5>Price</h5>
-                                            <span>'.$row["total_price"].'</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div>
-                            <h4>Message</h4>
-                            <span>'.$row["message"].'</span>
-                        </div>
-                        
-                        <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
-                            <div class="yot-mb-4">
-                                <div>
-                                    <h5>Order I.D</h5>
-                                    <span>'.$row["order_id_sticker"].'</span>
-                                </div>
-                                <div>
-                                    <h5>Order Date and Time</h5>
-                                    <span>'.$row["created_at_varchar"].'</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="yot-text-center">
-                            <button class="yot-btn-blue1 cancelOrder" data-id="'.$sticker."-".$row["order_sticker_main_id"].'" >Cancel</button>
-                        </div>
-                    </div>
-                    ';
-                }
-            }
-
-            // DISPLAY Tarpaulin Ready tO Print
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_ready_to_print_id DESC");
-            if(mysqli_num_rows($fetch_data) == 0){
-                $emptyTarp = 1;
-            }else{
-                while($row = mysqli_fetch_assoc($fetch_data)){
-                    echo'
-                    <!-- Tarpauline -->
-                    <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0 auto 8px;">
-                        <div class="yot-flex">
-                            <div class="yot-w-50 yot-mb-8">
-                                <!-- Title -->
-                                <div class="yot-text-center">
-                                    <h4>TARPAULINE</h4>
-                                </div>
-                                <div class="image-container-RTP" style="height: 150px;">
-                                    <img src="../../../../../g4stickerworks/asset/images/all-orders/'.$row["image"].'" alt="">
-                                </div>
-                            </div>
-        
-                            <div class="yot-w-50 yot-mb-8">
-                                <div class="yot-flex yot-flex-fd-c yot-mb-8">
-                                    <div class="yot-mb-4">
-                                        <h5>Width<span style="font-size:12px">(Foot)</span></h5>
-                                        <span>'.$row["width"].'</span>
-                                    </div>
-        
-                                    <span class="yot-mlr-4"></span>
-        
-                                    <div class="yot-mb-4">
-                                        <h5>Height<span style="font-size:12px">(Foot)</span></h5>
-                                        <span>'.$row["height"].'</span>
-                                    </div>
-        
-                                    <div class="yot-mb-4">
-                                        <h5>Quantity</h5>
-                                        <span>'.$row["quantity"].'</span>
-                                    </div>
-        
-                                    <div class="yot-mb-4">
-                                        <h5>Price</h5>
-                                        <span>'.$row["total_price"].'</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                        <div>
-                            <h4>Message</h4>
-                            <span>'.$row["message"].'</span>
-                        </div>
-                        
-                        <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
-                            <div class="yot-mb-4">
-                                <div>
-                                    <h5>Order I.D</h5>
-                                    <span>'.$row["order_id_ready_to_print"].'</span>
-                                </div>
-                                <div>
-                                    <h5>Order Date and Time</h5>
-                                    <span>'.$row["created_at_varchar"].'</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="yot-text-center">
-                            <button class="yot-btn-blue1 cancelOrder" data-id="'.$tarpaulin."-".$row["order_ready_to_print_id"].'" >Cancel</button>
-                        </div>
-                    </div>
-                    ';
-                }
-            }
-            
             // DISPLAY Temporary Plate
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_temp_plate_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_temp_plate_id DESC");
-            if(mysqli_num_rows($fetch_data) == 0){
-                $emptyTempPlate = 1;
-            }else if ($fetch_data){
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_temp_plate_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' AND order_temp_plate_id = '$order_table_id' ORDER BY order_temp_plate_id DESC");
+            if($fetch_data){
                 while($row = mysqli_fetch_assoc($fetch_data)){
                     if($row["format"] == 'FORMAT 1'){
                         echo'
@@ -269,7 +149,9 @@
                                 </div>
                             </div>
                         ';
-                    }else if($row["format"] == 'FORMAT 2'){
+                    }
+                    
+                    else if($row["format"] == 'FORMAT 2'){
                         echo'
                             <!-- Temporary Plate Format 2-->
                             <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0 auto 8px;">
@@ -346,7 +228,9 @@
                                 </div>
                             </div>
                         ';
-                    }else if($row["format"] == 'FORMAT 3'){
+                    }
+
+                    else if($row["format"] == 'FORMAT 3'){
                         echo'
                             <!-- Temporary Plate Format 3-->
                             <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0 auto 8px;">
@@ -416,7 +300,9 @@
                                 </div>
                             </div>
                         ';
-                    }else if($row["format"] == 'FORMAT 4'){
+                    }
+                    
+                    else if($row["format"] == 'FORMAT 4'){
                         echo'
                             <!-- Temporary Plate Format 4-->
                             <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0 auto 8px;">
@@ -488,15 +374,158 @@
                         ';
                     }
                 }
-            }else{
-                echo "Error: " . mysqli_error($conn);
             }
+        }
+
+        // Display all order Tarpaulin
+        public function getTarpaulin($order_table_id, $userId, $conn, $page, $status){
+            $tarpaulin = "tarpaulinOne";
+
+            // DISPLAY Tarpaulin Ready tO Print
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' AND order_ready_to_print_id = '$order_table_id' ORDER BY order_ready_to_print_id DESC");
+            while($row = mysqli_fetch_assoc($fetch_data)){
+                echo'
+                <!-- Tarpauline -->
+                <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0 auto 8px;">
+                    <div class="yot-flex">
+                        <div class="yot-w-50 yot-mb-8">
+                            <!-- Title -->
+                            <div class="yot-text-center">
+                                <h4>TARPAULINE</h4>
+                            </div>
+                            <div class="image-container-RTP" style="height: 150px;">
+                                <img src="../../../../../g4stickerworks/asset/images/all-orders/'.$row["image"].'" alt="">
+                            </div>
+                        </div>
+    
+                        <div class="yot-w-50 yot-mb-8">
+                            <div class="yot-flex yot-flex-fd-c yot-mb-8">
+                                <div class="yot-mb-4">
+                                    <h5>Width<span style="font-size:12px">(Foot)</span></h5>
+                                    <span>'.$row["width"].'</span>
+                                </div>
+    
+                                <span class="yot-mlr-4"></span>
+    
+                                <div class="yot-mb-4">
+                                    <h5>Height<span style="font-size:12px">(Foot)</span></h5>
+                                    <span>'.$row["height"].'</span>
+                                </div>
+    
+                                <div class="yot-mb-4">
+                                    <h5>Quantity</h5>
+                                    <span>'.$row["quantity"].'</span>
+                                </div>
+    
+                                <div class="yot-mb-4">
+                                    <h5>Price</h5>
+                                    <span>'.$row["total_price"].'</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4>Message</h4>
+                        <span>'.$row["message"].'</span>
+                    </div>
+                    
+                    <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
+                        <div class="yot-mb-4">
+                            <div>
+                                <h5>Order I.D</h5>
+                                <span>'.$row["order_id_ready_to_print"].'</span>
+                            </div>
+                            <div>
+                                <h5>Order Date and Time</h5>
+                                <span>'.$row["created_at_varchar"].'</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="yot-text-center">
+                        <button class="yot-btn-blue1 cancelOrder" data-id="'.$tarpaulin."-".$row["order_ready_to_print_id"].'" >Cancel</button>
+                    </div>
+                </div>
+                ';
+            }
+        }
+
+        // Display all order Tarpaulin
+        public function getSticker($order_table_id, $userId, $conn, $page, $status){
+            $sticker = "sticker";
+
+            // DISPLAY Sticker
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' AND order_sticker_main_id = '$order_table_id' ORDER BY order_sticker_main_id DESC");
+            while($row = mysqli_fetch_assoc($fetch_data)){
+                echo'
+                    <!-- Sticker -->
+                    <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0px auto 8px;">
+                        <div class="yot-flex">
+                            <div class="yot-w-50 yot-mb-8">
+                                <!-- Title -->
+                                <div class="yot-text-center">
+                                    <h4>STICKER</h4>
+                                </div>
+                                <div class="image-container-RTP" style="height: 150px;">
+                                    <img src="../../../../../g4stickerworks/asset/images/all-orders/'.$row["image"].'" alt="">
+                                </div>
+                            </div>
+        
+                            <div class="yot-w-50 yot-mb-8">
+                                <div class="yot-flex yot-flex-fd-c yot-mb-8">
+                                    <div class="yot-flex yot-flex-ai-c">
+                                        <div class="yot-mb-4">
+                                            <h5>Width<span style="font-size:12px">(Inch)</span></h5>
+                                            <span>'.$row["width"].'</span>
+                                        </div>
             
-            if($emptyTarp == 1 && $emptyTempPlate == 1 && $emptySticker){
-                echo '
-                    <div class="yot-flex yot-flex-fd-c-ai-c">
-                        <h1>Empty Cart</h1>
-                        <img src="../../../../../g4stickerworks/asset/images/undraw_empty_cart_co35.svg" alt="" style="width:300px; height:300px">
+                                        <span class="yot-mlr-4"></span>
+            
+                                        <div class="yot-mb-4">
+                                            <h5>Height<span style="font-size:12px">(Inch)</span></h5>
+                                            <span>'.$row["height"].'</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="yot-flex yot-flex-ai-c">
+                                        <div class="yot-mb-4">
+                                            <h5>Quantity</h5>
+                                            <span>'.$row["quantity"].'</span>
+                                        </div>
+                                        
+                                        <span class="yot-mlr-4"></span>
+
+                                        <div class="yot-mb-4">
+                                            <h5>Price</h5>
+                                            <span>'.$row["total_price"].'</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div>
+                            <h4>Message</h4>
+                            <span>'.$row["message"].'</span>
+                        </div>
+                        
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
+                            <div class="yot-mb-4">
+                                <div>
+                                    <h5>Order I.D</h5>
+                                    <span>'.$row["order_id_sticker"].'</span>
+                                </div>
+                                <div>
+                                    <h5>Order Date and Time</h5>
+                                    <span>'.$row["created_at_varchar"].'</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="yot-text-center">
+                            <button class="yot-btn-blue1 cancelOrder" data-id="'.$sticker."-".$row["order_sticker_main_id"].'" >Cancel</button>
+                        </div>
                     </div>
                 ';
             }

@@ -8,7 +8,7 @@
             require_once "../../helper/global/global.php"; 
 
             // Class
-            $classConnDB = new classConnDB();
+            $conn = (new classConnDB())->conn();
 
             echo '
                 <table class="yot-table-blue-theme">
@@ -23,6 +23,7 @@
                         <th>Total Price</th>
                         <th>Page</th>
                         <th>Status</th>
+                        <th>Reference No.</th>
                         <th>Receipt</th>
                         <th>Payment</th>
                         <th>Created</th>
@@ -30,15 +31,16 @@
             ';
             
             // DISPLAY
-            $fetch_data = mysqli_query($classConnDB->conn(), "SELECT * FROM order_ready_to_print_tbl ORDER BY order_ready_to_print_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl ORDER BY order_ready_to_print_id DESC");
             while($row = mysqli_fetch_assoc($fetch_data)){
+                $userId = $row["user_id"];
                 $order = $row["order_id_ready_to_print"]; // assuming $row["message"] contains the string you want to split
                 $split_order = chunk_split($order, 10, "\n"); // split the message into chunks of 50 characters, with a line break after each chunk
                 $message = $row["message"]; // assuming $row["message"] contains the string you want to split
                 $split_message = chunk_split($message, 200, "\n"); // split the message into chunks of 50 characters, with a line break after each chunk
                 echo'
                     <tr>
-                        <td>'.$row["user_id"].'</td>
+                        <td>'.$this->getUserProfile($userId, $conn).'</td>
                         <td>'.$split_order.'</td>
                         <td>'.$row["width"].'</td>
                         <td>'.$row["height"].'</td>
@@ -48,6 +50,7 @@
                         <td>'.$row["total_price"].'</td>
                         <td>'.$row["page"].'</td>
                         <td>'.$row["status"].'</td>
+                        <td>'.$row["reference_num"].'</td>
                         <td>'.$row["receipt"].'</td>
                         <td>'.$row["payment"].'</td>
                         <td>'.$row["created_at_varchar"].'</td>
@@ -56,6 +59,13 @@
             }
 
             echo'</table>';
+        }
+
+        public function getUserProfile($userId, $conn){
+            $fetch_data = mysqli_query($conn, "SELECT * FROM user_tbl WHERE user_id");
+            while($row = mysqli_fetch_assoc($fetch_data)){
+                return ucfirst($row["first_name"]) . " " . ucfirst($row["last_name"]);
+            }
         }
     }
 ?>

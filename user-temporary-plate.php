@@ -40,8 +40,9 @@
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
                 <a href="user-product" class="yot-text-fs-xl yot-active-bbh1">Products</a> <span class="yot-mlr-4"></span>
+                <a href="user-ready-to-print" class="yot-text-fs-xl yot-active-bbh1">Tarpaulin</a> <span class="yot-mlr-4"></span>
                 <!-- Tarpaulin -->
-                <div style="position: relative">
+                <!-- <div style="position: relative">
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">Tarpaulin</span>
                     </div>
@@ -49,7 +50,7 @@
                         <a href="user-ready-to-print" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Ready To Print</a>
                         <a href="user-make-layout" class="yot-text-fs-xl yot-active-bbh1">Make Layout</a>
                     </div>
-                </div> <span class="yot-mlr-4"></span>
+                </div> <span class="yot-mlr-4"></span>-->
                 <a href="user-sticker" class="yot-text-fs-xl yot-active-bbh1">Sticker</a> <span class="yot-mlr-4"></span>
                 <a href="user-temporary-plate" class="yot-text-fs-xl yot-active-bb-blue">Temporary Plate</a> <span class="yot-mlr-4"></span>
             </div>
@@ -75,8 +76,14 @@
             <a href="user-product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Products</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
+
+        <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin: 8px 0px 16px 0px;">
+            <a href="user-ready-to-print" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Tarpaulin</a>
+            <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
+        </div>
+
         <!-- Tarpaulin -->
-        <div class="yot-mb-8">
+        <!-- <div class="yot-mb-8">
             <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
                 <span style="font-size: 36px; font-weight: bolder;">Tarpaulin</span>
                 <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRight"></i></span>
@@ -85,7 +92,8 @@
                 <a href="user-ready-to-print" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
                 <a href="user-make-layout" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
             </div>
-        </div>
+        </div> -->
+
         <div class="yot-mb-16">
             <a href="user-sticker" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Sticker</a>
         </div>

@@ -51,6 +51,8 @@
             $payment = "NONE";
             $price = 0;
 
+            $order_table_name = "sticker";
+
             // Calculate Price
             if ($this->width >= 0 && $this->height <= 2.5) {
                 if ($this->quantity < 100) {
@@ -145,9 +147,20 @@
                             $stmt->bind_param("isiisssidssss", $userId, $uniqueId, $this->width, $this->height, $imageNameNew, $this->cover, $this->message, $this->quantity, $totalPrice, $page, $status, $payment, $dateTimeVarChar);
                             if($stmt->execute()){
                                 if($stmt->affected_rows > 0){
-                                    $stmt->close();
-                                    $conn->close();
-                                    echo "created";
+                                    // get the last insert ID
+                                    $last_insert_id = $conn->insert_id;                
+                                    $sql = "INSERT INTO cart_tbl (user_id, order_table_name, order_table_id, created_at_varchar, created_at) VALUES (?, ?, ?, ?, NOW())";
+                                    $stmt1 = $conn->prepare($sql);
+                                    $stmt1->bind_param("isis", $userId, $order_table_name, $last_insert_id, $dateTimeVarChar);
+                                    if($stmt1->execute()){
+                                        // Close First Query
+                                        $stmt->close();
+                            
+                                        // Close Second Query
+                                        $stmt1->close();
+                                        $conn->close();
+                                        echo "created";
+                                    }
                                 }
                             }
                         } else {

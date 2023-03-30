@@ -38,19 +38,22 @@
         public function create(){
             // File Path
             require_once "../helper/global/global.php";
-
+        
             // Class
             $conn = (new classConnDB())->conn();
             $dateTimeVarChar = (new classDateTime())->getDateTime();
             $userId = (new classSessionUserID())->sessionUserID();
             $uniqueId = (new classUniqueOrderId())->uniqueOrderId();
-
+        
             $format = "FORMAT 1";
             $totalPrice = 250.00 * $this->quantityFormatOne;
             $page = "CART";
             $status = "PENDING";
             $payment = "NONE";
-
+        
+            // Variable second Insert
+            $order_table_name = "temporaryplate";
+        
             // prepare the SQL statement with placeholders 
             $sql = "INSERT INTO order_temp_plate_tbl (user_id, order_id_temp_plate, type_of_plate, format, mv_file, region, dealer, quantity, total_price, page, status, payment, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
             // create a prepared statement
@@ -59,11 +62,22 @@
             $stmt->bind_param("issssssidssss", $userId, $uniqueId, $this->typeOfPlateFormatOne, $format, $this->mvFileFormatOne, $this->regionFormatOne, $this->dealerFormatOne, $this->quantityFormatOne, $totalPrice, $page, $status, $payment, $dateTimeVarChar);
             // execute the statement
             if($stmt->execute()){
-                // close the prepared statement and database connection
-                $stmt->close();
-                $conn->close();
-                echo "created";
+                // get the last insert ID
+                $last_insert_id = $conn->insert_id;                
+                $sql = "INSERT INTO cart_tbl (user_id, order_table_name, order_table_id, created_at_varchar, created_at) VALUES (?, ?, ?, ?, NOW())";
+                $stmt1 = $conn->prepare($sql);
+                $stmt1->bind_param("isis", $userId, $order_table_name, $last_insert_id, $dateTimeVarChar);
+                if($stmt1->execute()){
+                    // Close First Query
+                    $stmt->close();
+        
+                    // Close Second Query
+                    $stmt1->close();
+                    $conn->close();
+                    echo "created";
+                }
             }
         }
+        
     }
 ?>

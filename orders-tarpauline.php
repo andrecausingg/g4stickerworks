@@ -266,7 +266,7 @@
         <div class="g-main-item-right" style="padding: 24px; position: relative;">
             <div class="yot-flex-tab yot-flex-ai-c-jc-sb yot-mb-8">
                 <!-- Title -->
-                <h2 class="yot-mb-8 yot-resize-font-64">Tarpauline</h2>
+                <h2 class="yot-mb-8 yot-resize-font-64">Tarpaulin</h2>
 
                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-mlr-4">
                     <div class="yot-form-group yot-mr-4">

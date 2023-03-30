@@ -36,6 +36,11 @@
             $parts[0]; 
             $parts[1]; 
 
+            $sticker = "sticker";
+            $tarpaulin = "tarpaulin";
+            $temporaryplate = "temporaryplate";
+
+
             if($parts[0] == "sticker"){
                 // prepare the SQL statement with placeholders 
                 $sql = "DELETE FROM order_sticker_tbl WHERE order_sticker_main_id = ?";
@@ -48,8 +53,21 @@
                 if($stmt->execute()){
                     // close the prepared statement and database connection
                     $stmt->close();
-                    $conn->close();
-                    echo "deleted";
+
+                    // prepare the SQL statement with placeholders 
+                    $sql = "DELETE FROM cart_tbl WHERE order_table_id = ? AND order_table_name = 'sticker'";
+                    // create a prepared statement
+                    $stmt1 = $conn->prepare($sql);
+                    // bind the parameters to the placeholders
+                    $stmt1->bind_param("i",$parts[1]);
+            
+                    // Execute the statement
+                    if($stmt1->execute()){
+                        // close the prepared statement and database connection
+                        $stmt1->close();
+                        $conn->close();
+                        echo "deleted";
+                    }
                 }
             }else if($parts[0] == "tarpaulinOne"){
                 // prepare the SQL statement with placeholders 
@@ -63,8 +81,21 @@
                 if($stmt->execute()){
                     // close the prepared statement and database connection
                     $stmt->close();
-                    $conn->close();
-                    echo "deleted";
+
+                    // prepare the SQL statement with placeholders 
+                    $sql = "DELETE FROM cart_tbl WHERE order_table_id = ? AND order_table_name = 'tarpaulin'";
+                    // create a prepared statement
+                    $stmt1 = $conn->prepare($sql);
+                    // bind the parameters to the placeholders
+                    $stmt1->bind_param("i",$parts[1]);
+            
+                    // Execute the statement
+                    if($stmt1->execute()){
+                        // close the prepared statement and database connection
+                        $stmt1->close();
+                        $conn->close();
+                        echo "deleted";
+                    }
                 }
             }else if($parts[0] == "temporaryPlate"){
                 // prepare the SQL statement with placeholders 
@@ -78,8 +109,21 @@
                 if($stmt->execute()){
                     // close the prepared statement and database connection
                     $stmt->close();
-                    $conn->close();
-                    echo "deleted";
+
+                    // prepare the SQL statement with placeholders 
+                    $sql = "DELETE FROM cart_tbl WHERE order_table_id = ? AND order_table_name = 'temporaryplate'";
+                    // create a prepared statement
+                    $stmt1 = $conn->prepare($sql);
+                    // bind the parameters to the placeholders
+                    $stmt1->bind_param("i",$parts[1], );
+            
+                    // Execute the statement
+                    if($stmt1->execute()){
+                        // close the prepared statement and database connection
+                        $stmt1->close();
+                        $conn->close();
+                        echo "deleted";
+                    }
                 }
             }
         }
