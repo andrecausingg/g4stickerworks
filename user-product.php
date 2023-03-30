@@ -2,6 +2,9 @@
     require_once("./asset/php/helper/global/global.php");
     $classSessionLogin = new classSessionLogin();
     $classSessionLogin->sessionLogin();
+
+    $classSessionLoginUser = new classSessionLoginUser();
+    $classSessionLoginUser->sessionLoginUser();
 ?>
 
 <!DOCTYPE html>
@@ -35,8 +38,9 @@
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
                 <a href="user-product" class="yot-text-fs-xl yot-active-bb-blue">Products</a> <span class="yot-mlr-4"></span>
+                <a href="user-ready-to-print" class="yot-text-fs-xl yot-active-bbh1">Tarpaulin</a> <span class="yot-mlr-4"></span>
                 <!-- Tarpaulin -->
-                <div style="position: relative">
+                <!-- <div style="position: relative">
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">Tarpaulin</span>
                     </div>
@@ -44,7 +48,7 @@
                         <a href="user-ready-to-print" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">Ready To Print</a>
                         <a href="user-make-layout" class="yot-text-fs-xl yot-active-bbh1">Make Layout</a>
                     </div>
-                </div> <span class="yot-mlr-4"></span>
+                </div> <span class="yot-mlr-4"></span> -->
                 <a href="user-sticker" class="yot-text-fs-xl yot-active-bbh1">Sticker</a> <span class="yot-mlr-4"></span>
                 <a href="user-temporary-plate" class="yot-text-fs-xl yot-active-bbh1">Temporary Plate</a> <span class="yot-mlr-4"></span>
             </div>
@@ -70,8 +74,11 @@
             <a href="user-product" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Products</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
+        <div class="yot-mb-16">
+            <a href="user-ready-to-print" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Tarpaulin</a>
+        </div>
         <!-- Tarpaulin -->
-        <div class="yot-mb-8">
+        <!-- <div class="yot-mb-8">
             <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
                 <span style="font-size: 36px; font-weight: bolder;">Tarpaulin</span>
                 <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRight"></i></span>
@@ -80,7 +87,7 @@
                 <a href="user-ready-to-print" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
                 <a href="user-make-layout" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
             </div>
-        </div>
+        </div> -->
         <div class="yot-mb-16">
             <a href="user-sticker" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Sticker</a>
         </div>
@@ -98,119 +105,13 @@
         </div>
     </div>
 
-    <!-- List Of Products -->
+    <!-- Product Container -->
     <div class="yot-content-space-margin-t-120 yot-container">
-        <!-- Title And Select-->
-        <div class="yot-row yot-flex yot-flex-ai-c-jc-sb yot-tc-blue1 yot-mb-16">
-            <h1 class="yot-resize-font-64">All Products</h1>
-            <select class="yot-btn-blue1" name="" id="">
-                <option value="">- Select -</option>
-                <option value="">Tarpaulin</option>
-                <option value="">Tarpaulin</option>
-                <option value="">Tarpaulin</option>
-            </select>
-        </div>
-
-        <!-- List Of Products -->
-        <div class="yot-row">
-            <div class="yot-col-25 yot-bg-white yot-ma-8" style="padding:16px">
-                <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                <p>Name: mio i 125</p>
-                <p>Price: 1000.00</p>
-                <p>Theme: Sporty</p>
-
-                <div class="yot-mtb-16 yot-flex yot-flex-ai-c-jc-sb">
-                    <div>
-                        <button class="yot-btn-blue1">+</button>
-                        <span class="yot-mlr-8">1</span>
-                        <button class="yot-btn-blue1">-</button>
-                    </div>
-
-                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                        <button class="yot-btn-blue1">View</button>
-                    </div>
-                </div>
-
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <button class="yot-btn-blue1">Costumize</button>
-                    <button class="yot-btn-blue1">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="yot-col-25 yot-bg-white yot-ma-8" style="padding:16px">
-                <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                <p>Name: mio i 125</p>
-                <p>Price: 1000.00</p>
-                <p>Theme: Sporty</p>
-
-                <div class="yot-mtb-16 yot-flex yot-flex-ai-c-jc-sb">
-                    <div>
-                        <button class="yot-btn-blue1">+</button>
-                        <span class="yot-mlr-8">1</span>
-                        <button class="yot-btn-blue1">-</button>
-                    </div>
-
-                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                        <button class="yot-btn-blue1">View</button>
-                    </div>
-                </div>
-
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <button class="yot-btn-blue1">Costumize</button>
-                    <button class="yot-btn-blue1">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="yot-col-25 yot-bg-white yot-ma-8" style="padding:16px">
-                <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                <p>Name: mio i 125</p>
-                <p>Price: 1000.00</p>
-                <p>Theme: Sporty</p>
-
-                <div class="yot-mtb-16 yot-flex yot-flex-ai-c-jc-sb">
-                    <div>
-                        <button class="yot-btn-blue1">+</button>
-                        <span class="yot-mlr-8">1</span>
-                        <button class="yot-btn-blue1">-</button>
-                    </div>
-
-                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                        <button class="yot-btn-blue1">View</button>
-                    </div>
-                </div>
-
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <button class="yot-btn-blue1">Costumize</button>
-                    <button class="yot-btn-blue1">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="yot-col-25 yot-bg-white yot-ma-8" style="padding:16px">
-                <img src="./asset/images/products/mio-i-125/mio-i-125-blue.png" alt="">
-                <p>Name: mio i 125</p>
-                <p>Price: 1000.00</p>
-                <p>Theme: Sporty</p>
-
-                <div class="yot-mtb-16 yot-flex yot-flex-ai-c-jc-sb">
-                    <div>
-                        <button class="yot-btn-blue1">+</button>
-                        <span class="yot-mlr-8">1</span>
-                        <button class="yot-btn-blue1">-</button>
-                    </div>
-
-                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                        <button class="yot-btn-blue1">View</button>
-                    </div>
-                </div>
-
-                <div class="yot-flex yot-flex-ai-c-jc-sb">
-                    <button class="yot-btn-blue1">Costumize</button>
-                    <button class="yot-btn-blue1">Add to Cart</button>
-                </div>
-            </div>
-        </div>
+        <!-- All Decals Products -->
+        <section id="allDecalsProduct"></section>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
+    <script src="./asset/js/user-product/display/d-product.js"></script>
 </body>
 </html>

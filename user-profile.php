@@ -2,6 +2,9 @@
     require_once("./asset/php/helper/global/global.php");
     $classSessionLogin = new classSessionLogin();
     $classSessionLogin->sessionLogin();
+
+    $classSessionLoginUser = new classSessionLoginUser();
+    $classSessionLoginUser->sessionLoginUser();
 ?>
 
 <!DOCTYPE html>

@@ -2,6 +2,9 @@
     require_once("./asset/php/helper/global/global.php");
     $classSessionLogin = new classSessionLogin();
     $classSessionLogin->sessionLogin();
+
+    $classSessionLoginAdmin = new classSessionLoginAdmin();
+    $classSessionLoginAdmin->sessionLoginAdmin();
 ?>
 
 <!DOCTYPE html>
@@ -129,8 +132,11 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="yot-text-center">
+                <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
+            </div>
         </div>
-
     </div>
 
     <!-- Main Container -->
@@ -222,6 +228,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="yot-text-center">
+                <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
             </div>
         </div>
 

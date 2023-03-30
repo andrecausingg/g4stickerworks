@@ -188,13 +188,83 @@
         }
     }
 
-    // Login Session Verification 404
+    // Login Session User Verification 404
     class classSessionLogin{
         function sessionLogin(){
             require_once "/xampp/htdocs/g4stickerworks/asset/php/index/login.php";
 
             if(!isset($_SESSION["id"])){
                 echo "<script>window.location.href='404';</script>";
+            }
+        }
+    }
+    
+    // Login Session User Verification 404
+    class classSessionLoginUser{
+        private $classConnDB;
+
+        function __construct() {
+            $this->classConnDB = new classConnDB();
+        }
+
+        function sessionLoginUser(){
+            require_once "/xampp/htdocs/g4stickerworks/asset/php/index/login.php";
+
+            $role = "user";
+
+            if(isset($_SESSION["id"])){
+                $conn = $this->classConnDB->conn();
+
+                $userId = $_SESSION["id"];
+            
+                // prepare and execute the SQL statement with parameter binding
+                $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE user_id = ? AND role = ?");
+                $stmt->bind_param("is", $userId, $role);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+                if (!$result->num_rows) {
+                    echo "<script>window.location.href='404';</script>";
+                }
+                
+                // close the statement and database connection
+                $stmt->close();
+                $conn->close();
+            }
+        }
+    }
+    
+    // Login Session Admin Verification 404
+    class classSessionLoginAdmin{
+        private $classConnDB;
+
+        function __construct() {
+            $this->classConnDB = new classConnDB();
+        }
+
+        function sessionLoginAdmin(){
+            require_once "/xampp/htdocs/g4stickerworks/asset/php/index/login.php";
+
+            $role = "admin";
+
+            if(isset($_SESSION["id"])){
+                $conn = $this->classConnDB->conn();
+
+                $userId = $_SESSION["id"];
+            
+                // prepare and execute the SQL statement with parameter binding
+                $stmt = $conn->prepare("SELECT * FROM user_tbl WHERE user_id = ? AND role = ?");
+                $stmt->bind_param("is", $userId, $role);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                
+                if (!$result->num_rows) {
+                    echo "<script>window.location.href='404';</script>";
+                }
+                
+                // close the statement and database connection
+                $stmt->close();
+                $conn->close();
             }
         }
     }

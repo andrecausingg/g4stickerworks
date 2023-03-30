@@ -1,9 +1,3 @@
-<?php
-    require_once("./asset/php/helper/global/global.php");
-    $classSessionLogin = new classSessionLogin();
-    $classSessionLogin->sessionLogin();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

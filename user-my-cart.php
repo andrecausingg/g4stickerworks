@@ -2,6 +2,9 @@
     require_once("./asset/php/helper/global/global.php");
     $classSessionLogin = new classSessionLogin();
     $classSessionLogin->sessionLogin();
+
+    $classSessionLoginUser = new classSessionLoginUser();
+    $classSessionLoginUser->sessionLoginUser();
 ?>
 
 <!DOCTYPE html>
@@ -109,31 +112,32 @@
 
     <!-- My Cart Container -->
     <div class="yot-content-space-margin-t-120 yot-container g-main-container">
-        <div class="yot-col-33-33 yot-pa-8 g-main-left">
+        <div class="yot-col-33-33 yot-pa-8 g-main-left yot-flex yot-flex-fd-c-ai-c-jc-c">
             <div class="yot-mb-4"></div>
             <!-- Order I.D -->
             <div id="allOrdersIdSticker"></div>
             <div id="allOrdersIdTarpaulin"></div>
             <div id="allOrdersIdTemporaryPlate"></div>
 
-            <!-- Title-->
-            <div class="yot-row yot-flex-ai-c-jc-sb yot-container-w-tablet-size-up yot-pa-4" style="margin: 0px auto 8px;">
-                <div class="yot-flex yot-flex-fd-c-ai-c-jc-c" style="margin:auto">
+            <!-- Total Price-->
+            <div class="yot-container-w-tablet-size-up yot-pa-4" >
+                <div class="yot-flex yot-flex-fd-c-ai-c-jc-c">
                     <h1>Total Price:</h1>
                     <div style="font-size:40px; font-weight:bolder;">
                         <i class="fa-solid fa-peso-sign"></i><span id="displayTotalPrice"></span>
                     </div>
-                    <div id="payNowBtn">
-                        <button class="yot-btn-blue1">Pay Now</button>
-                    </div>
                 </div>
+            </div>
+
+            <div>
+                <button id="payNowBtn" class="yot-btn-blue1">Pay Now</button>
             </div>
         </div>
 
         <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
     </div>
 
-    <!-- Create Update Delete Sub Title Container -->
+    <!-- Create Update Delete Sub -->
     <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
         <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
