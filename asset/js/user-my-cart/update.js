@@ -1,12 +1,26 @@
 $(document).ready(function(){
+    var totalPrice = localStorage.getItem("totalPrice");
     var idSticker = localStorage.getItem("orderMainIdSticker");
     var idTarpaulin = localStorage.getItem("orderMainIdTarpaulin");
     var idTemporaryPlate = localStorage.getItem("orderMainIdTemporaryPlate");
-    
-    console.log(idSticker);
-    console.log(idTarpaulin);
-    console.log(idTemporaryPlate);
+    var nameSticker = "sticker";
+    var nameTarpaulin = "tarpaulin";
+    var nameTemporaryPlate = "temporaryplate";
 
+    console.log(totalPrice);
+    console.log(nameSticker + idSticker);
+    console.log(nameTarpaulin + idTarpaulin);
+    console.log(nameTemporaryPlate + idTemporaryPlate);
+
+
+    getBtnPayNow();
+
+    function getBtnPayNow(){
+        var totalPrice = localStorage.getItem("totalPrice");
+        if(totalPrice == 0.00){
+            $("#payNowContainer").hide();
+        }
+    }
 
     // Close Payment Form
     $("#payNowBtn").click(function(){

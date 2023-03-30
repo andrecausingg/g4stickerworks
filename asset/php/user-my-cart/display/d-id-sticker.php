@@ -12,12 +12,12 @@
             $userId = (new classSessionUserID())->sessionUserID();
 
             $page = 'CART';
-            $status = 'PENDING';
+            $statusOrder = 'NOTPAID';
 
             $idSticker = array();
 
             // DISPLAY Sticker
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_sticker_main_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' ORDER BY order_sticker_main_id DESC");
             while($row = mysqli_fetch_assoc($fetch_data)){
                 $idSticker[] = $row["order_sticker_main_id"];
             }

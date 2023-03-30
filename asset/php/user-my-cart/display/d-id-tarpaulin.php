@@ -12,12 +12,12 @@
             $userId = (new classSessionUserID())->sessionUserID();
 
             $page = 'CART';
-            $status = 'PENDING';
+            $statusOrder = 'NOTPAID';
 
             $idTarpaulin = array();
 
             // DISPLAY Tarpaulin Ready tO Print
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' ORDER BY order_ready_to_print_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' ORDER BY order_ready_to_print_id DESC");
             while($row = mysqli_fetch_assoc($fetch_data)){
                 $idTarpaulin[] = $row["order_ready_to_print_id"];
             }

@@ -47,7 +47,7 @@
             $uniqueId = (new classUniqueOrderId())->uniqueOrderId();
             
             $page = "CART";
-            $status = "PENDING";
+            $statusOrder = "NOTPAID";
             $payment = "NONE";
             $price = 0;
 
@@ -143,15 +143,15 @@
                             move_uploaded_file($imageTemp, $imageDestination);
         
                             // Use prepared statement to prevent SQL injection
-                            $stmt = $conn->prepare("INSERT INTO order_sticker_tbl (user_id, order_id_sticker, width, height, image, cover, message, quantity, total_price, page, status, payment, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-                            $stmt->bind_param("isiisssidssss", $userId, $uniqueId, $this->width, $this->height, $imageNameNew, $this->cover, $this->message, $this->quantity, $totalPrice, $page, $status, $payment, $dateTimeVarChar);
+                            $stmt = $conn->prepare("INSERT INTO order_sticker_tbl (user_id, order_id_sticker, width, height, image, cover, message, quantity, total_price, page, status_order, payment, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+                            $stmt->bind_param("isiisssidssss", $userId, $uniqueId, $this->width, $this->height, $imageNameNew, $this->cover, $this->message, $this->quantity, $totalPrice, $page, $statusOrder, $payment, $dateTimeVarChar);
                             if($stmt->execute()){
                                 if($stmt->affected_rows > 0){
                                     // get the last insert ID
                                     $last_insert_id = $conn->insert_id;                
-                                    $sql = "INSERT INTO cart_tbl (user_id, order_table_name, order_table_id, created_at_varchar, created_at) VALUES (?, ?, ?, ?, NOW())";
+                                    $sql = "INSERT INTO cart_tbl (user_id, order_table_name, order_table_id, status_order, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, NOW())";
                                     $stmt1 = $conn->prepare($sql);
-                                    $stmt1->bind_param("isis", $userId, $order_table_name, $last_insert_id, $dateTimeVarChar);
+                                    $stmt1->bind_param("isiss", $userId, $order_table_name, $last_insert_id, $statusOrder, $dateTimeVarChar);
                                     if($stmt1->execute()){
                                         // Close First Query
                                         $stmt->close();

@@ -46,7 +46,7 @@
             $totalPrice = $this->width * $this->height * $this->quantity * 15.00;
 
             $page = "CART";
-            $status = "PENDING";
+            $statusOrder = "NOTPAID";
             $payment = "NONE";
 
             $order_table_name = "tarpaulin";
@@ -73,16 +73,16 @@
                             move_uploaded_file($imageTemp, $imageDestination);
         
                             // Use prepared statement to prevent SQL injection
-                            $stmt = $conn->prepare("INSERT INTO order_ready_to_print_tbl (user_id, order_id_ready_to_print, width, height, image, message, quantity, total_price, page, status,  payment, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-                            $stmt->bind_param("isiissidssss", $userId, $uniqueId, $this->width, $this->height,  $imageNameNew, $this->message, $this->quantity, $totalPrice, $page, $status, $payment, $dateTimeVarChar);
+                            $stmt = $conn->prepare("INSERT INTO order_ready_to_print_tbl (user_id, order_id_ready_to_print, width, height, image, message, quantity, total_price, page, status_order,  payment, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+                            $stmt->bind_param("isiissidssss", $userId, $uniqueId, $this->width, $this->height,  $imageNameNew, $this->message, $this->quantity, $totalPrice, $page, $statusOrder, $payment, $dateTimeVarChar);
                             if($stmt->execute()){
                                 // get the last insert ID
                                 $last_insert_id = $conn->insert_id; 
 
                                 if($stmt->affected_rows > 0){
-                                    $sql = "INSERT INTO cart_tbl (user_id, order_table_name, order_table_id, created_at_varchar, created_at) VALUES (?, ?, ?, ?, NOW())";
+                                    $sql = "INSERT INTO cart_tbl (user_id, order_table_name, order_table_id, status_order, created_at_varchar, created_at) VALUES (?, ?, ?, ?, ?, NOW())";
                                     $stmt1 = $conn->prepare($sql);
-                                    $stmt1->bind_param("isis", $userId, $order_table_name, $last_insert_id, $dateTimeVarChar);
+                                    $stmt1->bind_param("isiss", $userId, $order_table_name, $last_insert_id, $statusOrder, $dateTimeVarChar);
                                     if($stmt1->execute()){
                                         // Close First Query
                                         $stmt->close();

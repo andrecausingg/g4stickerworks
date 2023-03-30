@@ -26,11 +26,6 @@
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
-    <!-- Date Picker -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -114,27 +109,28 @@
     <div class="yot-content-space-margin-t-120 yot-container g-main-container">
         <div class="yot-col-33-33 yot-pa-8 g-main-left yot-flex yot-flex-fd-c-ai-c-jc-c">
             <div class="yot-mb-4"></div>
-            <!-- Order I.D -->
+
             <div id="allOrdersIdSticker"></div>
             <div id="allOrdersIdTarpaulin"></div>
             <div id="allOrdersIdTemporaryPlate"></div>
 
-            <!-- Total Price-->
             <div class="yot-container-w-tablet-size-up yot-pa-4" >
                 <div class="yot-flex yot-flex-fd-c-ai-c-jc-c">
                     <h1>Total Price:</h1>
-                    <div style="font-size:40px; font-weight:bolder;">
-                        <i class="fa-solid fa-peso-sign"></i><span id="displayTotalPrice"></span>
+                    <div class="yot-flex yot-flex-ai-c" style="font-size:40px; font-weight:bolder;">
+                        <i class="fa-solid fa-peso-sign"></i><div id="displayTotalPrice"></div>
                     </div>
                 </div>
             </div>
 
-            <div>
+            <div id="payNowContainer">
                 <button id="payNowBtn" class="yot-btn-blue1">Pay Now</button>
             </div>
         </div>
 
-        <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
+        <!-- <div id="displayCartList" style="margin:auto"></div> -->
+
+            <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
     </div>
 
     <!-- Create Update Delete Sub -->
@@ -186,9 +182,8 @@
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
     <script src="./asset/js/user-my-cart/display/d-data.js"></script>
-    <script src="./asset/js/user-my-cart/create.js"></script>
+    <script src="./asset/js/user-my-cart/update.js"></script>
     <script src="./asset/js/user-my-cart/delete.js"></script>
 </body>
 </html>

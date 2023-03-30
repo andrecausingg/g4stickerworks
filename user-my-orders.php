@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Products</title>
+    <title>My Orders</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -37,7 +37,7 @@
 
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
-                <a href="user-product" class="yot-text-fs-xl yot-active-bb-blue">Products</a> <span class="yot-mlr-4"></span>
+                <a href="user-product" class="yot-text-fs-xl yot-active-bbh1">Products</a> <span class="yot-mlr-4"></span>
                 <a href="user-ready-to-print" class="yot-text-fs-xl yot-active-bbh1">Tarpaulin</a> <span class="yot-mlr-4"></span>
                 <!-- Tarpaulin -->
                 <!-- <div style="position: relative">
@@ -57,7 +57,7 @@
             <div class="yot-hide-for-mobile yot-flex yot-flex-ai-c">
                 <a href="user-profile" class="yot-text-fs-xl yot-active-bbh1">Profile</a> <span class="yot-mlr-4">|</span>
                 <a href="user-my-cart" class="yot-text-fs-xl yot-active-bbh1">My Cart </a> <span class="yot-mlr-4">|</span>
-                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a>
+                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bb-blue">My Orders</a>
             </div>
 
             <!-- Hamburger -->
@@ -68,10 +68,10 @@
     </header>
 
     <!-- Overlay Mobile -->
-    <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1 overlayLeftSideBar" style="display:none"></div>
-    <div id="overlayMobileIndex" class="yot-w-75 yot-flex yot-flex-fd-c  yot-vh-100 yot-bg-white yot-overlay-left yot-pa-16 overlayLeftSideBar" style="display:none">
+    <div id="overlayMobileBgIndex" class="yot-overlay-bg-trans yot-bg-black1 overlayLeftSideBar yot-z-index-1" style="display:none"></div>
+    <div id="overlayMobileIndex" class="yot-w-75 yot-flex yot-flex-fd-c  yot-vh-100 yot-bg-white yot-overlay-left yot-pa-16 yot-z-index-1 overlayLeftSideBar" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb" style="margin: 8px 0px 16px 0px;">
-            <a href="user-product" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Products</a>
+            <a href="user-product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Products</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
         <div class="yot-mb-16">
@@ -101,18 +101,85 @@
             <a href="user-my-cart" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;"></i>My Cart </a>
         </div>
         <div class="yot-mb-16">
-            <a href="user-my-orders" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">My Orders</a>
+            <a href="user-my-orders" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">My Orders</a>
         </div>
     </div>
 
-    <!-- Product Container -->
-    <div class="yot-content-space-margin-t-120 yot-container">
-        <!-- All Decals Products -->
-        <section id="allDecalsProduct"></section>
+    <!-- My Cart Container -->
+    <div class="yot-content-space-margin-t-120 yot-container g-main-container">
+        <!-- <div class="yot-col-33-33 yot-pa-8 g-main-left yot-flex yot-flex-fd-c-ai-c-jc-c">
+            <div class="yot-mb-4"></div>
+
+            <div id="allOrdersIdSticker"></div>
+            <div id="allOrdersIdTarpaulin"></div>
+            <div id="allOrdersIdTemporaryPlate"></div>
+
+            <div class="yot-container-w-tablet-size-up yot-pa-4" >
+                <div class="yot-flex yot-flex-fd-c-ai-c-jc-c">
+                    <h1>Total Price:</h1>
+                    <div class="yot-flex yot-flex-ai-c" style="font-size:40px; font-weight:bolder;">
+                        <i class="fa-solid fa-peso-sign"></i><div id="displayTotalPrice"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="payNowContainer">
+                <button id="payNowBtn" class="yot-btn-blue1">Pay Now</button>
+            </div>
+        </div> -->
+
+        <div id="displayOrderList" style="margin:auto"></div>
+    </div>
+
+    <!-- Create Update Delete Sub -->
+    <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+        <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
+            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                <!-- Title -->
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                    <h2 id="titleCaption" class="yot-tc-blue1">Payment</h2>
+                    <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                </div>
+
+                <!-- Create Form Container -->
+                <div id="createDisplayContainer">
+                    <form id="createPaymentForm">
+                        <!-- Reference No -->
+                        <div class="yot-form-group">
+                            <label for="referenceNo" class="yot-text-fs-l"><b>Reference No.</b></label>
+                            <input class="yot-form-input" type="text" name="" id="">
+                        </div>
+
+                        <div class="yot-form-group">
+                            <label for="uploadReceipt" class="yot-text-fs-l"><b>Upload Receipt</b></label>
+                            <input class="yot-form-input" type="file" name="" id="">
+                        </div>
+
+                        <div class="yot-text-center">
+                            <input class="yot-btn-blue1" type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Update Container -->
+                <div id="updateDisplayContainer" style="display:none"></div>
+
+                <!-- Delete Container -->
+                <div id="deleteDisplayContainer" style="display:none"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Container-->
+    <div id="successAlertDelete" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Cancel:</h3>
+            <i id="successAlertCloseIconDelete" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The Product was successfully cancel.</p>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/user-product/display/d-product.js"></script>
-    <script src="./asset/js/user-product/display/d-load-cart-data.js"></script>
+    <script src="./asset/js/user-my-order/display/d-data.js"></script>
 </body>
 </html>
