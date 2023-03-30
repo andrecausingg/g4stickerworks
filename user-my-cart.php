@@ -152,11 +152,14 @@
                 <!-- Create Form Container -->
                 <div id="createDisplayContainer">
                     <form id="createPaymentForm">
-                        <!-- Get Option -->
+                        <!-- Deliver Method Option -->
                         <div class="yot-form-group">
-                            <label for="referenceNo" class="yot-text-fs-l"><b>Delivery Method</b></label>
-                            <select class="yot-form-select yot-form-select-option" name="selectGetOption" id="selectGetOption">
-                                <option value="">- Select Delivery Method -</option>
+                            <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                <label for="referenceNo" class="yot-text-fs-l"><b>Delivery Method</b></label>
+                                <span class="yot-tc-red" id="emptyErrDeliverMethod" style="display: none;">Delivery Method field is required.<br></span>
+                            </div>
+                            <select class="yot-form-input" name="deliverMethod" id="deliverMethod">
+                            <option value="">- Select Delivery Method -</option>
                                 <option value="Courier">Courier</option>
                                 <option value="Pick up">Pick up</option>
                             </select>
@@ -164,14 +167,20 @@
 
                         <!-- Reference No -->
                         <div class="yot-form-group">
-                            <label for="referenceNo" class="yot-text-fs-l"><b>Reference No.</b></label>
-                            <input class="yot-form-input" type="text" name="" id="">
+                            <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                <label for="referenceNo" class="yot-text-fs-l"><b>Reference No.</b></label>
+                                <span class="yot-tc-red" id="emptyErrReferenceNum" style="display: none;">Reference No. field is required.<br></span>
+                            </div>
+                            <input class="yot-form-input" type="text" name="referenceNum" id="referenceNum">
                         </div>
 
                         <!-- Receipt -->
                         <div class="yot-form-group">
-                            <label for="uploadReceipt" class="yot-text-fs-l"><b>Upload Receipt</b></label>
-                            <input class="yot-form-input" type="file" name="" id="">
+                            <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                <label for="uploadReceipt" class="yot-text-fs-l"><b>Upload Receipt</b></label>
+                                <span class="yot-tc-red" id="emptyErrReceipt" style="display: none;">Receipt field is required.<br></span>
+                            </div>
+                            <input class="yot-form-input" type="file" name="imageReceipt" id="imageReceipt">
                         </div>
 
                         <div class="yot-mb-4">
