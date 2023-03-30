@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2023 at 07:22 AM
+-- Generation Time: Mar 30, 2023 at 10:14 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -32,6 +32,7 @@ CREATE TABLE `cart_tbl` (
   `user_id` int(11) NOT NULL,
   `order_table_name` varchar(255) NOT NULL,
   `order_table_id` int(11) NOT NULL,
+  `status_order` varchar(255) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

@@ -7,20 +7,11 @@ $(document).ready(function(){
     var nameTarpaulin = "tarpaulin";
     var nameTemporaryPlate = "temporaryplate";
 
-    console.log(totalPrice);
-    console.log(nameSticker + idSticker);
-    console.log(nameTarpaulin + idTarpaulin);
-    console.log(nameTemporaryPlate + idTemporaryPlate);
+    $('#createPaymentForm').submit(function(event) {
+        event.preventDefault(); // prevent default form submission
 
-
-    getBtnPayNow();
-
-    function getBtnPayNow(){
-        var totalPrice = localStorage.getItem("totalPrice");
-        if(totalPrice == 0.00){
-            $("#payNowContainer").hide();
-        }
-    }
+        
+    });
 
     // Close Payment Form
     $("#payNowBtn").click(function(){
@@ -33,4 +24,13 @@ $(document).ready(function(){
         $("#createBgContainer").hide();
         $("#createFormContainer").hide();
     });
+
+    // getBtnPayNow();
+
+    // function getBtnPayNow(){
+    //     var totalPrice = localStorage.getItem("totalPrice");
+    //     if(totalPrice == 0.00 || totalPrice == null){
+    //         $("#payNowContainer").hide();
+    //     }
+    // }
 });

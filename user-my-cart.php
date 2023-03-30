@@ -130,10 +130,10 @@
 
         <!-- <div id="displayCartList" style="margin:auto"></div> -->
 
-            <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
+        <div id="displayCartList" class="g-main-right yot-col-66-66 yot-pa-16 cart-list-user-my-cart"></div>
     </div>
 
-    <!-- Create Update Delete Sub -->
+    <!-- Create -->
     <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
         <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
             <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -146,12 +146,23 @@
                 <!-- Create Form Container -->
                 <div id="createDisplayContainer">
                     <form id="createPaymentForm">
+                        <!-- Get Option -->
+                        <div class="yot-form-group">
+                            <label for="referenceNo" class="yot-text-fs-l"><b>Delivery Method</b></label>
+                            <select class="yot-form-select yot-form-select-option" name="selectGetOption" id="selectGetOption">
+                                <option value="">- Select Delivery Method -</option>
+                                <option value="Courier">Courier</option>
+                                <option value="Pick up">Pick up</option>
+                            </select>
+                        </div>
+
                         <!-- Reference No -->
                         <div class="yot-form-group">
                             <label for="referenceNo" class="yot-text-fs-l"><b>Reference No.</b></label>
                             <input class="yot-form-input" type="text" name="" id="">
                         </div>
 
+                        <!-- Receipt -->
                         <div class="yot-form-group">
                             <label for="uploadReceipt" class="yot-text-fs-l"><b>Upload Receipt</b></label>
                             <input class="yot-form-input" type="file" name="" id="">

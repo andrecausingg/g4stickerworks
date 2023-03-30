@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2023 at 07:22 AM
+-- Generation Time: Mar 30, 2023 at 10:14 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -38,7 +38,8 @@ CREATE TABLE `order_ready_to_print_tbl` (
   `quantity` int(11) NOT NULL,
   `total_price` decimal(65,2) NOT NULL,
   `page` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL,
+  `status_order` varchar(20) NOT NULL,
+  `deliver_method` varchar(20) NOT NULL,
   `reference_num` varchar(255) NOT NULL,
   `receipt` varchar(255) NOT NULL,
   `payment` varchar(20) NOT NULL,
