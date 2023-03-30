@@ -58,7 +58,10 @@
             <div class="yot-hide-for-mobile yot-flex yot-flex-ai-c">
                 <a href="user-profile" class="yot-text-fs-xl yot-active-bbh1">Profile</a> <span class="yot-mlr-4">|</span>
                 <a href="user-my-cart" class="yot-text-fs-xl yot-active-bbh1">My Cart </a> <span class="yot-mlr-4">|</span>
-                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a>
+                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a><span class="yot-mlr-4">|</span>
+                <div class="yot-text-center">
+                    <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
+                </div>
             </div>
 
             <!-- Hamburger -->
@@ -75,8 +78,11 @@
             <a href="user-product" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Products</a>
             <i id="hamburgerCloseIndex" class="fa-solid fa-xmark yot-tc-blue-1" style="font-size: 46px; display: none;"></i>
         </div>
+        <div class="yot-mb-16">
+            <a href="user-ready-to-print" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">Tarpaulin</a>
+        </div>
         <!-- Tarpaulin -->
-        <div class="yot-mb-8">
+        <!-- <div class="yot-mb-8">
             <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-active-bb-blue yot-cursor-pointer">
                 <span style="font-size: 36px; font-weight: bolder;">Tarpaulin</span>
                 <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRight"></i></span>
@@ -85,7 +91,7 @@
                 <a href="user-ready-to-print" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Ready to Print</a>
                 <a href="user-make-layout" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
             </div>
-        </div>
+        </div> -->
         <div class="yot-mb-16">
             <a href="user-sticker" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Sticker</a>
         </div>
@@ -100,6 +106,9 @@
         </div>
         <div class="yot-mb-16">
             <a href="user-my-orders" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">My Orders</a>
+        </div>
+        <div class="yot-text-center">
+            <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
         </div>
     </div>
 

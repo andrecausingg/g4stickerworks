@@ -62,7 +62,10 @@
             <div class="yot-hide-for-mobile yot-flex yot-flex-ai-c">
                 <a href="user-profile" class="yot-text-fs-xl yot-active-bbh1">Profile</a> <span class="yot-mlr-4">|</span>
                 <a href="user-my-cart" class="yot-text-fs-xl yot-active-bbh1">My Cart </a> <span class="yot-mlr-4">|</span>
-                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a>
+                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a> <span class="yot-mlr-4">|</span>
+                <div class="yot-text-center">
+                    <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
+                </div>
             </div>
 
             <!-- Hamburger -->
@@ -111,6 +114,9 @@
         </div>
         <div class="yot-mb-16">
             <a href="user-my-orders" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">My Orders</a>
+        </div>
+        <div class="yot-text-center">
+            <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
         </div>
     </div>
 

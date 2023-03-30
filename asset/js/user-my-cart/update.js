@@ -10,7 +10,6 @@ $(document).ready(function(){
     $('#createPaymentForm').submit(function(event) {
         event.preventDefault(); // prevent default form submission
 
-        
     });
 
     // Close Payment Form

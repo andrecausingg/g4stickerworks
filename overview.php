@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
+                        <!-- <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a> -->
                     </div>
                 </div>
             </div>
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                     <div class="yot-mb-16">
-                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
+                        <!-- <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a> -->
                     </div>
                 </div>
             </div>
