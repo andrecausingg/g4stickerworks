@@ -39,41 +39,46 @@ class ClassSearch{
         $conn = $classConnDB->conn();
     
         // Create query
-        $query = "SELECT * FROM user_tbl ";
+        $query = "SELECT * FROM user_tbl WHERE role='admin' ";
         $queryParams = array();
 
         // Add a condition to the query if the search parameter is not empty
         if (isset($this->search) && !empty($this->search)) {
-            $search = $this->search;
-            $queryParams[] = "email LIKE '%$search%'";
+            $search = "%{$this->search}%";
+            $query .= " AND email LIKE ?";
+            $queryParams[] = $search;
         }
 
         // Add a condition to the query if the startDate parameter is not empty
         if (isset($this->startDate) && $this->startDate !== "undefined--undefined") {
             $startDate = $this->startDate;
-            $queryParams[] = "DATE(created_at) >= '$startDate'";
+            $query .= " AND DATE(created_at) >= ?";
+            $queryParams[] = $startDate;
         }
 
         // Add a condition to the query if the endDate parameter is not empty
         if (isset($this->endDate) && $this->endDate !== "undefined--undefined") {
             $endDate = $this->endDate;
-            $queryParams[] = "DATE(created_at) <= '$endDate'";
+            $query .= " AND DATE(created_at) <= ?";
+            $queryParams[] = $endDate;
         }
 
-        // Add the WHERE clause to the query if any conditions were added
+        $query .= " ORDER BY user_id DESC";
+
+        // Prepare statement
+        $stmt = $conn->prepare($query);
+
+        // Bind parameters
         if (!empty($queryParams)) {
-            $query .= " WHERE " . implode(" AND ", $queryParams);
-        }
-
-        if($this->search == ""){
-            $query .= "WHERE role='admin' ORDER BY user_id DESC ";
-        }else{
-            // Add the ORDER BY clause to sort the results by user_id in descending order, and filter by the 'user' role
-            $query .= " AND role = 'admin' ORDER BY user_id DESC";
+            $types = str_repeat('s', count($queryParams));
+            $stmt->bind_param($types, ...$queryParams);
         }
 
         // Execute query
-        $result = mysqli_query($conn, $query);
+        $stmt->execute();
+
+        // Get result
+        $result = $stmt->get_result();
     
         // Display data
         if ($result->num_rows > 0) {

@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us Page</title>
+    <title>Home Page</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -90,7 +90,6 @@
                         </div>
                         <div class="AdEmUsContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                             <a href="admin-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Admin</a>
-                            <!-- <a href="emp-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Employee</a> -->
                             <a href="user-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
                         </div>
                     </div>
@@ -102,15 +101,14 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
                         </div>
                         <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                            <a href="user-product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
+                            <a href="user-product-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
                             <a href="index-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
                             <a href="product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
                             <a href="services-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
                             <a href="contact-us-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Contact Us</a>
-                            <a href="about-us-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
+                            <a href="about-us-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
                             <a href="gallery-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Gallery</a>
                             <a href="all-footer-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">All Footer</a>
-                            
                         </div>
                     </div>
                 </div>
@@ -133,11 +131,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="yot-text-center">
                 <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
             </div>
         </div>
+
     </div>
 
     <!-- Main Container -->
@@ -189,7 +188,6 @@
                         </div>
                         <div class="AdEmUsContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                             <a href="admin-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Admin</a>
-                            <!-- <a href="employee-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Employee</a> -->
                             <a href="user-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
                         </div>
                     </div>
@@ -201,12 +199,12 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
                         </div>
                         <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                            <a href="user-product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
+                            <a href="user-product-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
                             <a href="index-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
                             <a href="product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
                             <a href="services-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
                             <a href="contact-us-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Contact Us</a>
-                            <a href="about-us-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
+                            <a href="about-us-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">About Us</a>
                             <a href="gallery-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Gallery</a>
                             <a href="all-footer-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">All Footer</a>
                         </div>
@@ -241,27 +239,71 @@
         <div class="g-main-item-right" style="padding: 24px;">
             <!-- Title with Btn Form-->
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
-                <h2 class="yot-mb-8 yot-resize-font-64">About Us Page</h2>
+                <h2 class="yot-mb-8 yot-resize-font-64">Home Hero Section</h2>
                 <div class="yot-text-center yot-pa-8">
+                    <button id="titleBtn" class="yot-btn-blue1">Title</button>
                     <button id="subTitleBtn" class="yot-btn-blue1">Sub Title</button>
-                    <button id="imagesBtn" class="yot-btn-blue1">Images</button>
+                    <button id="imagesBtn" class="yot-btn-blue1">Image</button>
                 </div>
             </div>
 
-            <!-- About Us -->
+            <!-- Index page Container -->
             <div class="yot-content-space-margin-t-80 yot-container">
-                <!-- About Us Section -->
-                <section>
-                    <!-- Title-->
-                    <div class="yot-tc-blue1 yot-text-center">
-                        <h1 class="yot-resize-font-64">ABOUT US</h1>
-                        <p id="displaySubTitle" class="yot-resize-font-18 yot-mb-16"></p>
+                <!-- Hero Section -->
+                <section class="yot-row yot-flex-ai-c" style="padding:0;">
+                    <!-- Description -->
+                    <div class="yot-tc-white yot-col-50" >
+                        <h1 id="titleDisplay" class="yot-resize-font-64 yot-mb-16"></h1>
+                        <p id="subTitle" class="yot-resize-font-18"></p>
                     </div>
 
-                    <div id="displayImages" class="yot-text-center"></div>
+                    <div class="index-hero-bg" style="top:150px"></div>
+
+                    <!-- Image -->
+                    <div id="imageDisplay" class="yot-col-50"></div>
                 </section>
 
-                <!-- Create Update Delete Sub Title Container -->
+                <!-- Create Update Delete Container Title-->
+                <div id="createBgContainerTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+                <div id="createFormContainerTitle" class="yot-overlay-mid-container" style="display:none;">
+                    <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+                        <!-- Title -->
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                            <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
+                            <i id="createCloseFormIconTitle" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                        </div>
+
+                        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="title">Title</label>
+                            <select class="yot-form-select yot-form-select-option" name="selectOptionTitle" id="selectOptionTitle">
+                                <option value="create">Create</option>
+                                <option value="update">Update</option>
+                                <option value="delete">Delete</option>
+                            </select>
+                        </div>
+
+                        <!-- Create Form Container -->
+                        <div id="createDisplayContainerTitle">
+                            <form id="createFormTitle">
+                                <div class="yot-form-group">
+                                    <textarea class="yot-form-input yot-tff-sas" type="text" name="title" id="title" style="height:100px;resize:none;" ></textarea>
+                                </div>
+
+                                <div class="yot-text-center">
+                                    <input class="yot-btn-blue1" type="submit" value="Submit">
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Update Container -->
+                        <div id="updateDisplayContainerTitle" style="display:none"></div>
+
+                        <!-- Delete Container -->
+                        <div id="deleteDisplayContainerTitle" style="display:none"></div>
+                    </div>
+                </div>
+
+                <!-- Create Update Delete Container Sub Title-->
                 <div id="createBgContainerSubTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
                 <div id="createFormContainerSubtitle" class="yot-overlay-mid-container" style="display:none;">
                     <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
@@ -284,7 +326,7 @@
                         <div id="createDisplayContainerSubTitle">
                             <form id="createFormSubTitle">
                                 <div class="yot-form-group">
-                                    <textarea class="yot-form-input yot-tff-sas" type="text" name="subTitle" id="subTitle" style="height:100px;resize:none;" ></textarea>
+                                    <textarea class="yot-form-input yot-tff-sas subTitle" type="text" name="subTitle" id="subTitle" style="height:100px;resize:none;" ></textarea>
                                 </div>
 
                                 <div class="yot-text-center">
@@ -348,7 +390,7 @@
     <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
         <div class="yot-flex yot-flex-ai-c-jc-sb">
             <h3>Successful Insertion:</h3>
-            <i id="successAlertCloseIconInsert" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+            <i id="createSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
         </div>
         <p class="yot-text-fs-l">The record was successfully inserted.</p>
     </div>
@@ -398,16 +440,19 @@
         <p class="yot-text-fs-l">Allowed size is 50mb</p>
     </div>
 
+
     <script src="./asset/js/all/global.js"></script>
 
-    <script src="./asset/js/about-us-page/display/d-data.js"></script>
+    <script src="./asset/js/index-page-hero-section/display/d-data.js"></script>
+    <script src="./asset/js/index-page-hero-section/create-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/update-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/delete-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/create-sub-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/update-sub-title.js"></script>
+    <script src="./asset/js/index-page-hero-section/delete-sub-title.js"></script>
 
-    <script src="./asset/js/about-us-page/create-sub-title.js"></script>
-    <script src="./asset/js/about-us-page/update-sub-title.js"></script>
-    <script src="./asset/js/about-us-page/delete-sub-title.js"></script>
-
-    <script src="./asset/js/about-us-page/create-image.js"></script>
-    <script src="./asset/js/about-us-page/update-image.js"></script>
-    <script src="./asset/js/about-us-page/delete-image.js"></script>
+    <script src="./asset/js/index-page-hero-section/create-image.js"></script>
+    <script src="./asset/js/index-page-hero-section/update-image.js"></script>
+    <script src="./asset/js/index-page-hero-section/delete-image.js"></script>
 </body>
 </html>

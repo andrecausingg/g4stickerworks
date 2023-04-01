@@ -48,7 +48,7 @@
                 echo '
                     <div class="yot-flex yot-flex-fd-c-ai-c">
                         <h1>Empty Orders</h1>
-                        <img src="../../../../../g4stickerworks/asset/images/undraw_empty_cart_co35.svg" alt="" style="width:300px; height:300px">
+                        <img src="../../../../../g4stickerworks/asset/images/undraw_empty_order_opql.svg" alt="" style="width:300px; height:300px">
                     </div>
                 ';
             }
