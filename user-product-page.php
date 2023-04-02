@@ -239,43 +239,31 @@
         <div class="g-main-item-right" style="padding: 24px;">
             <!-- Title with Btn Form-->
             <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
-                <h2 class="yot-mb-8 yot-resize-font-64">Home Hero Section</h2>
+                <h2 class="yot-mb-8 yot-resize-font-64">User Product</h2>
                 <div class="yot-text-center yot-pa-8">
-                    <button id="titleBtn" class="yot-btn-blue1">Title</button>
-                    <button id="subTitleBtn" class="yot-btn-blue1">Sub Title</button>
-                    <button id="imagesBtn" class="yot-btn-blue1">Image</button>
+                    <button id="addProductBtn" class="yot-btn-blue1">Product</button>
                 </div>
             </div>
 
-            <!-- Index page Container -->
+            <!-- User Product -->
+            <div id="displayUserProducts"></div>
+
+            <!-- User page Container -->
             <div class="yot-content-space-margin-t-80 yot-container">
-                <!-- Hero Section -->
-                <section class="yot-row yot-flex-ai-c" style="padding:0;">
-                    <!-- Description -->
-                    <div class="yot-tc-white yot-col-50" >
-                        <h1 id="titleDisplay" class="yot-resize-font-64 yot-mb-16"></h1>
-                        <p id="subTitle" class="yot-resize-font-18"></p>
-                    </div>
 
-                    <div class="index-hero-bg" style="top:150px"></div>
-
-                    <!-- Image -->
-                    <div id="imageDisplay" class="yot-col-50"></div>
-                </section>
-
-                <!-- Create Update Delete Container Title-->
-                <div id="createBgContainerTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-                <div id="createFormContainerTitle" class="yot-overlay-mid-container" style="display:none;">
+                <!-- Create Update Delete Product-->
+                <div id="createBgContainerProduct" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+                <div id="createFormContainerProduct" class="yot-overlay-mid-container" style="display:none;">
                     <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                        <!-- Title -->
+                        <!-- Product -->
                         <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                            <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
-                            <i id="createCloseFormIconTitle" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+                            <h2 id="captionProduct" class="yot-tc-blue1">CREATE</h2>
+                            <i id="createCloseFormIconProduct" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
                         </div>
 
                         <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="title">Title</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectOptionTitle" id="selectOptionTitle">
+                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Product</label>
+                            <select class="yot-form-select yot-form-select-option" name="selectOptionProduct" id="selectOptionProduct">
                                 <option value="create">Create</option>
                                 <option value="update">Update</option>
                                 <option value="delete">Delete</option>
@@ -283,10 +271,43 @@
                         </div>
 
                         <!-- Create Form Container -->
-                        <div id="createDisplayContainerTitle">
-                            <form id="createFormTitle">
+                        <div id="createDisplayContainerProduct">
+                            <form id="createFormProduct">
                                 <div class="yot-form-group">
-                                    <textarea class="yot-form-input yot-tff-sas" type="text" name="title" id="title" style="height:100px;resize:none;" ></textarea>
+                                    <!-- Error -->
+                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Product Name</label>
+                                        <span class="yot-tc-red" id="emptyErrName" style="display: none;">Product Name field is required.<br></span>
+                                    </div>
+                                    <input class="yot-form-input" type="text" name="name" id="name">
+                                </div>
+
+                                <div class="yot-form-group">
+                                    <!-- Error -->
+                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Description</label>
+                                        <span class="yot-tc-red" id="emptyErrDescription" style="display: none;">Description field is required.<br></span>
+                                    </div>
+                                    <input class="yot-form-input" type="text" name="description" id="description">
+                                </div>
+
+                                <div class="yot-form-group">
+                                    <!-- Error -->
+                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Price</label>
+                                        <span class="yot-tc-red" id="emptyErrPrice" style="display: none;">Price field is required.<br></span>
+                                    </div>
+                                    <input class="yot-form-input" type="text" name="price" id="price">
+                                </div>
+
+                                
+                                <div class="yot-form-group">
+                                    <!-- Error -->
+                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
+                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Image</label>
+                                        <span class="yot-tc-red" id="emptyErrimageUserProduct" style="display: none;">Image field is required.<br></span>
+                                    </div>
+                                    <input class="yot-form-input" type="file" name="imageUserProduct" id="imageUserProduct">
                                 </div>
 
                                 <div class="yot-text-center">
@@ -296,90 +317,10 @@
                         </div>
 
                         <!-- Update Container -->
-                        <div id="updateDisplayContainerTitle" style="display:none"></div>
+                        <div id="updateDisplayContainerProduct" style="display:none"></div>
 
                         <!-- Delete Container -->
-                        <div id="deleteDisplayContainerTitle" style="display:none"></div>
-                    </div>
-                </div>
-
-                <!-- Create Update Delete Container Sub Title-->
-                <div id="createBgContainerSubTitle" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-                <div id="createFormContainerSubtitle" class="yot-overlay-mid-container" style="display:none;">
-                    <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                        <!-- Title -->
-                        <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                            <h2 id="titleCaption" class="yot-tc-blue1">CREATE</h2>
-                            <i id="createCloseFormIconSubtitle" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-                        </div>
-
-                        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="subTitle">Sub Title</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectOptionSubTitle" id="selectOptionSubTitle">
-                                <option value="create">Create</option>
-                                <option value="update">Update</option>
-                                <option value="delete">Delete</option>
-                            </select>
-                        </div>
-
-                        <!-- Create Form Container -->
-                        <div id="createDisplayContainerSubTitle">
-                            <form id="createFormSubTitle">
-                                <div class="yot-form-group">
-                                    <textarea class="yot-form-input yot-tff-sas subTitle" type="text" name="subTitle" id="subTitle" style="height:100px;resize:none;" ></textarea>
-                                </div>
-
-                                <div class="yot-text-center">
-                                    <input class="yot-btn-blue1" type="submit" value="Submit">
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- Update Container -->
-                        <div id="updateDisplayContainerSubTitle" style="display:none"></div>
-
-                        <!-- Delete Container -->
-                        <div id="deleteDisplayContainerSubTitle" style="display:none"></div>
-                    </div>
-                </div>
-
-                <!-- Create Update Delete Image Container -->
-                <div id="createBgContainerImage" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-                <div id="createFormContainerImage" class="yot-overlay-mid-container" style="display:none;">
-                    <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                        <!-- Title -->
-                        <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                            <h2 id="titleImage" class="yot-tc-blue1">CREATE</h2>
-                            <i id="createCloseFormIconImage" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-                        </div>
-
-                        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="uploadImage">Upload Image</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectOptionImage" id="selectOptionImage">
-                                <option value="create">Create</option>
-                                <option value="update">Update</option>
-                                <option value="delete">Delete</option>
-                            </select>
-                        </div>
-
-                        <!-- Create Form Container -->
-                        <div id="createDisplayContainerImage">
-                            <form id="createFormImage">
-                                <div class="yot-form-group">
-                                    <input class="yot-form-input" type="file" name="image" id="image">
-                                </div>
-
-                                <div class="yot-text-center">
-                                    <input class="yot-btn-blue1" type="submit" value="Submit">
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- Update Container -->
-                        <div id="updateDisplayContainerImage" style="overflow-y:scroll; height:300px; display:none;"></div>
-
-                        <!-- Delete Container -->
-                        <div id="deleteDisplayContainerImage" style="overflow-y:scroll; height:300px; display:none;"></div>
+                        <div id="deleteDisplayContainerProduct" style="display:none"></div>
                     </div>
                 </div>
             </div>
@@ -440,19 +381,8 @@
         <p class="yot-text-fs-l">Allowed size is 50mb</p>
     </div>
 
-
     <script src="./asset/js/all/global.js"></script>
-
-    <script src="./asset/js/index-page-hero-section/display/d-data.js"></script>
-    <script src="./asset/js/index-page-hero-section/create-title.js"></script>
-    <script src="./asset/js/index-page-hero-section/update-title.js"></script>
-    <script src="./asset/js/index-page-hero-section/delete-title.js"></script>
-    <script src="./asset/js/index-page-hero-section/create-sub-title.js"></script>
-    <script src="./asset/js/index-page-hero-section/update-sub-title.js"></script>
-    <script src="./asset/js/index-page-hero-section/delete-sub-title.js"></script>
-
-    <script src="./asset/js/index-page-hero-section/create-image.js"></script>
-    <script src="./asset/js/index-page-hero-section/update-image.js"></script>
-    <script src="./asset/js/index-page-hero-section/delete-image.js"></script>
+    <script src="./asset/js/user-product-page/create.js"></script>
+    <script src="./asset/js/user-product-page/display/d-images.js"></script>
 </body>
 </html>

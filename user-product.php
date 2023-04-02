@@ -113,12 +113,12 @@
 
     <!-- Product Container -->
     <div class="yot-content-space-margin-t-120 yot-container">
-        <!-- All Decals Products -->
-        <section id="allDecalsProduct"></section>
+        <!-- User Product -->
+        <div id="displayUserProducts"></div>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/user-product/display/d-product.js"></script>
+    <script src="./asset/js/user-product-page/display/d-images.js"></script>
     <script src="./asset/js/user-product/display/d-load-cart-data.js"></script>
 </body>
 </html>

@@ -38,9 +38,9 @@
             <!-- Nav Links -->
             <div class="yot-hide-for-mobile yot-flex">
                 <a href="user-product" class="yot-text-fs-xl yot-active-bbh1">Products</a> <span class="yot-mlr-4"></span>
-
+                <a href="user-ready-to-print" class="yot-text-fs-xl yot-active-bb-blue">Tarpaulin</a> <span class="yot-mlr-4"></span>
                 <!-- Tarpaulin -->
-                <div style="position: relative">
+                <!-- <div style="position: relative">
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bb-blue yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">Tarpaulin</span>
                     </div>
@@ -48,8 +48,7 @@
                         <a href="user-ready-to-print" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">Ready To Print</a>
                         <a href="user-make-layout" class="yot-text-fs-xl yot-active-bbh1">Make Layout</a>
                     </div>
-                </div> <span class="yot-mlr-4"></span>
-
+                </div> <span class="yot-mlr-4"></span> -->
                 <a href="user-sticker" class="yot-text-fs-xl yot-active-bbh1">Sticker</a> <span class="yot-mlr-4"></span>
                 <a href="user-temporary-plate" class="yot-text-fs-xl yot-active-bbh1">Temporary Plate</a> <span class="yot-mlr-4"></span>
             </div>
