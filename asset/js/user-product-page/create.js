@@ -127,14 +127,17 @@ $(document).ready(function() {
             $("#createDisplayContainerProduct").show(); // show the create container
             $("#updateDisplayContainerProduct").hide(); // hide the update container
             $("#deleteDisplayContainerProduct").hide(); // hide the delete container
+            $("#midContainer").removeClass("yot-overlay-mid-container-form-tablet-size-up");
         } else if (selectedValue == "update") {
             $("#createDisplayContainerProduct").hide(); // hide the create container
             $("#updateDisplayContainerProduct").show(); // show the update container
             $("#deleteDisplayContainerProduct").hide(); // hide the delete container
+            $("#midContainer").addClass("yot-overlay-mid-container-form-tablet-size-up");
         } else if (selectedValue == "delete") {
             $("#createDisplayContainerProduct").hide(); // hide the create container
             $("#updateDisplayContainerProduct").hide(); // hide the update container
             $("#deleteDisplayContainerProduct").show(); // show the delete container
+            $("#midContainer").addClass("yot-overlay-mid-container-form-tablet-size-up");
         }
     });
 

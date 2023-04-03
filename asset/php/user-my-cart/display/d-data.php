@@ -14,17 +14,20 @@
             $emptyCart = 0;
             $page = 'CART';
             $statusOrder = "NOTPAID";
-            $order_table_ids = []; // Create an empty array to store the IDs
+            $order_table_id = []; // Create an empty array to store the IDs
 
             // DISPLAY All Orders in Cart
-            $fetch_data = mysqli_query($conn, "SELECT * FROM cart_tbl WHERE user_id = '$userId' AND status_order = '$statusOrder' ORDER BY cart_id DESC");
+            $stmt = $conn->prepare("SELECT * FROM cart_tbl WHERE user_id = ? AND status_order = ? ORDER BY cart_id DESC");
+            $stmt->bind_param("is", $userId, $statusOrder);
+            $stmt->execute();
+            $fetch_data = $stmt->get_result();
             if(mysqli_num_rows($fetch_data) == 0){
                 $emptyCart = 1;
             }else{
                 while($row = mysqli_fetch_assoc($fetch_data)){
                     $order_table_id = $row["order_table_id"];
                     $order_table_name = $row["order_table_name"];
-    
+
                     if($order_table_name == "temporaryplate"){
                         $this->getTemporaryPlate($order_table_id, $userId, $conn, $page, $statusOrder);
                     }
@@ -32,12 +35,17 @@
                     if($order_table_name == "tarpaulin"){
                         $this->getTarpaulin($order_table_id, $userId, $conn, $page, $statusOrder);
                     }   
-    
+
                     if($order_table_name == "sticker"){
                         $this->getSticker($order_table_id, $userId, $conn, $page, $statusOrder);
                     }
+
+                    if($order_table_name == "product"){
+                        $this->getProduct($order_table_id, $userId, $conn, $page, $statusOrder);
+                    }
                 }
             }
+
 
             // Empty Cart Display Image Empty
             if($emptyCart == 1){
@@ -142,7 +150,9 @@
                                     </div>
                                 </div>
 
-                                <div class="yot-text-center">
+                                <div class="yot-flex yot-flex-ai-c-jc-c">
+                                    <button data-id="'.$tempOne."-".$row["order_temp_plate_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
+                                    <span class="yot-mlr-4"></span>
                                     <button class="yot-btn-blue1 cancelOrder" data-id="'.$tempOne."-".$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
@@ -221,7 +231,9 @@
                                     </div>
                                 </div>
 
-                                <div class="yot-text-center">
+                                <div class="yot-flex yot-flex-ai-c-jc-c">
+                                    <button data-id="'.$tempTwo."-".$row["order_temp_plate_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
+                                    <span class="yot-mlr-4"></span>
                                     <button class="yot-btn-blue1 cancelOrder" data-id="'.$tempTwo."-".$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
@@ -293,7 +305,9 @@
                                     </div>
                                 </div>
 
-                                <div class="yot-text-center">
+                                <div class="yot-flex yot-flex-ai-c-jc-c">
+                                    <button data-id="'.$tempThree."-".$row["order_temp_plate_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
+                                    <span class="yot-mlr-4"></span>
                                     <button class="yot-btn-blue1 cancelOrder" data-id="'.$tempThree."-".$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
@@ -365,7 +379,9 @@
                                     </div>
                                 </div>
 
-                                <div class="yot-text-center">
+                                <div class="yot-flex yot-flex-ai-c-jc-c">
+                                    <button data-id="'.$tempFour."-".$row["order_temp_plate_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
+                                    <span class="yot-mlr-4"></span>
                                     <button class="yot-btn-blue1 cancelOrder" data-id="'.$tempFour."-".$row["order_temp_plate_id"].'" >Cancel</button>
                                 </div>
                             </div>
@@ -441,7 +457,9 @@
                         </div>
                     </div>
 
-                    <div class="yot-text-center">
+                    <div class="yot-flex yot-flex-ai-c-jc-sb">
+                        <button data-id="'.$tarpaulin."-".$row["order_ready_to_print_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
+                        <span class="yot-mlr-4"></span>
                         <button class="yot-btn-blue1 cancelOrder" data-id="'.$tarpaulin."-".$row["order_ready_to_print_id"].'" >Cancel</button>
                     </div>
                 </div>
@@ -449,7 +467,7 @@
             }
         }
 
-        // Display all order Tarpaulin
+        // Display all order Sticker
         public function getSticker($order_table_id, $userId, $conn, $page, $statusOrder){
             $sticker = "sticker";
 
@@ -521,8 +539,84 @@
                             </div>
                         </div>
 
-                        <div class="yot-text-center">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <button data-id="'.$sticker."-".$row["order_sticker_main_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
+                            <span class="yot-mlr-4"></span>
                             <button class="yot-btn-blue1 cancelOrder" data-id="'.$sticker."-".$row["order_sticker_main_id"].'" >Cancel</button>
+                        </div>
+                    </div>
+                ';
+            }
+        }
+
+        // Display all order Product
+        public function getProduct($order_table_id, $userId, $conn, $page, $statusOrder){
+            $product = "product";
+
+            // DISPLAY Product
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_product_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' AND order_product_id = '$order_table_id' ORDER BY order_product_id DESC");
+            while($row = mysqli_fetch_assoc($fetch_data)){
+                echo'
+                    <!-- Product -->
+                    <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0px auto 8px;">
+                        <div class="yot-flex">
+                            <div class="yot-w-50 yot-mb-8">
+                                <!-- Title -->
+                                <div class="yot-text-center">
+                                    <h4>PRODUCT</h4>
+                                </div>
+
+                                <div class="image-container-RTP" style="height: 150px;">
+                                    <img src="../../../../../g4stickerworks/asset/images/user-all-products/'.$row["image"].'" alt="">
+                                </div>
+                            </div>
+
+                            <div class="yot-w-50 yot-mb-8">
+                                <div class="yot-flex yot-flex-fd-c yot-mb-8">
+                                    <div class="yot-mb-4">
+                                        <h5>Name</h5>
+                                        <span>'.$row["name"].'</span>
+                                    </div>
+
+                                    <div class="yot-mb-4">
+                                        <h5>Description</h5>
+                                        <span>'.$row["description"].'</span>
+                                    </div>
+
+                                    <div class="yot-flex yot-flex-ai-c">
+                                        <div class="yot-mb-4">
+                                            <h5>Quantity</h5>
+                                            <span>'.$row["quantity"].'</span>
+                                        </div>
+                                        
+                                        <span class="yot-mlr-4"></span>
+
+                                        <div class="yot-mb-4">
+                                            <h5>Price</h5>
+                                            <span>'.$row["total_price"].'</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
+                            <div class="yot-mb-4">
+                                <div>
+                                    <h5>Order I.D</h5>
+                                    <span>'.$row["order_id_product"].'</span>
+                                </div>
+                                <div>
+                                    <h5>Order Date and Time</h5>
+                                    <span>'.$row["created_at_varchar"].'</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="yot-flex yot-flex-ai-c-jc-c">
+                            <button data-id="'.$product."-".$row["order_product_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
+                            <span class="yot-mlr-4"></span>
+                            <button class="yot-btn-blue1 cancelOrder" data-id="'.$product."-".$row["order_product_id"].'" >Cancel</button>
                         </div>
                     </div>
                 ';

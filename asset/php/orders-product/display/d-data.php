@@ -15,13 +15,9 @@
                     <tr>
                         <th>Name</th>
                         <th>Order No.</th>
-                        <th>Type Of Plate</th>
-                        <th>Format</th>   
-                        <th>Mv-File</th>
-                        <th>Register No.</th>
-                        <th>Region</th>
-                        <th>Delear</th>
-                        <th>Status Plate</th>
+                        <th>Product Name</th>
+                        <th>Description</th>   
+                        <th>Image</th>
                         <th>Quantity</th>
                         <th>Total Price</th>
                         <th>Page</th>
@@ -34,23 +30,19 @@
             ';
             
             // DISPLAY
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_temp_plate_tbl ORDER BY order_temp_plate_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_product_tbl ORDER BY order_product_id DESC");
             while($row = mysqli_fetch_assoc($fetch_data)){
                 $userId = $row["user_id"];
-                $order = $row["order_id_temp_plate"]; // assuming $row["message"] contains the string you want to split
+
+                $order = $row["order_id_product"]; // assuming $row["message"] contains the string you want to split
                 $split_order = chunk_split($order, 10, "\n"); // split the message into chunks of 50 characters, with a line break after each chunk
-                
                 echo'
                     <tr>
                         <td>'.$this->getUserProfile($userId, $conn).'</td>
                         <td>'.$split_order.'</td>
-                        <td>'.$row["type_of_plate"].'</td>
-                        <td>'.$row["format"].'</td>
-                        <td>'.$row["mv_file"].'</td>
-                        <td>'.$row["register_num"].'</td>
-                        <td>'.$row["region"].'</td>
-                        <td>'.$row["dealer"].'</td>
-                        <td>'.$row["status_plate"].'</td>
+                        <td>'.$row["name"].'</td>
+                        <td>'.$row["description"].'</td>
+                        <td><img src="../../../../../g4stickerworks/asset/images/user-all-products/'.$row["image"].'" alt="" height="50"></td>
                         <td>'.$row["quantity"].'</td>
                         <td>'.$row["total_price"].'</td>
                         <td>'.$row["page"].'</td>

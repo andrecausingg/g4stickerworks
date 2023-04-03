@@ -21,6 +21,7 @@
             $totalPriceSticker = 0;
             $totalPriceReadyToPrint = 0;
             $totalPricetemporaryPlate = 0;
+            $totalPriceProduct = 0;
 
             // Query
             $page = 'CART';
@@ -51,7 +52,13 @@
                     $totalPricetemporaryPlate += $row["total_price"]; 
                 }
 
-                $totalPrice = $totalPriceReadyToPrint + $totalPricetemporaryPlate + $totalPriceSticker;
+                // DISPLAY Product
+                $fetch_data = mysqli_query($conn, "SELECT * FROM order_product_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' ORDER BY order_product_id DESC");
+                while($row = mysqli_fetch_assoc($fetch_data)){
+                    $totalPriceProduct += $row["total_price"]; 
+                }
+
+                $totalPrice = $totalPriceReadyToPrint + $totalPricetemporaryPlate + $totalPriceSticker + $totalPriceProduct;
 
                 echo '<span id="totalPrice">'. number_format($totalPrice, 2, '.', '') .'</span>';
             }

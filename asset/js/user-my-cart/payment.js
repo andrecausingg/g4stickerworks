@@ -1,25 +1,63 @@
 $(document).ready(function(){
-    var totalPrice = localStorage.getItem("totalPrice");
-    var idSticker = localStorage.getItem("orderMainIdSticker");
-    var idTarpaulin = localStorage.getItem("orderMainIdTarpaulin");
-    var idTemporaryPlate = localStorage.getItem("orderMainIdTemporaryPlate");
-    var nameSticker = "sticker";
-    var nameTarpaulin = "tarpaulin";
-    var nameTemporaryPlate = "temporaryplate";
+    var dataId; // declare the variable outside of the click function
+
+    // Show Payment Form
+    $(document).on("click", ".payNowBtn", function(){
+        dataId = $(this).data("id"); // get the data-id attribute value of the clicked button
+
+        $("#createBgContainer").show();
+        $("#createFormContainer").show();
+    });
+
+    // Close Payment Form
+    $(document).on("click", "#createCloseFormIcon", function(){
+        $("#createBgContainer").hide();
+        $("#createFormContainer").hide();
+    });
 
     // Form Payment Receipt
     $('#createPaymentForm').submit(function(event) {
         event.preventDefault(); // prevent default form submission
-        
+
         var deliverMethod = $('#deliverMethod').val().trim();
         var referenceNum = $('#referenceNum').val().trim();
         var imageReceipt = $('#imageReceipt').val().trim();
 
-        if(deliverMethod != "" && validateDeliverMethod() &&
+        // create a new FormData object
+        var formData = new FormData();
+        formData.append('id', dataId);
+        formData.append('deliverMethod', deliverMethod);
+        formData.append('referenceNum', referenceNum);
+        formData.append('imageReceipt', $('#imageReceipt')[0].files[0]);
+
+        if( dataId != "" &&
+            deliverMethod != "" && validateDeliverMethod() &&
             referenceNum != "" && validateReferenceNum() && 
             imageReceipt != "" && validateUploadImage()
         ){
-
+            $.ajax({
+                url: '../../../../g4stickerworks/asset/php/user-my-cart/payment.php',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    var responseVar = response.trim();
+                    console.log(responseVar);
+                    if(responseVar == "created"){
+                        resetForm();
+                    }else if(responseVar == 'imagetoolarge'){
+                        hideErrImgTooBig();
+                    }else if(responseVar == 'errorUploadingimage'){
+                        hideErroruploadingimage();
+                    }else if(responseVar == 'invalidfiletype'){
+                        hideInvalidfiletype();
+                    }
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown); // handle error response from server
+                }
+            });
         }else{
             validateDeliverMethod();
             validateReferenceNum();
@@ -71,7 +109,6 @@ $(document).ready(function(){
                 return true;
             }
         }
-
     });
 
     $('#deliverMethod').change(validateDeliverMethod);
@@ -117,24 +154,31 @@ $(document).ready(function(){
         }
     }
 
-    // Close Payment Form
-    $("#payNowBtn").click(function(){
-        $("#createBgContainer").show();
-        $("#createFormContainer").show();
+    // Hide Success Paid Message
+    $("#createSuccessAlertCloseIcon").click(function(){
+        $("#createSuccessAlert").hide();
     });
 
-    // Close Payment Form
-    $("#createCloseFormIcon").click(function(){
-        $("#createBgContainer").hide();
-        $("#createFormContainer").hide();
-    });
+    function resetForm(){
+        // Clear image display
+       $('#displayImageSticker').html('');
+       
+       $("#totalPrice").html("0.00");
+       $("#createSuccessAlert").show();
+       setTimeout(function() {
+           $("#createSuccessAlert").hide(); // Show the element after 10 seconds
+       }, 10000); // 10000 milliseconds = 10 seconds
+       $('#deliverMethod, #referenceNum, #imageReceipt').val("");
+       $('#deliverMethod, #referenceNum, #imageReceipt').css('border-color', 'hsl(207, 90%, 54%)');
 
-    // getBtnPayNow();
+        // Display Data
+        $("#displayCartList").load("../../../../../g4stickerworks/asset/php/user-my-cart/display/d-data.php");
 
-    // function getBtnPayNow(){
-    //     var totalPrice = localStorage.getItem("totalPrice");
-    //     if(totalPrice == 0.00 || totalPrice == null){
-    //         $("#payNowContainer").hide();
-    //     }
-    // }
+        // Total Price
+        $("#displayTotalPrice").load("../../../../../g4stickerworks/asset/php/user-my-cart/display/d-total-price.php", function() {
+            // callback function to be executed after the content is loaded
+            var totalPrice = $("#totalPrice").text();
+            localStorage.setItem("totalPrice", totalPrice);
+        });
+   }
 });

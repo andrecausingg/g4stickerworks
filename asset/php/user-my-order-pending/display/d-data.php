@@ -13,12 +13,10 @@
 
             $emptyCart = 0;
 
-            $page = 'CART';
-            $status = 'PENDING';
+            $page = 'PENDING-ORDER';
+            $statusOrder = "PENDING";
 
-            $statusOrder = "PAID";
-
-            $order_table_ids = []; // Create an empty array to store the IDs
+            $order_table_id = []; // Create an empty array to store the IDs
 
             // DISPLAY All Orders in Cart
             $fetch_data = mysqli_query($conn, "SELECT * FROM cart_tbl WHERE user_id = '$userId' AND status_order = '$statusOrder' ORDER BY cart_id DESC");
@@ -30,15 +28,19 @@
                     $order_table_name = $row["order_table_name"];
     
                     if($order_table_name == "temporaryplate"){
-                        $this->getTemporaryPlate($order_table_id, $userId, $conn, $page, $status);
+                        $this->getTemporaryPlate($order_table_id, $userId, $conn, $page, $statusOrder);
                     }
                     
                     if($order_table_name == "tarpaulin"){
-                        $this->getTarpaulin($order_table_id, $userId, $conn, $page, $status);
+                        $this->getTarpaulin($order_table_id, $userId, $conn, $page, $statusOrder);
                     }   
     
                     if($order_table_name == "sticker"){
-                        $this->getSticker($order_table_id, $userId, $conn, $page, $status);
+                        $this->getSticker($order_table_id, $userId, $conn, $page, $statusOrder);
+                    }
+
+                    if($order_table_name == "product"){
+                        $this->getProduct($order_table_id, $userId, $conn, $page, $statusOrder);
                     }
                 }
             }
@@ -55,14 +57,14 @@
         }
 
         // Display all order Temporary Plate
-        public function getTemporaryPlate($order_table_id, $userId, $conn, $page, $status){
+        public function getTemporaryPlate($order_table_id, $userId, $conn, $page, $statusOrder){
             $tempOne = "temporaryPlate";
             $tempTwo = "temporaryPlate";
             $tempThree = "temporaryPlate";
             $tempFour = "temporaryPlate";
 
             // DISPLAY Temporary Plate
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_temp_plate_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' AND order_temp_plate_id = '$order_table_id' ORDER BY order_temp_plate_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_temp_plate_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' AND order_temp_plate_id = '$order_table_id' ORDER BY order_temp_plate_id DESC");
             if($fetch_data){
                 while($row = mysqli_fetch_assoc($fetch_data)){
                     if($row["format"] == 'FORMAT 1'){
@@ -143,7 +145,15 @@
                                             <h5>Order Date and Time</h5>
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
+                                        <div>
+                                            <h5>Reference No.</h5>
+                                            <span>'.$row["reference_num"].'</span>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="image-container-RTP" style="height: 150px;padding:0px">
+                                    <img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="">
                                 </div>
                             </div>
                         ';
@@ -218,7 +228,15 @@
                                             <h5>Order Date and Time</h5>
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
+                                        <div>
+                                            <h5>Reference No.</h5>
+                                            <span>'.$row["reference_num"].'</span>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="image-container-RTP" style="height: 150px;padding:0px">
+                                    <img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="">
                                 </div>
                             </div>
                         ';
@@ -286,7 +304,15 @@
                                             <h5>Order Date and Time</h5>
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
+                                        <div>
+                                            <h5>Reference No.</h5>
+                                            <span>'.$row["reference_num"].'</span>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="image-container-RTP" style="height: 150px;padding:0px">
+                                    <img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="">
                                 </div>
                             </div>
                         ';
@@ -354,7 +380,15 @@
                                             <h5>Order Date and Time</h5>
                                             <span>'.$row["created_at_varchar"].'</span>
                                         </div>
+                                        <div>
+                                            <h5>Reference No.</h5>
+                                            <span>'.$row["reference_num"].'</span>
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div class="image-container-RTP" style="height: 150px;padding:0px">
+                                    <img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="">
                                 </div>
                             </div>
                         ';
@@ -364,11 +398,11 @@
         }
 
         // Display all order Tarpaulin
-        public function getTarpaulin($order_table_id, $userId, $conn, $page, $status){
+        public function getTarpaulin($order_table_id, $userId, $conn, $page, $statusOrder){
             $tarpaulin = "tarpaulinOne";
 
             // DISPLAY Tarpaulin Ready tO Print
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' AND order_ready_to_print_id = '$order_table_id' ORDER BY order_ready_to_print_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_ready_to_print_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' AND order_ready_to_print_id = '$order_table_id' ORDER BY order_ready_to_print_id DESC");
             while($row = mysqli_fetch_assoc($fetch_data)){
                 echo'
                     <!-- Tarpauline -->
@@ -426,19 +460,25 @@
                                     <h5>Order Date and Time</h5>
                                     <span>'.$row["created_at_varchar"].'</span>
                                 </div>
+                                <div>
+                                    <h5>Reference No.</h5>
+                                    <span>'.$row["reference_num"].'</span>
+                                </div>
                             </div>
+                        </div>
+
+                        <div class="image-container-RTP" style="height: 150px;padding:0px">
+                            <img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="">
                         </div>
                     </div>
                 ';
             }
         }
 
-        // Display all order Tarpaulin
-        public function getSticker($order_table_id, $userId, $conn, $page, $status){
-            $sticker = "sticker";
-
+        // Display all order Sticker
+        public function getSticker($order_table_id, $userId, $conn, $page, $statusOrder){
             // DISPLAY Sticker
-            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status = '$status' AND order_sticker_main_id = '$order_table_id' ORDER BY order_sticker_main_id DESC");
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_sticker_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' AND order_sticker_main_id = '$order_table_id' ORDER BY order_sticker_main_id DESC");
             while($row = mysqli_fetch_assoc($fetch_data)){
                 echo'
                     <!-- Sticker -->
@@ -449,7 +489,7 @@
                                 <div class="yot-text-center">
                                     <h4>STICKER</h4>
                                 </div>
-                                <div class="image-container-RTP" style="height: 150px;">
+                                <div class="image-container-RTP yot-flex" style="height: 150px;">
                                     <img src="../../../../../g4stickerworks/asset/images/all-orders/'.$row["image"].'" alt="">
                                 </div>
                             </div>
@@ -486,12 +526,12 @@
                                 </div>
                             </div>
                         </div>
-    
+                          
                         <div>
                             <h4>Message</h4>
                             <span>'.$row["message"].'</span>
                         </div>
-                        
+    
                         <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
                             <div class="yot-mb-4">
                                 <div>
@@ -502,7 +542,88 @@
                                     <h5>Order Date and Time</h5>
                                     <span>'.$row["created_at_varchar"].'</span>
                                 </div>
+                                <div>
+                                    <h5>Reference No.</h5>
+                                    <span>'.$row["reference_num"].'</span>
+                                </div>
                             </div>
+                        </div>
+                        <div class="image-container-RTP" style="height: 150px;padding:0px">
+                            <img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="">
+                        </div>
+                    </div>
+                ';
+            }
+        }
+
+        // Display all order Product
+        public function getProduct($order_table_id, $userId, $conn, $page, $statusOrder){
+            // DISPLAY Product
+            $fetch_data = mysqli_query($conn, "SELECT * FROM order_product_tbl WHERE user_id = '$userId' AND page = '$page' AND status_order = '$statusOrder' AND order_product_id = '$order_table_id' ORDER BY order_product_id DESC");
+            while($row = mysqli_fetch_assoc($fetch_data)){
+                echo'
+                    <!-- Product -->
+                    <div class="yot-bg-white yot-pa-16 yot-container-w-tablet-size-up" style="margin: 0px auto 8px;">
+                        <div class="yot-flex">
+                            <div class="yot-w-50 yot-mb-8">
+                                <!-- Title -->
+                                <div class="yot-text-center">
+                                    <h4>PRODUCT</h4>
+                                </div>
+
+                                <div class="image-container-RTP" style="height: 150px;">
+                                    <img src="../../../../../g4stickerworks/asset/images/user-all-products/'.$row["image"].'" alt="">
+                                </div>
+                            </div>
+
+                            <div class="yot-w-50 yot-mb-8">
+                                <div class="yot-flex yot-flex-fd-c yot-mb-8">
+                                    <div class="yot-mb-4">
+                                        <h5>Name</h5>
+                                        <span>'.$row["name"].'</span>
+                                    </div>
+
+                                    <div class="yot-mb-4">
+                                        <h5>Description</h5>
+                                        <span>'.$row["description"].'</span>
+                                    </div>
+
+                                    <div class="yot-flex yot-flex-ai-c">
+                                        <div class="yot-mb-4">
+                                            <h5>Quantity</h5>
+                                            <span>'.$row["quantity"].'</span>
+                                        </div>
+                                        
+                                        <span class="yot-mlr-4"></span>
+
+                                        <div class="yot-mb-4">
+                                            <h5>Price</h5>
+                                            <span>'.$row["total_price"].'</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="yot-mb-8 yot-flex yot-flex-ai-c-jc-sb">
+                            <div class="yot-mb-4">
+                                <div>
+                                    <h5>Order I.D</h5>
+                                    <span>'.$row["order_id_product"].'</span>
+                                </div>
+                                <div>
+                                    <h5>Order Date and Time</h5>
+                                    <span>'.$row["created_at_varchar"].'</span>
+                                </div>
+                                <div>
+                                    <h5>Reference No.</h5>
+                                    <span>'.$row["reference_num"].'</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="image-container-RTP" style="height: 150px;padding:0px">
+                            <img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="">
                         </div>
                     </div>
                 ';

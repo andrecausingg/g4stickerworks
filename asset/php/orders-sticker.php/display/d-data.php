@@ -52,9 +52,9 @@
                         <td>'.$row["quantity"].'</td>
                         <td>'.$row["total_price"].'</td>
                         <td>'.$row["page"].'</td>
-                        <td>'.$row["status"].'</td>
+                        <td>'.$row["status_order"].'</td>
                         <td>'.$row["reference_num"].'</td>
-                        <td>'.$row["receipt"].'</td>
+                        <td><img src="../../../../../g4stickerworks/asset/images/all-receipt/'.$row["receipt"].'" alt="" height="50"></td>
                         <td>'.$row["payment"].'</td>
                         <td>'.$row["created_at_varchar"].'</td>
                     </tr>

@@ -30,10 +30,23 @@ class classDisplayData{
             echo '<div class="yot-col-25 yot-bg-white" style="margin:4px; padding:8px">
                     <img src="../../../../../g4stickerworks/asset/images/user-all-products/'.$row["image"].'" alt="">
                     <h4>Name: '.ucfirst($row["name"]).' </h4>
-                    <p class="yot-mb-4">Description: '.ucfirst($row["description"]).' </p>
-                    <h5 class="yot-mb-4">Price: '.ucfirst($row["price"]).' </h5>
-                    <div class="yot-text-center">
-                        <button class="yot-btn-blue1" data-id="'.$row["user_product_id"].'">Add to Cart</button>
+                    <h4 class="yot-mb-4">Price: '.$row["price"].' </h4>
+                    <p class="yot-mb-8">Description: '.ucfirst($row["description"]).' </p>
+                    <div class="yot-flex yot-flex-ai-c-jc-sb">
+                        <div class="yot-flex yot-flex-fd-c-ai-c">
+                            <h4>Quantity</h4>
+
+                            <div class="yot-flex yot-flex-ai-c">
+                                <i quantity-id="'.$row["user_product_id"].'" class="fa-solid fa-square-plus yot-text-fs-xxl plusIcon"></i>
+                                <h4 class="yot-mlr-8 quantityProduct" quantity-count-id ="'.$row["user_product_id"].'">1</h4>
+                                <i quantity-id="'.$row["user_product_id"].'" class="fa-solid fa-square-minus yot-text-fs-xxl minusIcon"></i>
+                            </div>
+                        </div>
+
+                        
+                        <div class="yot-text-center">
+                            <button class="yot-btn-blue1 yot-text-fs-xsm addToCart" data-id="'.$row["user_product_id"].'">Add to Cart</button>
+                        </div>
                     </div>
                 </div>';
 

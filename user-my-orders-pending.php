@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Orders</title>
+    <title>Pending - My Orders</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -57,7 +57,18 @@
             <div class="yot-hide-for-mobile yot-flex yot-flex-ai-c">
                 <a href="user-profile" class="yot-text-fs-xl yot-active-bbh1">Profile</a> <span class="yot-mlr-4">|</span>
                 <a href="user-my-cart" class="yot-text-fs-xl yot-active-bbh1">My Cart </a> <span class="yot-mlr-4">|</span>
-                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bb-blue">My Orders</a> <span class="yot-mlr-4">|</span>
+                <!-- <a href="user-my-orders" class="yot-text-fs-xl yot-active-bb-blue">My Orders</a> <span class="yot-mlr-4">|</span> -->
+                <!-- My Order -->
+                <div style="position: relative">
+                    <div class="tarpaulinContainerUserProduct yot-flex yot-active-bb-blue yot-cursor-pointer">
+                        <span class="tarpaulinNavLink yot-text-fs-xl">My Order</span>
+                    </div>
+                    <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 150px; right: -40px;">
+                        <a href="user-my-orders-pending" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">PENDING</a>
+                        <a href="user-my-orders-reject" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1 yot-tc-red">REJECT</a>
+                        <a href="user-my-orders-done" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1 yot-tc-green">DONE</a>
+                    </div>
+                </div> <span class="yot-mlr-4">|</span>
                 <div class="yot-text-center">
                     <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
                 </div>
@@ -80,6 +91,7 @@
         <div class="yot-mb-16">
             <a href="user-ready-to-print" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Tarpaulin</a>
         </div>
+
         <!-- Tarpaulin -->
         <!-- <div class="yot-mb-8">
             <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
@@ -91,6 +103,7 @@
                 <a href="user-make-layout" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Make Layout</a>
             </div>
         </div> -->
+
         <div class="yot-mb-16">
             <a href="user-sticker" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">Sticker</a>
         </div>
@@ -103,9 +116,22 @@
         <div class="yot-mb-16">
             <a href="user-my-cart" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;"></i>My Cart </a>
         </div>
-        <div class="yot-mb-16">
+        <!-- <div class="yot-mb-16">
             <a href="user-my-orders" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;">My Orders</a>
+        </div> -->
+        <!-- My Orders -->
+        <div class="yot-mb-8">
+            <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-cursor-pointer">
+                <span style="font-size: 36px; font-weight: bolder;">My Orders</span>
+                <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRight"></i></span>
+            </div>
+            <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c">
+                <a href="user-my-orders-pending" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">PENDING</a>
+                <a href="user-my-orders-reject" class="yot-mb-8 yot-active-bbh1 yot-tc-red" style="font-size: 18px; font-weight: bolder;">REJECT</a>
+                <a href="user-my-orders-done" class="yot-mb-8 yot-active-bbh1 yot-tc-green" style="font-size: 18px; font-weight: bolder;">DONE</a>
+            </div>
         </div>
+
         <div class="yot-text-center">
             <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
         </div>
@@ -113,28 +139,10 @@
 
     <!-- My Cart Container -->
     <div class="yot-content-space-margin-t-120 yot-container g-main-container">
-        <!-- <div class="yot-col-33-33 yot-pa-8 g-main-left yot-flex yot-flex-fd-c-ai-c-jc-c">
-            <div class="yot-mb-4"></div>
-
-            <div id="allOrdersIdSticker"></div>
-            <div id="allOrdersIdTarpaulin"></div>
-            <div id="allOrdersIdTemporaryPlate"></div>
-
-            <div class="yot-container-w-tablet-size-up yot-pa-4" >
-                <div class="yot-flex yot-flex-fd-c-ai-c-jc-c">
-                    <h1>Total Price:</h1>
-                    <div class="yot-flex yot-flex-ai-c" style="font-size:40px; font-weight:bolder;">
-                        <i class="fa-solid fa-peso-sign"></i><div id="displayTotalPrice"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="payNowContainer">
-                <button id="payNowBtn" class="yot-btn-blue1">Pay Now</button>
-            </div>
-        </div> -->
-
-        <div id="displayOrderList" style="margin:auto"></div>
+        <div class="yot-flex yot-flex-fd-c-ai-c" style="margin: 0 auto;">
+            <h1 class="yot-mb-4">PENDING: TO REVIEW</h1>
+            <div id="displayOrderList"></div>
+        </div>
     </div>
 
     <!-- Create Update Delete Sub -->
@@ -186,6 +194,6 @@
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/user-my-order/display/d-data.js"></script>
+    <script src="./asset/js/user-my-order-pending/display/d-data.js"></script>
 </body>
 </html>

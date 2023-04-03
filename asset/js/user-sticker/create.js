@@ -24,7 +24,6 @@ $(document).ready(function() {
               contentType: false,
               success: function(response) {
                 var responseVar = response.trim();
-                console.log(responseVar);
                 if(responseVar == "created"){
                     resetForm();
                 }else if(responseVar == 'imagetoolarge'){
@@ -150,11 +149,6 @@ $(document).ready(function() {
         var width = parseFloat($("#width").val());
         var height = parseFloat($("#height").val());
         var quantity = parseInt($("#quantity").val());
-
-        console.log(width);
-        console.log(height);
-        console.log(height);
-        console.log(laminateOption);
 
         // Define price variable before using it in conditions
         var price = 0;

@@ -57,7 +57,18 @@
             <div class="yot-hide-for-mobile yot-flex yot-flex-ai-c">
                 <a href="user-profile" class="yot-text-fs-xl yot-active-bbh1">Profile</a> <span class="yot-mlr-4">|</span>
                 <a href="user-my-cart" class="yot-text-fs-xl yot-active-bb-blue">My Cart </a> <span class="yot-mlr-4">|</span>
-                <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a> <span class="yot-mlr-4">|</span>
+                <!-- <a href="user-my-orders" class="yot-text-fs-xl yot-active-bbh1">My Orders</a> <span class="yot-mlr-4">|</span> -->
+                <!-- My Order -->
+                <div style="position: relative">
+                    <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-cursor-pointer">
+                        <span class="tarpaulinNavLink yot-text-fs-xl">My Order</span>
+                    </div>
+                    <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 150px; right: -40px;">
+                        <a href="user-my-orders-pending" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">PENDING</a>
+                        <a href="user-my-orders-reject" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1 yot-tc-red">REJECT</a>
+                        <a href="user-my-orders-done" class="yot-text-fs-xl yot-active-bbh1 yot-tc-green">DONE</a>
+                    </div>
+                </div> <span class="yot-mlr-4">|</span>
                 <div class="yot-text-center">
                     <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
                 </div>
@@ -103,8 +114,20 @@
         <div class="yot-mb-16">
             <a href="user-my-cart" class="yot-active-bb-blue" style="font-size: 36px; font-weight: bolder;"></i>My Cart </a>
         </div>
-        <div class="yot-mb-16">
+        <!-- <div class="yot-mb-16">
             <a href="user-my-orders" class="yot-active-bbh1" style="font-size: 36px; font-weight: bolder;">My Orders</a>
+        </div> -->
+        <!-- My Order -->
+        <div class="yot-mb-8">
+            <div class="tarpaulinContainerUserProduct yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-cursor-pointer">
+                <span style="font-size: 36px; font-weight: bolder;">My Order</span>
+                <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRight"></i></span>
+            </div>
+            <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
+                <a href="user-my-orders-pending" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">PENDING</a>
+                <a href="user-my-orders-reject" class="yot-mb-8 yot-active-bbh1 yot-tc-red" style="font-size: 18px; font-weight: bolder;">REJECT</a>
+                <a href="user-my-orders-done" class="yot-mb-8 yot-active-bbh1 yot-tc-green" style="font-size: 18px; font-weight: bolder;">DONE</a>
+            </div>
         </div>
         <div class="yot-text-center">
             <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
@@ -128,10 +151,6 @@
                     </div>
                 </div>
             </div>
-
-            <div id="payNowContainer">
-                <button id="payNowBtn" class="yot-btn-blue1">Pay Now</button>
-            </div>
         </div>
 
         <!-- <div id="displayCartList" style="margin:auto"></div> -->
@@ -141,65 +160,67 @@
 
     <!-- Create -->
     <div id="createBgContainer" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-        <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
-            <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                <!-- Title -->
-                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                    <h2 id="titleCaption" class="yot-tc-blue1">Payment</h2>
-                    <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-                </div>
+    <div id="createFormContainer" class="yot-overlay-mid-container" style="display:none;">
+        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
+            <!-- Title -->
+            <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
+                <h2 id="titleCaption" class="yot-tc-blue1">Payment</h2>
+                <i id="createCloseFormIcon" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
+            </div>
 
-                <!-- Create Form Container -->
-                <div id="createDisplayContainer">
-                    <form id="createPaymentForm">
-                        <!-- Deliver Method Option -->
-                        <div class="yot-form-group">
-                            <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                <label for="referenceNo" class="yot-text-fs-l"><b>Delivery Method</b></label>
-                                <span class="yot-tc-red" id="emptyErrDeliverMethod" style="display: none;">Delivery Method field is required.<br></span>
-                            </div>
-                            <select class="yot-form-input" name="deliverMethod" id="deliverMethod">
-                            <option value="">- Select Delivery Method -</option>
-                                <option value="Courier">Courier</option>
-                                <option value="Pick up">Pick up</option>
-                            </select>
+            <!-- Create Form Container -->
+            <div id="createDisplayContainer">
+                <form id="createPaymentForm">
+                    <!-- Deliver Method Option -->
+                    <div class="yot-form-group">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <label for="referenceNo" class="yot-text-fs-l"><b>Delivery Method</b></label>
+                            <span class="yot-tc-red" id="emptyErrDeliverMethod" style="display: none;">Delivery Method field is required.<br></span>
                         </div>
+                        <select class="yot-form-input" name="deliverMethod" id="deliverMethod">
+                        <option value="">- Select Delivery Method -</option>
+                            <option value="COURIER">Courier</option>
+                            <option value="PICK UP">Pick up</option>
+                        </select>
+                    </div>
 
-                        <!-- Reference No -->
-                        <div class="yot-form-group">
-                            <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                <label for="referenceNo" class="yot-text-fs-l"><b>Reference No.</b></label>
-                                <span class="yot-tc-red" id="emptyErrReferenceNum" style="display: none;">Reference No. field is required.<br></span>
-                            </div>
-                            <input class="yot-form-input" type="text" name="referenceNum" id="referenceNum">
+                    <!-- Reference No -->
+                    <div class="yot-form-group">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <label for="referenceNo" class="yot-text-fs-l"><b>Reference No.</b></label>
+                            <span class="yot-tc-red" id="emptyErrReferenceNum" style="display: none;">Reference No. field is required.<br></span>
                         </div>
+                        <input class="yot-form-input" type="text" name="referenceNum" id="referenceNum">
+                    </div>
 
-                        <!-- Receipt -->
-                        <div class="yot-form-group">
-                            <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                <label for="uploadReceipt" class="yot-text-fs-l"><b>Upload Receipt</b></label>
-                                <span class="yot-tc-red" id="emptyErrReceipt" style="display: none;">Receipt field is required.<br></span>
-                            </div>
-                            <input class="yot-form-input" type="file" name="imageReceipt" id="imageReceipt">
+                    <!-- Receipt -->
+                    <div class="yot-form-group">
+                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                            <label for="uploadReceipt" class="yot-text-fs-l"><b>Upload Receipt</b></label>
+                            <span class="yot-tc-red" id="emptyErrReceipt" style="display: none;">Receipt field is required.<br></span>
                         </div>
+                        <input class="yot-form-input" type="file" name="imageReceipt" id="imageReceipt">
+                    </div>
 
-                        <div class="yot-mb-4">
-                            <p style="font-weight:bolder;">* Please note that our company has a no cancel policy once the order has been placed. We appreciate your understanding and cooperation.</p>
-                        </div>
+                    <div class="yot-mb-4">
+                        <p style="font-weight:bolder;">* Please note that our company has a no cancel policy once the order has been placed. We appreciate your understanding and cooperation.</p>
+                    </div>
 
-                        <div class="yot-text-center">
-                            <input class="yot-btn-blue1" type="submit" value="Submit">
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Update Container -->
-                <div id="updateDisplayContainer" style="display:none"></div>
-
-                <!-- Delete Container -->
-                <div id="deleteDisplayContainer" style="display:none"></div>
+                    <div class="yot-text-center">
+                        <input class="yot-btn-blue1" type="submit" value="Submit">
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
+
+    <!-- Success Container-->
+    <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Successful Paid:</h3>
+            <i id="createSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">The order has been successfully paid.</p>
     </div>
 
     <!-- Delete Container-->
@@ -211,9 +232,36 @@
         <p class="yot-text-fs-l">The Product was successfully cancel.</p>
     </div>
 
+    <!-- Error Container Invalid File Type -->
+    <div id="invalidfiletypeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Invalid File Type</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">Only JPG, JPEG, and PNG files are allowed.</p>
+    </div>
+
+    <!-- Error Container Uploading Image -->
+    <div id="errorUploadingimageAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error Uploading image</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">There's Something Wrong!</p>
+    </div>
+
+    <!-- Error Container Invalidfiletype -->
+    <div id="errorImagetoolargeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
+        <div class="yot-flex yot-flex-ai-c-jc-sb">
+            <h3>Error File too Big</h3>
+            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+        </div>
+        <p class="yot-text-fs-l">Allowed size is 50mb</p>
+    </div>
+
     <script src="./asset/js/all/global.js"></script>
     <script src="./asset/js/user-my-cart/display/d-data.js"></script>
-    <script src="./asset/js/user-my-cart/update.js"></script>
+    <script src="./asset/js/user-my-cart/payment.js"></script>
     <script src="./asset/js/user-my-cart/delete.js"></script>
 </body>
 </html>

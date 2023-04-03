@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Orders Products</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./asset/images/g4works-favicon-16x16.png">
@@ -26,6 +26,11 @@
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <!-- Date Picker -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -37,7 +42,8 @@
 
             <!-- Hamburger -->
             <div class="yot-hide-for-desktop">
-                <i id="hamburgerIndex" class="fa-solid fa-bars yot-tc-blue1" style="font-size: 36px;"></i>
+                <i id="hamburgerIndex" class="fa-solid fa-bars yot-tc-blue1 yot-mr-8" style="font-size: 36px;"></i>
+                <i id="statsIconOrder" class="fa-solid fa-chart-bar yot-tc-blue1 yot-hide-for-small-mobile-up" style="font-size: 36px;"></i>
             </div>
         </nav>
     </header>
@@ -58,17 +64,17 @@
                     <div class="yot-mb-16">
                         <a href="overview" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Over View</a>
                     </div>
-                   <!-- Orders -->
-                   <div class="yot-mb-8">
-                        <div class="orderPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
+                    <!-- Orders -->
+                    <div class="yot-mb-16">
+                        <div class="orderPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-active-bbh1 yot-cursor-pointer">
                             <span style="font-size: 24px; font-weight: bolder;">Orders</span>
-                            <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightOrder"></i></span>
+                            <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightOrder"></i></span>
                         </div>
-                        <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a>
-                            <a href="orders-products" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Products</a>
+                        <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
+                        <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a>
+                            <a href="orders-products" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Products</a>
                             <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
-                            <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Sticker</a>
+                            <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1 " style="font-size: 18px; font-weight: bolder;">Sticker</a>
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
                     </div>
@@ -83,25 +89,25 @@
                 <h4 class="yot-mb-8">MANAGEMENT</h4>
                 <div class="yot-pl-48">
                     <!-- Accounts -->
-                    <div class="yot-mb-8">
+                    <div class="yot-mb-16">
                         <div class="accountPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1">
                             <span style="font-size: 24px; font-weight: bolder;">Accounts</span>
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl"></i></span>
                         </div>
                         <div class="AdEmUsContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                             <a href="admin-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Admin</a>
-                            <a href="user-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
+                            <a href="users-accounts" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Users</a>
                         </div>
                     </div>
 
                     <!-- Pages -->
-                    <div class="yot-mb-8">
-                        <div class="pagesPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-active-bbh1 yot-cursor-pointer">
+                    <div class="yot-mb-16">
+                        <div class="pagesPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
                             <span style="font-size: 24px; font-weight: bolder;">Pages</span>
-                            <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
+                            <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightPages"></i></span>
                         </div>
-                        <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                            <a href="user-product-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
+                        <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
+                            <a href="user-product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
                             <a href="index-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
                             <a href="product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
                             <a href="services-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
@@ -119,7 +125,7 @@
                 <h4 class="yot-mb-8">OFFICE WORKS</h4>
                 <div class="yot-pl-48">
                     <!-- Work -->
-                    <div class="yot-mb-8">
+                    <div class="yot-mb-16">
                         <div class="workPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
                             <span style="font-size: 24px; font-weight: bolder;">Work</span>
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightWork"></i></span>
@@ -134,6 +140,39 @@
 
             <div class="yot-text-center">
                 <a class="yot-btn-blue1" href="logout" style="color:white">Log out</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Overlay Order Stats -->
+    <div id="overlayMobileOrderStatsBg" class="yot-overlay-bg-trans yot-bg-black1 overlayLeftSideBar yot-z-index-2" style="display:none"></div>
+    <div id="overlayMobileOrder" class="yot-w-75 yot-flex yot-flex-fd-c yot-vh-100 yot-bg-white yot-overlay-left overlayLeftSideBar over-view-overlay-mobile yot-z-index-2" style="display:none; overflow-y:scroll;">
+        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="padding: 8px 16px 8px 8px">
+            <a href="#"><img src="./asset/images/g4works-logo.png" alt="" width="64" height="64"></a>
+            <i id="hamburgerCloseOrder" class="fa-solid fa-xmark yot-tc-blue1" style="font-size: 46px; display: none;"></i>
+        </div>
+
+        <div style="padding:0px 16px">
+            <!-- Container -->
+            <div>
+                <!--  -->
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Pendings</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div>
+
+                <!--  -->
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Cancel</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div>
+
+                <!--  -->
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Done</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div>
             </div>
         </div>
 
@@ -156,22 +195,22 @@
                     <div class="yot-mb-16">
                         <a href="overview" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Over View</a>
                     </div>
-                   <!-- Orders -->
-                   <div class="yot-mb-8">
-                        <div class="orderPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
+                    <!-- Orders -->
+                    <div class="yot-mb-8">
+                        <div class="orderPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-active-bbh1 yot-cursor-pointer">
                             <span style="font-size: 24px; font-weight: bolder;">Orders</span>
-                            <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightOrder"></i></span>
+                            <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightOrder"></i></span>
                         </div>
-                        <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
+                        <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
                             <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a>
-                            <a href="orders-products" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Products</a>
+                            <a href="orders-products" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Products</a>
                             <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
                             <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Sticker</a>
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
                     </div>
                     <!-- <div class="yot-mb-16">
-                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="yot-active-bbh1">Visitors</a>
+                        <a href="visitors" style="font-size: 24px; font-weight: bolder;" class="">Visitors</a>
                     </div> -->
                 </div>
             </div>
@@ -194,12 +233,12 @@
                     
                     <!-- Pages -->
                     <div class="yot-mb-8">
-                        <div class="pagesPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bb-blue yot-active-bbh1 yot-cursor-pointer">
+                        <div class="pagesPageContainerOverView yot-flex yot-flex-ai-c-jc-sb yot-mb-8 yot-active-bbh1 yot-cursor-pointer">
                             <span style="font-size: 24px; font-weight: bolder;">Pages</span>
-                            <span class="yot-ml-16"><i class="fa-solid fa-angle-down yot-text-fs-xxl faAngleRightPages"></i></span>
+                            <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightPages"></i></span>
                         </div>
-                        <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
-                            <a href="user-product-page" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
+                        <div class="InPrSeGaContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
+                            <a href="user-product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">User Product</a>
                             <a href="index-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Home</a>
                             <a href="product-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Product</a>
                             <a href="services-page" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px !important; font-weight: bolder;">Services</a>
@@ -236,160 +275,82 @@
         </div>
 
         <!-- Right -->
-        <div class="g-main-item-right" style="padding: 24px;">
-            <!-- Title with Btn Form-->
-            <div class="yot-row yot-flex-ai-c-jc-sb yot-bg-white yot-pa-8">
-                <h2 class="yot-mb-8 yot-resize-font-64">User Product</h2>
-                <div class="yot-text-center yot-pa-8">
-                    <button id="addProductBtn" class="yot-btn-blue1">Product</button>
-                </div>
-            </div>
+        <div class="g-main-item-right" style="padding: 24px; position: relative;">
+            <div class="yot-flex-tab yot-flex-ai-c-jc-sb yot-mb-8">
+                <!-- Title -->
+                <h2 class="yot-mb-8 yot-resize-font-64">Products</h2>
 
-            <!-- User Product -->
-            <div id="displayUserProducts"></div>
-
-            <!-- User page Container -->
-            <div class="yot-content-space-margin-t-80 yot-container">
-                <!-- Create Update Delete Product-->
-                <div id="createBgContainerProduct" class="yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-                <div id="createFormContainerProduct" class="yot-overlay-mid-container" style="display:none;">
-                    <div id="midContainer" class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form">
-                        <!-- Product -->
-                        <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-flex-jc-sb">
-                            <h2 id="captionProduct" class="yot-tc-blue1">CREATE</h2>
-                            <i id="createCloseFormIconProduct" class="fa-solid fa-circle-xmark yot-text-fs-xxl"></i>
-                        </div>
-
-                        <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-16">
-                            <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Product</label>
-                            <select class="yot-form-select yot-form-select-option" name="selectOptionProduct" id="selectOptionProduct">
-                                <option value="create">Create</option>
-                                <option value="update">Update</option>
-                                <option value="delete">Delete</option>
-                            </select>
-                        </div>
-
-                        <!-- Create Form Container -->
-                        <div id="createDisplayContainerProduct">
-                            <form id="createFormProduct">
-                                <div class="yot-form-group">
-                                    <!-- Error -->
-                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Product Name</label>
-                                        <span class="yot-tc-red" id="emptyErrName" style="display: none;">Product Name field is required.<br></span>
-                                    </div>
-                                    <input class="yot-form-input" type="text" name="name" id="name">
-                                </div>
-
-                                <div class="yot-form-group">
-                                    <!-- Error -->
-                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Description</label>
-                                        <span class="yot-tc-red" id="emptyErrDescription" style="display: none;">Description field is required.<br></span>
-                                    </div>
-                                    <input class="yot-form-input" type="text" name="description" id="description">
-                                </div>
-
-                                <div class="yot-form-group">
-                                    <!-- Error -->
-                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Price</label>
-                                        <span class="yot-tc-red" id="emptyErrPrice" style="display: none;">Price field is required.<br></span>
-                                    </div>
-                                    <input class="yot-form-input" type="text" name="price" id="price">
-                                </div>
-
-                                
-                                <div class="yot-form-group">
-                                    <!-- Error -->
-                                    <div class="yot-flex yot-flex-ai-c-jc-sb">
-                                        <label class="yot-text-fs-xl yot-mb-4" style="font-weight: bolder;" for="Product">Image</label>
-                                        <span class="yot-tc-red" id="emptyErrimageUserProduct" style="display: none;">Image field is required.<br></span>
-                                    </div>
-                                    <input class="yot-form-input" type="file" name="imageUserProduct" id="imageUserProduct">
-                                </div>
-
-                                <div class="yot-text-center">
-                                    <input class="yot-btn-blue1" type="submit" value="Submit">
-                                </div>
-                            </form>
-                        </div>
-
-                        <!-- Update Container -->
-                        <div id="updateDisplayContainerProduct" style="display:none;">
-                            <!-- Table For Delete-->
-                            <div class="yot-w-100" id="updateDisplayProduct" style="overflow-y:scroll;max-height:400px; "></div>
-                        </div>
-
-                        <!-- Delete Container -->
-                        <div id="deleteDisplayContainerProduct" style="display:none;">
-                            <!-- Table For Delete-->
-                            <div class="yot-w-100" id="deleteDisplayProduct" style="overflow-y:scroll;max-height:400px; "></div>
-                        </div>
+               <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-mlr-4">
+                    <div class="yot-form-group yot-mr-4">
+                        <label for="startDate" class="yot-text-fs-l"><b>Start Date</b></label>
+                        <input type="text" name="" class="datepicker yot-form-input" placeholder="Month/Day/Year">
                     </div>
-                </div>
+                    <div class="yot-form-group yot-ml-4">
+                        <label for="endDate" class="yot-text-fs-l"><b>End Date</b></label>
+                        <input type="text" name="" class="datepicker yot-form-input" placeholder="Month/Day/Year">
+                    </div>
+               </div> 
+
+               <div class="yot-mb-8">
+                    <label for="search" class="yot-text-fs-l"><b>Search</b></label>
+                    <input type="search" name="" id="" class="yot-btn-round yot-form-input" placeholder="Search">
+               </div>
+            </div>
+
+            <!-- Container -->
+            <div class="over-view-container yot-hide-for-small-mobile-down">
+                <!--  -->
+                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Pendings</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div> -->
+
+                <!--  -->
+                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Cancel</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div> -->
+
+                <!--  -->
+                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Done</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div> -->
+            </div>
+
+            <!-- Table -->
+            <div class="yot-w-100" id="displayProduct" style="max-height:650px; overflow-y:scroll"></div>
+
+        </div>
+    </div>
+
+    <!-- Cancel -->
+    <div class=" yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+    <div class="yot-overlay-mid-container" style="display: none;">
+        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form yot-text-center">
+            <h1 class="yot-mb-16">Are you sure you want to Cancel?</h1>
+            <div>
+                <button class="yot-btn-blue1">Yes</button>
+                <button class="yot-btn-blue1">No</button>
             </div>
         </div>
     </div>
 
-    <!-- Success Container-->
-    <div id="createSuccessAlert" class="yot-bg-green yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
-        <div class="yot-flex yot-flex-ai-c-jc-sb">
-            <h3>Successful Insertion:</h3>
-            <i id="createSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
+    <!-- Done -->
+    <div class=" yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
+    <div class="yot-overlay-mid-container" style="display: none;">
+        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form yot-text-center">
+            <h1 class="yot-mb-16">Are you sure you want to mark as Done?</h1>
+            <div>
+                <button class="yot-btn-blue1">Yes</button>
+                <button class="yot-btn-blue1">No</button>
+            </div>
         </div>
-        <p class="yot-text-fs-l">The record was successfully inserted.</p>
-    </div>
-
-    <!-- Delete Container-->
-    <div id="deleteSuccessAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
-        <div class="yot-flex yot-flex-ai-c-jc-sb">
-            <h3>Successful Deletion:</h3>
-            <i id="deleteSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
-        </div>
-        <p class="yot-text-fs-l">The record was successfully deleted.</p>
-    </div>
-
-    <!-- Success Update Container-->
-    <div id="updateSuccessAlert" class="yot-bg-orange yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
-        <div class="yot-flex yot-flex-ai-c-jc-sb">
-            <h3>Successful Update:</h3>
-            <i id="updateSuccessAlertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
-        </div>
-        <p class="yot-text-fs-l">The record was successfully updated.</p>
-    </div>
-
-    <!-- Error Container Invalid File Type -->
-    <div id="invalidfiletypeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
-        <div class="yot-flex yot-flex-ai-c-jc-sb">
-            <h3>Error Invalid File Type</h3>
-            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
-        </div>
-        <p class="yot-text-fs-l">Only JPG, JPEG, and PNG files are allowed.</p>
-    </div>
-
-    <!-- Error Container Uploading Image -->
-    <div id="errorUploadingimageAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
-        <div class="yot-flex yot-flex-ai-c-jc-sb">
-            <h3>Error Uploading image</h3>
-            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
-        </div>
-        <p class="yot-text-fs-l">There's Something Wrong!</p>
-    </div>
-
-    <!-- Error Container Invalidfiletype -->
-    <div id="errorImagetoolargeAlert" class="yot-bg-red yot-tc-white z-index-3 yot-pa-16 yot-alert-container" style="display:none">
-        <div class="yot-flex yot-flex-ai-c-jc-sb">
-            <h3>Error File too Big</h3>
-            <i id="alertCloseIcon" class="fa-solid fa-circle-xmark yot-text-fs-xl "></i>
-        </div>
-        <p class="yot-text-fs-l">Allowed size is 50mb</p>
     </div>
 
     <script src="./asset/js/all/global.js"></script>
-    <script src="./asset/js/user-product-page/create.js"></script>
-    <script src="./asset/js/user-product-page/update.js"></script>
-    <script src="./asset/js/user-product-page/delete.js"></script>
-    <script src="./asset/js/user-product-page/display/d-images.js"></script>
+    <script src="./asset/js/order/order.js"></script>
+    <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
+    <script src="./asset/js/orders-product/display/d-order-product.js"></script>
 </body>
 </html>

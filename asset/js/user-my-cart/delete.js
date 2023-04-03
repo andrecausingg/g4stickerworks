@@ -12,7 +12,6 @@ $(document).ready(function(){
                 },
                 success: function(response) {
                     const responseVar = response.trim();
-                    console.log(responseVar);
                     if(responseVar == "deleted"){
                         resetForm();
                     }

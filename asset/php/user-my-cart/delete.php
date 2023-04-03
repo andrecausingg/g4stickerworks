@@ -1,13 +1,13 @@
 <?php
     if(isset($_POST["id"])){
-        $id = sanitize($_POST['id']);
+        $id = sanitize1($_POST['id']);
         $classDeleteAdminAccounts = new classDeleteAdminAccounts();
         $classDeleteAdminAccounts->setId($id);
         $classDeleteAdminAccounts->getDeleteContainer();
     }
     
     // Sanitize Input
-    function sanitize($data) {
+    function sanitize1($data) {
         $data = trim($data);
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
@@ -27,10 +27,7 @@
             require_once "../../../asset/php/helper/global/global.php"; 
     
             // Class
-            $classConnDB = new classConnDB();
-    
-            // Variable
-            $conn = $classConnDB->conn();
+            $conn = (new classConnDB())->conn();
 
             $parts = explode("-",$this->id);
             $parts[0]; 
@@ -112,6 +109,34 @@
 
                     // prepare the SQL statement with placeholders 
                     $sql = "DELETE FROM cart_tbl WHERE order_table_id = ? AND order_table_name = 'temporaryplate'";
+                    // create a prepared statement
+                    $stmt1 = $conn->prepare($sql);
+                    // bind the parameters to the placeholders
+                    $stmt1->bind_param("i",$parts[1], );
+            
+                    // Execute the statement
+                    if($stmt1->execute()){
+                        // close the prepared statement and database connection
+                        $stmt1->close();
+                        $conn->close();
+                        echo "deleted";
+                    }
+                }
+            }else if($parts[0] == "product"){
+                // prepare the SQL statement with placeholders 
+                $sql = "DELETE FROM order_product_tbl WHERE order_product_id = ?";
+                // create a prepared statement
+                $stmt = $conn->prepare($sql);
+                // bind the parameters to the placeholders
+                $stmt->bind_param("i",$parts[1]);
+        
+                // Execute the statement
+                if($stmt->execute()){
+                    // close the prepared statement and database connection
+                    $stmt->close();
+
+                    // prepare the SQL statement with placeholders 
+                    $sql = "DELETE FROM cart_tbl WHERE order_table_id = ? AND order_table_name = 'product'";
                     // create a prepared statement
                     $stmt1 = $conn->prepare($sql);
                     // bind the parameters to the placeholders
