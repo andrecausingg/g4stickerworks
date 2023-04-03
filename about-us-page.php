@@ -65,7 +65,7 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightOrder"></i></span>
                         </div>
                         <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a>
+                            <!-- <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a> -->
                             <a href="orders-products" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Products</a>
                             <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
                             <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Sticker</a>
@@ -164,7 +164,7 @@
                             <span class="yot-ml-16"><i class="fa-solid fa-angle-right yot-text-fs-xxl faAngleRightOrder"></i></span>
                         </div>
                         <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
-                            <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a>
+                            <!-- <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a> -->
                             <a href="orders-products" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Products</a>
                             <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
                             <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Sticker</a>

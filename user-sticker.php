@@ -219,6 +219,8 @@
                                 <select class="yot-form-input" name="cover" id="cover">
                                     <option value="">- Select Cover -</option>
                                     <option value="YES">Lamanited</option>
+                                    <!-- <option value="YES-MATTE">Lamanited MATTE</option>
+                                    <option value="YES-GLOSSY">Lamanited GLOSSY</option> -->
                                     <option value="NO">Not Lamanited</option>
                                 </select>
                             </div>

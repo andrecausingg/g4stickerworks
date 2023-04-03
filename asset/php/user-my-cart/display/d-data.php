@@ -457,7 +457,7 @@
                         </div>
                     </div>
 
-                    <div class="yot-flex yot-flex-ai-c-jc-sb">
+                    <div class="yot-flex yot-flex-ai-c-jc-c">
                         <button data-id="'.$tarpaulin."-".$row["order_ready_to_print_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
                         <span class="yot-mlr-4"></span>
                         <button class="yot-btn-blue1 cancelOrder" data-id="'.$tarpaulin."-".$row["order_ready_to_print_id"].'" >Cancel</button>
