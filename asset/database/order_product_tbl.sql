@@ -24,13 +24,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `temp_plate_tbl`
+-- Table structure for table `order_product_tbl`
 --
 
-CREATE TABLE `temp_plate_tbl` (
-  `temp_plate_id` int(11) NOT NULL,
-  `type` varchar(50) NOT NULL,
+CREATE TABLE `order_product_tbl` (
+  `order_product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `order_id_product` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `total_price` decimal(65,2) NOT NULL,
   `image` varchar(255) NOT NULL,
+  `page` varchar(20) NOT NULL,
+  `status_order` varchar(20) NOT NULL,
+  `deliver_method` varchar(20) NOT NULL,
+  `reference_num` varchar(255) NOT NULL,
+  `receipt` varchar(255) NOT NULL,
+  `payment` varchar(20) NOT NULL,
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -40,20 +51,20 @@ CREATE TABLE `temp_plate_tbl` (
 --
 
 --
--- Indexes for table `temp_plate_tbl`
+-- Indexes for table `order_product_tbl`
 --
-ALTER TABLE `temp_plate_tbl`
-  ADD PRIMARY KEY (`temp_plate_id`);
+ALTER TABLE `order_product_tbl`
+  ADD PRIMARY KEY (`order_product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `temp_plate_tbl`
+-- AUTO_INCREMENT for table `order_product_tbl`
 --
-ALTER TABLE `temp_plate_tbl`
-  MODIFY `temp_plate_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order_product_tbl`
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
