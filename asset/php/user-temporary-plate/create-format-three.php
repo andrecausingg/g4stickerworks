@@ -41,7 +41,7 @@
 
             $format = "FORMAT 3";
             $totalPrice = 250.00 * $this->quantityFormatThree;
-            $page = "CART";
+            $page = "NOTPAID";
             $statusOrder = "NOTPAID";
             $payment = "NONE";
             $statusPlate = "TEMPORARY PLATE";

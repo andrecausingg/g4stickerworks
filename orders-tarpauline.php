@@ -293,30 +293,45 @@
                </div> 
 
                <div class="yot-mb-8">
-                    <label for="search" class="yot-text-fs-l"><b>Search</b></label>
+               <label for="search" class="yot-text-fs-l"><b>Search Order No.</b></label>
                     <input type="search" name="" id="" class="yot-btn-round yot-form-input" placeholder="Search">
                </div>
             </div>
 
             <!-- Container -->
             <div class="over-view-container yot-hide-for-small-mobile-down">
-                <!--  -->
-                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
-                    <h3 class="yot-tc-black">Pendings</h3>
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Not Paid</h3>
                     <h2 class="yot-tc-black">0</span>
-                </div> -->
+                </div>
 
-                <!--  -->
-                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
-                    <h3 class="yot-tc-black">Cancel</h3>
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Pending</h3>
                     <h2 class="yot-tc-black">0</span>
-                </div> -->
+                </div>
 
-                <!--  -->
-                <!-- <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Verified</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div>
+
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Reject</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div>
+            </div>
+
+            <!-- Container -->
+            <div class="over-view-container yot-hide-for-small-mobile-down">
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                    <h3 class="yot-tc-black">Ready</h3>
+                    <h2 class="yot-tc-black">0</span>
+                </div>
+
+                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Done</h3>
                     <h2 class="yot-tc-black">0</span>
-                </div> -->
+                </div>
             </div>
 
             <!-- Table -->

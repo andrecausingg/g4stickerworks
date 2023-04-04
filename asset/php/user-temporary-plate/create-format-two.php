@@ -48,7 +48,7 @@
 
             $format = "FORMAT 2";
             $totalPrice = 250.00 * $this->quantityFormatTwo;
-            $page = "CART";
+            $page = "NOTPAID";
             $statusOrder = "NOTPAID";
             $payment = "NONE";
 

@@ -50,7 +50,7 @@
             $product = "product";
 
             $statusOrder = "PENDING";
-            $page = "PENDING-ORDER";
+            $page = "PENDING";
             $payment = "DONE";
 
             $image = $_FILES['imageReceipt'];

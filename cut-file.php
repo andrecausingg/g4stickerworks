@@ -254,7 +254,7 @@
                         </div>
                         <div class="yot-form-group yot-ml-4">
                             <label for="endDate" class="yot-text-fs-l"><b>End Date</b></label>
-                            <input type="text" name="startDate" id="endDate" class="datepicker yot-form-input" placeholder="Month/Day/Year">
+                            <input type="text" name="endDate" id="endDate" class="datepicker yot-form-input" placeholder="Month/Day/Year">
                         </div>
                    </div> 
     

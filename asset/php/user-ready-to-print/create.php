@@ -45,7 +45,7 @@
 
             $totalPrice = $this->width * $this->height * $this->quantity * 15.00;
 
-            $page = "CART";
+            $page = "NOTPAID";
             $statusOrder = "NOTPAID";
             $payment = "NONE";
 

@@ -46,7 +46,7 @@
             $userId = (new classSessionUserID())->sessionUserID();
             $uniqueId = (new classUniqueOrderId())->uniqueOrderId();
             
-            $page = "CART";
+            $page = "NOTPAID";
             $statusOrder = "NOTPAID";
             $payment = "NONE";
             $price = 0;

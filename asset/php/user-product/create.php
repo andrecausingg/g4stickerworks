@@ -35,7 +35,7 @@
             $uniqueId = (new classUniqueOrderId())->uniqueOrderId();
 
             $tableName = "product";
-            $page = "CART";
+            $page = "NOTPAID";
             $statusOrder = "NOTPAID";
             $payment = "NONE";
 

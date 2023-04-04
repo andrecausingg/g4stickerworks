@@ -1630,7 +1630,7 @@ i {
 }
 
 .yot-tc-orange {
-  color: hsl(23, 100%, 50%) !important;
+  color: hsl(23, 100%, 50%);
 }
 
 .yot-tc-white {

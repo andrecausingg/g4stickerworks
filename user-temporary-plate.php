@@ -68,10 +68,12 @@
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bbh1 yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">My Order</span>
                     </div>
-                    <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 150px; right: -40px;">
+                    <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -60px;">
                         <a href="user-my-orders-pending" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">PENDING</a>
-                        <a href="user-my-orders-reject" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1 yot-tc-red">REJECT</a>
-                        <a href="user-my-orders-done" class="yot-text-fs-xl yot-active-bbh1 yot-tc-green">DONE</a>
+                        <a href="user-my-orders-verified" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">VERIFIED</a>
+                        <a href="user-my-orders-ready" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">READY TO GET</a>
+                        <a href="user-my-orders-reject" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">REJECT</a>
+                        <a href="user-my-orders-done" class="yot-text-fs-xl yot-active-bbh1">DONE</a>
                     </div>
                 </div> <span class="yot-mlr-4">|</span>
                 <div class="yot-text-center">
@@ -134,8 +136,10 @@
             </div>
             <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                 <a href="user-my-orders-pending" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">PENDING</a>
-                <a href="user-my-orders-reject" class="yot-mb-8 yot-active-bbh1 yot-tc-red" style="font-size: 18px; font-weight: bolder;">REJECT</a>
-                <a href="user-my-orders-done" class="yot-mb-8 yot-active-bbh1 yot-tc-green" style="font-size: 18px; font-weight: bolder;">DONE</a>
+                <a href="user-my-orders-verified" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">VERIFIED</a>
+                <a href="user-my-orders-ready" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">READY TO GET</a>
+                <a href="user-my-orders-reject" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">REJECT</a>
+                <a href="user-my-orders-done" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">DONE</a>
             </div>
         </div>
         <div class="yot-text-center">
@@ -231,8 +235,8 @@
                             <!-- Err Mv File Seven Digit -->
                             <div class="yot-text-end">
                                 <label class="yot-mb-4 yot-text-center" style="font-weight: bolder;" for="mvFileSecenDigitFormatOne"> <span class="yot-text-fs-xl ">MV File Seven Digit</span> <br> <span class="yot-text-fs-tiny">Seven Digit</span><br></label>
-                                <span class="yot-tc-red yot-text-end" id="emptyErrMvFileSevenDigitFormatOne" style="display: none;">This Field is required.<br></span>
-                                <span class="yot-tc-red yot-text-end" id="lessSevenErrMvFileSevenDigitFormatOne" style="display: none;">This Field must seven digit.<br></span>
+                                <span class= "yot-tc-red yot-text-end" id="emptyErrMvFileSevenDigitFormatOne" style="display: none;">This Field is required.<br></span>
+                                <span class= "yot-tc-red yot-text-end" id="lessSevenErrMvFileSevenDigitFormatOne" style="display: none;">This Field must seven digit.<br></span>
                             </div>
                         </div>
                         <div class="yot-flex yot-flex-ai-c">

@@ -12,7 +12,7 @@
             $userId = (new classSessionUserID())->sessionUserID();
 
             $emptyCart = 0;
-            $page = 'CART';
+            $page = 'NOTPAID';
             $statusOrder = "NOTPAID";
             $order_table_id = []; // Create an empty array to store the IDs
 
@@ -51,7 +51,7 @@
             if($emptyCart == 1){
                 echo '
                     <div class="yot-flex yot-flex-fd-c-ai-c">
-                        <h1>Empty Cart</h1>
+                        <h1>EMPTY CART</h1>
                         <img src="../../../../../g4stickerworks/asset/images/undraw_empty_cart_co35.svg" alt="" style="width:300px; height:300px">
                     </div>
                 ';
@@ -539,7 +539,7 @@
                             </div>
                         </div>
 
-                        <div class="yot-flex yot-flex-ai-c-jc-sb">
+                        <div class="yot-flex yot-flex-ai-c-jc-c">
                             <button data-id="'.$sticker."-".$row["order_sticker_main_id"].'" class="yot-btn-blue1 payNowBtn">Pay Now</button>
                             <span class="yot-mlr-4"></span>
                             <button class="yot-btn-blue1 cancelOrder" data-id="'.$sticker."-".$row["order_sticker_main_id"].'" >Cancel</button>

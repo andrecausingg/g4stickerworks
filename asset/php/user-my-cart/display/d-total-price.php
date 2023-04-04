@@ -24,7 +24,7 @@
             $totalPriceProduct = 0;
 
             // Query
-            $page = 'CART';
+            $page = 'NOTPAID';
             $status = 'PENDING';
 
             $statusOrder = 'NOTPAID';

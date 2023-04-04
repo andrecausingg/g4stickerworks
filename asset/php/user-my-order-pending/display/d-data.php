@@ -13,7 +13,7 @@
 
             $emptyCart = 0;
 
-            $page = 'PENDING-ORDER';
+            $page = 'PENDING';
             $statusOrder = "PENDING";
 
             $order_table_id = []; // Create an empty array to store the IDs
@@ -49,7 +49,7 @@
             if($emptyCart == 1){
                 echo '
                     <div class="yot-flex yot-flex-fd-c-ai-c">
-                        <h1>Empty Orders</h1>
+                        <h1>EMPTY</h1>
                         <img src="../../../../../g4stickerworks/asset/images/undraw_empty_order_opql.svg" alt="" style="width:300px; height:300px">
                     </div>
                 ';

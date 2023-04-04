@@ -1,3 +1,9 @@
 $(document).ready(function(){
-    $("#displayOrderTemporaryPlate").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate.php/display/d-data.php");
+    $("#displayOrderTemporaryPlate").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate/display/d-data.php");
+    $(".displayNotPaid").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate/display/d-not-paid.php");
+    $(".displayPending").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate/display/d-pending.php");
+    $(".displayVerified").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate/display/d-verified.php");
+    $(".displayReject").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate/display/d-reject.php");
+    $(".displayReady").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate/display/d-ready.php");
+    $(".displayDone").load("../../../../../g4stickerworks/asset/php/orders-temporary-plate/display/d-done.php");
 });

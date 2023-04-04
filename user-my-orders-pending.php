@@ -63,10 +63,12 @@
                     <div class="tarpaulinContainerUserProduct yot-flex yot-active-bb-blue yot-cursor-pointer">
                         <span class="tarpaulinNavLink yot-text-fs-xl">My Order</span>
                     </div>
-                    <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 150px; right: -40px;">
+                    <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c yot-bg-white yot-pa-16" style="display:none; position: absolute; width: 200px; right: -60px;">
                         <a href="user-my-orders-pending" class="yot-text-fs-xl yot-mb-8 yot-active-bb-blue">PENDING</a>
-                        <a href="user-my-orders-reject" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1 yot-tc-red">REJECT</a>
-                        <a href="user-my-orders-done" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1 yot-tc-green">DONE</a>
+                        <a href="user-my-orders-verified" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">VERIFIED</a>
+                        <a href="user-my-orders-ready" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">READY TO GET</a>
+                        <a href="user-my-orders-reject" class="yot-text-fs-xl yot-mb-8 yot-active-bbh1">REJECT</a>
+                        <a href="user-my-orders-done" class="yot-text-fs-xl yot-active-bbh1">DONE</a>
                     </div>
                 </div> <span class="yot-mlr-4">|</span>
                 <div class="yot-text-center">
@@ -127,8 +129,10 @@
             </div>
             <div class="rPmLContainer yot-ml-48 yot-flex yot-flex-fd-c">
                 <a href="user-my-orders-pending" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">PENDING</a>
-                <a href="user-my-orders-reject" class="yot-mb-8 yot-active-bbh1 yot-tc-red" style="font-size: 18px; font-weight: bolder;">REJECT</a>
-                <a href="user-my-orders-done" class="yot-mb-8 yot-active-bbh1 yot-tc-green" style="font-size: 18px; font-weight: bolder;">DONE</a>
+                <a href="user-my-orders-verified" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">VERIFIED</a>
+                <a href="user-my-orders-ready" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">READY TO GET</a>
+                <a href="user-my-orders-reject" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">REJECT</a>
+                <a href="user-my-orders-done" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">DONE</a>
             </div>
         </div>
 
@@ -140,7 +144,7 @@
     <!-- My Cart Container -->
     <div class="yot-content-space-margin-t-120 yot-container g-main-container">
         <div class="yot-flex yot-flex-fd-c-ai-c" style="margin: 0 auto;">
-            <h1 class="yot-mb-4">PENDING: TO REVIEW</h1>
+            <h1 class="yot-mb-4">PENDING ORDERS</h1>
             <div id="displayOrderList"></div>
         </div>
     </div>
