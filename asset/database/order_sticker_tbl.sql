@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2023 at 08:23 AM
+-- Generation Time: Apr 04, 2023 at 02:37 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -49,6 +49,13 @@ CREATE TABLE `order_sticker_tbl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `order_sticker_tbl`
+--
+
+INSERT INTO `order_sticker_tbl` (`order_sticker_main_id`, `user_id`, `order_id_sticker`, `width`, `height`, `image`, `cover`, `message`, `quantity`, `total_price`, `page`, `status_order`, `deliver_method`, `reference_num`, `receipt`, `payment`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'G420230404083458PMPSTxlhmL816388', 1, 1, '642c19726c8fd2.32012261.png', 'YES', 'wew', 1, '10.00', 'NOTPAID', 'NOTPAID', '', '', '', 'NONE', 'Apr 04, 2023 08:34:58 PM', '2023-04-04 20:34:58');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -66,7 +73,7 @@ ALTER TABLE `order_sticker_tbl`
 -- AUTO_INCREMENT for table `order_sticker_tbl`
 --
 ALTER TABLE `order_sticker_tbl`
-  MODIFY `order_sticker_main_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_sticker_main_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

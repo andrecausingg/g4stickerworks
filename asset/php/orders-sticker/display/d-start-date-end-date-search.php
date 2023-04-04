@@ -146,7 +146,7 @@ class ClassSearch{
                         <td>'.$row["created_at_varchar"].'</td>
                         <td>
                         ';
-                            $this->getSelectTagStatusOrder($row["status_order"], $row["order_sticker_main_id"]);
+                            $this->getSelectTagStatusOrder($row["status_order"], $row["order_sticker_main_id"], $userId);
                         echo'
                         </td>
                     </tr>
@@ -171,10 +171,12 @@ class ClassSearch{
         }
     }
 
-    public function getSelectTagStatusOrder($statusOrder, $orderMainId){
+    public function getSelectTagStatusOrder($statusOrder, $orderMainId, $userId){
+        $tableName = "sticker";
+
         if($statusOrder == "NOTPAID"){
             echo '
-                <select data-id="'.$orderMainId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
+                <select data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
                     <option value="NOTPAID" selected>NOTPAID</option>
                     <option value="PENDING">PENDING</option>
                     <option value="VERIFIED">VERIFIED</option>
@@ -185,7 +187,7 @@ class ClassSearch{
             ';
         }else if($statusOrder == "PENDING"){
             echo'
-            <select data-id="'.$orderMainId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
+            <select data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
             <option value="NOTPAID">NOTPAID</option>
                     <option value="PENDING" selected>PENDING</option>
                     <option value="VERIFIED">VERIFIED</option>
@@ -196,7 +198,7 @@ class ClassSearch{
             ';
         }else if($statusOrder == "VERIFIED"){
             echo'
-            <select data-id="'.$orderMainId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
+            <select data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
                 <option value="NOTPAID">NOTPAID</option>
                     <option value="PENDING">PENDING</option>
                     <option value="VERIFIED" selected>VERIFIED</option>
@@ -207,7 +209,7 @@ class ClassSearch{
             ';
         }else if($statusOrder == "REJECT"){
             echo'
-                <select data-id="'.$orderMainId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
+                <select data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
                     <option value="NOTPAID">NOTPAID</option>
                     <option value="PENDING">PENDING</option>
                     <option value="VERIFIED">VERIFIED</option>
@@ -218,7 +220,7 @@ class ClassSearch{
             ';
         }else if($statusOrder == "READY"){
             echo'
-                <select data-id="'.$orderMainId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
+                <select data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
                     <option value="NOTPAID">NOTPAID</option>
                     <option value="PENDING">PENDING</option>
                     <option value="VERIFIED">VERIFIED</option>
@@ -229,7 +231,7 @@ class ClassSearch{
             ';
         }else if($statusOrder == "DONE"){
             echo'
-                <select data-id="'.$orderMainId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
+                <select data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="cars" id="cars" style="width:150px">
                     <option value="NOTPAID">NOTPAID</option>
                     <option value="PENDING">PENDING</option>
                     <option value="VERIFIED">VERIFIED</option>

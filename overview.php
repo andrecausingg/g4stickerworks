@@ -67,7 +67,7 @@
                         <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                             <!-- <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a> -->
                             <a href="orders-products" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Products</a>
-                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
+                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpaulin</a>
                             <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Sticker</a>
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
@@ -165,7 +165,7 @@
                         <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c" style="display:none">
                             <!-- <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a> -->
                             <a href="orders-products" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Products</a>
-                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
+                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpaulin</a>
                             <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Sticker</a>
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
@@ -237,46 +237,9 @@
 
         <!-- Right -->
         <div class="g-main-item-right" style="padding: 24px;">
-            <!-- Title -->
-            <h2 class="yot-mb-16 yot-resize-font-64">Over View</h2>
-
-            <!-- Container -->
-            <div class="over-view-container">
-                <!--  -->
-                <div class="yot-bg-blue1 yot-mb-8 over-view-item1" style="border-radius: 8px; padding: 8px;">
-                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-8">
-                        <h3 class="yot-tc-white">Accounts</h3>
-                        <button class="yot-btn-white1 yot-btn-round">View</button>
-                    </div>
-                    <h2 class="yot-tc-white">0</span>
-                </div>
-
-                <!--  -->
-                <div class="yot-bg-blue1 yot-mb-8 over-view-item2" style="border-radius: 8px; padding: 8px;">
-                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-8">
-                        <h3 class="yot-tc-white">Orders</h3>
-                        <button class="yot-btn-white1 yot-btn-round">View</button>
-                    </div>
-                    <h2 class="yot-tc-white">0</span>
-                </div>
-
-                <!--  -->
-                <div class="yot-bg-blue1 yot-mb-8 over-view-item3" style="border-radius: 8px; padding: 8px;">
-                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-8">
-                        <h3 class="yot-tc-white">Visitors</h3>
-                        <button class="yot-btn-white1 yot-btn-round">View</button>
-                    </div>
-                    <h2 class="yot-tc-white">0</span>
-                </div>
-
-                <!--  -->
-                <div class="yot-bg-blue1 yot-mb-8 over-view-item4" style="border-radius: 8px; padding: 8px;">
-                    <div class="yot-flex yot-flex-ai-c-jc-sb yot-mb-8">
-                        <h3 class="yot-tc-white">Office Work</h3>
-                        <button class="yot-btn-white1 yot-btn-round">View</button>
-                    </div>
-                    <h2 class="yot-tc-white">0</span>
-                </div>
+            <div class="yot-text-center">
+                <img src="./asset/images/undraw_welcome_cats_thqn.svg" alt="" height="300">
+                <h3>Welcome to the G4StickerWorks dashboard! <br> We are thrilled to have you on board and excited to provide you with the best sticker ordering experience. Our dashboard is designed to simplify the process of ordering stickers by giving you access to everything you need in one place.</h3>
             </div>
         </div>
     </div>

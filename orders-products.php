@@ -73,7 +73,7 @@
                         <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
                         <!-- <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a> -->
                             <a href="orders-products" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Products</a>
-                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
+                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpaulin</a>
                             <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1 " style="font-size: 18px; font-weight: bolder;">Sticker</a>
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
@@ -155,24 +155,34 @@
 
         <div style="padding:0px 16px">
             <!-- Container -->
-            <div>
-                <!--  -->
-                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
-                    <h3 class="yot-tc-black">Pendings</h3>
-                    <h2 class="yot-tc-black">0</span>
-                </div>
+            <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <h3 class="yot-tc-black">Not Paid</h3> 
+                <div class="displayNotPaid"></div>
+            </div>
 
-                <!--  -->
-                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
-                    <h3 class="yot-tc-black">Cancel</h3>
-                    <h2 class="yot-tc-black">0</span>
-                </div>
+            <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <h3 class="yot-tc-black">Pending</h3>
+                <div class="displayPending"></div>
+            </div>
 
-                <!--  -->
-                <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
-                    <h3 class="yot-tc-black">Done</h3>
-                    <h2 class="yot-tc-black">0</span>
-                </div>
+            <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <h3 class="yot-tc-black">Verified</h3>
+                <div class="displayVerified"></div>
+            </div>
+
+            <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <h3 class="yot-tc-black">Reject</h3>
+                <div class="displayReject"></div>
+            </div>
+
+            <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <h3 class="yot-tc-black">Ready</h3>
+                <div class="displayReady"></div>
+            </div>
+
+            <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
+                <h3 class="yot-tc-black">Done</h3>
+                <div class="displayDone"></div>
             </div>
         </div>
 
@@ -204,7 +214,7 @@
                         <div class="orderContainerOverView yot-ml-48 yot-flex yot-flex-fd-c">
                             <!-- <a href="orders-all" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">All Orders</a> -->
                             <a href="orders-products" class="yot-mb-8 yot-active-bb-blue" style="font-size: 18px; font-weight: bolder;">Products</a>
-                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpauline</a>
+                            <a href="orders-tarpauline" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Tarpaulin</a>
                             <a href="orders-sticker" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Sticker</a>
                             <a href="orders-temporary-plate" class="yot-mb-8 yot-active-bbh1" style="font-size: 18px; font-weight: bolder;">Temporary Plate</a>
                         </div>
@@ -280,20 +290,35 @@
                 <!-- Title -->
                 <h2 class="yot-mb-8 yot-resize-font-64">Products</h2>
 
-               <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-mlr-4">
+                <div class="yot-mb-8 yot-flex yot-flex-ai-c yot-mlr-4">
                     <div class="yot-form-group yot-mr-4">
                         <label for="startDate" class="yot-text-fs-l"><b>Start Date</b></label>
-                        <input type="text" name="" class="datepicker yot-form-input" placeholder="Month/Day/Year">
+                        <input type="text" name="startDate" id="startDate" class="datepicker yot-form-input" placeholder="Month/Day/Year">
                     </div>
                     <div class="yot-form-group yot-ml-4">
                         <label for="endDate" class="yot-text-fs-l"><b>End Date</b></label>
-                        <input type="text" name="" class="datepicker yot-form-input" placeholder="Month/Day/Year">
+                        <input type="text" name="endDate" id="endDate" class="datepicker yot-form-input" placeholder="Month/Day/Year">
                     </div>
                </div> 
 
-               <div class="yot-mb-8">
-               <label for="search" class="yot-text-fs-l"><b>Search Order No.</b></label>
-                    <input type="search" name="" id="" class="yot-btn-round yot-form-input" placeholder="Search">
+               <div class="yot-mb-8 yot-flex yot-flex-ai-c">
+                    <div class="yow-w-33">
+                        <label for="search" class="yot-text-fs-l"><b>Search Order No.</b></label>
+                        <input type="search" name="search" id="search" class="yot-btn-round yot-form-input" placeholder="Search">
+                    </div>
+                    <span class="yot-mlr-4"></span>
+                    <div class="yow-w-50">
+                        <label for="search" class="yot-text-fs-l"><b>Status Order</b></label>
+                        <select class="yot-form-input" name="filterStatusOrder" id="filterStatusOrder">
+                            <option value="">All</option>
+                            <option value="NOTPAID">NOTPAID</option>
+                            <option value="PENDING">PENDING</option>
+                            <option value="VERIFIED">VERIFIED</option>
+                            <option value="REJECT">REJECT</option>
+                            <option value="READY">READY</option>
+                            <option value="DONE">DONE</option>
+                        </select>
+                    </div>
                </div>
             </div>
 
@@ -301,22 +326,22 @@
             <div class="over-view-container yot-hide-for-small-mobile-down">
                 <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Not Paid</h3>
-                    <h2 class="yot-tc-black">0</span>
+                    <div class="displayNotPaid"></div>
                 </div>
 
                 <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Pending</h3>
-                    <h2 class="yot-tc-black">0</span>
+                    <div class="displayPending"></div>
                 </div>
 
                 <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Verified</h3>
-                    <h2 class="yot-tc-black">0</span>
+                    <div class="displayVerified"></div>
                 </div>
 
                 <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Reject</h3>
-                    <h2 class="yot-tc-black">0</span>
+                    <div class="displayReject"></div>
                 </div>
             </div>
 
@@ -324,42 +349,17 @@
             <div class="over-view-container yot-hide-for-small-mobile-down">
                 <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Ready</h3>
-                    <h2 class="yot-tc-black">0</span>
+                    <div class="displayReady"></div>
                 </div>
 
                 <div class="yot-bg-white yot-mb-8 over-view-item1 yot-flex yot-flex-ai-c-jc-sb yot-mb-8" style="border-radius: 8px; padding: 16px;">
                     <h3 class="yot-tc-black">Done</h3>
-                    <h2 class="yot-tc-black">0</span>
+                    <div class="displayDone"></div>
                 </div>
             </div>
 
             <!-- Table -->
             <div class="yot-w-100" id="displayProduct" style="max-height:650px; overflow-y:scroll"></div>
-
-        </div>
-    </div>
-
-    <!-- Cancel -->
-    <div class=" yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-    <div class="yot-overlay-mid-container" style="display: none;">
-        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form yot-text-center">
-            <h1 class="yot-mb-16">Are you sure you want to Cancel?</h1>
-            <div>
-                <button class="yot-btn-blue1">Yes</button>
-                <button class="yot-btn-blue1">No</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Done -->
-    <div class=" yot-overlay-bg-trans yot-bg-black1" style="display:none"></div>
-    <div class="yot-overlay-mid-container" style="display: none;">
-        <div class="yot-overlay-mid-child yot-bg-white yot-pa-16 yot-overlay-mid-container-form yot-text-center">
-            <h1 class="yot-mb-16">Are you sure you want to mark as Done?</h1>
-            <div>
-                <button class="yot-btn-blue1">Yes</button>
-                <button class="yot-btn-blue1">No</button>
-            </div>
         </div>
     </div>
 
@@ -367,5 +367,8 @@
     <script src="./asset/js/order/order.js"></script>
     <script src="./asset/js/api/jquery-date-picker/date-picker.js"></script>
     <script src="./asset/js/orders-product/display/d-order-product.js"></script>
+
+    <script src="./asset/js/orders-product/update.js"></script>
+    <script src="./asset/js/orders-product/display//d-search-start-date-end-date.js"></script>
 </body>
 </html>

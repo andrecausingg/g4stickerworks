@@ -1,3 +1,9 @@
 $(document).ready(function(){
-    $("#displayOrderTarpauline").load("../../../../../g4stickerworks/asset/php/orders-tarpauline.php/display/d-data.php");
+    $("#displayOrderTarpauline").load("../../../../../g4stickerworks/asset/php/orders-tarpauline/display/d-data.php");
+    $(".displayNotPaid").load("../../../../../g4stickerworks/asset/php/orders-tarpauline/display/d-not-paid.php");
+    $(".displayPending").load("../../../../../g4stickerworks/asset/php/orders-tarpauline/display/d-pending.php");
+    $(".displayVerified").load("../../../../../g4stickerworks/asset/php/orders-tarpauline/display/d-verified.php");
+    $(".displayReject").load("../../../../../g4stickerworks/asset/php/orders-tarpauline/display/d-reject.php");
+    $(".displayReady").load("../../../../../g4stickerworks/asset/php/orders-tarpauline/display/d-ready.php");
+    $(".displayDone").load("../../../../../g4stickerworks/asset/php/orders-tarpauline/display/d-done.php");
 });

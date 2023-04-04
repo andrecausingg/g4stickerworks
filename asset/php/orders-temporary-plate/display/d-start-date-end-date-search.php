@@ -190,8 +190,8 @@ class ClassSearch{
             ';
         }else if($statusOrder == "PENDING"){
             echo'
-                <select  data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="changeStatusOrder" id="changeStatusOrder" style="width:150px">
-                    <option value="NOTPAID">NOTPAID</option>
+            <select  data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="changeStatusOrder" id="changeStatusOrder" style="width:150px">
+            <option value="NOTPAID">NOTPAID</option>
                     <option value="PENDING" selected>PENDING</option>
                     <option value="VERIFIED">VERIFIED</option>
                     <option value="REJECT">REJECT</option>
@@ -201,8 +201,8 @@ class ClassSearch{
             ';
         }else if($statusOrder == "VERIFIED"){
             echo'
-                <select  data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="changeStatusOrder" id="changeStatusOrder" style="width:150px">
-                    <option value="NOTPAID">NOTPAID</option>
+            <select  data-id="'.$tableName."-".$orderMainId."-".$userId.'" class="yot-form-input changeStatusOrder" name="changeStatusOrder" id="changeStatusOrder" style="width:150px">
+                <option value="NOTPAID">NOTPAID</option>
                     <option value="PENDING">PENDING</option>
                     <option value="VERIFIED" selected>VERIFIED</option>
                     <option value="REJECT">REJECT</option>

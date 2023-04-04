@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2023 at 08:22 AM
+-- Generation Time: Apr 04, 2023 at 02:36 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -38,6 +38,16 @@ CREATE TABLE `cart_tbl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `cart_tbl`
+--
+
+INSERT INTO `cart_tbl` (`cart_id`, `user_id`, `order_table_name`, `order_table_id`, `status_order`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'product', 1, 'NOTPAID', 'Apr 04, 2023 08:34:29 PM', '2023-04-04 20:34:29'),
+(2, 1, 'tarpaulin', 1, 'NOTPAID', 'Apr 04, 2023 08:34:45 PM', '2023-04-04 20:34:45'),
+(3, 1, 'sticker', 1, 'NOTPAID', 'Apr 04, 2023 08:34:58 PM', '2023-04-04 20:34:58'),
+(4, 1, 'temporaryplate', 1, 'NOTPAID', 'Apr 04, 2023 08:35:28 PM', '2023-04-04 20:35:28');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,7 +65,7 @@ ALTER TABLE `cart_tbl`
 -- AUTO_INCREMENT for table `cart_tbl`
 --
 ALTER TABLE `cart_tbl`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

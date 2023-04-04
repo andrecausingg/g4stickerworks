@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2023 at 08:22 AM
+-- Generation Time: Apr 04, 2023 at 02:36 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -88,6 +88,16 @@ CREATE TABLE `cart_tbl` (
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart_tbl`
+--
+
+INSERT INTO `cart_tbl` (`cart_id`, `user_id`, `order_table_name`, `order_table_id`, `status_order`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'product', 1, 'NOTPAID', 'Apr 04, 2023 08:34:29 PM', '2023-04-04 20:34:29'),
+(2, 1, 'tarpaulin', 1, 'NOTPAID', 'Apr 04, 2023 08:34:45 PM', '2023-04-04 20:34:45'),
+(3, 1, 'sticker', 1, 'NOTPAID', 'Apr 04, 2023 08:34:58 PM', '2023-04-04 20:34:58'),
+(4, 1, 'temporaryplate', 1, 'NOTPAID', 'Apr 04, 2023 08:35:28 PM', '2023-04-04 20:35:28');
 
 -- --------------------------------------------------------
 
@@ -282,6 +292,16 @@ CREATE TABLE `decals_tbl` (
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `decals_tbl`
+--
+
+INSERT INTO `decals_tbl` (`decals_id`, `decals_type`, `brand`, `model`, `image`, `created_at_varchar`, `created_at`) VALUES
+(2, 'Full Decals', 'Honda', 'Honda BeAT', '642c188d2440d4.31566995.png', 'Apr 04, 2023 08:31:09 PM', '2023-04-04 20:31:09'),
+(3, 'Full Decals', 'Honda', 'Honda Click', '642c1895b9fc95.67328885.png', 'Apr 04, 2023 08:31:17 PM', '2023-04-04 20:31:17'),
+(4, 'Full Decals', 'Honda', 'Honda Genio', '642c189eeb1c03.88679922.png', 'Apr 04, 2023 08:31:26 PM', '2023-04-04 20:31:26'),
+(5, 'Full Decals', 'Honda', 'Honda PCX', '642c18aaa4c225.68196007.png', 'Apr 04, 2023 08:31:38 PM', '2023-04-04 20:31:38');
+
 -- --------------------------------------------------------
 
 --
@@ -339,7 +359,8 @@ CREATE TABLE `home_hero_section_tbl` (
 
 INSERT INTO `home_hero_section_tbl` (`home_hero_section_id`, `title`, `sub_title`, `image`, `created_at_varchar`, `created_at`) VALUES
 (1, 'WE DESIGN,PRINT and INSTALL', '', '', 'Mar 09, 2023 08:57:12 PM', '2023-03-09 20:57:12'),
-(2, '', 'Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins', '', 'Mar 09, 2023 08:57:23 PM', '2023-03-09 20:57:23');
+(2, '', 'Unleash Your Creativity with Our High-Quality Stickers and Tarpaulins', '', 'Mar 09, 2023 08:57:23 PM', '2023-03-09 20:57:23'),
+(4, '', '', '642c18d4c8a042.04552100.png', 'Apr 04, 2023 08:32:20 PM', '2023-04-04 20:32:20');
 
 -- --------------------------------------------------------
 
@@ -365,6 +386,13 @@ CREATE TABLE `order_product_tbl` (
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_product_tbl`
+--
+
+INSERT INTO `order_product_tbl` (`order_product_id`, `user_id`, `order_id_product`, `name`, `description`, `quantity`, `total_price`, `image`, `page`, `status_order`, `deliver_method`, `reference_num`, `receipt`, `payment`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'G420230404083429PMPSTPeJKX779472', 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ab praesentium nesciunt id quasi sequi, temporibus assumenda, deserunt ipsam laudantium porro', 1, '4.00', '642c192fa0a438.48615047.png', 'NOTPAID', 'NOTPAID', '', '', '', 'NONE', 'Apr 04, 2023 08:34:29 PM', '2023-04-04 20:34:29');
 
 -- --------------------------------------------------------
 
@@ -392,6 +420,13 @@ CREATE TABLE `order_ready_to_print_tbl` (
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `order_ready_to_print_tbl`
+--
+
+INSERT INTO `order_ready_to_print_tbl` (`order_ready_to_print_id`, `user_id`, `order_id_ready_to_print`, `width`, `height`, `image`, `message`, `quantity`, `total_price`, `page`, `status_order`, `deliver_method`, `reference_num`, `receipt`, `payment`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'G420230404083445PMPSTLVlUj217999', 1, 1, '642c196536cc42.78887936.png', 'wew', 1, '15.00', 'NOTPAID', 'NOTPAID', '', '', '', 'NONE', 'Apr 04, 2023 08:34:45 PM', '2023-04-04 20:34:45');
+
 -- --------------------------------------------------------
 
 --
@@ -418,6 +453,13 @@ CREATE TABLE `order_sticker_tbl` (
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_sticker_tbl`
+--
+
+INSERT INTO `order_sticker_tbl` (`order_sticker_main_id`, `user_id`, `order_id_sticker`, `width`, `height`, `image`, `cover`, `message`, `quantity`, `total_price`, `page`, `status_order`, `deliver_method`, `reference_num`, `receipt`, `payment`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'G420230404083458PMPSTxlhmL816388', 1, 1, '642c19726c8fd2.32012261.png', 'YES', 'wew', 1, '10.00', 'NOTPAID', 'NOTPAID', '', '', '', 'NONE', 'Apr 04, 2023 08:34:58 PM', '2023-04-04 20:34:58');
 
 -- --------------------------------------------------------
 
@@ -447,6 +489,13 @@ CREATE TABLE `order_temp_plate_tbl` (
   `created_at_varchar` varchar(255) NOT NULL,
   `created_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_temp_plate_tbl`
+--
+
+INSERT INTO `order_temp_plate_tbl` (`order_temp_plate_id`, `user_id`, `order_id_temp_plate`, `type_of_plate`, `format`, `mv_file`, `register_num`, `region`, `dealer`, `status_plate`, `quantity`, `total_price`, `page`, `status_order`, `deliver_method`, `reference_num`, `receipt`, `payment`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'G420230404083528PMPSTDzi8R830625', 'ACRYLIC', 'FORMAT 1', '1111-1111111', '', 'REGION II', 'YAMAHA', '', 1, '250.00', 'NOTPAID', 'NOTPAID', '', '', '', 'NONE', 'Apr 04, 2023 08:35:28 PM', '2023-04-04 20:35:28');
 
 -- --------------------------------------------------------
 
@@ -531,10 +580,10 @@ CREATE TABLE `user_product_tbl` (
 --
 
 INSERT INTO `user_product_tbl` (`user_product_id`, `name`, `description`, `price`, `image`, `created_at_varchar`, `created_at`) VALUES
-(1, 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci culpa doloribus eum sed, veniam amet reprehenderit ea voluptatibus iste voluptatem, similique nobis mollitia, architecto quidem? Et temporibus vel itaque magni!', '1.00', '642989e6d4e8f6.00200135.png', 'Apr 02, 2023 09:57:58 PM', '2023-04-02 21:57:58'),
-(2, 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci culpa doloribus eum sed, veniam amet reprehenderit ea voluptatibus iste voluptatem, similique nobis mollitia, architecto quidem? Et temporibus vel itaque magni!', '2.00', '642989ef1083c5.71221118.png', 'Apr 02, 2023 09:58:07 PM', '2023-04-02 21:58:07'),
-(3, 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci culpa doloribus eum sed, veniam amet reprehenderit ea voluptatibus iste voluptatem, similique nobis mollitia, architecto quidem? Et temporibus vel itaque magni!', '3.00', '642989f6cecaf7.47745958.png', 'Apr 02, 2023 09:58:14 PM', '2023-04-02 21:58:14'),
-(4, 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci culpa doloribus eum sed, veniam amet reprehenderit ea voluptatibus iste voluptatem, similique nobis mollitia, architecto quidem? Et temporibus vel itaque magni!', '4.00', '642989ff36c1e7.67969614.png', 'Apr 02, 2023 09:58:23 PM', '2023-04-02 21:58:23');
+(1, 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ab praesentium nesciunt id quasi sequi, temporibus assumenda, deserunt ipsam laudantium porro', '1.00', '642c191b334170.52524552.png', 'Apr 04, 2023 08:33:31 PM', '2023-04-04 20:33:31'),
+(2, 'mio1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ab praesentium nesciunt id quasi sequi, temporibus assumenda, deserunt ipsam laudantium porro', '2.00', '642c1923a2cf28.81839107.png', 'Apr 04, 2023 08:33:39 PM', '2023-04-04 20:33:39'),
+(3, 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ab praesentium nesciunt id quasi sequi, temporibus assumenda, deserunt ipsam laudantium porro', '3.00', '642c1929b75fa2.29920589.png', 'Apr 04, 2023 08:33:45 PM', '2023-04-04 20:33:45'),
+(4, 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ab praesentium nesciunt id quasi sequi, temporibus assumenda, deserunt ipsam laudantium porro', '4.00', '642c192fa0a438.48615047.png', 'Apr 04, 2023 08:33:51 PM', '2023-04-04 20:33:51');
 
 -- --------------------------------------------------------
 
@@ -698,7 +747,7 @@ ALTER TABLE `all_footer_tbl`
 -- AUTO_INCREMENT for table `cart_tbl`
 --
 ALTER TABLE `cart_tbl`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `contact_us_page_tbl`
@@ -716,7 +765,7 @@ ALTER TABLE `cut_file_tbl`
 -- AUTO_INCREMENT for table `decals_tbl`
 --
 ALTER TABLE `decals_tbl`
-  MODIFY `decals_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `decals_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `gallery_page_tbl`
@@ -728,31 +777,31 @@ ALTER TABLE `gallery_page_tbl`
 -- AUTO_INCREMENT for table `home_hero_section_tbl`
 --
 ALTER TABLE `home_hero_section_tbl`
-  MODIFY `home_hero_section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `home_hero_section_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `order_product_tbl`
 --
 ALTER TABLE `order_product_tbl`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `order_ready_to_print_tbl`
 --
 ALTER TABLE `order_ready_to_print_tbl`
-  MODIFY `order_ready_to_print_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_ready_to_print_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `order_sticker_tbl`
 --
 ALTER TABLE `order_sticker_tbl`
-  MODIFY `order_sticker_main_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_sticker_main_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `order_temp_plate_tbl`
 --
 ALTER TABLE `order_temp_plate_tbl`
-  MODIFY `order_temp_plate_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_temp_plate_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `services_page_tbl`

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2023 at 08:23 AM
+-- Generation Time: Apr 04, 2023 at 02:37 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -47,6 +47,13 @@ CREATE TABLE `order_product_tbl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `order_product_tbl`
+--
+
+INSERT INTO `order_product_tbl` (`order_product_id`, `user_id`, `order_id_product`, `name`, `description`, `quantity`, `total_price`, `image`, `page`, `status_order`, `deliver_method`, `reference_num`, `receipt`, `payment`, `created_at_varchar`, `created_at`) VALUES
+(1, 1, 'G420230404083429PMPSTPeJKX779472', 'mio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ab praesentium nesciunt id quasi sequi, temporibus assumenda, deserunt ipsam laudantium porro', 1, '4.00', '642c192fa0a438.48615047.png', 'NOTPAID', 'NOTPAID', '', '', '', 'NONE', 'Apr 04, 2023 08:34:29 PM', '2023-04-04 20:34:29');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -64,7 +71,7 @@ ALTER TABLE `order_product_tbl`
 -- AUTO_INCREMENT for table `order_product_tbl`
 --
 ALTER TABLE `order_product_tbl`
-  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
